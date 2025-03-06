@@ -6,6 +6,8 @@ You can easily access a free cloud version of [R Studio](https://posit.cloud/) a
 
 ## Four easy steps
 
+Hello
+
 1.  Follow the link <https://posit.cloud/>.
 2.  Get started.
 3.  Choose a plan (there is a free option).
