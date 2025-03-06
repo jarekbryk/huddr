@@ -1,5 +1,7 @@
 # Descriptive statistics
 
+Hello from CLR
+
 ::: callout-note
 ## Functions
 
