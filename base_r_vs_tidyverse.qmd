@@ -1,6 +1,6 @@
 # Base R vs tidyverse
 
-In summary, this book has no content whatsoever.
+This should be a short summary of the difference between the two dialects of R.
 
 ```{r}
 1 + 1
