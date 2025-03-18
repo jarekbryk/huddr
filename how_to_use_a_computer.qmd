@@ -1,0 +1,7 @@
+# How to use a computer
+
+TESTTEST
+
+```{r}
+1 + 1
+```
