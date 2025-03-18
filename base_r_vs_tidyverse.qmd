@@ -1,6 +1,10 @@
 # Base R vs tidyverse
 
+<<<<<<< HEAD
 This should be a short summary of the difference between the two dialects of R.
+=======
+TEST
+>>>>>>> 23cddad595cd539bfa391f16c772dc91fa4843e4
 
 ```{r}
 1 + 1
