@@ -13,10 +13,11 @@ book:
     - installation.qmd
     - setup.qmd
     - posit_cloud.qmd
+    - how_to_use_a_computer.qmd
   - part: 'Part 2: R fundamentals'
     chapters:
     - base_r_vs_tidyverse.qmd
-    - loading_your_data.qmd
+    - loading_packages_and_data.qmd
     - basic_functions.qmd
     - dealing_with_missing_data.qmd
     - basic_functions_extended.qmd
