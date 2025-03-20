@@ -1,4 +1,5 @@
 # Basic R functions
+In this short chapter you will find a summary of some of the basic and most useful functions and operators from the tidyverse package that you will be using in R studio. If you want to learn a bit more about a specific function from this chapter simply click on the function, and it will take you to a page with additional information.
 
 ::: callout-note
 ## Functions
