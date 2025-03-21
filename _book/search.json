@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Hudd-R book",
     "section": "",
-    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\nWTH\n\n1 + 1\n\n[1] 2",
+    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\nWTH Does this show up in upstream?\n\n1 + 1\n\n[1] 2",
     "crumbs": [
       "Preface"
     ]
@@ -46,7 +46,7 @@
     "href": "installation.html#four-easy-steps",
     "title": "2  Installation",
     "section": "2.3 Four easy steps",
-    "text": "2.3 Four easy steps\n\nFollow the link https://posit.cloud/.\nGet started.\nChoose a plan (there is a free option).\nSign up with your email address.",
+    "text": "2.3 Four easy steps\nHello\n\nFollow the link https://posit.cloud/.\nGet started.\nChoose a plan (there is a free option).\nSign up with your email address.",
     "crumbs": [
       "Part 1: Preparations",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installation</span>"
@@ -134,7 +134,7 @@
     "href": "base_r_vs_tidyverse.html",
     "title": "6  Base R vs tidyverse",
     "section": "",
-    "text": "TEST\n\n1 + 1\n\n[1] 2",
+    "text": "This should be a short summary of the difference between the two dialects of R.\nTEST\n\n1 + 1\n\n[1] 2",
     "crumbs": [
       "Part 2: R fundamentals",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Base R vs tidyverse</span>"
@@ -482,36 +482,80 @@
     ]
   },
   {
+    "objectID": "practice_questions.html",
+    "href": "practice_questions.html",
+    "title": "15  Practice Questions",
+    "section": "",
+    "text": "15.1 Mastering the Basics\nWhat function loads a package that is already on your computer? install.packageinstall.packageslibrarylibraries\nWhat library do you need to load in your data set? tidyverserodents_fullhereselect from computer\nWhich function should I use to load in a comma separated dataset? read_csvread_tsvheread_xsxl\nWhat function is used to select specific columns from a dataset? filterselectcolumngroup_by\nWhat function is used to select specific rows from a dataset? filterarrangesummariseselect\nWhich function is used to add new columns or modify existing ones? summarisetibblesummarymutate\nWhich symbol is used for filter c()%in%all of the above==\nWhat is this symbol used for? |&gt; Makes the function run in accordance with previous functionIt stores the output of a function as a variable but does not allow it to be used as an argument in another function.Takes the output of one function and passes it into another function as an argumentIt executes multiple functions simultaneously\nWhich ggplot function would give me a scatterplot? geom_point()ggplot(scatterplot)geom_graph()geom_scatter",
+    "crumbs": [
+      "Part 6: Additional Exercises",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Practice Questions</span>"
+    ]
+  },
+  {
+    "objectID": "practice_questions.html#mastering-the-basics",
+    "href": "practice_questions.html#mastering-the-basics",
+    "title": "15  Practice Questions",
+    "section": "",
+    "text": "What are the steps to follow every time you start a new quatro doc?\n\n A B C D\n\n\nOpen Quarto and create a new document. Load in the necessary libraries. Load the dataset. Make sure progress is saved to OneDrive or on your computer.\nDelete all previous Quarto documents. Load the dataset before installing any necessary libraries. Restart your computer to ensure a clean workspace. Save the document only after completing all analyses.\nOpen Quarto and immediately run all code chunks without checking the dataset. Load random libraries that might not be needed. Manually enter data instead of loading a dataset. Save the file as a text document instead of a Quarto file.\nLoad the dataset before opening Quarto. Write a full report before installing or loading any libraries. Save the document only in temporary storage. Run analyses without checking if the dataset loaded correctly.",
+    "crumbs": [
+      "Part 6: Additional Exercises",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Practice Questions</span>"
+    ]
+  },
+  {
+    "objectID": "practice_questions.html#manipulating-data-sets",
+    "href": "practice_questions.html#manipulating-data-sets",
+    "title": "15  Practice Questions",
+    "section": "15.2 Manipulating data sets",
+    "text": "15.2 Manipulating data sets\n\nfilter can be used to group rows: TRUEFALSE\nWhich is the correct form?\n\n filter(species_id = 'GM') filter(species_id %in% c(DM, NL) filter(species_id == %in% c(DM, NL)",
+    "crumbs": [
+      "Part 6: Additional Exercises",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Practice Questions</span>"
+    ]
+  },
+  {
+    "objectID": "practice_questions.html#working-with-ggplot",
+    "href": "practice_questions.html#working-with-ggplot",
+    "title": "15  Practice Questions",
+    "section": "15.3 Working with ggplot",
+    "text": "15.3 Working with ggplot",
+    "crumbs": [
+      "Part 6: Additional Exercises",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Practice Questions</span>"
+    ]
+  },
+  {
     "objectID": "biomedical_science.html",
     "href": "biomedical_science.html",
-    "title": "15  Biomedical Science topics",
+    "title": "16  Biomedical Science topics",
     "section": "",
     "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
     "crumbs": [
-      "Part 5: Topic-specific approaches",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Biomedical Science topics</span>"
+      "Part 6: Additional Exercises",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Biomedical Science topics</span>"
     ]
   },
   {
     "objectID": "genomics.html",
     "href": "genomics.html",
-    "title": "16  Genomics",
+    "title": "17  Genomics",
     "section": "",
     "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
     "crumbs": [
-      "Part 5: Topic-specific approaches",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Genomics</span>"
+      "Part 6: Additional Exercises",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Genomics</span>"
     ]
   },
   {
     "objectID": "phylogenetics.html",
     "href": "phylogenetics.html",
-    "title": "17  Phylogenetics",
+    "title": "18  Phylogenetics",
     "section": "",
     "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
     "crumbs": [
-      "Part 5: Topic-specific approaches",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Phylogenetics</span>"
+      "Part 6: Additional Exercises",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Phylogenetics</span>"
     ]
   },
   {

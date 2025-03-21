@@ -118,7 +118,7 @@ opts10 <- c(answer = "A",
             "B", 
             "C", 
             "D")
-cat("What are the steps to follow every time you start a new quatro doc?", longmcq(q10))
+cat("What are the steps to follow every time you start a new quatro doc?", longmcq(opts10))
 ```
 
 A)
