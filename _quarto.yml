@@ -32,7 +32,6 @@ book:
   - part: 'Part 6: Additional Exercises'
     chapters:
     - practice_questions.qmd
-    chapters:
     - biomedical_science.qmd
     - genomics.qmd
     - phylogenetics.qmd
