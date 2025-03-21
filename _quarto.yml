@@ -22,6 +22,7 @@ book:
         - basic_functions_extended.qmd
         - joining_functions_extended.qmd
         - pivot_functions_extended.qmd
+        - graph_functions_extended.qmd
     - dealing_with_missing_data.qmd
     - web_exercises_11.qmd
   - part: 'Part 3: Statistical tests'
