@@ -30,8 +30,8 @@ book:
   - part: 'Part 4: Functions and loops'
   - part: 'Part 5: Topic-specific approaches'
   - part: 'Part 6: Additional Exercises'
-  	chapters:
-  	- practice_questions.qmd
+    chapters:
+    - practice_questions.qmd
     chapters:
     - biomedical_science.qmd
     - genomics.qmd
