@@ -3,7 +3,8 @@
 ::: callout-note
 This exercise sheet is all about getting comfortable with RStudio and the tidyverse. In it you will find exercises ranging from individual use of functions to practicing exercises that will allow you to better manipulate data sets.
 :::
-```{r}
+
+```{r echo=FALSE}
 library(webexercises)
 
 ```
@@ -11,7 +12,8 @@ library(webexercises)
 ## Mastering the Basics
 
 1.  
-```{r}
+
+```{r results='asis', echo=FALSE}
 opts <- c("install.package", 
             "install.packages", 
             answer = "library", 
@@ -21,97 +23,156 @@ q1 <- mcq(opts)
 cat("What function loads a package that is already on your computer?", q1) 
 ```
 
-2.
-```{r}
-cat("What library do you need to load in your data set?", q2)
+2.  
+
+```{r results='asis', echo=FALSE}
 opts2 <- c("tidyverse", 
             "rodents_full", 
             answer = "here", 
             "select from computer")
 q2 <- mcq(opts2)
-
+cat("What library do you need to load in your data set?", q2)
 ```
 
-
 3.  
-```{r}
-cat("Which function should I use to load in a comma separated dataset?", q3)
+
+```{r results='asis', echo=FALSE}
 opts3 <- c("read_csv", 
             "read_tsv", 
             answer = "he", 
             "read_xsxl")
 q3<- mcq(opts3)
+cat("Which function should I use to load in a comma separated dataset?", q3)
 ```
 
 4.  
-```{r}
-cat("What function is used to select specific columns from a dataset?", q4)
+
+```{r results='asis', echo=FALSE}
 opts4 <- c("filter", 
             answer = "select", 
             "column", 
             "group_by")
 q4 <- mcq(opts4)
+cat("What function is used to select specific columns from a dataset?", q4)
 ```
 
 5.  
-```{r}
-cat("What function is used to select specific rows from a dataset?", q5)
+
+```{r results='asis', echo=FALSE}
 opts5 <- c(answer = "filter", 
             "arrange", 
             "summarise", 
             "select")
 q5 <- mcq(opts5)
+cat("What function is used to select specific rows from a dataset?", q5)
 ```
 
 6.  
-```{r}
-cat("Which function is used to add new columns or modify existing ones?", q6)
+
+```{r results='asis', echo=FALSE}
 opts6 <- c("summarise", 
             "tibble", 
             "summary", 
 					 answer = "mutate")
 q6 <- mcq(opts6)
+cat("Which function is used to add new columns or modify existing ones?", q6)
 ```
 
 7.  
-```{r}
-cat("Which line of code is correctly formatted?", q2)
-opts2 <- c("tidyverse", 
-            "rodents_full", 
-            answer = "filter == ", 
-            "select from computer")
-q2 <- mcq(opts2)
+
+```{r results='asis', echo=FALSE}
+opts7 <- c("c()", 
+            "%in%", 
+            answer = "all of the above", 
+            "==")
+q7 <- mcq(opts7)
+cat("Which symbol is used for filter", q7)
 ```
 
 8.  
-```{r}
-cat("What library do you need to load in your data set?", q2)
-opts2 <- c("tidyverse", 
-            "rodents_full", 
-            answer = "here", 
-            "select from computer")
-q2 <- mcq(opts2)
+
+```{r results='asis', echo=FALSE}
+opts8 <- c("Makes the function run in accordance with previous function", 
+            "It stores the output of a function as a variable but does not allow it to be used as an argument in another function.", 
+            answer = "Takes the output of one function and passes it into another function as an argument", 
+            "It executes multiple functions simultaneously ")
+q8 <- mcq(opts8)
+cat("What is this symbol used for? |>", q8)
 ```
 
 9.  
-```{r}
-cat("What library do you need to load in your data set?", q2)
-opts2 <- c("tidyverse", 
-            "rodents_full", 
-            answer = "here", 
-            "select from computer")
-q2 <- mcq(opts2)
+
+```{r results='asis', echo=FALSE}
+opts9 <- c(answer = "geom_point()", 
+            "ggplot(scatterplot)", 
+            "geom_graph()", 
+            "geom_scatter")
+q9 <- mcq(opts9)
+cat("Which ggplot function would give me a scatterplot?", q9)
 ```
 
 10. 
-```{r}
-cat("What library do you need to load in your data set?", q2)
-opts2 <- c("tidyverse", 
-            "rodents_full", 
-            answer = "here", 
-            "select from computer")
-q2 <- mcq(opts2)
+
+```{r results='asis', echo=FALSE}
+opts10 <- c(answer = "A", 
+            "B", 
+            "C", 
+            "D")
+cat("What are the steps to follow every time you start a new quatro doc?", longmcq(q10))
 ```
+
+A)
+Open Quarto and create a new document.
+Load in the necessary libraries.
+Load the dataset.
+Make sure progress is saved to OneDrive or on your computer.
+
+B)
+Delete all previous Quarto documents.
+Load the dataset before installing any necessary libraries.
+Restart your computer to ensure a clean workspace.
+Save the document only after completing all analyses.
+
+C)
+Open Quarto and immediately run all code chunks without checking the dataset.
+Load random libraries that might not be needed.
+Manually enter data instead of loading a dataset.
+Save the file as a text document instead of a Quarto file.
+
+D)
+Load the dataset before opening Quarto.
+Write a full report before installing or loading any libraries.
+Save the document only in temporary storage.
+Run analyses without checking if the dataset loaded correctly.
+
+## Manipulating data sets
+
+::: {.webex-check .webex-box}
+filter can be used to group rows: `r torf(TRUE)`
+
+```{r, results='asis', echo = FALSE}
+optsf <- c(
+   "filter(species_id = 'GM')",
+   
+   answer = "filter(species_id %in% c(DM, NL)",
+   
+   "filter(species_id == %in% c(DM, NL)")
+
+cat("Which is the correct form?", longmcq(optsf))
+```
+:::
+
+2.  
+
+3.  
+
+4.  
+
+5.  
+
+6.  
+
+7.  
 
 ## Working with ggplot
 
@@ -133,20 +194,4 @@ q2 <- mcq(opts2)
 
 9.  
 
-10. 
-
-## Manipulating data sets
-
-1.  
-
-2.  
-
-3.  
-
-4.  
-
-5.  
-
-6.  
-
-7.  
+10.
