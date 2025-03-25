@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Installation – Hudd-R book</title>
+<title>2&nbsp; Installing R and RStudio on your computer – Hudd-R book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./installation.html">Part 1: Preparations</a></li><li class="breadcrumb-item"><a href="./installation.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Installation</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./installation.html">Part 1: Preparations</a></li><li class="breadcrumb-item"><a href="./installation.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Installing R and RStudio on your computer</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -131,7 +131,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./installation.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Installation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Installing R and RStudio on your computer</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -289,36 +289,28 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#installing-r-and-r-studio-on-your-computer" id="toc-installing-r-and-r-studio-on-your-computer" class="nav-link active" data-scroll-target="#installing-r-and-r-studio-on-your-computer"><span class="header-section-number">3</span> Installing R and R Studio on your computer</a>
+  <li><a href="#download-rtools-or-command-line-tools" id="toc-download-rtools-or-command-line-tools" class="nav-link active" data-scroll-target="#download-rtools-or-command-line-tools"><span class="header-section-number">2.0.1</span> Download RTools or Command Line Tools:</a></li>
+  <li><a href="#rtools-for-windows" id="toc-rtools-for-windows" class="nav-link" data-scroll-target="#rtools-for-windows"><span class="header-section-number">2.1</span> RTools for Windows</a></li>
+  <li><a href="#command-line-tools-for-macos" id="toc-command-line-tools-for-macos" class="nav-link" data-scroll-target="#command-line-tools-for-macos"><span class="header-section-number">2.2</span> Command Line Tools for macOS</a></li>
+  <li><a href="#download-and-install-r" id="toc-download-and-install-r" class="nav-link" data-scroll-target="#download-and-install-r"><span class="header-section-number">3</span> Download and install R</a>
   <ul class="collapse">
-  <li><a href="#why-do-i-need-to-install-this-on-my-computer" id="toc-why-do-i-need-to-install-this-on-my-computer" class="nav-link" data-scroll-target="#why-do-i-need-to-install-this-on-my-computer"><span class="header-section-number">3.1</span> Why do I need to install this on my computer?</a></li>
+  <li><a href="#windows-devices" id="toc-windows-devices" class="nav-link" data-scroll-target="#windows-devices"><span class="header-section-number">3.1</span> Windows devices</a></li>
+  <li><a href="#macos-devices" id="toc-macos-devices" class="nav-link" data-scroll-target="#macos-devices"><span class="header-section-number">3.2</span> macOS devices:</a></li>
   </ul></li>
-  <li><a href="#installation-issues" id="toc-installation-issues" class="nav-link" data-scroll-target="#installation-issues"><span class="header-section-number">4</span> Installation Issues:</a></li>
-  <li><a href="#important-notes" id="toc-important-notes" class="nav-link" data-scroll-target="#important-notes"><span class="header-section-number">5</span> Important Notes:</a></li>
-  <li><a href="#download-rtools-or-command-line-tools" id="toc-download-rtools-or-command-line-tools" class="nav-link" data-scroll-target="#download-rtools-or-command-line-tools"><span class="header-section-number">6</span> Download RTools or Command Line Tools:</a>
+  <li><a href="#download-and-install-rstudio" id="toc-download-and-install-rstudio" class="nav-link" data-scroll-target="#download-and-install-rstudio"><span class="header-section-number">4</span> Download and install RStudio</a>
   <ul class="collapse">
-  <li><a href="#rtools-for-windows" id="toc-rtools-for-windows" class="nav-link" data-scroll-target="#rtools-for-windows"><span class="header-section-number">6.1</span> RTools for Windows</a></li>
-  <li><a href="#command-line-tools-for-macos" id="toc-command-line-tools-for-macos" class="nav-link" data-scroll-target="#command-line-tools-for-macos"><span class="header-section-number">6.2</span> Command Line Tools for macOS</a></li>
+  <li><a href="#windows-and-macos-devices" id="toc-windows-and-macos-devices" class="nav-link" data-scroll-target="#windows-and-macos-devices"><span class="header-section-number">4.1</span> Windows and macOS devices:</a></li>
   </ul></li>
-  <li><a href="#download-and-install-r" id="toc-download-and-install-r" class="nav-link" data-scroll-target="#download-and-install-r"><span class="header-section-number">7</span> Download and install R</a>
-  <ul class="collapse">
-  <li><a href="#windows-devices" id="toc-windows-devices" class="nav-link" data-scroll-target="#windows-devices"><span class="header-section-number">7.1</span> Windows devices</a></li>
-  <li><a href="#macos-devices" id="toc-macos-devices" class="nav-link" data-scroll-target="#macos-devices"><span class="header-section-number">7.2</span> macOS devices:</a></li>
-  </ul></li>
-  <li><a href="#download-and-install-r-studio" id="toc-download-and-install-r-studio" class="nav-link" data-scroll-target="#download-and-install-r-studio"><span class="header-section-number">8</span> Download and install R Studio</a>
-  <ul class="collapse">
-  <li><a href="#windows-and-macos-devices" id="toc-windows-and-macos-devices" class="nav-link" data-scroll-target="#windows-and-macos-devices"><span class="header-section-number">8.1</span> Windows and macOS devices:</a></li>
-  </ul></li>
-  <li><a href="#next" id="toc-next" class="nav-link" data-scroll-target="#next"><span class="header-section-number">9</span> Next</a></li>
+  <li><a href="#next" id="toc-next" class="nav-link" data-scroll-target="#next"><span class="header-section-number">5</span> Next</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./installation.html">Part 1: Preparations</a></li><li class="breadcrumb-item"><a href="./installation.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Installation</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./installation.html">Part 1: Preparations</a></li><li class="breadcrumb-item"><a href="./installation.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Installing R and RStudio on your computer</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Installation</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Installing R and RStudio on your computer</span></h1>
 </div>
 
 
@@ -335,48 +327,78 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="installing-r-and-r-studio-on-your-computer" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Installing R and R Studio on your computer</h1>
-<ul>
-<li>This step-by-step guide will show you how to install R and R Studio on your computer.</li>
-</ul>
-<section id="why-do-i-need-to-install-this-on-my-computer" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="why-do-i-need-to-install-this-on-my-computer"><span class="header-section-number">3.1</span> Why do I need to install this on my computer?</h2>
-<ul>
-<li>To fully understand and be capable of using R, you will need to practice extensively beyond what is shown in class, hence why it is highly recommended to install R on your personal devices.</li>
-</ul>
-</section>
-</section>
-<section id="installation-issues" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Installation Issues:</h1>
-<p>If you’re unable to install any software on your computer or your only device is a tablet/ Chromebook, ignore the following instructions and switch to the next section <strong>“Using R and R Studio in a web browser”</strong>.</p>
-</section>
-<section id="important-notes" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Important Notes:</h1>
-<p><strong>OneDrive users:</strong></p>
-<ul>
+<p>This step-by-step guide will show you how to install R and R Studio on your personal computer.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note: if your personal computer is a Chromebook or a tablet, these instructions do not apply and need to follow instructions in the section “Use RStudio in a web browser”.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>RTools, R and RStudio, along with all the starting packages, are already installed on every computer in the computer labs in JPSG/17 and JPSG/26, so you only need to follow instructions in the section “Setting up R and RStudio”.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Why do I need to install this on my computer?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To fully understand and be capable of using R, you will need to practice extensively beyond what is shown in class, hence why it is highly recommended to install R on your personal devices.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Notes for OneDrive users
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
 <li>DO NOT install the RTools, R or R Studio programs below in your OneDrive cloud folder.</li>
 <li>These applications must be on your actual hard drive (also known as C drive).</li>
 <li>However, you can place your project folders and files on your OneDrive.</li>
-</ul>
-<p><strong>Computers in JPSG/17 and JPSG/26:</strong></p>
-<ul>
-<li>All packages required to run R (RTools, R and R Studio) are installed on every computer in JPSG/17 and JPSG/26. If you are using any of those computers, skip to the <strong>“Setting up R and R Studio”</strong> section to complete the set-up.</li>
-</ul>
-</section>
-<section id="download-rtools-or-command-line-tools" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Download RTools or Command Line Tools:</h1>
+</ol>
+</div>
+</div>
+<p>TODO: link to how to use a computer chapter</p>
+<section id="download-rtools-or-command-line-tools" class="level3" data-number="2.0.1">
+<h3 data-number="2.0.1" class="anchored" data-anchor-id="download-rtools-or-command-line-tools"><span class="header-section-number">2.0.1</span> Download RTools or Command Line Tools:</h3>
 <ul>
 <li><p>You need to make sure your computer is ready for the installation of R and R Studio.</p></li>
 <li><p>You can do that with the help of RTools.</p></li>
 <li><p>We recommend installing RTools (on Windows devices) or Command Line Tools (on Mac) as it allows for the installation of various external packages (which we will be frequently using).</p></li>
 </ul>
-<section id="rtools-for-windows" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="rtools-for-windows"><span class="header-section-number">6.1</span> RTools for Windows</h2>
+</section>
+<section id="rtools-for-windows" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="rtools-for-windows"><span class="header-section-number">2.1</span> RTools for Windows</h2>
 <p>Instructions and installation are on this page: <strong>https://cran.r-project.org/bin/windows/Rtools/</strong>. Remember to download the latest version of RTools (4.4).</p>
 </section>
-<section id="command-line-tools-for-macos" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="command-line-tools-for-macos"><span class="header-section-number">6.2</span> Command Line Tools for macOS</h2>
+<section id="command-line-tools-for-macos" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="command-line-tools-for-macos"><span class="header-section-number">2.2</span> Command Line Tools for macOS</h2>
 <p>To install the latest version:</p>
 <ol type="1">
 <li><p>Open Terminal app on your mac</p></li>
@@ -388,35 +410,34 @@ ul.task-list li input[type="checkbox"] {
 <li>Follow the instructions. Note that the download may take a while as it is a large file.</li>
 </ol>
 </section>
-</section>
-<section id="download-and-install-r" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> Download and install R</h1>
-<section id="windows-devices" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="windows-devices"><span class="header-section-number">7.1</span> Windows devices</h2>
+<section id="download-and-install-r" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Download and install R</h1>
+<section id="windows-devices" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="windows-devices"><span class="header-section-number">3.1</span> Windows devices</h2>
 <ul>
-<li>Use this link to download and install R: <strong>https://www.stats.bris.ac.uk/R/bin/windows/base/</strong></li>
+<li>Use this link to download and install R: <a href="https://www.stats.bris.ac.uk/R/bin/windows/base/">https://www.stats.bris.ac.uk/R/bin/windows/base/</a></li>
 </ul>
 </section>
-<section id="macos-devices" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="macos-devices"><span class="header-section-number">7.2</span> macOS devices:</h2>
+<section id="macos-devices" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="macos-devices"><span class="header-section-number">3.2</span> macOS devices:</h2>
 <ul>
-<li>Use this link to download and install R: <strong>https://www.stats.bris.ac.uk/R/bin/macosx/base/</strong></li>
-</ul>
-</section>
-</section>
-<section id="download-and-install-r-studio" class="level1" data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span> Download and install R Studio</h1>
-<section id="windows-and-macos-devices" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="windows-and-macos-devices"><span class="header-section-number">8.1</span> Windows and macOS devices:</h2>
-<ul>
-<li>Use this link: <strong>https://posit.co/download/rstudio-desktop/</strong>.Click on the button “Install R Studio”. You are able to use the same link for both devices, as your operating system will be instantly recognized.</li>
+<li>Use this link to download and install R: <a href="https://www.stats.bris.ac.uk/R/bin/macosx/base/">https://www.stats.bris.ac.uk/R/bin/macosx/base/</a></li>
 </ul>
 </section>
 </section>
-<section id="next" class="level1" data-number="9">
-<h1 data-number="9"><span class="header-section-number">9</span> Next</h1>
+<section id="download-and-install-rstudio" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Download and install RStudio</h1>
+<section id="windows-and-macos-devices" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="windows-and-macos-devices"><span class="header-section-number">4.1</span> Windows and macOS devices:</h2>
 <ul>
-<li>Once you have successfully installed RTools, R and R Studio on your computer, go to the next section called <strong>“Setting up R and R Studio”</strong>.</li>
+<li>Use this link: <a href="https://posit.co/download/rstudio-desktop/">https://posit.co/download/rstudio-desktop/</a>.Click on the button “Install RStudio”. You are able to use the same link for both devices, as your operating system will be instantly recognized.</li>
+</ul>
+</section>
+</section>
+<section id="next" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Next</h1>
+<ul>
+<li>Once you have successfully installed RTools, R and RStudio on your computer, go to the next section called <strong>“Setting up R and RStudio”</strong>.</li>
 </ul>
 
 

@@ -22,78 +22,67 @@
   {
     "objectID": "installation.html",
     "href": "installation.html",
-    "title": "2  Installation",
+    "title": "2  Installing R and RStudio on your computer",
     "section": "",
-    "text": "3 Installing R and R Studio on your computer",
+    "text": "2.0.1 Download RTools or Command Line Tools:\nThis step-by-step guide will show you how to install R and R Studio on your personal computer.\nTODO: link to how to use a computer chapter",
     "crumbs": [
       "Part 1: Preparations",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installation</span>"
-    ]
-  },
-  {
-    "objectID": "installation.html#why-do-i-need-to-install-this-on-my-computer",
-    "href": "installation.html#why-do-i-need-to-install-this-on-my-computer",
-    "title": "2  Installation",
-    "section": "3.1 Why do I need to install this on my computer?",
-    "text": "3.1 Why do I need to install this on my computer?\n\nTo fully understand and be capable of using R, you will need to practice extensively beyond what is shown in class, hence why it is highly recommended to install R on your personal devices.",
-    "crumbs": [
-      "Part 1: Preparations",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installation</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing R and RStudio on your computer</span>"
     ]
   },
   {
     "objectID": "installation.html#rtools-for-windows",
     "href": "installation.html#rtools-for-windows",
-    "title": "2  Installation",
-    "section": "6.1 RTools for Windows",
-    "text": "6.1 RTools for Windows\nInstructions and installation are on this page: https://cran.r-project.org/bin/windows/Rtools/. Remember to download the latest version of RTools (4.4).",
+    "title": "2  Installing R and RStudio on your computer",
+    "section": "2.1 RTools for Windows",
+    "text": "2.1 RTools for Windows\nInstructions and installation are on this page: https://cran.r-project.org/bin/windows/Rtools/. Remember to download the latest version of RTools (4.4).",
     "crumbs": [
       "Part 1: Preparations",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installation</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing R and RStudio on your computer</span>"
     ]
   },
   {
     "objectID": "installation.html#command-line-tools-for-macos",
     "href": "installation.html#command-line-tools-for-macos",
-    "title": "2  Installation",
-    "section": "6.2 Command Line Tools for macOS",
-    "text": "6.2 Command Line Tools for macOS\nTo install the latest version:\n\nOpen Terminal app on your mac\nCopy and paste (or type) the following command\n\nxcode-select --install\nthen press “Enter”:\n\nFollow the instructions. Note that the download may take a while as it is a large file.",
+    "title": "2  Installing R and RStudio on your computer",
+    "section": "2.2 Command Line Tools for macOS",
+    "text": "2.2 Command Line Tools for macOS\nTo install the latest version:\n\nOpen Terminal app on your mac\nCopy and paste (or type) the following command\n\nxcode-select --install\nthen press “Enter”:\n\nFollow the instructions. Note that the download may take a while as it is a large file.",
     "crumbs": [
       "Part 1: Preparations",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installation</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing R and RStudio on your computer</span>"
     ]
   },
   {
     "objectID": "installation.html#windows-devices",
     "href": "installation.html#windows-devices",
-    "title": "2  Installation",
-    "section": "7.1 Windows devices",
-    "text": "7.1 Windows devices\n\nUse this link to download and install R: https://www.stats.bris.ac.uk/R/bin/windows/base/",
+    "title": "2  Installing R and RStudio on your computer",
+    "section": "3.1 Windows devices",
+    "text": "3.1 Windows devices\n\nUse this link to download and install R: https://www.stats.bris.ac.uk/R/bin/windows/base/",
     "crumbs": [
       "Part 1: Preparations",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installation</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing R and RStudio on your computer</span>"
     ]
   },
   {
     "objectID": "installation.html#macos-devices",
     "href": "installation.html#macos-devices",
-    "title": "2  Installation",
-    "section": "7.2 macOS devices:",
-    "text": "7.2 macOS devices:\n\nUse this link to download and install R: https://www.stats.bris.ac.uk/R/bin/macosx/base/",
+    "title": "2  Installing R and RStudio on your computer",
+    "section": "3.2 macOS devices:",
+    "text": "3.2 macOS devices:\n\nUse this link to download and install R: https://www.stats.bris.ac.uk/R/bin/macosx/base/",
     "crumbs": [
       "Part 1: Preparations",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installation</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing R and RStudio on your computer</span>"
     ]
   },
   {
     "objectID": "installation.html#windows-and-macos-devices",
     "href": "installation.html#windows-and-macos-devices",
-    "title": "2  Installation",
-    "section": "8.1 Windows and macOS devices:",
-    "text": "8.1 Windows and macOS devices:\n\nUse this link: https://posit.co/download/rstudio-desktop/.Click on the button “Install R Studio”. You are able to use the same link for both devices, as your operating system will be instantly recognized.",
+    "title": "2  Installing R and RStudio on your computer",
+    "section": "4.1 Windows and macOS devices:",
+    "text": "4.1 Windows and macOS devices:\n\nUse this link: https://posit.co/download/rstudio-desktop/.Click on the button “Install RStudio”. You are able to use the same link for both devices, as your operating system will be instantly recognized.",
     "crumbs": [
       "Part 1: Preparations",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installation</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing R and RStudio on your computer</span>"
     ]
   },
   {
