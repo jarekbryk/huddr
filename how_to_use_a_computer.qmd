@@ -1,7 +1,16 @@
 # How to use a computer
 
-TESTTEST
+In my experience, one of the biggest barriers to learning programming for students today is not the complexity of coding itself, but rather the lack of fundamental computer skills. This chapter covers the most common issues that I encounter.
 
-```{r}
-1 + 1
-```
+### Concepts of paths and hierarchies
+
+### Folders and files, and how to use File Explorer or Finder
+
+### File extensions and default programmes to open files
+
+### How to move or copy files from one folder to another
+
+### Difference between OneDrive and a hard drive
+
+### How to unzip a file/folder
+

@@ -1,32 +1,30 @@
 # Installing R and RStudio on your computer
 
-This step-by-step guide will show you how to install R and R Studio on your personal computer. 
-
-::: callout-important
-Note: if your personal computer is a Chromebook or a tablet, these instructions do not apply and need to follow instructions in the section "Use RStudio in a web browser".
-:::
+This step-by-step guide will show you how to install R and R Studio _on your personal computer_. 
 
 ::: callout-note
+### Computer labs JPSG/17 and JPSG/26 are ready for R
 RTools, R and RStudio, along with all the starting packages, are already installed on every computer in the computer labs in JPSG/17 and JPSG/26, so you only need to follow instructions in the section "Setting up R and RStudio".
 :::
 
 ::: callout-important
-### Why do I need to install this on my computer?
-
-To fully understand and be capable of using R, you will need to practice extensively beyond what is shown in class, hence why it is highly recommended to install R on your personal devices.
+### Do you have a Chromebook or a tablet?
+Note: if your personal computer is a Chromebook or a tablet, these instructions will not work and you need to follow instructions in the section [Use RStudio in a web browser](posit_cloud.html).
 :::
 
 ::: callout-important
-# Notes for OneDrive users
-
-1. DO NOT install the RTools, R or R Studio programs below in your OneDrive cloud folder.
-2. These applications must be on your actual hard drive (also known as C drive).
-3. However, you can place your project folders and files on your OneDrive.
+### Why do I need to install this on my computer?
+To be capable of using R well, you will need to practice extensively beyond what is shown in class, hence why it is highly recommended to install R on your personal devices.
 :::
 
-TODO: link to how to use a computer chapter
+::: callout-important
+### Notes for OneDrive users
+You must not install the RTools, R or RStudio in your OneDrive (or any other cloud-based) folder. These applications must be on your actual hard drive (also known as C drive). 
+:::
 
-### Download RTools or Command Line Tools:
+If you are not familiar with concepts of cloud, file and folder paths and unzipping archived files on your computer, please read the chapter [How to use a computer](how_to_use_a_computer.html) first.
+
+### Download and install RTools (on Windows) or Command Line Tools (on macOS)
 
 -   You need to make sure your computer is ready for the installation of
     R and R Studio.
@@ -37,30 +35,19 @@ TODO: link to how to use a computer chapter
     Tools (on Mac) as it allows for the installation of various external
     packages (which we will be frequently using).
 
-## RTools for Windows
+#### Download and install RTools (Windows only)
 
-Instructions and installation are on this page:
-**https://cran.r-project.org/bin/windows/Rtools/**. Remember to download
-the latest version of RTools (4.4).
+Instructions are available at [https://cran.r-project.org/bin/windows/Rtools/](https://cran.r-project.org/bin/windows/Rtools/). Remember to download the latest version of RTools.
 
-## Command Line Tools for macOS
+#### Download and install Command Line Tools (macOS only)
 
-To install the latest version:
+1.  Open the Terminal app on your Mac.
+2.  Copy and paste (or type) the following command: `xcode-select --install`, then press "Enter".
+3.  Follow the instructions. Note that the download may take a while as it is a large file.
 
-1.  Open Terminal app on your mac
+## Download and install R
 
-2.  Copy and paste (or type) the following command
-
-`xcode-select --install`
-
-then press "Enter":
-
-3.  Follow the instructions. Note that the download may take a while as
-    it is a large file.
-
-# Download and install R
-
-## Windows devices
+### Windows devices
 
 -   Use this link to download and install R:
     [https://www.stats.bris.ac.uk/R/bin/windows/base/](https://www.stats.bris.ac.uk/R/bin/windows/base/)

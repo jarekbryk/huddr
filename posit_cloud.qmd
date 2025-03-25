@@ -1,4 +1,4 @@
-# Use RStudio in a web browser
+# Using RStudio in a web browser
 
 ## posit.cloud
 

@@ -1,6 +1,6 @@
 # Introduction
 
-This is an online book created to facilitate learning R by students at the University of Huddersfield's Division of Biomedical and Life Sciences. However, unlike other books with tutorials on R (some of which we mention below), this book is thought of as a quick reference, with lists of core functions, their parameters and code syntax. We hope that it will help students learning R to overcome the challenge of not only thinking about _what to do_ (what is this task asking me to do?) but also _how to do it_ (how do I translate this into code?) - in language of computer code that is completely foreign to all but a few students.
+This is an online book created to facilitate learning R by students at the University of Huddersfield's Division of Biomedical and Life Sciences. However, unlike other books with tutorials on R (some of which we mention below), this book is thought of as a quick reference, with lists of core functions, their parameters and code syntax. We hope that it will help students learning R to overcome the dual challenge of not only thinking about _what to do_ (what is this task asking me to do?) but also _how to do it_ (how do I translate this into code?) - in language of computer code that is completely foreign to all but a few students.
 
 Technically speaking, practically everything in this book can be found 
 
