@@ -24,40 +24,73 @@
     "href": "installation.html",
     "title": "2  Installation",
     "section": "",
-    "text": "2.1 Set up project structure for the module\nOnce R and R Studio are installed, go through the following steps to prepare them for work on the module.\nWarning!\nDo not put spaces in file or folder names. Use - or _ or DifferentCase to separate different parts of the name. For example: Research-Skills not Research Skills.\n### Step by step:\nStep 1: Open R Studio.\nStep 2: Select File → New project located on the top left of the screen (if you are using a Mac put your mouse to the top and that will make the options appear) and then, in the window that appears, select New directory, then again select New project.\nStep 3: In the form that appears, under “Directory name:”, give your project directory a useful name (SIB2001_2425), and under “Create a project under subdirectory of:” select a convenient place on your computer to put it (strongly recommend OneDrive - University of Huddersfield) . Then click Create Project. R Studio will create your project folder and refresh the main window.\nStep 4: In the R Studio bottom-right panel, click New Folder and create the first folder: “code”. Repeat this step twice more to add folders: “data” and “output”.",
+    "text": "3 Installing R and R Studio on your computer",
     "crumbs": [
       "Part 1: Preparations",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installation</span>"
     ]
   },
   {
-    "objectID": "installation.html#adjust-the-r-studio-interface",
-    "href": "installation.html#adjust-the-r-studio-interface",
+    "objectID": "installation.html#why-do-i-need-to-install-this-on-my-computer",
+    "href": "installation.html#why-do-i-need-to-install-this-on-my-computer",
     "title": "2  Installation",
-    "section": "2.2 Adjust the R Studio interface",
-    "text": "2.2 Adjust the R Studio interface\n # Using R and R Studio in a web browser\nIf you are unable to install R and R Studio on your computer or tablet, or if you just want to practice but do not have your computer with you, there is a simple solution for that.\nYou can easily access a free cloud version of R Studio and sign up for a free account that will allow you to to run R Studio in any web browser and on any computer without the need to install RTools, Xcode, R or R Studio.",
+    "section": "3.1 Why do I need to install this on my computer?",
+    "text": "3.1 Why do I need to install this on my computer?\n\nTo fully understand and be capable of using R, you will need to practice extensively beyond what is shown in class, hence why it is highly recommended to install R on your personal devices.",
     "crumbs": [
       "Part 1: Preparations",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installation</span>"
     ]
   },
   {
-    "objectID": "installation.html#four-easy-steps",
-    "href": "installation.html#four-easy-steps",
+    "objectID": "installation.html#rtools-for-windows",
+    "href": "installation.html#rtools-for-windows",
     "title": "2  Installation",
-    "section": "2.3 Four easy steps",
-    "text": "2.3 Four easy steps\nHello\n\nFollow the link https://posit.cloud/.\nGet started.\nChoose a plan (there is a free option).\nSign up with your email address.",
+    "section": "6.1 RTools for Windows",
+    "text": "6.1 RTools for Windows\nInstructions and installation are on this page: https://cran.r-project.org/bin/windows/Rtools/. Remember to download the latest version of RTools (4.4).",
     "crumbs": [
       "Part 1: Preparations",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installation</span>"
     ]
   },
   {
-    "objectID": "installation.html#creating-an-r-project",
-    "href": "installation.html#creating-an-r-project",
+    "objectID": "installation.html#command-line-tools-for-macos",
+    "href": "installation.html#command-line-tools-for-macos",
     "title": "2  Installation",
-    "section": "2.4 Creating an R Project",
-    "text": "2.4 Creating an R Project\nNow that you have successfully created your account simply go to New Project and create a New R Studio Project:",
+    "section": "6.2 Command Line Tools for macOS",
+    "text": "6.2 Command Line Tools for macOS\nTo install the latest version:\n\nOpen Terminal app on your mac\nCopy and paste (or type) the following command\n\nxcode-select --install\nthen press “Enter”:\n\nFollow the instructions. Note that the download may take a while as it is a large file.",
+    "crumbs": [
+      "Part 1: Preparations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installation</span>"
+    ]
+  },
+  {
+    "objectID": "installation.html#windows-devices",
+    "href": "installation.html#windows-devices",
+    "title": "2  Installation",
+    "section": "7.1 Windows devices",
+    "text": "7.1 Windows devices\n\nUse this link to download and install R: https://www.stats.bris.ac.uk/R/bin/windows/base/",
+    "crumbs": [
+      "Part 1: Preparations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installation</span>"
+    ]
+  },
+  {
+    "objectID": "installation.html#macos-devices",
+    "href": "installation.html#macos-devices",
+    "title": "2  Installation",
+    "section": "7.2 macOS devices:",
+    "text": "7.2 macOS devices:\n\nUse this link to download and install R: https://www.stats.bris.ac.uk/R/bin/macosx/base/",
+    "crumbs": [
+      "Part 1: Preparations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installation</span>"
+    ]
+  },
+  {
+    "objectID": "installation.html#windows-and-macos-devices",
+    "href": "installation.html#windows-and-macos-devices",
+    "title": "2  Installation",
+    "section": "8.1 Windows and macOS devices:",
+    "text": "8.1 Windows and macOS devices:\n\nUse this link: https://posit.co/download/rstudio-desktop/.Click on the button “Install R Studio”. You are able to use the same link for both devices, as your operating system will be instantly recognized.",
     "crumbs": [
       "Part 1: Preparations",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installation</span>"
@@ -66,56 +99,67 @@
   {
     "objectID": "setup.html",
     "href": "setup.html",
-    "title": "3  Set up RStudio",
+    "title": "3  Setting up RStudio",
     "section": "",
-    "text": "3.1 Set up project structure for the module\nFinally, install the required packages.",
+    "text": "3.1 Set up project structure for the module\nOnce R and RStudio are installed, go through the following steps to prepare them for work on the module. But before you begin, make sure about these things:\nAn animation showing the whole process:",
     "crumbs": [
       "Part 1: Preparations",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Set up RStudio</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Setting up RStudio</span>"
     ]
   },
   {
     "objectID": "setup.html#set-up-project-structure-for-the-module",
     "href": "setup.html#set-up-project-structure-for-the-module",
-    "title": "3  Set up RStudio",
+    "title": "3  Setting up RStudio",
     "section": "",
-    "text": "Open R Studio.\nSelect “File → New project” then, in the window that appears, select “New directory”, then again select “New project”.\nIn the form that appears, under “Directory name:”, give your project directory a useful name (I suggest a pattern modulecode_year - e.g. SIB2001_2223 - remember, the name must not have spaces!)\nUnder “Create a project under subdirectory of:” select a convenient place on your computer (if you are doing this on a university computer, the location of your project directory will be somewhere on the OneDrive).\nClick “Create Project”. R Studio will create your project folder and refresh the main window.\nIn the R Studio bottom-right panel, click “New Folder” and create three folders: “code”, “data” and “output” (these are three separate operations).",
+    "text": "3.1.1 Step by step instructions\n\nOpen R Studio.\nSelect File → New project located on the top left of the screen (if you are using a Mac put your mouse to the top and that will make the options appear) and then, in the window that appears, select New directory, then again select New project.\nIn the form that appears, under Directory name:, give your project directory a useful name (I recommend format modulecode_year, e.g. SIB2001_2425), and under Create a project under subdirectory of: select a convenient place on your computer to put it (I strongly recommend your university folder (OneDrive - University of Huddersfield)). Then click Create Project. RStudio will create your project folder and refresh the main window.\nIn the RStudio bottom-right panel, click New Folder and create the first folder; name it code. Repeat this step twice more to add folders: data and output.",
     "crumbs": [
       "Part 1: Preparations",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Set up RStudio</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Setting up RStudio</span>"
     ]
   },
   {
-    "objectID": "setup.html#install-required-packages-for-your-work",
-    "href": "setup.html#install-required-packages-for-your-work",
-    "title": "3  Set up RStudio",
-    "section": "3.2 Install required packages for your work",
-    "text": "3.2 Install required packages for your work\n\nSelect menu “File → New File → R Notebook”. At this point you may see a prompt for installation of certain packages. Agree to the installation.\nOnce the installation from the previous point end, go to the panel on the left or bottom-left (called “Console”), copy-paste the following code and press Enter: install.packages(c(\"quarto\", \"tidyverse\", \"here\", \"rstatix\", \"palmerpenguins\")). If you don’t see the “Console” panel, go to menu “View → Move Focus to Console”.\nIt will take up to several minutes for all the packages to be downloaded and installed. There will be a lot of red text scrolling through the window, but this is all normal. Any actual errors will terminate the installation. If this happens, please contact me and include a legible screenshot with the error message or copy-paste it into email or a Teams message.",
+    "objectID": "setup.html#adjust-the-rstudio-interface",
+    "href": "setup.html#adjust-the-rstudio-interface",
+    "title": "3  Setting up RStudio",
+    "section": "3.2 Adjust the RStudio interface",
+    "text": "3.2 Adjust the RStudio interface\n\n\nSelect menu Tools → Global Options and then uncheck option Restore .RData into workspace at startup and set Save workspace to .RData on exit to Never.\nSelect the section Code on the left side of the window and select the option Use native pipe operator\nConfirm by clicking OK (in the bottom right corder of the window)\n\nYou are now ready: you can now follow all the code that we do in the class and in the other resources mentioned on Brightspace.",
     "crumbs": [
       "Part 1: Preparations",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Set up RStudio</span>"
-    ]
-  },
-  {
-    "objectID": "setup.html#adjust-the-interface-and-code-options",
-    "href": "setup.html#adjust-the-interface-and-code-options",
-    "title": "3  Set up RStudio",
-    "section": "3.3 Adjust the interface and code options",
-    "text": "3.3 Adjust the interface and code options\n\nSelect manu “Tools → Global Options…” and then uncheck “Restore .RData into workspace at startup” and set “Save workspace to .RData on exit” to “Never”.\nThen, select the section “Code” on the left side of the window and select the option “Use native pipe operator”\nConfirm by clicking “OK” (in the bottom right corder of the window)\n\nYou are now ready: you can now follow all the code that we do in the class and in the other resources mentioned in the section “Information”.",
-    "crumbs": [
-      "Part 1: Preparations",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Set up RStudio</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Setting up RStudio</span>"
     ]
   },
   {
     "objectID": "posit_cloud.html",
     "href": "posit_cloud.html",
-    "title": "4  Use RStudio in a browser",
+    "title": "4  Use RStudio in a web browser",
     "section": "",
-    "text": "4.1 Use RStudio in a browser\nIf you cannot install R and R Studio on your computer or tablet, or you want to practice but don’t have your computer with you, the company that makes R Studio also makes a cloud version of it, available for free at https://rstudio.cloud/ . You need to sign up for a free account (allowing you to use it for 25 hours per month) and you will be able to run R Studio in a web browser (any web browser, on any computer) without installing R or R Studio.\nOnce you sign up and the rstudio.cloud opens in the browser, click “New Project” on the right and enter a new name for it (sib2001). Finally, in the panel on the left or bottom-left (called “Console”), copy-paste the following code and press Enter: install.packages(c(\"tidyverse\", \"here\", \"rstatix\", \"palmerpenguins\")).\nIt will take up to several minutes for all the packages to be downloaded and installed. You may be asked a question during the installation, to which you should agree. There will be a lot of red text scrolling through the window, but this is all normal. Any actual errors will terminate the installation. If this happens, please contact me. When the installation is over, you are ready: you can now follow all the code we do in the class and in the other resources mentioned in the section “Information” on Brightspace.",
+    "text": "4.1 posit.cloud\nIf you cannot install R and RStudio on your computer or tablet, or you want to practice but don’t have your computer with you, the company that makes RStudio also makes a cloud version of it, available for free at https://posit.cloud/. You need to sign up for a free account (allowing you to use it for 25 hours per month) and you will be able to run RStudio in a web browser (any web browser, on any computer) without the need to install RTools, Xcode, R or RStudio.",
     "crumbs": [
       "Part 1: Preparations",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Use RStudio in a browser</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Use RStudio in a web browser</span>"
+    ]
+  },
+  {
+    "objectID": "posit_cloud.html#sign-up-for-an-account",
+    "href": "posit_cloud.html#sign-up-for-an-account",
+    "title": "4  Use RStudio in a web browser",
+    "section": "4.2 Sign up for an account",
+    "text": "4.2 Sign up for an account\n\nFollow the link https://posit.cloud/.\nGet started.\nChoose a plan (there is a free option).\nSign up with your university email address.",
+    "crumbs": [
+      "Part 1: Preparations",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Use RStudio in a web browser</span>"
+    ]
+  },
+  {
+    "objectID": "posit_cloud.html#create-an-r-project-structure",
+    "href": "posit_cloud.html#create-an-r-project-structure",
+    "title": "4  Use RStudio in a web browser",
+    "section": "4.3 Create an R project structure",
+    "text": "4.3 Create an R project structure\nOnce you sign up and the rstudio.cloud opens in the browser, click “New Project” on the right and enter a new name for it (I recommend modulecode_year, e.g. SIB2001_2425). In the panel Files on the bottom-right, click New Folder button and create three folders: code, data and output. Finally, in the panel on the left or bottom-left (called “Console”), copy-paste the following code and press Enter: install.packages(c(\"tidyverse\", \"here\", \"rstatix\", \"palmerpenguins\")).\nIt will take up to several minutes for all the packages to be downloaded and installed. You may be asked a question during the installation, to which you should agree. There will be a lot of red text scrolling through the window, but this is all normal. Any actual errors will terminate the installation. When the installation is over, you are ready: you can now follow all the code we do in the class and in the other resources on Brightspace.",
+    "crumbs": [
+      "Part 1: Preparations",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Use RStudio in a web browser</span>"
     ]
   },
   {

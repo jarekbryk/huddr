@@ -1,46 +1,95 @@
 # Installation
 
-Once R and R Studio are installed, go through the following steps to prepare them for work on the module. 
+# Installing R and R Studio on your computer
 
-## Set up project structure for the module
+-   This step-by-step guide will show you how to install R and R Studio
+    on your computer.
 
-**Warning!**
+## Why do I need to install this on my computer?
 
-**Do not** put spaces in file or folder names. Use **-** or **\_** or **D**ifferent**C**ase to separate different parts of the name. For example: Research-Skills not Research Skills.
+-   To fully understand and be capable of using R, you will need to
+    practice extensively beyond what is shown in class, hence why it is
+    highly recommended to install R on your personal devices.
 
-![](images/StepOne.gif)
-### **Step by step:**
+# Installation Issues:
 
-**Step 1:** Open R Studio.
+If you're unable to install any software on your computer or your only
+device is a tablet/ Chromebook, ignore the following instructions and
+switch to the next section **"Using R and R Studio in a web browser"**.
 
-**Step 2:** Select **File → New project** located on the top left of the screen (if you are using a Mac put your mouse to the top and that will make the options appear) and then, in the window that appears, select **New directory**, then again select **New project**.
+# Important Notes:
 
-**Step 3:** In the form that appears, under "Directory name:", give your project directory a useful name (**SIB2001_2425**), and under "Create a project under subdirectory of:" select a convenient place on your computer to put it (strongly recommend OneDrive - University of Huddersfield) . Then click **Create Project**. R Studio will create your project folder and refresh the main window.
+**OneDrive users:**
 
-**Step 4:** In the R Studio bottom-right panel, click **New Folder** and create the first folder: "code". Repeat this step twice more to add folders: "data" and "output".
+-   DO NOT install the RTools, R or R Studio programs below in your
+    OneDrive cloud folder.
+-   These applications must be on your actual hard drive (also known as
+    C drive).
+-   However, you can place your project folders and files on your
+    OneDrive.
 
-## Adjust the R Studio interface
+**Computers in JPSG/17 and JPSG/26:**
 
-![](images/StepTwo.gif)
-# Using R and R Studio in a web browser
+-   All packages required to run R (RTools, R and R Studio) are
+    installed on every computer in JPSG/17 and JPSG/26. If you are using
+    any of those computers, skip to the **"Setting up R and R Studio"**
+    section to complete the set-up.
 
-If you are unable to install R and R Studio on your computer or tablet, or if you just want to practice but do not have your computer with you, there is a simple solution for that.
+# Download RTools or Command Line Tools:
 
-You can easily access a free cloud version of [R Studio](https://posit.cloud/) and sign up for a free account that will allow you to to run R Studio in any web browser and on any computer without the need to install RTools, Xcode, R or R Studio.
+-   You need to make sure your computer is ready for the installation of
+    R and R Studio.
 
-## Four easy steps
+-   You can do that with the help of RTools.
 
-Hello
+-   We recommend installing RTools (on Windows devices) or Command Line
+    Tools (on Mac) as it allows for the installation of various external
+    packages (which we will be frequently using).
 
-1.  Follow the link <https://posit.cloud/>.
-2.  Get started.
-3.  Choose a plan (there is a free option).
-4.  Sign up with your email address.
+## RTools for Windows
 
-![](images/signing_up.gif)
+Instructions and installation are on this page:
+**https://cran.r-project.org/bin/windows/Rtools/**. Remember to download
+the latest version of RTools (4.4).
 
-## Creating an R Project
+## Command Line Tools for macOS
 
-Now that you have successfully created your account simply go to New Project and create a New R Studio Project:
+To install the latest version:
 
-![](images/r_project.gif)
+1.  Open Terminal app on your mac
+
+2.  Copy and paste (or type) the following command
+
+`xcode-select --install`
+
+then press "Enter":
+
+3.  Follow the instructions. Note that the download may take a while as
+    it is a large file.
+
+# Download and install R
+
+## Windows devices
+
+-   Use this link to download and install R:
+    **https://www.stats.bris.ac.uk/R/bin/windows/base/**
+
+## macOS devices:
+
+-   Use this link to download and install R:
+    **https://www.stats.bris.ac.uk/R/bin/macosx/base/**
+
+# Download and install R Studio
+
+## Windows and macOS devices:
+
+-   Use this link: **https://posit.co/download/rstudio-desktop/**.Click
+    on the button "Install R Studio". You are able to use the same link
+    for both devices, as your operating system will be instantly
+    recognized.
+
+# Next
+
+-   Once you have successfully installed RTools, R and R Studio on your
+    computer, go to the next section called **"Setting up R and R
+    Studio"**.

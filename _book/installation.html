@@ -137,13 +137,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./setup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Set up RStudio</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Setting up RStudio</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./posit_cloud.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Use RStudio in a browser</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Use RStudio in a web browser</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -289,10 +289,27 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#set-up-project-structure-for-the-module" id="toc-set-up-project-structure-for-the-module" class="nav-link active" data-scroll-target="#set-up-project-structure-for-the-module"><span class="header-section-number">2.1</span> Set up project structure for the module</a></li>
-  <li><a href="#adjust-the-r-studio-interface" id="toc-adjust-the-r-studio-interface" class="nav-link" data-scroll-target="#adjust-the-r-studio-interface"><span class="header-section-number">2.2</span> Adjust the R Studio interface</a></li>
-  <li><a href="#four-easy-steps" id="toc-four-easy-steps" class="nav-link" data-scroll-target="#four-easy-steps"><span class="header-section-number">2.3</span> Four easy steps</a></li>
-  <li><a href="#creating-an-r-project" id="toc-creating-an-r-project" class="nav-link" data-scroll-target="#creating-an-r-project"><span class="header-section-number">2.4</span> Creating an R Project</a></li>
+  <li><a href="#installing-r-and-r-studio-on-your-computer" id="toc-installing-r-and-r-studio-on-your-computer" class="nav-link active" data-scroll-target="#installing-r-and-r-studio-on-your-computer"><span class="header-section-number">3</span> Installing R and R Studio on your computer</a>
+  <ul class="collapse">
+  <li><a href="#why-do-i-need-to-install-this-on-my-computer" id="toc-why-do-i-need-to-install-this-on-my-computer" class="nav-link" data-scroll-target="#why-do-i-need-to-install-this-on-my-computer"><span class="header-section-number">3.1</span> Why do I need to install this on my computer?</a></li>
+  </ul></li>
+  <li><a href="#installation-issues" id="toc-installation-issues" class="nav-link" data-scroll-target="#installation-issues"><span class="header-section-number">4</span> Installation Issues:</a></li>
+  <li><a href="#important-notes" id="toc-important-notes" class="nav-link" data-scroll-target="#important-notes"><span class="header-section-number">5</span> Important Notes:</a></li>
+  <li><a href="#download-rtools-or-command-line-tools" id="toc-download-rtools-or-command-line-tools" class="nav-link" data-scroll-target="#download-rtools-or-command-line-tools"><span class="header-section-number">6</span> Download RTools or Command Line Tools:</a>
+  <ul class="collapse">
+  <li><a href="#rtools-for-windows" id="toc-rtools-for-windows" class="nav-link" data-scroll-target="#rtools-for-windows"><span class="header-section-number">6.1</span> RTools for Windows</a></li>
+  <li><a href="#command-line-tools-for-macos" id="toc-command-line-tools-for-macos" class="nav-link" data-scroll-target="#command-line-tools-for-macos"><span class="header-section-number">6.2</span> Command Line Tools for macOS</a></li>
+  </ul></li>
+  <li><a href="#download-and-install-r" id="toc-download-and-install-r" class="nav-link" data-scroll-target="#download-and-install-r"><span class="header-section-number">7</span> Download and install R</a>
+  <ul class="collapse">
+  <li><a href="#windows-devices" id="toc-windows-devices" class="nav-link" data-scroll-target="#windows-devices"><span class="header-section-number">7.1</span> Windows devices</a></li>
+  <li><a href="#macos-devices" id="toc-macos-devices" class="nav-link" data-scroll-target="#macos-devices"><span class="header-section-number">7.2</span> macOS devices:</a></li>
+  </ul></li>
+  <li><a href="#download-and-install-r-studio" id="toc-download-and-install-r-studio" class="nav-link" data-scroll-target="#download-and-install-r-studio"><span class="header-section-number">8</span> Download and install R Studio</a>
+  <ul class="collapse">
+  <li><a href="#windows-and-macos-devices" id="toc-windows-and-macos-devices" class="nav-link" data-scroll-target="#windows-and-macos-devices"><span class="header-section-number">8.1</span> Windows and macOS devices:</a></li>
+  </ul></li>
+  <li><a href="#next" id="toc-next" class="nav-link" data-scroll-target="#next"><span class="header-section-number">9</span> Next</a></li>
   </ul>
 </nav>
     </div>
@@ -318,38 +335,89 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Once R and R Studio are installed, go through the following steps to prepare them for work on the module.&nbsp;</p>
-<section id="set-up-project-structure-for-the-module" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="set-up-project-structure-for-the-module"><span class="header-section-number">2.1</span> Set up project structure for the module</h2>
-<p><strong>Warning!</strong></p>
-<p><strong>Do not</strong> put spaces in file or folder names. Use <strong>-</strong> or <strong>_</strong> or <strong>D</strong>ifferent<strong>C</strong>ase to separate different parts of the name. For example: Research-Skills not Research Skills.</p>
-<p><img src="images/StepOne.gif" class="img-fluid"> ### <strong>Step by step:</strong></p>
-<p><strong>Step 1:</strong> Open R Studio.</p>
-<p><strong>Step 2:</strong> Select&nbsp;<strong>File → New project</strong> located on the top left of the screen (if you are using a Mac put your mouse to the top and that will make the options appear) and then, in the window that appears, select&nbsp;<strong>New directory</strong>, then again select&nbsp;<strong>New project</strong>.</p>
-<p><strong>Step 3:</strong> In the form that appears, under “Directory name:”, give your project directory a useful name (<strong>SIB2001_2425</strong>), and under “Create a project under subdirectory of:” select a convenient place on your computer to put it (strongly recommend OneDrive - University of Huddersfield) . Then click&nbsp;<strong>Create Project</strong>. R Studio will create your project folder and refresh the main window.</p>
-<p><strong>Step 4:</strong> In the R Studio bottom-right panel, click&nbsp;<strong>New Folder</strong> and create the first folder: “code”. Repeat this step twice more to add folders: “data” and “output”.</p>
+<section id="installing-r-and-r-studio-on-your-computer" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Installing R and R Studio on your computer</h1>
+<ul>
+<li>This step-by-step guide will show you how to install R and R Studio on your computer.</li>
+</ul>
+<section id="why-do-i-need-to-install-this-on-my-computer" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="why-do-i-need-to-install-this-on-my-computer"><span class="header-section-number">3.1</span> Why do I need to install this on my computer?</h2>
+<ul>
+<li>To fully understand and be capable of using R, you will need to practice extensively beyond what is shown in class, hence why it is highly recommended to install R on your personal devices.</li>
+</ul>
 </section>
-<section id="adjust-the-r-studio-interface" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="adjust-the-r-studio-interface"><span class="header-section-number">2.2</span> Adjust the R Studio interface</h2>
-<p><img src="images/StepTwo.gif" class="img-fluid"> # Using R and R Studio in a web browser</p>
-<p>If you are unable to install R and R Studio on your computer or tablet, or if you just want to practice but do not have your computer with you, there is a simple solution for that.</p>
-<p>You can easily access a free cloud version of <a href="https://posit.cloud/">R Studio</a> and sign up for a free account that will allow you to to run R Studio in any web browser and on any computer without the need to install RTools, Xcode, R or R Studio.</p>
 </section>
-<section id="four-easy-steps" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="four-easy-steps"><span class="header-section-number">2.3</span> Four easy steps</h2>
-<p>Hello</p>
+<section id="installation-issues" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Installation Issues:</h1>
+<p>If you’re unable to install any software on your computer or your only device is a tablet/ Chromebook, ignore the following instructions and switch to the next section <strong>“Using R and R Studio in a web browser”</strong>.</p>
+</section>
+<section id="important-notes" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Important Notes:</h1>
+<p><strong>OneDrive users:</strong></p>
+<ul>
+<li>DO NOT install the RTools, R or R Studio programs below in your OneDrive cloud folder.</li>
+<li>These applications must be on your actual hard drive (also known as C drive).</li>
+<li>However, you can place your project folders and files on your OneDrive.</li>
+</ul>
+<p><strong>Computers in JPSG/17 and JPSG/26:</strong></p>
+<ul>
+<li>All packages required to run R (RTools, R and R Studio) are installed on every computer in JPSG/17 and JPSG/26. If you are using any of those computers, skip to the <strong>“Setting up R and R Studio”</strong> section to complete the set-up.</li>
+</ul>
+</section>
+<section id="download-rtools-or-command-line-tools" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Download RTools or Command Line Tools:</h1>
+<ul>
+<li><p>You need to make sure your computer is ready for the installation of R and R Studio.</p></li>
+<li><p>You can do that with the help of RTools.</p></li>
+<li><p>We recommend installing RTools (on Windows devices) or Command Line Tools (on Mac) as it allows for the installation of various external packages (which we will be frequently using).</p></li>
+</ul>
+<section id="rtools-for-windows" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="rtools-for-windows"><span class="header-section-number">6.1</span> RTools for Windows</h2>
+<p>Instructions and installation are on this page: <strong>https://cran.r-project.org/bin/windows/Rtools/</strong>. Remember to download the latest version of RTools (4.4).</p>
+</section>
+<section id="command-line-tools-for-macos" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="command-line-tools-for-macos"><span class="header-section-number">6.2</span> Command Line Tools for macOS</h2>
+<p>To install the latest version:</p>
 <ol type="1">
-<li>Follow the link <a href="https://posit.cloud/" class="uri">https://posit.cloud/</a>.</li>
-<li>Get started.</li>
-<li>Choose a plan (there is a free option).</li>
-<li>Sign up with your email address.</li>
+<li><p>Open Terminal app on your mac</p></li>
+<li><p>Copy and paste (or type) the following command</p></li>
 </ol>
-<p><img src="images/signing_up.gif" class="img-fluid"></p>
+<p><code>xcode-select --install</code></p>
+<p>then press “Enter”:</p>
+<ol start="3" type="1">
+<li>Follow the instructions. Note that the download may take a while as it is a large file.</li>
+</ol>
 </section>
-<section id="creating-an-r-project" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="creating-an-r-project"><span class="header-section-number">2.4</span> Creating an R Project</h2>
-<p>Now that you have successfully created your account simply go to New Project and create a New R Studio Project:</p>
-<p><img src="images/r_project.gif" class="img-fluid"></p>
+</section>
+<section id="download-and-install-r" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Download and install R</h1>
+<section id="windows-devices" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="windows-devices"><span class="header-section-number">7.1</span> Windows devices</h2>
+<ul>
+<li>Use this link to download and install R: <strong>https://www.stats.bris.ac.uk/R/bin/windows/base/</strong></li>
+</ul>
+</section>
+<section id="macos-devices" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="macos-devices"><span class="header-section-number">7.2</span> macOS devices:</h2>
+<ul>
+<li>Use this link to download and install R: <strong>https://www.stats.bris.ac.uk/R/bin/macosx/base/</strong></li>
+</ul>
+</section>
+</section>
+<section id="download-and-install-r-studio" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Download and install R Studio</h1>
+<section id="windows-and-macos-devices" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="windows-and-macos-devices"><span class="header-section-number">8.1</span> Windows and macOS devices:</h2>
+<ul>
+<li>Use this link: <strong>https://posit.co/download/rstudio-desktop/</strong>.Click on the button “Install R Studio”. You are able to use the same link for both devices, as your operating system will be instantly recognized.</li>
+</ul>
+</section>
+</section>
+<section id="next" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Next</h1>
+<ul>
+<li>Once you have successfully installed RTools, R and R Studio on your computer, go to the next section called <strong>“Setting up R and R Studio”</strong>.</li>
+</ul>
 
 
 </section>
@@ -985,8 +1053,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./setup.html" class="pagination-link" aria-label="Set up RStudio">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Set up RStudio</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./setup.html" class="pagination-link" aria-label="Setting up RStudio">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Setting up RStudio</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
