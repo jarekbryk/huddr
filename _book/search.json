@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Hudd-R book",
     "section": "",
-    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\nWTH Does this show up in upstream?\n\n1 + 1\n\n[1] 2",
+    "text": "Preface\nThis is an online book created to facilitate learning R by students at the University of Huddersfield’s Division of Biomedical and Life Sciences. However, unlike other books with tutorials on R (some of which we mention below), this book is thought of as a quick reference, with lists of core functions, their parameters and code syntax. We hope that it will help students learning R to overcome the dual challenge of not only thinking about what to do (what is this task asking me to do?) but also how to do it (how do I translate this into code?) - in language of computer code that is completely foreign to all but a few students.\n\nStudent-driven\nOne of the main reasons this book looks like this is that its contents is driven by a small group of year 2 students who, after taking part in our 12-week R programming module and liking it, decided to help create a resource that can help other students engage with R more easily.",
     "crumbs": [
       "Preface"
     ]
@@ -14,7 +14,7 @@
     "href": "introduction.html",
     "title": "1  Introduction",
     "section": "",
-    "text": "This is an online book created to facilitate learning R by students at the University of Huddersfield’s Division of Biomedical and Life Sciences. However, unlike other books with tutorials on R (some of which we mention below), this book is thought of as a quick reference, with lists of core functions, their parameters and code syntax. We hope that it will help students learning R to overcome the challenge of not only thinking about what to do (what is this task asking me to do?) but also how to do it (how do I translate this into code?) - in language of computer code that is completely foreign to all but a few students.\nTechnically speaking, practically everything in this book can be found\n\n1.0.1 Student-driven\nOne of the main reasons this book looks like this is that its contents is driven by a small group of year 2 students\n\n\n1.0.2 Inspirations and references\n\n\n1.0.3 Note on the LLMs\nWe are aware of the 800-pound Gorilla gorilla gorilla in the room: we live in times where any basic programming task can be effectively (if not efficiently or exactly correctly) completed by a large language model\nThe answer is twofold:\n\nIn order to use LLMs effectively, students must understand what they are doing, which is not the case for the majority of the term. Without understanding why and how things work, students are unable to judge the LLM’s output; even when they copy-paste the code and it works, they will not be able to solve a similar or related task next time.\n\nThis phenomenon - that LLMs are useful only if you already have a good idea what you need to do - is discussed very well by prof. Ethan Mallick HERE.",
+    "text": "This is an online book created to facilitate learning R by students at the University of Huddersfield’s Division of Biomedical and Life Sciences. However, unlike other books with tutorials on R (some of which we mention below), this book is thought of as a quick reference, with lists of core functions, their parameters and code syntax. We hope that it will help students learning R to overcome the dual challenge of not only thinking about what to do (what is this task asking me to do?) but also how to do it (how do I translate this into code?) - in language of computer code that is completely foreign to all but a few students.\nTechnically speaking, practically everything in this book can be found\n\n1.0.1 Student-driven\nOne of the main reasons this book looks like this is that its contents is driven by a small group of year 2 students\n\n\n1.0.2 Inspirations and references\n\n\n1.0.3 Note on the LLMs\nWe are aware of the 800-pound Gorilla gorilla gorilla in the room: we live in times where any basic programming task can be effectively (if not efficiently or exactly correctly) completed by a large language model\nThe answer is twofold:\n\nIn order to use LLMs effectively, students must understand what they are doing, which is not the case for the majority of the term. Without understanding why and how things work, students are unable to judge the LLM’s output; even when they copy-paste the code and it works, they will not be able to solve a similar or related task next time.\n\nThis phenomenon - that LLMs are useful only if you already have a good idea what you need to do - is discussed very well by prof. Ethan Mallick HERE.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
@@ -24,40 +24,18 @@
     "href": "installation.html",
     "title": "2  Installing R and RStudio on your computer",
     "section": "",
-    "text": "2.0.1 Download RTools or Command Line Tools:\nThis step-by-step guide will show you how to install R and R Studio on your personal computer.\nTODO: link to how to use a computer chapter",
+    "text": "2.0.1 Download and install RTools (on Windows) or Command Line Tools (on macOS)\nThis step-by-step guide will show you how to install R and R Studio on your personal computer.\nIf you are not familiar with concepts of cloud, file and folder paths and unzipping archived files on your computer, please read the chapter How to use a computer first.",
     "crumbs": [
       "Part 1: Preparations",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing R and RStudio on your computer</span>"
     ]
   },
   {
-    "objectID": "installation.html#rtools-for-windows",
-    "href": "installation.html#rtools-for-windows",
+    "objectID": "installation.html#download-and-install-r",
+    "href": "installation.html#download-and-install-r",
     "title": "2  Installing R and RStudio on your computer",
-    "section": "2.1 RTools for Windows",
-    "text": "2.1 RTools for Windows\nInstructions and installation are on this page: https://cran.r-project.org/bin/windows/Rtools/. Remember to download the latest version of RTools (4.4).",
-    "crumbs": [
-      "Part 1: Preparations",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing R and RStudio on your computer</span>"
-    ]
-  },
-  {
-    "objectID": "installation.html#command-line-tools-for-macos",
-    "href": "installation.html#command-line-tools-for-macos",
-    "title": "2  Installing R and RStudio on your computer",
-    "section": "2.2 Command Line Tools for macOS",
-    "text": "2.2 Command Line Tools for macOS\nTo install the latest version:\n\nOpen Terminal app on your mac\nCopy and paste (or type) the following command\n\nxcode-select --install\nthen press “Enter”:\n\nFollow the instructions. Note that the download may take a while as it is a large file.",
-    "crumbs": [
-      "Part 1: Preparations",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing R and RStudio on your computer</span>"
-    ]
-  },
-  {
-    "objectID": "installation.html#windows-devices",
-    "href": "installation.html#windows-devices",
-    "title": "2  Installing R and RStudio on your computer",
-    "section": "3.1 Windows devices",
-    "text": "3.1 Windows devices\n\nUse this link to download and install R: https://www.stats.bris.ac.uk/R/bin/windows/base/",
+    "section": "2.1 Download and install R",
+    "text": "2.1 Download and install R\n\n2.1.1 Windows devices\n\nUse this link to download and install R: https://www.stats.bris.ac.uk/R/bin/windows/base/",
     "crumbs": [
       "Part 1: Preparations",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing R and RStudio on your computer</span>"
@@ -67,8 +45,8 @@
     "objectID": "installation.html#macos-devices",
     "href": "installation.html#macos-devices",
     "title": "2  Installing R and RStudio on your computer",
-    "section": "3.2 macOS devices:",
-    "text": "3.2 macOS devices:\n\nUse this link to download and install R: https://www.stats.bris.ac.uk/R/bin/macosx/base/",
+    "section": "2.2 macOS devices:",
+    "text": "2.2 macOS devices:\n\nUse this link to download and install R: https://www.stats.bris.ac.uk/R/bin/macosx/base/",
     "crumbs": [
       "Part 1: Preparations",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing R and RStudio on your computer</span>"
@@ -78,8 +56,8 @@
     "objectID": "installation.html#windows-and-macos-devices",
     "href": "installation.html#windows-and-macos-devices",
     "title": "2  Installing R and RStudio on your computer",
-    "section": "4.1 Windows and macOS devices:",
-    "text": "4.1 Windows and macOS devices:\n\nUse this link: https://posit.co/download/rstudio-desktop/.Click on the button “Install RStudio”. You are able to use the same link for both devices, as your operating system will be instantly recognized.",
+    "section": "3.1 Windows and macOS devices:",
+    "text": "3.1 Windows and macOS devices:\n\nUse this link: https://posit.co/download/rstudio-desktop/.Click on the button “Install RStudio”. You are able to use the same link for both devices, as your operating system will be instantly recognized.",
     "crumbs": [
       "Part 1: Preparations",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing R and RStudio on your computer</span>"
@@ -121,34 +99,34 @@
   {
     "objectID": "posit_cloud.html",
     "href": "posit_cloud.html",
-    "title": "4  Use RStudio in a web browser",
+    "title": "4  Using RStudio in a web browser",
     "section": "",
     "text": "4.1 posit.cloud\nIf you cannot install R and RStudio on your computer or tablet, or you want to practice but don’t have your computer with you, the company that makes RStudio also makes a cloud version of it, available for free at https://posit.cloud/. You need to sign up for a free account (allowing you to use it for 25 hours per month) and you will be able to run RStudio in a web browser (any web browser, on any computer) without the need to install RTools, Xcode, R or RStudio.",
     "crumbs": [
       "Part 1: Preparations",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Use RStudio in a web browser</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Using RStudio in a web browser</span>"
     ]
   },
   {
     "objectID": "posit_cloud.html#sign-up-for-an-account",
     "href": "posit_cloud.html#sign-up-for-an-account",
-    "title": "4  Use RStudio in a web browser",
+    "title": "4  Using RStudio in a web browser",
     "section": "4.2 Sign up for an account",
     "text": "4.2 Sign up for an account\n\nFollow the link https://posit.cloud/.\nGet started.\nChoose a plan (there is a free option).\nSign up with your university email address.",
     "crumbs": [
       "Part 1: Preparations",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Use RStudio in a web browser</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Using RStudio in a web browser</span>"
     ]
   },
   {
     "objectID": "posit_cloud.html#create-an-r-project-structure",
     "href": "posit_cloud.html#create-an-r-project-structure",
-    "title": "4  Use RStudio in a web browser",
+    "title": "4  Using RStudio in a web browser",
     "section": "4.3 Create an R project structure",
     "text": "4.3 Create an R project structure\nOnce you sign up and the rstudio.cloud opens in the browser, click “New Project” on the right and enter a new name for it (I recommend modulecode_year, e.g. SIB2001_2425). In the panel Files on the bottom-right, click New Folder button and create three folders: code, data and output. Finally, in the panel on the left or bottom-left (called “Console”), copy-paste the following code and press Enter: install.packages(c(\"tidyverse\", \"here\", \"rstatix\", \"palmerpenguins\")).\nIt will take up to several minutes for all the packages to be downloaded and installed. You may be asked a question during the installation, to which you should agree. There will be a lot of red text scrolling through the window, but this is all normal. Any actual errors will terminate the installation. When the installation is over, you are ready: you can now follow all the code we do in the class and in the other resources on Brightspace.",
     "crumbs": [
       "Part 1: Preparations",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Use RStudio in a web browser</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Using RStudio in a web browser</span>"
     ]
   },
   {
@@ -156,7 +134,7 @@
     "href": "how_to_use_a_computer.html",
     "title": "5  How to use a computer",
     "section": "",
-    "text": "TESTTEST\n\n1 + 1\n\n[1] 2",
+    "text": "In my experience, one of the biggest barriers to learning programming for students today is not the complexity of coding itself, but rather the lack of fundamental computer skills. This chapter covers the most common issues that I encounter.\n\n5.0.1 Concepts of paths and hierarchies\n\n\n5.0.2 Folders and files, and how to use File Explorer or Finder\n\n\n5.0.3 File extensions and default programmes to open files\n\n\n5.0.4 How to move or copy files from one folder to another\n\n\n5.0.5 Difference between OneDrive and a hard drive\n\n\n5.0.6 How to unzip a file/folder",
     "crumbs": [
       "Part 1: Preparations",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>How to use a computer</span>"
