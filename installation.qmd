@@ -1,41 +1,32 @@
-# Installation
+# Installing R and RStudio on your computer
 
-# Installing R and R Studio on your computer
+This step-by-step guide will show you how to install R and R Studio on your personal computer. 
 
--   This step-by-step guide will show you how to install R and R Studio
-    on your computer.
+::: callout-important
+Note: if your personal computer is a Chromebook or a tablet, these instructions do not apply and need to follow instructions in the section "Use RStudio in a web browser".
+:::
 
-## Why do I need to install this on my computer?
+::: callout-note
+RTools, R and RStudio, along with all the starting packages, are already installed on every computer in the computer labs in JPSG/17 and JPSG/26, so you only need to follow instructions in the section "Setting up R and RStudio".
+:::
 
--   To fully understand and be capable of using R, you will need to
-    practice extensively beyond what is shown in class, hence why it is
-    highly recommended to install R on your personal devices.
+::: callout-important
+### Why do I need to install this on my computer?
 
-# Installation Issues:
+To fully understand and be capable of using R, you will need to practice extensively beyond what is shown in class, hence why it is highly recommended to install R on your personal devices.
+:::
 
-If you're unable to install any software on your computer or your only
-device is a tablet/ Chromebook, ignore the following instructions and
-switch to the next section **"Using R and R Studio in a web browser"**.
+::: callout-important
+# Notes for OneDrive users
 
-# Important Notes:
+1. DO NOT install the RTools, R or R Studio programs below in your OneDrive cloud folder.
+2. These applications must be on your actual hard drive (also known as C drive).
+3. However, you can place your project folders and files on your OneDrive.
+:::
 
-**OneDrive users:**
+TODO: link to how to use a computer chapter
 
--   DO NOT install the RTools, R or R Studio programs below in your
-    OneDrive cloud folder.
--   These applications must be on your actual hard drive (also known as
-    C drive).
--   However, you can place your project folders and files on your
-    OneDrive.
-
-**Computers in JPSG/17 and JPSG/26:**
-
--   All packages required to run R (RTools, R and R Studio) are
-    installed on every computer in JPSG/17 and JPSG/26. If you are using
-    any of those computers, skip to the **"Setting up R and R Studio"**
-    section to complete the set-up.
-
-# Download RTools or Command Line Tools:
+### Download RTools or Command Line Tools:
 
 -   You need to make sure your computer is ready for the installation of
     R and R Studio.
@@ -72,24 +63,23 @@ then press "Enter":
 ## Windows devices
 
 -   Use this link to download and install R:
-    **https://www.stats.bris.ac.uk/R/bin/windows/base/**
+    [https://www.stats.bris.ac.uk/R/bin/windows/base/](https://www.stats.bris.ac.uk/R/bin/windows/base/)
 
 ## macOS devices:
 
 -   Use this link to download and install R:
-    **https://www.stats.bris.ac.uk/R/bin/macosx/base/**
+    [https://www.stats.bris.ac.uk/R/bin/macosx/base/](https://www.stats.bris.ac.uk/R/bin/macosx/base/)
 
-# Download and install R Studio
+# Download and install RStudio
 
 ## Windows and macOS devices:
 
--   Use this link: **https://posit.co/download/rstudio-desktop/**.Click
-    on the button "Install R Studio". You are able to use the same link
+-   Use this link: [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/).Click
+    on the button "Install RStudio". You are able to use the same link
     for both devices, as your operating system will be instantly
     recognized.
 
 # Next
 
--   Once you have successfully installed RTools, R and R Studio on your
-    computer, go to the next section called **"Setting up R and R
-    Studio"**.
+-   Once you have successfully installed RTools, R and RStudio on your
+    computer, go to the next section called **"Setting up R and RStudio"**.
