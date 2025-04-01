@@ -4,6 +4,8 @@ This is an online book created to facilitate learning R by students at the Unive
 
 Technically speaking, practically everything in this book can be found 
 
+
+
 ### Student-driven
 
 One of the main reasons this book looks like this is that its contents is driven by a small group of year 2 students
@@ -19,3 +21,4 @@ The answer is twofold:
 1. In order to use LLMs effectively, students must understand what they are doing, which is not the case for the majority of the term. Without understanding why and how things work, students are unable to judge the LLM's output; even when they copy-paste the code and it works, they will not be able to solve a similar or related task next time.
 
 This phenomenon - that LLMs are useful only if you already have a good idea what you need to do - is discussed very well by prof. Ethan Mallick HERE.
+
