@@ -1,6 +1,6 @@
 # A bit more about basic functions
 
-## Filter 
+## Filter
 
 The `filter()` function allows you to pick rows in a data set. To use this function you simply need to specify the requirement/condition by which you want to filter your data.
 
@@ -94,7 +94,7 @@ rodents |>
 
 ------------------------------------------------------------------------
 
-## Mutate 
+## Mutate
 
 The `mutate()` function allows you to create and modify columns from a data set. - It can create new columns as functions of existing variables.
 

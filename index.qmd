@@ -1,11 +1,7 @@
 # Preface {.unnumbered}
 
-This is a Quarto book.
+This is an online book created to facilitate learning R by students at the University of Huddersfield's Division of Biomedical and Life Sciences. However, unlike other books with tutorials on R (some of which we mention below), this book is thought of as a quick reference, with lists of core functions, their parameters and code syntax. We hope that it will help students learning R to overcome the dual challenge of not only thinking about _what to do_ (what is this task asking me to do?) but also _how to do it_ (how do I translate this into code?) - in language of computer code that is completely foreign to all but a few students.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+### Student-driven
 
-WTH
-
-```{r}
-1 + 1
-```
+One of the main reasons this book looks like this is that its contents is driven by a small group of year 2 students who, after taking part in our 12-week R programming module and _liking it_, decided to help create a resource that can help other students engage with R more easily.

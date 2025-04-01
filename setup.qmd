@@ -1,30 +1,37 @@
-# Set up RStudio
+# Setting up RStudio
 
+Once R and RStudio are installed, go through the following steps to prepare them for work on the module. But before you begin, make sure about these things:
+
+::: callout-tip
+Do not put spaces in file or folder names. Use **-** or **\_** or **D**ifferent**C**ase to separate different parts of the name, for example: Research-Skills not Research Skills.
+:::
+
+::: callout-tip
+If you put your project folder on OneDrive (or other cloud service platform), you will be able to access your files and data from any computer where you are logged in to OneDrive, not just from computers in the computer labs.
+:::
 
 ## Set up project structure for the module
 
-- Open R Studio.
-- Select "File → New project" then, in the window that appears, select "New directory", then again select "New project". 
-- In the form that appears, under "Directory name:", give your project directory a useful name (I suggest a pattern modulecode_year - e.g. SIB2001_2223 - remember, the name must not have spaces!)
-- Under "Create a project under subdirectory of:" select a convenient place on your computer (if you are doing this on a university computer, the location of your project directory will be somewhere on the OneDrive). 
-- Click "Create Project". R Studio will create your project folder and refresh the main window.
-- In the R Studio bottom-right panel, click "New Folder" and create three folders: "code", "data" and "output" (these are three separate operations).
+An animation showing the whole process:
 
-Finally, install the required packages.
+![](gifs/StepOne.gif)
 
-## Install required packages for your work
+### Step by step instructions
 
-- Select menu "File → New File → R Notebook". At this point you may see a prompt for installation of certain packages. Agree to the installation.
-- Once the installation from the previous point end, go to the panel on the left or bottom-left (called "Console"), copy-paste the following code and press Enter: `install.packages(c("quarto", "tidyverse", "here", "rstatix", "palmerpenguins"))`. If you don't see the "Console" panel, go to menu "View → Move Focus to Console".
-- It will take up to several minutes for all the packages to be downloaded and installed. There will be a lot of red text scrolling through the window, but this is all normal. Any actual errors will terminate the installation. If this happens, please contact me and include a legible screenshot with the error message or copy-paste it into email or a Teams message.
+1. Open R Studio.
+2. Select `File → New project` located on the top left of the screen (if you are using a Mac put your mouse to the top and that will make the options appear) and then, in the window that appears, select `New directory`, then again select `New project`.
+3. In the form that appears, under `Directory name:`, give your project directory a useful name (I recommend format modulecode_year, e.g. SIB2001_2425), and under `Create a project under subdirectory of:` select a convenient place on your computer to put it (I strongly recommend your university folder (OneDrive - University of Huddersfield)). Then click `Create Project`. RStudio will create your project folder and refresh the main window.
 
-## Adjust the interface and code options
+4. In the RStudio bottom-right panel, click `New Folder` and create the first folder; name it `code`. Repeat this step twice more to add folders: `data` and `output`.
 
-- Select manu "Tools → Global Options..." and then _uncheck_ "Restore .RData into workspace at startup" and set "Save workspace to .RData on exit" to "Never".
-- Then, select the section "Code" on the left side of the window and select the option "Use native pipe operator"
-- Confirm by clicking "OK" (in the bottom right corder of the window)
+## Adjust the RStudio interface
 
+![](gifs/StepTwo.gif)
 
-You are now ready: you can now follow all the code that we do in the class and in the other resources mentioned in the section "Information".
+1. Select menu `Tools → Global Options` and then _uncheck_ option `Restore .RData into workspace at startup` and set `Save workspace to .RData on exit` to `Never`.
+2. Select the section `Code` on the left side of the window and select the option `Use native pipe operator`
+3. Confirm by clicking `OK` (in the bottom right corder of the window)
+
+You are now ready: you can now follow all the code that we do in the class and in the other resources mentioned on Brightspace.
 
 

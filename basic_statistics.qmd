@@ -1,5 +1,7 @@
 # Descriptive statistics
 
+
+
 ::: callout-note
 ## Functions
 
@@ -217,5 +219,5 @@ chisq_test(weight)
 ------------------------------------------------------------------------
 
 ::: callout-important
-To use this all these function you will need to load `library(rstatix)`!!!
+To use all these functions you will need to load `library(rstatix)`!!!
 :::

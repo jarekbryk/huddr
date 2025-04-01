@@ -1,9 +1,24 @@
 # Introduction
 
-This is a book created from markdown and executable code.
+This is an online book created to facilitate learning R by students at the University of Huddersfield's Division of Biomedical and Life Sciences. However, unlike other books with tutorials on R (some of which we mention below), this book is thought of as a quick reference, with lists of core functions, their parameters and code syntax. We hope that it will help students learning R to overcome the dual challenge of not only thinking about _what to do_ (what is this task asking me to do?) but also _how to do it_ (how do I translate this into code?) - in language of computer code that is completely foreign to all but a few students.
 
-See @knuth84 for additional discussion of literate programming.
+Technically speaking, practically everything in this book can be found 
 
-```{r}
-1 + 1 = 10
-```
+
+
+### Student-driven
+
+One of the main reasons this book looks like this is that its contents is driven by a small group of year 2 students
+
+### Inspirations and references
+
+### Note on the LLMs
+
+We are aware of the 800-pound _Gorilla gorilla gorilla_ in the room: we live in times where any basic programming task can be effectively (if not efficiently or exactly correctly) completed by a large language model
+
+The answer is twofold:
+
+1. In order to use LLMs effectively, students must understand what they are doing, which is not the case for the majority of the term. Without understanding why and how things work, students are unable to judge the LLM's output; even when they copy-paste the code and it works, they will not be able to solve a similar or related task next time.
+
+This phenomenon - that LLMs are useful only if you already have a good idea what you need to do - is discussed very well by prof. Ethan Mallick HERE.
+
