@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./dealing_with_missing_data.html" rel="next">
+<link href="./basic_functions_extended.html" rel="next">
 <link href="./loading_packages_and_data.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -217,32 +217,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dealing_with_missing_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Deadling with missing data</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./basic_functions_extended.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">A bit more about basic functions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">A bit more about basic functions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./joining_functions_extended.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Joining functions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Joining functions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pivot_functions_extended.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Even more about pivot functions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Even more about pivot functions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./graph_functions_extended.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Graph Functions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dealing_with_missing_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Deadling with missing data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./web_exercises_11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Web exercises</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Web exercises</span></span></a>
   </div>
 </li>
       </ul>
@@ -259,7 +265,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./basic_statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Descriptive statistics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Descriptive statistics</span></span></a>
   </div>
 </li>
       </ul>
@@ -284,25 +290,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./practice_questions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Practice Questions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Practice Questions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./biomedical_science.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Biomedical Science topics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Biomedical Science topics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./genomics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Genomics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Genomics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./phylogenetics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Phylogenetics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Phylogenetics</span></span></a>
   </div>
 </li>
       </ul>
@@ -356,6 +362,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<p>In this short chapter you will find a summary of some of the basic and most useful functions and operators from the tidyverse package that you will be using in R studio. If you want to learn a bit more about a specific function from this chapter simply click on the function, and it will take you to a page with additional information.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -394,10 +401,10 @@ Functions
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><code>left_join()</code> - Keeps all the values from the left table and matching rows from the right table.</li>
-<li><code>right_join()</code> - Keeps all the values from the right table and matching rows from the left table.</li>
-<li><code>inner_join()</code> - Keeps all values that have matching keys in both tables.</li>
-<li><code>full_join()</code> - Keeps all values from both tables.</li>
+<li><a href="./joining_functions_extended.html"><code>left_join()</code></a>- Keeps all the values from the left table and matching rows from the right table.</li>
+<li><a href="./joining_functions_extended.html"><code>right_join()</code></a>- Keeps all the values from the right table and matching rows from the left table.</li>
+<li><a href="./joining_functions_extended.html"><code>inner_join()</code></a>- Keeps all values that have matching keys in both tables.</li>
+<li><a href="./joining_functions_extended.html"><code>full_join()</code></a>- Keeps all values from both tables.</li>
 </ul>
 </div>
 </div>
@@ -416,8 +423,8 @@ Functions
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><code>pivot_longer()</code> - Allows you to lengthen your data set from a wide format to a long format by reducing the number of columns and increasing the number of rows.</li>
-<li><code>pivot_wider()</code> - Allows you to widen your data set from a long format to a wide format by reducing the number of rows and increasing the number of columns.</li>
+<li><a href="./pivot_functions_extended.html"><code>pivot_longer()</code></a>- Allows you to lengthen your data set from a wide format to a long format by reducing the number of columns and increasing the number of rows.</li>
+<li><a href="./pivot_functions_extended.html"><code>pivot_wider()</code></a>- Allows you to widen your data set from a long format to a wide format by reducing the number of rows and increasing the number of columns.</li>
 </ul>
 </div>
 </div>
@@ -536,8 +543,10 @@ Functions
 <li><code>geom_boxplot()</code></li>
 <li><code>geom_point()</code></li>
 <li><code>geom_line()</code></li>
+<li><code>geom_col()</code></li>
 <li><code>geom_histogram()</code></li>
 <li><code>geom_jitter()</code></li>
+<li><code>geom_bar()</code></li>
 </ul></li>
 </ul>
 </div>
@@ -1222,8 +1231,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./dealing_with_missing_data.html" class="pagination-link" aria-label="Deadling with missing data">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Deadling with missing data</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./basic_functions_extended.html" class="pagination-link" aria-label="A bit more about basic functions">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">A bit more about basic functions</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
