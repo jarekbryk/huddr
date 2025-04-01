@@ -125,8 +125,10 @@ Now, in order to get a plot you should think about three main components:
     -   `geom_boxplot()`
     -   `geom_point()`
     -   `geom_line()`
+    -   `geom_col()`
     -   `geom_histogram()`
     -   `geom_jitter()`
+    -   `geom_bar()`
 :::
 
 Here you can see two examples of how to do a plot (one with pipe operator and one without):
