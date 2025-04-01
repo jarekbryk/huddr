@@ -2,6 +2,44 @@
 
 In my experience, one of the biggest barriers to learning programming for students today is not the complexity of coding itself, but rather the lack of fundamental computer skills. This chapter covers the most common issues that I encounter.
 
+
+### For Windows
+
+### File Explorer, folders and file
+
+-   File explorer allows you to see all the files saved to your computer stored in different sections like Downloads or Desktop. There is a search bar in the top right hand corner which allows you to search for a document or folder by name.
+
+-   ![](images/Screenshot%202025-01-27%20141717.png)
+
+-   A folder is shown by a folder icon next to the name of the folder, it also says File Folder under type.
+
+    ![](images/Screenshot%202025-01-27%20142022.png)
+
+-   A file is shown by an icon of the File type and the name of the File. The type of file is also written under type - in this case a Microsoft Excel workbook titled Book1 and a Microsoft Word Document titled Essay plan
+
+![](images/Screenshot%202025-01-27%20142052.png)
+
+### Paths and hierarchies
+
+-   To find your file you need to follow the path through the hierarchy. To start you need to know if your file is saved to your hard drive or One Drive. from there you can either click on the file or the folder it is saved in.
+
+    ![](images/Screenshot%202025-02-05%20141435.png)
+
+-   The box in the image above shows the path to the file, the video below shows how to get there
+
+### One Drive vs hard drive
+
+One Drive stores your files in the cloud allowing you to access them from anywhere by logging into your account. you will have a One drive account connected to your university email that will show when using the university computers, by saving your files here you can also work on them on personal devices. the Hard Drive is storage built into the computer your using, saving files here saves them to that device.
+
+### How to unzip a file/folder
+
+-   To make large files easier to transfer we can compress them (zip them). These files will need to be unzipped before you can use the content inside. this can be done 2 ways. the first way is by entering the zipped file and pressing the unzip button in the tip right corner. the next way is to right click on the zipped folder before entering it and clicking on unzip from the menu.
+
+### How to move/copy files from one folder to another
+
+### File extensions and default programes to open files
+
+
 ### Concepts of paths and hierarchies
 
 ### Folders and files, and how to use File Explorer or Finder
