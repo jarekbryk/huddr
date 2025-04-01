@@ -41,7 +41,7 @@ The second step should be to load your data into R (otherwise you'll have nothin
 
 </div>
 
-Now that you know which function to use, you'll have to follow three easy steps to load your dataset:
+Now that you know which function to use, you'll have to follow three easy steps to load your data set:
 
 1.  Name the data and input an arrow signing to the data \<-
 2.  Use the relevant function for your file type
@@ -51,7 +51,7 @@ Here's and example for you:
 
 ```{r}
 #| eval: false
-squirrels <- read_csv(here("data", "squirrels.csv"))
+rodents <- read_tsv(here("data", "rodents_full.txt"))
 ```
 
 If you want to use `read_delim()` you'll need to specify what delimiter you want to use (e.g. delim = ";")
