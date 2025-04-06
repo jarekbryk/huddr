@@ -26,38 +26,40 @@ If you are not familiar with concepts of cloud, file and folder paths and unzipp
 
 In order for your computer to be ready for the installation of R and RStudio, you need to install RTools first (if you are on Windows) or Command Line Tools (if you are on macOS). Please proceed through these instructions in order.
 
-## Installation instructions {.tabset}
+## Installation instructions 
 
-### For Windows
+::: {.panel-tabset}
 
-#### Download and install RTools
+## For Windows 
+
+### Download and install RTools
 
 Instructions are available at [https://cran.r-project.org/bin/windows/Rtools/](https://cran.r-project.org/bin/windows/Rtools/). Remember to download the latest version of RTools.
 
-#### Download and install R
+### Download and install R
 
 Use this link to download and install R: [https://www.stats.bris.ac.uk/R/bin/windows/base/](https://www.stats.bris.ac.uk/R/bin/windows/base/)
 
-#### Download and install RStudio
+### Download and install RStudio
 
 Use this link: [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/) and click on the button "Install RStudio".
 
-### For macOS
+## For macOS
 
-#### Download and install Command Line Tools
+### Download and install Command Line Tools
 
 1.  Open the Terminal app on your Mac.
 2.  Copy and paste (or type) the following command: `xcode-select --install`, then press "Enter".
 3.  Follow the instructions. Note that the download may take a while as it is a large file.
 
-#### Download and install R
+### Download and install R
 
 Use this link to download and install R: [https://www.stats.bris.ac.uk/R/bin/macosx/base/](https://www.stats.bris.ac.uk/R/bin/macosx/base/)
 
-#### Download and install RStudio
+### Download and install RStudio
 
 Use this link: [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/). Click on the button "Install RStudio".
 
-# Next
+:::
 
 Once you have successfully installed RTools, R and RStudio on your computer, go to the next section [Setting up R and RStudio](setup.html)
