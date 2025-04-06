@@ -10,21 +10,21 @@ Do not put spaces in file or folder names. Use **-** or **\_** or **D**ifferent*
 If you put your project folder on OneDrive (or other cloud service platform), you will be able to access your files and data from any computer where you are logged in to OneDrive, not just from computers in the computer labs.
 :::
 
-## Set up project structure for the module
+### Set up project structure for the module
 
 An animation showing the whole process:
 
 ![](gifs/StepOne.gif)
 
-### Step by step instructions
+#### Step by step instructions
 
-1. Open R Studio.
+1. Open RStudio.
 2. Select `File → New project` located on the top left of the screen (if you are using a Mac put your mouse to the top and that will make the options appear) and then, in the window that appears, select `New directory`, then again select `New project`.
 3. In the form that appears, under `Directory name:`, give your project directory a useful name (I recommend format modulecode_year, e.g. SIB2001_2425), and under `Create a project under subdirectory of:` select a convenient place on your computer to put it (I strongly recommend your university folder (OneDrive - University of Huddersfield)). Then click `Create Project`. RStudio will create your project folder and refresh the main window.
 
 4. In the RStudio bottom-right panel, click `New Folder` and create the first folder; name it `code`. Repeat this step twice more to add folders: `data` and `output`.
 
-## Adjust the RStudio interface
+### Adjust the RStudio interface
 
 ![](gifs/StepTwo.gif)
 
@@ -32,6 +32,9 @@ An animation showing the whole process:
 2. Select the section `Code` on the left side of the window and select the option `Use native pipe operator`
 3. Confirm by clicking `OK` (in the bottom right corder of the window)
 
-You are now ready: you can now follow all the code that we do in the class and in the other resources mentioned on Brightspace.
+::: callout-note
+### You are now ready
+You can now follow all the code that we do in the class and in the other resources mentioned on Brightspace.
+:::
 
 

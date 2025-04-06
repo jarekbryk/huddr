@@ -14,59 +14,50 @@ Note: if your personal computer is a Chromebook or a tablet, these instructions 
 
 ::: callout-important
 ### Why do I need to install this on my computer?
-To be capable of using R well, you will need to practice extensively beyond what is shown in class, hence why it is highly recommended to install R on your personal devices.
+To be capable of using R well, you will need to practice extensively beyond what we do in class, hence why it is highly recommended to install R on your personal devices.
 :::
 
 ::: callout-important
 ### Notes for OneDrive users
-You must not install the RTools, R or RStudio in your OneDrive (or any other cloud-based) folder. These applications must be on your actual hard drive (also known as C drive). 
+You must not install the RTools, R or RStudio in your OneDrive (or any other cloud-based) folder. These applications must be on your actual hard drive (often known as C drive). 
 :::
 
 If you are not familiar with concepts of cloud, file and folder paths and unzipping archived files on your computer, please read the chapter [How to use a computer](how_to_use_a_computer.html) first.
 
-### Download and install RTools (on Windows) or Command Line Tools (on macOS)
+In order for your computer to be ready for the installation of R and RStudio, you need to install RTools first (if you are on Windows) or Command Line Tools (if you are on macOS). Please proceed through these instructions in order.
 
--   You need to make sure your computer is ready for the installation of
-    R and R Studio.
+## Installation instructions {.tabset}
 
--   You can do that with the help of RTools.
+### For Windows
 
--   We recommend installing RTools (on Windows devices) or Command Line
-    Tools (on Mac) as it allows for the installation of various external
-    packages (which we will be frequently using).
-
-#### Download and install RTools (Windows only)
+#### Download and install RTools
 
 Instructions are available at [https://cran.r-project.org/bin/windows/Rtools/](https://cran.r-project.org/bin/windows/Rtools/). Remember to download the latest version of RTools.
 
-#### Download and install Command Line Tools (macOS only)
+#### Download and install R
+
+Use this link to download and install R: [https://www.stats.bris.ac.uk/R/bin/windows/base/](https://www.stats.bris.ac.uk/R/bin/windows/base/)
+
+#### Download and install RStudio
+
+Use this link: [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/) and click on the button "Install RStudio".
+
+### For macOS
+
+#### Download and install Command Line Tools
 
 1.  Open the Terminal app on your Mac.
 2.  Copy and paste (or type) the following command: `xcode-select --install`, then press "Enter".
 3.  Follow the instructions. Note that the download may take a while as it is a large file.
 
-## Download and install R
+#### Download and install R
 
-### Windows devices
+Use this link to download and install R: [https://www.stats.bris.ac.uk/R/bin/macosx/base/](https://www.stats.bris.ac.uk/R/bin/macosx/base/)
 
--   Use this link to download and install R:
-    [https://www.stats.bris.ac.uk/R/bin/windows/base/](https://www.stats.bris.ac.uk/R/bin/windows/base/)
+#### Download and install RStudio
 
-## macOS devices:
-
--   Use this link to download and install R:
-    [https://www.stats.bris.ac.uk/R/bin/macosx/base/](https://www.stats.bris.ac.uk/R/bin/macosx/base/)
-
-# Download and install RStudio
-
-## Windows and macOS devices:
-
--   Use this link: [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/).Click
-    on the button "Install RStudio". You are able to use the same link
-    for both devices, as your operating system will be instantly
-    recognized.
+Use this link: [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/). Click on the button "Install RStudio".
 
 # Next
 
--   Once you have successfully installed RTools, R and RStudio on your
-    computer, go to the next section called **"Setting up R and RStudio"**.
+Once you have successfully installed RTools, R and RStudio on your computer, go to the next section [Setting up R and RStudio](setup.html)

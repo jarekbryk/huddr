@@ -2,7 +2,7 @@
 
 ## posit.cloud
 
-If you cannot install R and RStudio on your computer or tablet, or you want to practice but don't have your computer with you, the company that makes RStudio also makes a cloud version of it, available for free at [https://posit.cloud/](https://posit.cloud/). You need to sign up for a free account (allowing you to use it for 25 hours per month) and you will be able to run RStudio in a web browser (any web browser, on any computer) without the need to install RTools, Xcode, R or RStudio.
+If you cannot install R and RStudio on your computer, if your computer is a Chromebook or a tablet, or if you want to practice but don't have your computer with you, the company that makes RStudio also makes a cloud version of it, available for free at [https://posit.cloud/](https://posit.cloud/). You need to sign up for a free account (allowing you to use it for 25 hours per month) and you will be able to run RStudio in a web browser (any web browser, on any computer) without the need to install RTools, Xcode, R or RStudio.
 
 ## Sign up for an account
 
@@ -15,7 +15,7 @@ If you cannot install R and RStudio on your computer or tablet, or you want to p
 
 ## Create an R project structure 
 
-Once you sign up and the rstudio.cloud opens in the browser, click "New Project" on the right and enter a new name for it (I recommend _modulecode_year_, e.g. SIB2001_2425). In the panel `Files` on the bottom-right, click `New Folder` button and create three folders: `code`, `data` and `output`. Finally, in the panel on the left or bottom-left (called "Console"), copy-paste the following code and press Enter: `install.packages(c("tidyverse", "here", "rstatix", "palmerpenguins"))`.
+Once you sign up and the rstudio.cloud opens in the browser, click "New Project" on the right and enter a new name for it (I recommend _modulecode_year_, e.g. SIB2001_2425). In the panel `Files` on the bottom-right, click `New Folder` button and create three folders: `code`, `data` and `output`. Finally, in the panel on the left or bottom-left (called "Console"), copy-paste the following code and press Enter: `install.packages(c("tidyverse", "here", "rstatix", "janitor", "datapasta",  "palmerpenguins"))`.
 
 It will take up to several minutes for all the packages to be downloaded and installed. You may be asked a question during the installation, to which you should agree. There will be a lot of red text scrolling through the window, but this is all normal. Any actual errors will terminate the installation. When the installation is over, you are ready: you can now follow all the code we do in the class and in the other resources on Brightspace.
 
