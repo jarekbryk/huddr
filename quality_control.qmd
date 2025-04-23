@@ -111,8 +111,8 @@ df |> ggplot(aes(x= run, y=value))+ geom_line()+geom_point()+
 
 ## References
 
--   Levey, S., & Jennings, E. R. (1950). The use of control charts in the clinical laboratory. American journal of clinical pathology, 20(11), 1059–1066. https://doi.org/10.1093/ajcp/20.11_ts.1059
--   Nelson, L. S. (1984). The Shewhart Control Chart—Tests for Special Causes. Journal of Quality Technology, 16(4), 237–239. https://doi.org/10.1080/00224065.1984.11978921
+-   Levey, S., & Jennings, E. R. (1950). The use of control charts in the clinical laboratory. _American Journal of Clinical Pathology_, 20(11), 1059–1066. [https://doi.org/10.1093/ajcp/20.11_ts.1059](https://doi.org/10.1093/ajcp/20.11_ts.1059)
+-   Nelson, L. S. (1984). The Shewhart Control Chart—Tests for Special Causes. _Journal of Quality Technology_, 16(4), 237–239. [https://doi.org/10.1080/00224065.1984.11978921](https://doi.org/10.1080/00224065.1984.11978921)
 -   Shewhart, W.A., (1923) Economic Control Of Quality Of Manufactured Product
--   Westgard, J. O., Barry, P. L., Hunt, M. R., & Groth, T. (1981). A multi-rule Shewhart chart for quality control in clinical chemistry. Clinical chemistry, 27(3), 493–501.
--   Western Electric Rules- Western Electric Company (1956), Statistical Quality Control Handbook. (1 ed.)
+-   Westgard, J. O., Barry, P. L., Hunt, M. R., & Groth, T. (1981). A multi-rule Shewhart chart for quality control in clinical chemistry. _Clinical Chemistry_, 27(3), 493–501.
+-   Western Electric Rules - Western Electric Company (1956), _Statistical Quality Control Handbook_ (1 ed.).
