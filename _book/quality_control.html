@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; Loading and Installing Packages – Hudd-R book</title>
+<title>15&nbsp; Quality control analysis – Hudd-R book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./dealing_with_missing_data.html" rel="next">
-<link href="./how_to_use_a_computer.html" rel="prev">
+<link href="./genomics.html" rel="next">
+<link href="./practice_questions.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -118,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./loading_packages_and_data.html">Part 2: R fundamentals</a></li><li class="breadcrumb-item"><a href="./loading_packages_and_data.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Loading and Installing Packages</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quality_control.html">Part 6: Topic-specific approaches</a></li><li class="breadcrumb-item"><a href="./quality_control.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Quality control analysis</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -201,7 +201,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./loading_packages_and_data.html" class="sidebar-item-text sidebar-link active">
+  <a href="./loading_packages_and_data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Loading and Installing Packages</span></span></a>
   </div>
 </li>
@@ -292,7 +292,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quality_control.html" class="sidebar-item-text sidebar-link">
+  <a href="./quality_control.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Quality control analysis</span></span></a>
   </div>
 </li>
@@ -326,17 +326,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#loading-and-installing-packages" id="toc-loading-and-installing-packages" class="nav-link active" data-scroll-target="#loading-and-installing-packages"><span class="header-section-number">6.1</span> 1. Loading and Installing Packages</a></li>
-  <li><a href="#loading-your-data" id="toc-loading-your-data" class="nav-link" data-scroll-target="#loading-your-data"><span class="header-section-number">6.2</span> 2. Loading your data</a></li>
+  <li><a href="#the-levey-jennings-chart-and-westgard-rules" id="toc-the-levey-jennings-chart-and-westgard-rules" class="nav-link active" data-scroll-target="#the-levey-jennings-chart-and-westgard-rules"><span class="header-section-number">15.1</span> The Levey-Jennings Chart and Westgard Rules</a></li>
+  <li><a href="#testing-for-outliers-using-normally-distributed-data" id="toc-testing-for-outliers-using-normally-distributed-data" class="nav-link" data-scroll-target="#testing-for-outliers-using-normally-distributed-data"><span class="header-section-number">15.2</span> Testing for outliers using normally distributed data</a></li>
+  <li><a href="#further-work" id="toc-further-work" class="nav-link" data-scroll-target="#further-work"><span class="header-section-number">15.3</span> Further Work</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">15.4</span> References</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./loading_packages_and_data.html">Part 2: R fundamentals</a></li><li class="breadcrumb-item"><a href="./loading_packages_and_data.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Loading and Installing Packages</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quality_control.html">Part 6: Topic-specific approaches</a></li><li class="breadcrumb-item"><a href="./quality_control.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Quality control analysis</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Loading and Installing Packages</span></h1>
+<h1 class="title"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Quality control analysis</span></h1>
 </div>
 
 
@@ -353,22 +355,81 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="loading-and-installing-packages" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="loading-and-installing-packages"><span class="header-section-number">6.1</span> 1. Loading and Installing Packages</h2>
-<p>The first step after you create a document in R should always be loading all the required packages (and installing them if needed).</p>
+<section id="the-levey-jennings-chart-and-westgard-rules" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="the-levey-jennings-chart-and-westgard-rules"><span class="header-section-number">15.1</span> The Levey-Jennings Chart and Westgard Rules</h2>
+<p>Levey-Jennings (LJ) charts are widely used in clinical and analytical laboratories as part of their quality control (QC) processes. They provide a visual representation of repeated experimental measurements of a known standard (an analyte of known concentration). These measurements are often taken daily (or every 12 hours in a 24-hour environment). The LJ chart allows the scientist to assess the consistency and reliability of an experimental procedure. Outliers, (or violations) are identified by following a set of rules. NHS pathology services and many analytical laboratories follow the <a href="https://westgard.com/westgard-rules.html" target="_blank">Westgard Rules</a>. These outliers may indicate that the experimental procedure is not performing to the required standard. However, as we shall see below, occasional outliers are expected even under normal conditions, as random variation in data following a normal distribution will produce such values.</p>
+<p>Below, we will generate a Levey-Jennings chart and apply a set of rules to identify outliers. First, install the ggQC package and load the libraries that we need.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># If you don't have ggQC package installed, uncheck the line below and run the install.packages() command to install ggQC package; then delete this line or check it back</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("ggQC")</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span> (ggQC)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+</div>
+<p>We need to generate some sample data.. The “run” is the day of the assay (1-30) The “value” is the result of the assay.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>run <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>value <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">50.0</span>, <span class="fl">49.1</span>, <span class="fl">53.1</span>, <span class="fl">52.9</span>, <span class="fl">50.6</span>, <span class="fl">49.4</span>, <span class="fl">51.3</span>, <span class="fl">52.3</span>, <span class="fl">50.2</span>, <span class="fl">50.1</span>, <span class="fl">49.8</span>, <span class="fl">49.2</span>,  <span class="fl">49.2</span>, <span class="fl">51.4</span>, <span class="fl">50.3</span>, <span class="fl">51.2</span>, <span class="fl">51.8</span>, <span class="fl">49.1</span>, <span class="fl">49.2</span>, <span class="fl">49.9</span>, <span class="fl">49.4</span>, <span class="fl">49.0</span>, <span class="fl">49.6</span>, <span class="fl">49.4</span>, <span class="fl">48.2</span>, <span class="fl">49.4</span>, <span class="fl">48.0</span>, <span class="fl">50.4</span>, <span class="fl">51.2</span>, <span class="fl">54.4</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">run =</span> run, <span class="at">value =</span> value)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We will now generate a Levey-Jennings plot of the data using the code below. The blue line in the centre is the mean. The red lines indicate 1, 2 or 3 standard deviations from the mean. In this case, both the mean and SD are calculated from the data. Sometimes a LJ chart is generated using a previously established true value of the standard with an associated SD.<br> Many other options are available as part of the ggQC package. In addition, you can generate different types of quality control charts. You can read more <a href="http://rcontrolcharts.com/index.html" target="_blank">here</a></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> run, <span class="at">y =</span> value)) <span class="sc">+</span> <span class="co">#start ggplot</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_line</span>() <span class="sc">+</span> <span class="co"># add the data points and the line</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stat_QC</span>(<span class="at">method =</span> <span class="st">"XmR"</span>,    <span class="co"># XmR is for individual data points with a moving Range</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">auto.label =</span> <span class="cn">TRUE</span>,         <span class="co"># Use Autolabels</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">label.digits =</span> <span class="dv">1</span>,          <span class="co"># Use one digit in the label</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">show.1n2.sigma =</span> <span class="cn">TRUE</span>)     <span class="co"># Show 1 and 2 sigma (SD) lines</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="quality_control_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Look at the plot above and compare these results to the <a href="https://westgard.com/westgard-rules.html" target="_blank">Westgard Rules</a></p>
+<p>In the data above, three of the Westgard rules have been violated. Can you identify the runs that are a problem? No code is required here, simply look at the plot above and compare the result to the Westgard Rules on the website above.</p>
+<p>Check your answer by running the code below. This generates a facet plot, highlighting violations in red.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#create facet plot with QC violations</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> run, <span class="at">y =</span> value)) <span class="sc">+</span> <span class="co">#init ggplot</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_qc_violations</span>(<span class="at">method =</span> <span class="st">"XmR"</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="quality_control_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Now, place your cursor over “stat_qc_violations” and press F1. You will see that the QC violations in the ggQC package are based on these rules below:</p>
 <ul>
-<li><p><strong>What is a package?</strong> You should think of a package as a collection of functions, data and help files that you can download and install in R.</p></li>
-<li><p>You can do this by using the function <code>install.packages()</code> and always remember to put the name of the package in quotation marks as in the example below:</p></li>
+<li>Violation Same Side: 8 or more consecutive, same-side points</li>
+<li>Violation 1 Sigma: 4 or more consecutive, same-side points exceeding 1 sigma</li>
+<li>Violation 2 Sigma: 2 or more consecutive, same-side points exceeding 2 sigma</li>
+<li>Violation 3 Sigma: any points exceeding 3 sigma</li>
 </ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"rstatix"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Once you have installed a package it will not be immediately available for you to use, but you’ll have to load it by using the <code>library()</code> function as in the example below:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
+<p>Notice that the first of these rules is not identical to the Westgard rule. For rule 1, this package is slightly more sensitive as it highlights violations where there are 8 or more consecutive same-side points, while the equivalent Westgard rule states 10 or more same-side points. The other 3 rules above have an equivalent Westgard rule.</p>
+<p>This is important as various sets of rules for detecting out-of-control or non-random conditions have been proposed and used for different applications:</p>
+<ul>
+<li>Walter A. Shewhart (1923) Economic Control Of Quality Of Manufactured Product</li>
+<li>Western Electric Rules- Western Electric Company (1956), Statistical Quality Control Handbook. (1 ed.)</li>
+<li>Nelson Rules (1984)</li>
+<li><a href="https://westgard.com/westgard-rules.html" target="_blank">Westgard Rules</a> (1981)</li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -378,37 +439,93 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Always start a quarto document by loading <strong>tidyverse</strong> and <strong>here</strong></p>
+<p>Always follow the protocol and quality control processes that are used in your workplace – it will vary!</p>
 </div>
 </div>
 </section>
-<section id="loading-your-data" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="loading-your-data"><span class="header-section-number">6.2</span> 2. Loading your data</h2>
-<p>The second step should be to load your data into R (otherwise you’ll have nothing to work with). To do this you first have to check what type of file your data set is (is it .txt, .csv, .xlsx?). Depending on the type of file you have is the function that you are going to use:</p>
+<section id="testing-for-outliers-using-normally-distributed-data" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="testing-for-outliers-using-normally-distributed-data"><span class="header-section-number">15.2</span> Testing for outliers using normally distributed data</h2>
+<p>The data provided above was deliberately manipulated to introduce three rule violations. If this was your actual data from one month in an analytical laboratory, it would indicate that serious errors are occurring on a regular basis. You would need to rectify the problem(s) before running any real samples. If your data is from a normal distribution then outliers detected by these rules are quite rare, but they do happen, even if nothing is wrong with the equipment or the user. Use the code below to generate QC plots of 30 data points from a normal distribution with a mean of 40 and SD = 2. Run this code 12 times to see how often outliers might occur in one year under ideal conditions.<br> Remember, if any outliers are detected, even at these rare intevals, you would still need to check all of your equipment and reagents, as you would have no way of knowing if it is a malfunction or just random noise.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate some random data and plot it</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(<span class="at">run =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>),</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>      <span class="at">value =</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean =</span><span class="dv">40</span>, <span class="at">sd =</span><span class="dv">2</span>),) <span class="sc">|&gt;</span> </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span> (<span class="fu">aes</span>(<span class="at">x =</span> run, <span class="at">y =</span> value)) <span class="sc">+</span> </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_qc_violations</span>(<span class="at">method =</span> <span class="st">"XmR"</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
 <div>
+<figure class="figure">
+<p><img src="quality_control_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>How many times were outliers detected?<br> Why are these rules designed so that outliers are rare?</p>
+</div>
+</div>
+</section>
+<section id="further-work" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="further-work"><span class="header-section-number">15.3</span> Further Work</h2>
+<p>You may have noticed that in the first graph above, the mean was 50.3. This value was calculated from the data. In many analytical processes, the standard will be of a known concentration and the process will have a well established standard deviation. Let us assume that for the data above, the known standard should be 50 units with a standard deviation of 1.3. Can you write R-code to generate a plot of the same data but with:</p>
 <ul>
-<li><code>read_csv()</code> reads comma separated files</li>
-<li><code>read_csv2()</code> reads semicolon separated files</li>
-<li><code>read_tsv()</code> reads tab separated files</li>
-<li><code>read_xlsx</code> reads excel files (for this function you’ll need to load <code>library(readxl)</code>)</li>
-<li><code>read_delim()</code> reads files with any delimiter</li>
+<li>with a blue dashed horizontal line at exactly 50 units, label it “50” or “mean”</li>
+<li>with faint red dashed lines to indicate 1, 2 or 3 standard deviations from 50. Label these lines with “-1 SD”, “+1 SD”, “-2 SD”, “+2 SD” etc.</li>
 </ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<p>Now that you know which function to use, you’ll have to follow three easy steps to load your data set:</p>
-<ol type="1">
-<li>Name the data and input an arrow signing to the data &lt;-</li>
-<li>Use the relevant function for your file type</li>
-<li>Use function here to tell R where you file is saved and what’s the name <strong>(Remember to always save you file in the data folder!)</strong></li>
-</ol>
-<p>Here’s and example for you:</p>
+<div class="callout-title-container flex-fill">
+Tips
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>use geom_seqment rather than geom_hline as this allows you to control the endpoint with xend = 30</p>
+<p>use annotate to add a text label. Set the x = 30.5 as this is the right-side of the plot. Set the y-value to the correct numerical values to get -1 SD, +1 SD, -2 SD, +2 SD etc</p>
+</div>
+</div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>rodents <span class="ot">&lt;-</span> <span class="fu">read_tsv</span>(<span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"rodents_full.txt"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#this is to get you started</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span> run, <span class="at">y=</span>value))<span class="sc">+</span> <span class="fu">geom_line</span>()<span class="sc">+</span><span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">1</span>, <span class="at">xend =</span> <span class="dv">30</span>, <span class="at">y =</span> <span class="dv">50</span>, <span class="at">yend =</span> <span class="dv">50</span>), <span class="co"># sets the start and end points</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">color =</span> <span class="st">"blue"</span>,                           <span class="co"># makes it blue</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">linetype =</span> <span class="st">"dashed"</span>,                     <span class="co"># dashed</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">linewidth =</span> <span class="fl">0.5</span>) <span class="sc">+</span>                            <span class="co"># fine </span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">30.5</span>, <span class="at">y =</span> <span class="dv">50</span>, <span class="at">label =</span> <span class="st">"50"</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">color =</span> <span class="st">"blue"</span>) <span class="co"># adds the label "50"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in geom_segment(aes(x = 1, xend = 30, y = 50, yend = 50), color = "blue", : All aesthetics have length 1, but the data has 30 rows.
+ℹ Please consider using `annotate()` or provide this layer with data containing
+  a single row.</code></pre>
 </div>
-<p>If you want to use <code>read_delim()</code> you’ll need to specify what delimiter you want to use (e.g.&nbsp;delim = “;”)</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>squirrels <span class="ot">&lt;-</span> <span class="fu">read_delim</span> (<span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"squirrels.csv"</span>), <span class="at">delim =</span> <span class="st">";"</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>squirrels</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="quality_control_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
+</div>
+</div>
+</section>
+<section id="references" class="level2" data-number="15.4">
+<h2 data-number="15.4" class="anchored" data-anchor-id="references"><span class="header-section-number">15.4</span> References</h2>
+<ul>
+<li>Levey, S., &amp; Jennings, E. R. (1950). The use of control charts in the clinical laboratory. American journal of clinical pathology, 20(11), 1059–1066. https://doi.org/10.1093/ajcp/20.11_ts.1059</li>
+<li>Nelson, L. S. (1984). The Shewhart Control Chart—Tests for Special Causes. Journal of Quality Technology, 16(4), 237–239. https://doi.org/10.1080/00224065.1984.11978921</li>
+<li>Shewhart, W.A., (1923) Economic Control Of Quality Of Manufactured Product</li>
+<li>Westgard, J. O., Barry, P. L., Hunt, M. R., &amp; Groth, T. (1981). A multi-rule Shewhart chart for quality control in clinical chemistry. Clinical chemistry, 27(3), 493–501.</li>
+<li>Western Electric Rules- Western Electric Company (1956), Statistical Quality Control Handbook. (1 ed.)</li>
+</ul>
 
 
 </section>
@@ -1021,13 +1138,13 @@ window.onload = function() {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./how_to_use_a_computer.html" class="pagination-link" aria-label="How to use a computer">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">How to use a computer</span></span>
+      <a href="./practice_questions.html" class="pagination-link" aria-label="Practice Questions">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Practice Questions</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./dealing_with_missing_data.html" class="pagination-link" aria-label="Deadling with missing data">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Deadling with missing data</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./genomics.html" class="pagination-link" aria-label="Genomics">
+        <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Genomics</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

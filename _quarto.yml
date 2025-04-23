@@ -32,7 +32,7 @@ book:
   - part: 'Part 5: Functions and loops'
   - part: 'Part 6: Topic-specific approaches'
     chapters:
-    - biomedical_science.qmd
+    - quality_control.qmd
     - genomics.qmd
     - phylogenetics.qmd
   - references.qmd

@@ -481,14 +481,58 @@
     ]
   },
   {
-    "objectID": "biomedical_science.html",
-    "href": "biomedical_science.html",
-    "title": "15  Biomedical Science topics",
+    "objectID": "quality_control.html",
+    "href": "quality_control.html",
+    "title": "15  Quality control analysis",
     "section": "",
-    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
+    "text": "15.1 The Levey-Jennings Chart and Westgard Rules\nLevey-Jennings (LJ) charts are widely used in clinical and analytical laboratories as part of their quality control (QC) processes. They provide a visual representation of repeated experimental measurements of a known standard (an analyte of known concentration). These measurements are often taken daily (or every 12 hours in a 24-hour environment). The LJ chart allows the scientist to assess the consistency and reliability of an experimental procedure. Outliers, (or violations) are identified by following a set of rules. NHS pathology services and many analytical laboratories follow the Westgard Rules. These outliers may indicate that the experimental procedure is not performing to the required standard. However, as we shall see below, occasional outliers are expected even under normal conditions, as random variation in data following a normal distribution will produce such values.\nBelow, we will generate a Levey-Jennings chart and apply a set of rules to identify outliers. First, install the ggQC package and load the libraries that we need.\n# If you don't have ggQC package installed, uncheck the line below and run the install.packages() command to install ggQC package; then delete this line or check it back\n# install.packages(\"ggQC\")\nlibrary (ggQC)\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\nWe need to generate some sample data.. The “run” is the day of the assay (1-30) The “value” is the result of the assay.\nrun &lt;- c(1:30)\nvalue &lt;- c(50.0, 49.1, 53.1, 52.9, 50.6, 49.4, 51.3, 52.3, 50.2, 50.1, 49.8, 49.2,  49.2, 51.4, 50.3, 51.2, 51.8, 49.1, 49.2, 49.9, 49.4, 49.0, 49.6, 49.4, 48.2, 49.4, 48.0, 50.4, 51.2, 54.4)\ndf &lt;- tibble(run = run, value = value)\nWe will now generate a Levey-Jennings plot of the data using the code below. The blue line in the centre is the mean. The red lines indicate 1, 2 or 3 standard deviations from the mean. In this case, both the mean and SD are calculated from the data. Sometimes a LJ chart is generated using a previously established true value of the standard with an associated SD. Many other options are available as part of the ggQC package. In addition, you can generate different types of quality control charts. You can read more here\ndf |&gt; ggplot(aes(x = run, y = value)) + #start ggplot\n  geom_point() + geom_line() + # add the data points and the line\n    stat_QC(method = \"XmR\",    # XmR is for individual data points with a moving Range\n    auto.label = TRUE,         # Use Autolabels\n    label.digits = 1,          # Use one digit in the label\n    show.1n2.sigma = TRUE)     # Show 1 and 2 sigma (SD) lines\nLook at the plot above and compare these results to the Westgard Rules\nIn the data above, three of the Westgard rules have been violated. Can you identify the runs that are a problem? No code is required here, simply look at the plot above and compare the result to the Westgard Rules on the website above.\nCheck your answer by running the code below. This generates a facet plot, highlighting violations in red.\n#create facet plot with QC violations\nggplot(df, aes(x = run, y = value)) + #init ggplot\n  stat_qc_violations(method = \"XmR\" )\nNow, place your cursor over “stat_qc_violations” and press F1. You will see that the QC violations in the ggQC package are based on these rules below:\nNotice that the first of these rules is not identical to the Westgard rule. For rule 1, this package is slightly more sensitive as it highlights violations where there are 8 or more consecutive same-side points, while the equivalent Westgard rule states 10 or more same-side points. The other 3 rules above have an equivalent Westgard rule.\nThis is important as various sets of rules for detecting out-of-control or non-random conditions have been proposed and used for different applications:",
     "crumbs": [
       "Part 6: Topic-specific approaches",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Biomedical Science topics</span>"
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Quality control analysis</span>"
+    ]
+  },
+  {
+    "objectID": "quality_control.html#the-levey-jennings-chart-and-westgard-rules",
+    "href": "quality_control.html#the-levey-jennings-chart-and-westgard-rules",
+    "title": "15  Quality control analysis",
+    "section": "",
+    "text": "Violation Same Side: 8 or more consecutive, same-side points\nViolation 1 Sigma: 4 or more consecutive, same-side points exceeding 1 sigma\nViolation 2 Sigma: 2 or more consecutive, same-side points exceeding 2 sigma\nViolation 3 Sigma: any points exceeding 3 sigma\n\n\n\n\nWalter A. Shewhart (1923) Economic Control Of Quality Of Manufactured Product\nWestern Electric Rules- Western Electric Company (1956), Statistical Quality Control Handbook. (1 ed.)\nNelson Rules (1984)\nWestgard Rules (1981)\n\n\n\n\n\n\n\nImportant\n\n\n\nAlways follow the protocol and quality control processes that are used in your workplace – it will vary!",
+    "crumbs": [
+      "Part 6: Topic-specific approaches",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Quality control analysis</span>"
+    ]
+  },
+  {
+    "objectID": "quality_control.html#testing-for-outliers-using-normally-distributed-data",
+    "href": "quality_control.html#testing-for-outliers-using-normally-distributed-data",
+    "title": "15  Quality control analysis",
+    "section": "15.2 Testing for outliers using normally distributed data",
+    "text": "15.2 Testing for outliers using normally distributed data\nThe data provided above was deliberately manipulated to introduce three rule violations. If this was your actual data from one month in an analytical laboratory, it would indicate that serious errors are occurring on a regular basis. You would need to rectify the problem(s) before running any real samples. If your data is from a normal distribution then outliers detected by these rules are quite rare, but they do happen, even if nothing is wrong with the equipment or the user. Use the code below to generate QC plots of 30 data points from a normal distribution with a mean of 40 and SD = 2. Run this code 12 times to see how often outliers might occur in one year under ideal conditions. Remember, if any outliers are detected, even at these rare intevals, you would still need to check all of your equipment and reagents, as you would have no way of knowing if it is a malfunction or just random noise.\n\n# Generate some random data and plot it\ntibble(run = c(1:30),\n      value = rnorm(30, mean =40, sd =2),) |&gt; \n  ggplot (aes(x = run, y = value)) + \n  stat_qc_violations(method = \"XmR\" )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion\n\n\n\nHow many times were outliers detected? Why are these rules designed so that outliers are rare?",
+    "crumbs": [
+      "Part 6: Topic-specific approaches",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Quality control analysis</span>"
+    ]
+  },
+  {
+    "objectID": "quality_control.html#further-work",
+    "href": "quality_control.html#further-work",
+    "title": "15  Quality control analysis",
+    "section": "15.3 Further Work",
+    "text": "15.3 Further Work\nYou may have noticed that in the first graph above, the mean was 50.3. This value was calculated from the data. In many analytical processes, the standard will be of a known concentration and the process will have a well established standard deviation. Let us assume that for the data above, the known standard should be 50 units with a standard deviation of 1.3. Can you write R-code to generate a plot of the same data but with:\n\nwith a blue dashed horizontal line at exactly 50 units, label it “50” or “mean”\nwith faint red dashed lines to indicate 1, 2 or 3 standard deviations from 50. Label these lines with “-1 SD”, “+1 SD”, “-2 SD”, “+2 SD” etc.\n\n\n\n\n\n\n\nTips\n\n\n\nuse geom_seqment rather than geom_hline as this allows you to control the endpoint with xend = 30\nuse annotate to add a text label. Set the x = 30.5 as this is the right-side of the plot. Set the y-value to the correct numerical values to get -1 SD, +1 SD, -2 SD, +2 SD etc\n\n\n\n#this is to get you started\ndf |&gt; ggplot(aes(x= run, y=value))+ geom_line()+geom_point()+\n  geom_segment(aes(x = 1, xend = 30, y = 50, yend = 50), # sets the start and end points\n               color = \"blue\",                           # makes it blue\n               linetype = \"dashed\",                     # dashed\n               linewidth = 0.5) +                            # fine \n  annotate(\"text\", x = 30.5, y = 50, label = \"50\", hjust = 0, color = \"blue\") # adds the label \"50\"\n\nWarning in geom_segment(aes(x = 1, xend = 30, y = 50, yend = 50), color = \"blue\", : All aesthetics have length 1, but the data has 30 rows.\nℹ Please consider using `annotate()` or provide this layer with data containing\n  a single row.",
+    "crumbs": [
+      "Part 6: Topic-specific approaches",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Quality control analysis</span>"
+    ]
+  },
+  {
+    "objectID": "quality_control.html#references",
+    "href": "quality_control.html#references",
+    "title": "15  Quality control analysis",
+    "section": "15.4 References",
+    "text": "15.4 References\n\nLevey, S., & Jennings, E. R. (1950). The use of control charts in the clinical laboratory. American journal of clinical pathology, 20(11), 1059–1066. https://doi.org/10.1093/ajcp/20.11_ts.1059\nNelson, L. S. (1984). The Shewhart Control Chart—Tests for Special Causes. Journal of Quality Technology, 16(4), 237–239. https://doi.org/10.1080/00224065.1984.11978921\nShewhart, W.A., (1923) Economic Control Of Quality Of Manufactured Product\nWestgard, J. O., Barry, P. L., Hunt, M. R., & Groth, T. (1981). A multi-rule Shewhart chart for quality control in clinical chemistry. Clinical chemistry, 27(3), 493–501.\nWestern Electric Rules- Western Electric Company (1956), Statistical Quality Control Handbook. (1 ed.)",
+    "crumbs": [
+      "Part 6: Topic-specific approaches",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Quality control analysis</span>"
     ]
   },
   {
