@@ -536,25 +536,47 @@
     ]
   },
   {
+    "objectID": "limit_of_detection.html",
+    "href": "limit_of_detection.html",
+    "title": "16  Limit of Detection",
+    "section": "",
+    "text": "16.0.1 Getting the data\nThe aim of this guide is to show you how to calculate the Limit of Detection (LOD) and the Limit of Quantitation (LOQ) using R. For a detailed explanation of these terms, please see Armbruster and Pry, 2008.\nFirst, install the packages and load the libraries\nThe sample data below is from an ELISA standard curve. The absorbance was measured at 450 nm for seven known concentrations of albumin (ng per ml). Optionally, you can read about this ELISA here. The manufacturer claims that this kit “Detects albumin levels from 3.125 ng/ml)”. Lets see if our real student data below compares with this. Load in the data below.\nalbumin_concentration &lt;- c(0.0, 1.4, 2.8, 5.6, 11.1, 22.2, 44.4)\nabsorbance &lt;- c(0.135, 0.215, 0.156, 0.240, 0.324, 0.557, 0.891)\ndf &lt;- tibble(albumin_concentration = albumin_concentration, absorbance = absorbance)\nTake a quick look at the data.\ndf |&gt; ggplot(aes(x = albumin_concentration, y = absorbance)) +\n  geom_point() +\n  geom_line() +\n  xlab(\"[Albumin] (ng/ml)\") +\n  ylab(\"Absorbance (450 nm)\")\nWe need to fit a linear model to the data.\n#fit a linear model to the data\nlinear_model &lt;- lm(absorbance ~ albumin_concentration, data = df)\nlinear_model\n\n\nCall:\nlm(formula = absorbance ~ albumin_concentration, data = df)\n\nCoefficients:\n          (Intercept)  albumin_concentration  \n              0.14691                0.01702\nThe chemCal package has a function for generating a plot of the calibration data with the 95% confidence limits.\n#generate a graph\ncalplot(linear_model, xlab = \"[Albumin] (ng/ml)\", ylab = \"Absorbance (450 nm)\")",
+    "crumbs": [
+      "Part 6: Topic-specific approaches",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Limit of Detection</span>"
+    ]
+  },
+  {
+    "objectID": "limit_of_detection.html#references",
+    "href": "limit_of_detection.html#references",
+    "title": "16  Limit of Detection",
+    "section": "16.1 References",
+    "text": "16.1 References\n\nArmbruster, D. A., & Pry, T. (2008). Limit of blank, limit of detection and limit of quantitation. The Clinical biochemist. Reviews, 29 (Suppl 1), S49–S52",
+    "crumbs": [
+      "Part 6: Topic-specific approaches",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Limit of Detection</span>"
+    ]
+  },
+  {
     "objectID": "genomics.html",
     "href": "genomics.html",
-    "title": "16  Genomics",
+    "title": "17  Genomics",
     "section": "",
     "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
     "crumbs": [
       "Part 6: Topic-specific approaches",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Genomics</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Genomics</span>"
     ]
   },
   {
     "objectID": "phylogenetics.html",
     "href": "phylogenetics.html",
-    "title": "17  Phylogenetics",
+    "title": "18  Phylogenetics",
     "section": "",
     "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
     "crumbs": [
       "Part 6: Topic-specific approaches",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Phylogenetics</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Phylogenetics</span>"
     ]
   }
 ]

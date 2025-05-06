@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>18&nbsp; Phylogenetics – Hudd-R book</title>
+<title>16&nbsp; Limit of Detection – Hudd-R book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
-<link href="./genomics.html" rel="prev">
+<link href="./genomics.html" rel="next">
+<link href="./quality_control.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -118,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quality_control.html">Part 6: Topic-specific approaches</a></li><li class="breadcrumb-item"><a href="./phylogenetics.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Phylogenetics</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quality_control.html">Part 6: Topic-specific approaches</a></li><li class="breadcrumb-item"><a href="./limit_of_detection.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Limit of Detection</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -298,7 +298,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./limit_of_detection.html" class="sidebar-item-text sidebar-link">
+  <a href="./limit_of_detection.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Limit of Detection</span></span></a>
   </div>
 </li>
@@ -310,7 +310,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./phylogenetics.html" class="sidebar-item-text sidebar-link active">
+  <a href="./phylogenetics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Phylogenetics</span></span></a>
   </div>
 </li>
@@ -327,15 +327,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#getting-the-data" id="toc-getting-the-data" class="nav-link active" data-scroll-target="#getting-the-data"><span class="header-section-number">16.0.1</span> Getting the data</a></li>
+  <li><a href="#calculating-the-limit-of-detection-lod-or-minimum-detectable-value" id="toc-calculating-the-limit-of-detection-lod-or-minimum-detectable-value" class="nav-link" data-scroll-target="#calculating-the-limit-of-detection-lod-or-minimum-detectable-value"><span class="header-section-number">16.0.2</span> Calculating the Limit of Detection (LOD) (or minimum detectable value):</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">16.1</span> References</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quality_control.html">Part 6: Topic-specific approaches</a></li><li class="breadcrumb-item"><a href="./phylogenetics.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Phylogenetics</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quality_control.html">Part 6: Topic-specific approaches</a></li><li class="breadcrumb-item"><a href="./limit_of_detection.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Limit of Detection</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Phylogenetics</span></h1>
+<h1 class="title"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Limit of Detection</span></h1>
 </div>
 
 
@@ -352,15 +360,141 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>In summary, this book has no content whatsoever.</p>
+<p>The aim of this guide is to show you how to calculate the Limit of Detection (LOD) and the Limit of Quantitation (LOQ) using R. For a detailed explanation of these terms, please see <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2556583/#sec3">Armbruster and Pry, 2008</a>.</p>
+<p>First, install the packages and load the libraries</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("chemCal")</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(chemCal)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+</div>
+<section id="getting-the-data" class="level3" data-number="16.0.1">
+<h3 data-number="16.0.1" class="anchored" data-anchor-id="getting-the-data"><span class="header-section-number">16.0.1</span> Getting the data</h3>
+<p>The sample data below is from an ELISA standard curve. The absorbance was measured at 450 nm for seven known concentrations of albumin (ng per ml). Optionally, you can <a href="https://www.abcam.com/en-us/products/elisa-kits/human-albumin-elisa-kit-ab108788?">read about this ELISA here</a>. The manufacturer claims that this kit “Detects albumin levels from 3.125 ng/ml)”. Lets see if our real student data below compares with this. Load in the data below.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>albumin_concentration <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">1.4</span>, <span class="fl">2.8</span>, <span class="fl">5.6</span>, <span class="fl">11.1</span>, <span class="fl">22.2</span>, <span class="fl">44.4</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>absorbance <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.135</span>, <span class="fl">0.215</span>, <span class="fl">0.156</span>, <span class="fl">0.240</span>, <span class="fl">0.324</span>, <span class="fl">0.557</span>, <span class="fl">0.891</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">albumin_concentration =</span> albumin_concentration, <span class="at">absorbance =</span> absorbance)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Take a quick look at the data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> albumin_concentration, <span class="at">y =</span> absorbance)) <span class="sc">+</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"[Albumin] (ng/ml)"</span>) <span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Absorbance (450 nm)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="limit_of_detection_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We need to fit a linear model to the data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#fit a linear model to the data</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>linear_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(absorbance <span class="sc">~</span> albumin_concentration, <span class="at">data =</span> df)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>linear_model</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<pre><code>
+Call:
+lm(formula = absorbance ~ albumin_concentration, data = df)
+
+Coefficients:
+          (Intercept)  albumin_concentration  
+              0.14691                0.01702  </code></pre>
 </div>
 </div>
+<p>The chemCal package has a function for generating a plot of the calibration data with the 95% confidence limits.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#generate a graph</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">calplot</span>(linear_model, <span class="at">xlab =</span> <span class="st">"[Albumin] (ng/ml)"</span>, <span class="at">ylab =</span> <span class="st">"Absorbance (450 nm)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="limit_of_detection_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="calculating-the-limit-of-detection-lod-or-minimum-detectable-value" class="level3" data-number="16.0.2">
+<h3 data-number="16.0.2" class="anchored" data-anchor-id="calculating-the-limit-of-detection-lod-or-minimum-detectable-value"><span class="header-section-number">16.0.2</span> Calculating the Limit of Detection (LOD) (or minimum detectable value):</h3>
+<p>The LOD is the lowest amount of analyte (or signal) that can be reliably detected by a method. It is defined based on the probability of making a type II error — also known as a false negative. A type II error happens when the analyte is actually present, but the method fails to detect it. The probability of a false negative is given by ‘beta’ and has the default value of 0.05 (a 5% chance of a false negative).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#with default values</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lod</span>(linear_model, </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.05</span>,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">beta =</span> <span class="fl">0.05</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="st">"default"</span>,</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">tol =</span> <span class="st">"default"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$albumin_concentration
+[1] 8.122929
+
+$absorbance
+[1] 0.2851984</code></pre>
+</div>
+</div>
+<p>Or simply…</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lod</span>(linear_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$albumin_concentration
+[1] 8.122929
+
+$absorbance
+[1] 0.2851984</code></pre>
+</div>
+</div>
+<p>The output gives a list of values, corresponding to the two axes. The LOD is normally stated in units of concentration (the x-axis). You can extract the albumin concentration from the list using the $ sign as below.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lod</span>(linear_model)<span class="sc">$</span>albumin_concentration</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 8.122929</code></pre>
+</div>
+</div>
+<p>The units of this value are the same as the x-axis. So…</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">"Limit of Detection = "</span>, </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>      <span class="fu">round</span>(<span class="fu">lod</span>(linear_model)<span class="sc">$</span>albumin_concentration, <span class="dv">2</span>), <span class="co">#rounds to 2 d.p.</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>      <span class="st">"ng/ml"</span>,</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">sep =</span> <span class="st">" "</span>) <span class="co"># adds a space between each of the above</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Limit of Detection =  8.12 ng/ml"</code></pre>
+</div>
+</div>
+<p>In the same way, you calculate the Limit of Quantitation using “loq”</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">"Limit of Quantitation = "</span>, </span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>      <span class="fu">round</span>(<span class="fu">loq</span>(linear_model)<span class="sc">$</span>albumin_concentration, <span class="dv">2</span>), <span class="co">#rounds to 2 d.p.</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>      <span class="st">"ng/ml"</span>,</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">sep =</span> <span class="st">" "</span>) <span class="co"># adds a space between each of the above</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Limit of Quantitation =  15.2 ng/ml"</code></pre>
+</div>
+</div>
+</section>
+<section id="references" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="references"><span class="header-section-number">16.1</span> References</h2>
+<ul>
+<li>Armbruster, D. A., &amp; Pry, T. (2008). Limit of blank, limit of detection and limit of quantitation. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2556583/#sec3">The Clinical biochemist. Reviews, 29 (Suppl 1), S49–S52</a></li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script>
@@ -970,13 +1104,13 @@ window.onload = function() {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./genomics.html" class="pagination-link" aria-label="Genomics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Genomics</span></span>
+      <a href="./quality_control.html" class="pagination-link" aria-label="Quality control analysis">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Quality control analysis</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./genomics.html" class="pagination-link" aria-label="Genomics">
+        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Genomics</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
