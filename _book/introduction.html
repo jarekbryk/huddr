@@ -304,9 +304,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3"><span class="header-section-number">1.1.3</span> Section 3</a></li>
   <li><a href="#tidyverse-vs-base-r" id="toc-tidyverse-vs-base-r" class="nav-link" data-scroll-target="#tidyverse-vs-base-r"><span class="header-section-number">1.1.4</span> Tidyverse vs base R</a></li>
   <li><a href="#how-to-use-a-computer" id="toc-how-to-use-a-computer" class="nav-link" data-scroll-target="#how-to-use-a-computer"><span class="header-section-number">1.1.5</span> How to use a computer</a></li>
-  <li><a href="#inspirations-and-references" id="toc-inspirations-and-references" class="nav-link" data-scroll-target="#inspirations-and-references"><span class="header-section-number">1.1.6</span> Inspirations and references</a></li>
-  <li><a href="#note-on-the-llms" id="toc-note-on-the-llms" class="nav-link" data-scroll-target="#note-on-the-llms"><span class="header-section-number">1.1.7</span> Note on the LLMs</a></li>
-  <li><a href="#improving-this-book" id="toc-improving-this-book" class="nav-link" data-scroll-target="#improving-this-book"><span class="header-section-number">1.1.8</span> Improving this book</a></li>
+  <li><a href="#note-on-the-llms" id="toc-note-on-the-llms" class="nav-link" data-scroll-target="#note-on-the-llms"><span class="header-section-number">1.1.6</span> Note on the LLMs</a></li>
+  <li><a href="#improving-this-book" id="toc-improving-this-book" class="nav-link" data-scroll-target="#improving-this-book"><span class="header-section-number">1.1.7</span> Improving this book</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -333,59 +332,61 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This book was co-designed and co-written with a group of second-year students at the University of Huddersfield’s Division of Biomedical and Life Sciences in 24/25, as a resource for themselves and other students to learn R. As it happened, I had a template for the book ready, as I was trying to do it myself for the last two years :-), and the five of us got it done much more effectively. Technically speaking, practically everything in this book can be found in R help pages,</p>
+<p>This book was co-designed and co-written with a group of second-year students at the University of Huddersfield’s Division of Biomedical and Life Sciences in 24/25, as a resource for themselves and other students to learn R. As it happened, I had a template for the book ready, as I was trying to do it myself for the past two years :-), and the five of us got it done much more effectively. Technically speaking, practically everything in this book can be found in R help pages, but our idea was to put all of the information that we use in the class in a single place to make it easier to find and use.</p>
 <section id="how-this-book-is-organised" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="how-this-book-is-organised"><span class="header-section-number">1.1</span> How this book is organised</h2>
-<p>This book is roughtly divided into three major sections:</p>
+<p>This book is roughly divided into three major sections:</p>
 <section id="section-1" class="level3" data-number="1.1.1">
 <h3 data-number="1.1.1" class="anchored" data-anchor-id="section-1"><span class="header-section-number">1.1.1</span> Section 1</h3>
 <ul>
-<li><em>Part 1</em> deals with preparing your computer for R - installing it, adjusting interface of RStudio, installing packages we use in the class and setting up the working environment in the browser for those who can only use Chromebooks or tablets. This part contains a very important chapter on how to use a computer, which contains information on fundamental operations on files and folders in Windows or macOS (see below).</li>
+<li><em>Part 1</em> deals with preparing your computer for R - installing it, adjusting interface of RStudio, installing packages we use in the class and setting up the working environment in the browser for those who can only use Chromebooks or tablets. This part also contains an important chapter on how to use a computer, with information on fundamental operations on files and folders in Windows or macOS.</li>
 </ul>
 </section>
 <section id="section-2" class="level3" data-number="1.1.2">
 <h3 data-number="1.1.2" class="anchored" data-anchor-id="section-2"><span class="header-section-number">1.1.2</span> Section 2</h3>
 <ul>
-<li><em>Part 2</em> contains the key content of the book: information on the functions we use (including plotting with <code>ggplot</code>) and their parameters, examples of their use, as well as information on loading data and dealing with missing data. We anticipate that this is the part that you will be using most often.</li>
+<li><em>Part 2</em> contains the key content of the book: information on the functions we use (including plotting with <code>ggplot</code>) and their parameters, examples of their use, as well as information on loading data and dealing with missing data. We anticipate that this is the part that students will be using most often.</li>
 <li><em>Part 3</em> contains information on statistical tests, but it is <em>not</em> a statistics textbook. This part concentrates on <em>how to</em> run statistical tests that you learned last year in R, rather than explaining when to run them, how to check their assumptions and how to interpret their results.</li>
-<li><em>Part 4</em> contains self-checking exercises that run entirely in the browser and are usful to make sure you are “getting it” as you go along through the class.</li>
+<li><em>Part 4</em> contains self-checking exercises that run entirely in the browser and are useful to make sure you are “getting it” as you go along.</li>
 </ul>
 </section>
 <section id="section-3" class="level3" data-number="1.1.3">
 <h3 data-number="1.1.3" class="anchored" data-anchor-id="section-3"><span class="header-section-number">1.1.3</span> Section 3</h3>
 <ul>
-<li><em>Part 5</em> deals with loops and functions, topics we introduce fully in the final year, but which occasionally come up in the second year during your analyses. This part is not developed year, but when it is, it will be using the “nest-function-map” approach from the <code>purrr</code> package.</li>
-<li><em>Part 6</em> contains several chaptere, where each deals with a specific topic, either from a different module or a self-contained topic. They are also not developed yet.</li>
+<li><em>Part 5</em> deals with loops and functions, topics we introduce fully in the final year, but which occasionally come up in the second year during the analyses. This part is not developed yet, but when it will be, it will be using the “nest-function-map” approach from the <code>purrr</code> package.</li>
+<li><em>Part 6</em> contains several chapters, each of which deals with a specific topic, useful in other modules or specific assignments. Currently chapters on quality control and limits of detection are ready (both useful in Professional Skills module assignments), with chapters on genomics and phylogenetics not developed yet (both will be useful in the Current Topics in Molecular Life Sciences assginments).</li>
 </ul>
 </section>
 <section id="tidyverse-vs-base-r" class="level3" data-number="1.1.4">
 <h3 data-number="1.1.4" class="anchored" data-anchor-id="tidyverse-vs-base-r"><span class="header-section-number">1.1.4</span> Tidyverse vs base R</h3>
 <p>This book is almost entirely written with the <code>tidyverse</code> dialect of R in mind, using RStudio as an integrated development environment (IDE). Base R is only mentioned when we get to square brackets’ indexing of lists in the advanced chapters on functions and loops (which we do not teach until the final year). The reason is that I consider <code>tidyverse</code> to be easier for beginners to grasp and 99% of what we need to do this year is available through <code>tidyverse</code>. <code>Tidyverse</code> packages have better help sources available online and they are consistent: operating on data frames with relatively small number of usefully-named functions makes it easier to climb the learning curve. Our recommended textbook to accompany the classes is the second edition of <a href="https://r4ds.hadley.nz">R for Data Science</a> by Hadley Wickham, Mine Cetinkaya-Rundel and Garett Grolemund, which is freely available online.</p>
-<p>For students, I higly recommend reading the following sources to understand the base R vs.&nbsp;<code>tidyverse</code> story: - For the historical overview, read (<a href="https://www.youtube.com/watch?v=5033jBHFiHE">or watch</a>) Roger Penn’s <a href="https://simplystatistics.org/posts/2018-07-12-use-r-keynote-2018/">Teaching R to New Users - From tapply to the Tidyverse</a>. - David Robinson’s <a href="http://varianceexplained.org/r/teach-tidyverse/">Teach the tidyverse to beginners</a> post that first inspired me to switch to <code>tidyverse</code> after a year of teaching base R + <code>ggplot</code>. - Not everyone agrees that <code>tidyverse</code> is better, or is better for teaching R, and the two recent contrarian views come from Norm Matloff (<a href="https://github.com/matloff/TidyverseSkeptic">Teaching R in a Kinder, Gentler, More Effective Manner</a>) and Robert München (<a href="https://r4stats.com/articles/why-r-is-hard-to-learn/">Why R is Hard to Learn</a>).</p>
+<p>For students, I highly recommend reading the following sources to understand the base R vs.&nbsp;<code>tidyverse</code> story:</p>
+<ul>
+<li>For the historical overview, read (<a href="https://www.youtube.com/watch?v=5033jBHFiHE">or watch</a>) Roger Penn’s <a href="https://simplystatistics.org/posts/2018-07-12-use-r-keynote-2018/">Teaching R to New Users - From tapply to the Tidyverse</a>.</li>
+<li>David Robinson’s <a href="http://varianceexplained.org/r/teach-tidyverse/">Teach the tidyverse to beginners</a> post that first inspired me to switch to <code>tidyverse</code> after a year of teaching base R + <code>ggplot</code>.</li>
+<li>Not everyone agrees that <code>tidyverse</code> is better, or is better for teaching R, and the two recent contrarian views come from Norm Matloff (<a href="https://github.com/matloff/TidyverseSkeptic">Teaching R in a Kinder, Gentler, More Effective Manner</a>) and Robert München (<a href="https://r4stats.com/articles/why-r-is-hard-to-learn/">Why R is Hard to Learn</a>).</li>
+</ul>
 </section>
 <section id="how-to-use-a-computer" class="level3" data-number="1.1.5">
 <h3 data-number="1.1.5" class="anchored" data-anchor-id="how-to-use-a-computer"><span class="header-section-number">1.1.5</span> How to use a computer</h3>
 <p>Notably (and importantly for me as a tutor and module leader of the module where we teach R), this book contains a chapter on <a href="how_to_use_a_computer.html">how to use a computer</a>. In my experience in teaching R to undergraduates, many students struggle with <em>operating</em> a computer, which makes learning <em>the hard stuff</em> (data science and programming in R) even trickier. In a recent talk (discussing students’ attitudes to learning coding) I presented this slide, which listed common issues I witness every year:</p>
-<p><img src="images/windows_101_slide.png" class="img-fluid"> So the chapter <a href="how_to_use_a_computer.html">How to use a computer</a> contains guidelines and animated gifs demonstrating how to accomplish basic operations on files and folders, and explaning the key concepts of paths and file system hierarchy. We very much hope this will be helpful.</p>
-<p>From a teaching perspective, a very useful reading in this context is this 30 year-old post (!) by Phil Agre: <a href="https://www.librarian.net/stax/4965/how-to-help-someone-use-a-computer-by-phil-agre/">How to Help Someone Use a Computer</a>. All of his recommendations are still valid today.</p>
+<p><img src="images/windows_101_slide.png" class="img-fluid"></p>
+<p>The chapter <a href="how_to_use_a_computer.html">How to use a computer</a> contains guidelines and animated gifs demonstrating how to accomplish basic operations on files and folders, and explaining the key concepts of paths and file system hierarchy. We very much hope this will be helpful.</p>
+<p>From a teaching perspective, a very useful reading in this context is this 30 year-old text (!) by Phil Agre: <a href="https://www.librarian.net/stax/4965/how-to-help-someone-use-a-computer-by-phil-agre/">How to Help Someone Use a Computer</a>. All of his recommendations are still valid today (! again).</p>
 </section>
-<section id="inspirations-and-references" class="level3" data-number="1.1.6">
-<h3 data-number="1.1.6" class="anchored" data-anchor-id="inspirations-and-references"><span class="header-section-number">1.1.6</span> Inspirations and references</h3>
-</section>
-<section id="note-on-the-llms" class="level3" data-number="1.1.7">
-<h3 data-number="1.1.7" class="anchored" data-anchor-id="note-on-the-llms"><span class="header-section-number">1.1.7</span> Note on the LLMs</h3>
-<p>We are aware of the 800-pound <em>Gorilla gorilla gorilla</em> in the room: we live in times where any basic programming task can be effectively (if not efficiently or exactly correctly) completed by a large language model.</p>
-<p>The answer is twofold:</p>
-<p>Firstly, in order to use LLMs effectively, students must understand what they are doing, which is not the case for the majority of them in the first few weeks of coding. Without understanding why and how things work, students are unable to judge the LLM’s output; even when they copy-paste the code and it works, they will not be able to solve a similar or related task next time.</p>
+<section id="note-on-the-llms" class="level3" data-number="1.1.6">
+<h3 data-number="1.1.6" class="anchored" data-anchor-id="note-on-the-llms"><span class="header-section-number">1.1.6</span> Note on the LLMs</h3>
+<p>We are aware of the 800-pound <em>Gorilla gorilla gorilla</em> in the room: we live in times where any basic programming task can be effectively (if not efficiently or exactly correctly) completed by a large language model. However, in order to use LLMs effectively, students must understand what they are doing, which is not the case for the majority of them in the first few weeks of coding. Without understanding why and how things work, students are unable to judge the LLM’s output; even when they copy-paste the code and it works, they will not be able to solve a similar or related task next time.</p>
 <p>This phenomenon - that LLMs are useful only if you already have a good idea what you need to do - is discussed very well by prof. Ethan Mallick in his post <a href="https://www.oneusefulthing.org/p/15-times-to-use-ai-and-5-not-to">15 Times to use AI, and 5 Not to</a>. His final paragraph (emphasis mine):</p>
 <blockquote class="blockquote">
 <p>Knowing when to use AI turns out to be a form of wisdom, not just technical knowledge. <em>Like most wisdom, it’s somewhat paradoxical: AI is often most useful where we’re already expert enough to spot its mistakes, yet least helpful in the deep work that made us experts in the first place. It works best for tasks we could do ourselves but shouldn’t waste time on, yet can actively harm our learning when we use it to skip necessary struggles.</em></p>
 </blockquote>
-<p>Secondly</p>
+<p>Secondly, with support from the LLMs readily available, students can concentrate on extracting meaning from data, effectively using their existing knowledge of biological systems to interpret patterns identified in the data (potentially with help of the LLMs).</p>
+<p>At this point, however, we do not directly <em>teach</em> the use of LLMs for coding, as we consider the purpose of these sessions to be to acquire fundamental competencies in programmatic data analysis.</p>
 </section>
-<section id="improving-this-book" class="level3" data-number="1.1.8">
-<h3 data-number="1.1.8" class="anchored" data-anchor-id="improving-this-book"><span class="header-section-number">1.1.8</span> Improving this book</h3>
-<p>This book is open source. It is published under a very generous MIT License so you may use it and its contents however you like (we would appreciate if you let us know if you do!). If you find a mistake or you want to expand it or suggest a better way of explaining things, please either get in touch with Jarek or, even better, submit a pull request <a href="https://github.com/jarekbryk/huddr">on GitHub</a>.</p>
+<section id="improving-this-book" class="level3" data-number="1.1.7">
+<h3 data-number="1.1.7" class="anchored" data-anchor-id="improving-this-book"><span class="header-section-number">1.1.7</span> Improving this book</h3>
+<p>This book is open source. It is published under a very generous MIT License so you may use it and its contents however you like (we would appreciate if you let us know if you do!). If you find a mistake or you want to expand it or suggest a better way of explaining things, please either get in touch with Jarek or, even better, submit a pull request directly <a href="https://github.com/jarekbryk/huddr">on GitHub</a>.</p>
 
 
 </section>

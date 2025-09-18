@@ -6,8 +6,10 @@ First, install the packages and load the libraries that we need.
 
 ```{r warning=FALSE}
 # install.packages("chemCal")
-library(chemCal)
 library(tidyverse)
+library(chemCal)
+library(ggpmisc)
+
 ```
 
 ### Getting the data
@@ -24,14 +26,50 @@ Take a quick look at the data.
 
 ```{r}
 df |> 
-	ggplot(aes(x = albumin_concentration, y = absorbance)) +
+ggplot(aes(x = albumin_concentration, y = absorbance)) +
   geom_point() +
   geom_line() +
   xlab("[Albumin] (ng/ml)") +
   ylab("Absorbance (450 nm)")
 ```
 
-We need to fit a linear model to the data.
+## Adding the equation of the line
+
+We will now use stat_poly_eq from the ggpmisc package to display the equation of the line. We specify a linear model using y ~ x.  
+Although we could still use geom_smooth here, for consistency we will use the stat_poly_line function to add the line. Notice that we use the same equation y ~ x on both lines.
+
+```{r}
+df |> 
+  ggplot(aes(x = albumin_concentration, y = absorbance)) +
+  geom_point() +
+  stat_poly_line(formula = y ~ x) +
+  stat_poly_eq(use_label("eq", "R2"), formula = y ~ x) +
+  xlab("[Albumin] (ng/ml)") +
+  ylab("Absorbance (450 nm)")
+```
+
+::: callout-tip
+## What about non-linear data?
+
+Press F1 on the stat_poly_eq function, run the example given with a polynomial function.
+:::
+
+It looks better with the R-squared value positioned under the equation. We can add label.x and label.y values to control the positions of "eq" and "R2" separately.
+
+```{r}
+df |> 
+  ggplot(aes(x = albumin_concentration, y = absorbance)) +
+  geom_point() +
+  stat_poly_line(formula = y ~ x) +
+  stat_poly_eq(use_label("eq"), formula = y ~ x, label.y = 0.9, label.x = 0.05) +
+  stat_poly_eq(use_label("R2"), formula = y ~ x, label.y = 0.85, label.x = 0.05)+
+  xlab("[Albumin] (ng/ml)") +
+  ylab("Absorbance (450 nm)")
+```
+
+## The linear model 
+To calculate the limit of detection, we need to fit a linear model to the data and write all the parameters of this model to an object called "linear_model". This object is a list of 12 things and it includes the original data (click on linear_model to view all the parameters).
+
 
 ```{r}
 #fit a linear model to the data
@@ -39,7 +77,59 @@ linear_model <- lm(absorbance ~ albumin_concentration, data = df)
 linear_model
 ```
 
-The chemCal package has a function for generating a plot of the calibration data with the 95% confidence limits.
+Notice that the coefficients above match with the equation we added to the plot earlier. 
+
+### The LOD calculation
+
+We will now use the chemCal package to calculate the limit of detection (LOD). The LOD is the lowest amount of analyte (or signal) that can be reliably detected by a method. It is defined based on the probability of making a type II error — also known as a false negative. A type II error happens when the analyte is actually present, but the method fails to detect it (like type II fun).
+
+The default values of the lod function from chemCal are the ones recommended by IUPAC. We can simply run this function on the linear_model from earlier.
+
+```{r}
+lod(linear_model)
+```
+
+Below are the default values. You can read about these in the help section. The probability of a false negative is given by 'beta' and has the default value of 0.05 (a 5% chance of a false negative).
+
+```{r}
+#with default values
+lod(linear_model, 
+    alpha = 0.05,
+    beta = 0.05,
+    method = "default",
+    tol = "default")
+```
+
+The output you see is a list of two values corresponding to the two axes. The LOD is normally stated in units of concentration (the x-axis). You can extract the albumin concentration from the list using the $ sign as below.
+
+```{r}
+lod(linear_model)$albumin_concentration
+```
+
+The units of this value are the same as the x-axis. So...
+
+```{r}
+paste("Limit of Detection = ", 
+      round(lod(linear_model)$albumin_concentration, 2), #rounds to 2 d.p.
+      "ng/ml",
+      sep = " ") # adds a space between each of the above
+```
+
+In the same way, you calculate the Limit of Quantitation using "loq"
+
+```{r}
+paste("Limit of Quantitation = ", 
+      round(loq(linear_model)$albumin_concentration, 2), #rounds to 2 d.p.
+      "ng/ml",
+      sep = " ") # adds a space between each of the above
+```
+
+::: {.callout-caution}
+## Important
+Always check your answer looks sensible. Look where the LOD and LOQ values are on the graph and compare it to the data. 
+:::
+
+The chemCal package has a function for generating a plot of your linear_model object with 95% confidence limits.
 
 ```{r}
 #generate a graph
@@ -68,54 +158,15 @@ plot_df <- full_join(confidence_df, prediction_df, by = "albumin_concentration")
 # Plot with both confidence and prediction intervals
 plot_df |>
 	ggplot() + aes(x = albumin_concentration, y = fitted) + geom_line() +
+	stat_poly_line(formula = y ~ x) +
+	stat_poly_eq(use_label("eq"), formula = y ~ x, label.y = 0.9, label.x = 0.05) +
+	stat_poly_eq(use_label("R2"), formula = y ~ x, label.y = 0.85, label.x = 0.05) +
 	geom_ribbon(aes(x = albumin_concentration, ymin = pred_lower, ymax = pred_upper, fill = "Prediction (95%)"), alpha = 0.15) +
 	geom_ribbon(aes(x = albumin_concentration, ymin = conf_lower, ymax = conf_upper, fill = "Confidence (95%)"), alpha = 0.15) +
-  labs(x = "[Albumin] (ng/ml)", y = "Absorbance (450 nm)", fill = NULL) +
-  theme_minimal()
+	labs(x = "[Albumin] (ng/ml)", y = "Absorbance (450 nm)", fill = NULL) + 
+	theme_minimal()
 ```
 
-### Calculating the Limit of Detection (LOD) (or minimum detectable value):
-
-The LOD is the lowest amount of analyte (or signal) that can be reliably detected by a method. It is defined based on the probability of making a type II error — also known as a false negative. A type II error happens when the analyte is actually present, but the method fails to detect it. The probability of a false negative is given by 'beta' and has the default value of 0.05 (a 5% chance of a false negative).
-
-```{r}
-#with default values
-lod(linear_model, 
-    alpha = 0.05,
-    beta = 0.05,
-    method = "default",
-    tol = "default")
-```
-
-Or simply...
-
-```{r}
-lod(linear_model)
-```
-
-The output gives a list of values, corresponding to the two axes. The LOD is normally stated in units of concentration (the x-axis). You can extract the albumin concentration from the list using the $ sign as below. 
-
-```{r}
-lod(linear_model)$albumin_concentration
-```
-
-The units of this value are the same as the x-axis. So...
-
-```{r}
-paste("Limit of Detection = ", 
-      round(lod(linear_model)$albumin_concentration, 2), #rounds to 2 d.p.
-      "ng/ml",
-      sep = " ") # adds a space between each of the above
-```
-
-In the same way, you calculate the Limit of Quantitation using "loq"
-
-```{r}
-paste("Limit of Quantitation = ", 
-      round(loq(linear_model)$albumin_concentration, 2), #rounds to 2 d.p.
-      "ng/ml",
-      sep = " ") # adds a space between each of the above
-```
 
 ## References
 
