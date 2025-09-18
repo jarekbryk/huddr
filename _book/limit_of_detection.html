@@ -360,8 +360,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>The aim of this guide is to show you how to calculate the Limit of Detection (LOD) and the Limit of Quantitation (LOQ) using R. For a detailed explanation of these terms, please see <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2556583/#sec3">Armbruster and Pry, 2008</a>.</p>
-<p>First, install the packages and load the libraries</p>
+<p>The aim of this guide is to show you how to calculate the Limit of Detection (LOD) and the Limit of Quantitation (LOQ) using R. For a detailed explanation of these terms, please see <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2556583/#sec3">Armbruster and Pry 2008</a>.</p>
+<p>First, install the packages and load the libraries that we need.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("chemCal")</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(chemCal)</span>
@@ -370,9 +370,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.1.4     ✔ readr     2.1.5
 ✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.1     ✔ tibble    3.2.1
-✔ lubridate 1.9.3     ✔ tidyr     1.3.1
-✔ purrr     1.0.2     
+✔ ggplot2   3.5.2     ✔ tibble    3.3.0
+✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+✔ purrr     1.0.4     
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ✖ dplyr::filter() masks stats::filter()
 ✖ dplyr::lag()    masks stats::lag()
@@ -381,7 +381,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="getting-the-data" class="level3" data-number="16.0.1">
 <h3 data-number="16.0.1" class="anchored" data-anchor-id="getting-the-data"><span class="header-section-number">16.0.1</span> Getting the data</h3>
-<p>The sample data below is from an ELISA standard curve. The absorbance was measured at 450 nm for seven known concentrations of albumin (ng per ml). Optionally, you can <a href="https://www.abcam.com/en-us/products/elisa-kits/human-albumin-elisa-kit-ab108788?">read about this ELISA here</a>. The manufacturer claims that this kit “Detects albumin levels from 3.125 ng/ml)”. Lets see if our real student data below compares with this. Load in the data below.</p>
+<p>The sample data below is from an ELISA standard curve. You can <a href="https://www.abcam.com/en-us/products/elisa-kits/human-albumin-elisa-kit-ab108788">read about this ELISA here</a>. The absorbance was measured at 450 nm for seven known concentrations of albumin (ng per ml). The manufacturer claims that this kit “Detects albumin levels from 3.125 ng/ml)”. Lets see if our real student data compares with this. Load in the data below.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>albumin_concentration <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">1.4</span>, <span class="fl">2.8</span>, <span class="fl">5.6</span>, <span class="fl">11.1</span>, <span class="fl">22.2</span>, <span class="fl">44.4</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>absorbance <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.135</span>, <span class="fl">0.215</span>, <span class="fl">0.156</span>, <span class="fl">0.240</span>, <span class="fl">0.324</span>, <span class="fl">0.557</span>, <span class="fl">0.891</span>)</span>
@@ -389,11 +389,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Take a quick look at the data.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> albumin_concentration, <span class="at">y =</span> absorbance)) <span class="sc">+</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"[Albumin] (ng/ml)"</span>) <span class="sc">+</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Absorbance (450 nm)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> albumin_concentration, <span class="at">y =</span> absorbance)) <span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"[Albumin] (ng/ml)"</span>) <span class="sc">+</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Absorbance (450 nm)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -429,17 +430,49 @@ Coefficients:
 </div>
 </div>
 </div>
+<p>The two kinds of uncertainty bands around the calibration fitted line are 95% confidence and prediction bands (if you use the default settings). Confidence bands show the uncertainty in the estimate of the average response at each concentration of albumin (or other analyte) — how sure we are about the position of the calibration curve itself. These bands are relatively narrow as they only reflect uncertainty in the fitted regression line.</p>
+<p>Prediction bands show the range where we expect new individual measurements to fall at a given concentration. They are always wider because they include not just the uncertainty in the calibration line but also the natural scatter of measurements around that line. Prediction intervals are crucial for LOD: they indicate how much a single absorbance reading could vary at low analyte concentrations, and therefore how confidently we can distinguish a true signal from background noise.</p>
+<p>Here is the same plot generated with <code>tidyverse</code> functions, starting with the same linear model of the <code>df</code> dataset; you will need package <code>broom</code> to extract fitted and predicted values from the model object:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Confidence band</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>confidence_df <span class="ot">&lt;-</span> <span class="fu">augment</span>(linear_model, df, <span class="at">interval =</span> <span class="st">"confidence"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(albumin_concentration, <span class="at">fitted =</span> .fitted, <span class="at">conf_lower =</span> .lower, <span class="at">conf_upper =</span> .upper)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Prediction band</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>prediction_df <span class="ot">&lt;-</span> <span class="fu">augment</span>(linear_model, <span class="at">newdata =</span> df, <span class="at">interval =</span> <span class="st">"prediction"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(albumin_concentration, <span class="at">pred_lower =</span> .lower, <span class="at">pred_upper =</span> .upper)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine the two datasets</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>plot_df <span class="ot">&lt;-</span> <span class="fu">full_join</span>(confidence_df, prediction_df, <span class="at">by =</span> <span class="st">"albumin_concentration"</span>)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot with both confidence and prediction intervals</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>plot_df <span class="sc">|&gt;</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">aes</span>(<span class="at">x =</span> albumin_concentration, <span class="at">y =</span> fitted) <span class="sc">+</span> <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">x =</span> albumin_concentration, <span class="at">ymin =</span> pred_lower, <span class="at">ymax =</span> pred_upper, <span class="at">fill =</span> <span class="st">"Prediction (95%)"</span>), <span class="at">alpha =</span> <span class="fl">0.15</span>) <span class="sc">+</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">x =</span> albumin_concentration, <span class="at">ymin =</span> conf_lower, <span class="at">ymax =</span> conf_upper, <span class="at">fill =</span> <span class="st">"Confidence (95%)"</span>), <span class="at">alpha =</span> <span class="fl">0.15</span>) <span class="sc">+</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"[Albumin] (ng/ml)"</span>, <span class="at">y =</span> <span class="st">"Absorbance (450 nm)"</span>, <span class="at">fill =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="limit_of_detection_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="calculating-the-limit-of-detection-lod-or-minimum-detectable-value" class="level3" data-number="16.0.2">
 <h3 data-number="16.0.2" class="anchored" data-anchor-id="calculating-the-limit-of-detection-lod-or-minimum-detectable-value"><span class="header-section-number">16.0.2</span> Calculating the Limit of Detection (LOD) (or minimum detectable value):</h3>
 <p>The LOD is the lowest amount of analyte (or signal) that can be reliably detected by a method. It is defined based on the probability of making a type II error — also known as a false negative. A type II error happens when the analyte is actually present, but the method fails to detect it. The probability of a false negative is given by ‘beta’ and has the default value of 0.05 (a 5% chance of a false negative).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#with default values</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lod</span>(linear_model, </span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.05</span>,</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">beta =</span> <span class="fl">0.05</span>,</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="st">"default"</span>,</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">tol =</span> <span class="st">"default"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#with default values</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lod</span>(linear_model, </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.05</span>,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">beta =</span> <span class="fl">0.05</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="st">"default"</span>,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">tol =</span> <span class="st">"default"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$albumin_concentration
 [1] 8.122929
@@ -450,7 +483,7 @@ $absorbance
 </div>
 <p>Or simply…</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lod</span>(linear_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lod</span>(linear_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$albumin_concentration
 [1] 8.122929
@@ -461,27 +494,27 @@ $absorbance
 </div>
 <p>The output gives a list of values, corresponding to the two axes. The LOD is normally stated in units of concentration (the x-axis). You can extract the albumin concentration from the list using the $ sign as below.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lod</span>(linear_model)<span class="sc">$</span>albumin_concentration</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lod</span>(linear_model)<span class="sc">$</span>albumin_concentration</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 8.122929</code></pre>
 </div>
 </div>
 <p>The units of this value are the same as the x-axis. So…</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">"Limit of Detection = "</span>, </span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>      <span class="fu">round</span>(<span class="fu">lod</span>(linear_model)<span class="sc">$</span>albumin_concentration, <span class="dv">2</span>), <span class="co">#rounds to 2 d.p.</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>      <span class="st">"ng/ml"</span>,</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">sep =</span> <span class="st">" "</span>) <span class="co"># adds a space between each of the above</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">"Limit of Detection = "</span>, </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>      <span class="fu">round</span>(<span class="fu">lod</span>(linear_model)<span class="sc">$</span>albumin_concentration, <span class="dv">2</span>), <span class="co">#rounds to 2 d.p.</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>      <span class="st">"ng/ml"</span>,</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">sep =</span> <span class="st">" "</span>) <span class="co"># adds a space between each of the above</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Limit of Detection =  8.12 ng/ml"</code></pre>
 </div>
 </div>
 <p>In the same way, you calculate the Limit of Quantitation using “loq”</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">"Limit of Quantitation = "</span>, </span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>      <span class="fu">round</span>(<span class="fu">loq</span>(linear_model)<span class="sc">$</span>albumin_concentration, <span class="dv">2</span>), <span class="co">#rounds to 2 d.p.</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>      <span class="st">"ng/ml"</span>,</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">sep =</span> <span class="st">" "</span>) <span class="co"># adds a space between each of the above</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">"Limit of Quantitation = "</span>, </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>      <span class="fu">round</span>(<span class="fu">loq</span>(linear_model)<span class="sc">$</span>albumin_concentration, <span class="dv">2</span>), <span class="co">#rounds to 2 d.p.</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>      <span class="st">"ng/ml"</span>,</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">sep =</span> <span class="st">" "</span>) <span class="co"># adds a space between each of the above</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Limit of Quantitation =  15.2 ng/ml"</code></pre>
 </div>

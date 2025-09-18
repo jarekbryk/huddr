@@ -1,10 +1,10 @@
 # Limit of Detection
 
-The aim of this guide is to show you how to calculate the Limit of Detection (LOD) and the Limit of Quantitation (LOQ) using R. For a detailed explanation of these terms, please see [Armbruster and Pry, 2008](https://pmc.ncbi.nlm.nih.gov/articles/PMC2556583/#sec3).
+The aim of this guide is to show you how to calculate the Limit of Detection (LOD) and the Limit of Quantitation (LOQ) using R. For a detailed explanation of these terms, please see [Armbruster and Pry 2008](https://pmc.ncbi.nlm.nih.gov/articles/PMC2556583/#sec3).
 
-First, install the packages and load the libraries
+First, install the packages and load the libraries that we need.
 
-```{r}
+```{r warning=FALSE}
 # install.packages("chemCal")
 library(chemCal)
 library(tidyverse)
@@ -12,7 +12,7 @@ library(tidyverse)
 
 ### Getting the data
 
-The sample data below is from an ELISA standard curve. The absorbance was measured at 450 nm for seven known concentrations of albumin (ng per ml). Optionally, you can [read about this ELISA here](https://www.abcam.com/en-us/products/elisa-kits/human-albumin-elisa-kit-ab108788?). The manufacturer claims that this kit "Detects albumin levels from 3.125 ng/ml)". Lets see if our real student data below compares with this. Load in the data below.
+The sample data below is from an ELISA standard curve. You can [read about this ELISA here](https://www.abcam.com/en-us/products/elisa-kits/human-albumin-elisa-kit-ab108788). The absorbance was measured at 450 nm for seven known concentrations of albumin (ng per ml). The manufacturer claims that this kit "Detects albumin levels from 3.125 ng/ml)". Lets see if our real student data compares with this. Load in the data below.
 
 ```{r}
 albumin_concentration <- c(0.0, 1.4, 2.8, 5.6, 11.1, 22.2, 44.4)
@@ -23,7 +23,8 @@ df <- tibble(albumin_concentration = albumin_concentration, absorbance = absorba
 Take a quick look at the data. 
 
 ```{r}
-df |> ggplot(aes(x = albumin_concentration, y = absorbance)) +
+df |> 
+	ggplot(aes(x = albumin_concentration, y = absorbance)) +
   geom_point() +
   geom_line() +
   xlab("[Albumin] (ng/ml)") +
@@ -43,6 +44,34 @@ The chemCal package has a function for generating a plot of the calibration data
 ```{r}
 #generate a graph
 calplot(linear_model, xlab = "[Albumin] (ng/ml)", ylab = "Absorbance (450 nm)")
+```
+The two kinds of uncertainty bands around the calibration fitted line are 95% confidence and prediction bands (if you use the default settings). Confidence bands show the uncertainty in the estimate of the average response at each concentration of albumin (or other analyte) — how sure we are about the position of the calibration curve itself. These bands are relatively narrow as they only reflect uncertainty in the fitted regression line. 
+
+Prediction bands show the range where we expect new individual measurements to fall at a given concentration. They are always wider because they include not just the uncertainty in the calibration line but also the natural scatter of measurements around that line. Prediction intervals are crucial for LOD: they indicate how much a single absorbance reading could vary at low analyte concentrations, and therefore how confidently we can distinguish a true signal from background noise.
+
+Here is the same plot generated with `tidyverse` functions, starting with the same linear model of the `df` dataset; you will need package `broom` to extract fitted and predicted values from the model object:
+
+```{r warning=FALSE}
+library(broom)
+
+# Confidence band
+confidence_df <- augment(linear_model, df, interval = "confidence") |>
+  select(albumin_concentration, fitted = .fitted, conf_lower = .lower, conf_upper = .upper)
+
+# Prediction band
+prediction_df <- augment(linear_model, newdata = df, interval = "prediction") |>
+  select(albumin_concentration, pred_lower = .lower, pred_upper = .upper)
+
+# Combine the two datasets
+plot_df <- full_join(confidence_df, prediction_df, by = "albumin_concentration")
+
+# Plot with both confidence and prediction intervals
+plot_df |>
+	ggplot() + aes(x = albumin_concentration, y = fitted) + geom_line() +
+	geom_ribbon(aes(x = albumin_concentration, ymin = pred_lower, ymax = pred_upper, fill = "Prediction (95%)"), alpha = 0.15) +
+	geom_ribbon(aes(x = albumin_concentration, ymin = conf_lower, ymax = conf_upper, fill = "Confidence (95%)"), alpha = 0.15) +
+  labs(x = "[Albumin] (ng/ml)", y = "Absorbance (450 nm)", fill = NULL) +
+  theme_minimal()
 ```
 
 ### Calculating the Limit of Detection (LOD) (or minimum detectable value):
