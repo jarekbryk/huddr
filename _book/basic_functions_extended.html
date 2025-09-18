@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>9&nbsp; A bit more about basic functions – Hudd-R book</title>
+<title>12&nbsp; A bit more about basic functions – Hudd-R book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -118,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./loading_packages_and_data.html">Part 2: R fundamentals</a></li><li class="breadcrumb-item"><a href="./basic_functions_extended.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">A bit more about basic functions</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./loading_packages_and_data.html">Part 3: R fundamentals</a></li><li class="breadcrumb-item"><a href="./basic_functions_extended.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">A bit more about basic functions</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -143,22 +143,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Part 1: Preparations</span></a>
+ <span class="menu-text">Part 1: Introduction</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -166,26 +154,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./installation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Installing R and RStudio on your computer</span></span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./setup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Setting up RStudio</span></span></a>
+  <a href="./tidyverse_vs_baser.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tidyverse vs base R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posit_cloud.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Using RStudio in a web browser</span></span></a>
+  <a href="./llms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Note on the LLMs</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./how_to_use_a_computer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">How to use a computer</span></span></a>
+  <a href="./how_to_contribute.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Improving this book</span></span></a>
   </div>
 </li>
       </ul>
@@ -193,7 +181,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Part 2: R fundamentals</span></a>
+ <span class="menu-text">Part 2: Preparations</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -201,44 +189,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./loading_packages_and_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Loading and Installing Packages</span></span></a>
+  <a href="./how_to_use_a_computer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">How to use a computer</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dealing_with_missing_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Deadling with missing data</span></span></a>
+  <a href="./installation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Installing R and RStudio on your computer</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./basic_functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Basic R functions</span></span></a>
+  <a href="./setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Setting up RStudio</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./basic_functions_extended.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">A bit more about basic functions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./joining_functions_extended.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Joining functions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./pivot_functions_extended.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Even more about pivot functions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./graph_functions_extended.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Graph Functions</span></span></a>
+  <a href="./posit_cloud.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Using RStudio in a web browser</span></span></a>
   </div>
 </li>
       </ul>
@@ -246,7 +216,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Part 3: Statistical tests</span></a>
+ <span class="menu-text">Part 3: R fundamentals</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -254,8 +224,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./basic_statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Descriptive statistics</span></span></a>
+  <a href="./loading_packages_and_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Loading and Installing Packages</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dealing_with_missing_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Deadling with missing data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./basic_functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Basic R functions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./basic_functions_extended.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">A bit more about basic functions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./joining_functions_extended.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Joining functions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pivot_functions_extended.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Even more about pivot functions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./graph_functions_extended.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Graph Functions</span></span></a>
   </div>
 </li>
       </ul>
@@ -263,7 +269,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Part 4: Additional Exercises</span></a>
+ <span class="menu-text">Part 4: Statistical tests</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -271,47 +277,64 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./basic_statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Descriptive statistics</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part 5: Additional Exercises</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./practice_questions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Practice Questions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Practice Questions</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Part 5: Functions and loops</span></span>
+ <span class="menu-text">Part 6: Functions and loops</span></span>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text">Part 6: Topic-specific approaches</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part 7: Topic-specific approaches</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./quality_control.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Quality control analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Quality control analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./limit_of_detection.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Limit of Detection</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Limit of Detection</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./genomics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Genomics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Genomics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./phylogenetics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Phylogenetics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Phylogenetics</span></span></a>
   </div>
 </li>
       </ul>
@@ -332,45 +355,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#filter" id="toc-filter" class="nav-link active" data-scroll-target="#filter"><span class="header-section-number">9.1</span> Filter</a>
+  <li><a href="#filter" id="toc-filter" class="nav-link active" data-scroll-target="#filter"><span class="header-section-number">12.1</span> Filter</a>
   <ul class="collapse">
-  <li><a href="#useful-filter-functions-and-parameters" id="toc-useful-filter-functions-and-parameters" class="nav-link" data-scroll-target="#useful-filter-functions-and-parameters"><span class="header-section-number">9.1.1</span> Useful filter functions and parameters</a></li>
+  <li><a href="#useful-filter-functions-and-parameters" id="toc-useful-filter-functions-and-parameters" class="nav-link" data-scroll-target="#useful-filter-functions-and-parameters"><span class="header-section-number">12.1.1</span> Useful filter functions and parameters</a></li>
   </ul></li>
-  <li><a href="#select" id="toc-select" class="nav-link" data-scroll-target="#select"><span class="header-section-number">9.2</span> Select</a>
+  <li><a href="#select" id="toc-select" class="nav-link" data-scroll-target="#select"><span class="header-section-number">12.2</span> Select</a>
   <ul class="collapse">
-  <li><a href="#useful-select-functions" id="toc-useful-select-functions" class="nav-link" data-scroll-target="#useful-select-functions"><span class="header-section-number">9.2.1</span> Useful select functions</a></li>
+  <li><a href="#useful-select-functions" id="toc-useful-select-functions" class="nav-link" data-scroll-target="#useful-select-functions"><span class="header-section-number">12.2.1</span> Useful select functions</a></li>
   </ul></li>
-  <li><a href="#count" id="toc-count" class="nav-link" data-scroll-target="#count"><span class="header-section-number">9.3</span> Count</a>
+  <li><a href="#count" id="toc-count" class="nav-link" data-scroll-target="#count"><span class="header-section-number">12.3</span> Count</a>
   <ul class="collapse">
-  <li><a href="#useful-count-parameters-and-functions" id="toc-useful-count-parameters-and-functions" class="nav-link" data-scroll-target="#useful-count-parameters-and-functions"><span class="header-section-number">9.3.1</span> Useful count parameters and functions</a></li>
+  <li><a href="#useful-count-parameters-and-functions" id="toc-useful-count-parameters-and-functions" class="nav-link" data-scroll-target="#useful-count-parameters-and-functions"><span class="header-section-number">12.3.1</span> Useful count parameters and functions</a></li>
   </ul></li>
-  <li><a href="#mutate" id="toc-mutate" class="nav-link" data-scroll-target="#mutate"><span class="header-section-number">9.4</span> Mutate</a>
+  <li><a href="#mutate" id="toc-mutate" class="nav-link" data-scroll-target="#mutate"><span class="header-section-number">12.4</span> Mutate</a>
   <ul class="collapse">
-  <li><a href="#useful-mutate-functions" id="toc-useful-mutate-functions" class="nav-link" data-scroll-target="#useful-mutate-functions"><span class="header-section-number">9.4.1</span> Useful mutate functions</a></li>
+  <li><a href="#useful-mutate-functions" id="toc-useful-mutate-functions" class="nav-link" data-scroll-target="#useful-mutate-functions"><span class="header-section-number">12.4.1</span> Useful mutate functions</a></li>
   </ul></li>
-  <li><a href="#arrange" id="toc-arrange" class="nav-link" data-scroll-target="#arrange"><span class="header-section-number">9.5</span> Arrange</a>
+  <li><a href="#arrange" id="toc-arrange" class="nav-link" data-scroll-target="#arrange"><span class="header-section-number">12.5</span> Arrange</a>
   <ul class="collapse">
-  <li><a href="#useful-arrange-functions" id="toc-useful-arrange-functions" class="nav-link" data-scroll-target="#useful-arrange-functions"><span class="header-section-number">9.5.1</span> Useful arrange functions</a></li>
+  <li><a href="#useful-arrange-functions" id="toc-useful-arrange-functions" class="nav-link" data-scroll-target="#useful-arrange-functions"><span class="header-section-number">12.5.1</span> Useful arrange functions</a></li>
   </ul></li>
-  <li><a href="#group_by" id="toc-group_by" class="nav-link" data-scroll-target="#group_by"><span class="header-section-number">9.6</span> Group_by</a></li>
-  <li><a href="#summarise" id="toc-summarise" class="nav-link" data-scroll-target="#summarise"><span class="header-section-number">9.7</span> Summarise</a>
+  <li><a href="#group_by" id="toc-group_by" class="nav-link" data-scroll-target="#group_by"><span class="header-section-number">12.6</span> Group_by</a></li>
+  <li><a href="#summarise" id="toc-summarise" class="nav-link" data-scroll-target="#summarise"><span class="header-section-number">12.7</span> Summarise</a>
   <ul class="collapse">
-  <li><a href="#useful-summary-functions-and-parameters" id="toc-useful-summary-functions-and-parameters" class="nav-link" data-scroll-target="#useful-summary-functions-and-parameters"><span class="header-section-number">9.7.1</span> Useful summary functions and parameters</a></li>
+  <li><a href="#useful-summary-functions-and-parameters" id="toc-useful-summary-functions-and-parameters" class="nav-link" data-scroll-target="#useful-summary-functions-and-parameters"><span class="header-section-number">12.7.1</span> Useful summary functions and parameters</a></li>
   </ul></li>
-  <li><a href="#tibble" id="toc-tibble" class="nav-link" data-scroll-target="#tibble"><span class="header-section-number">9.8</span> Tibble</a>
+  <li><a href="#tibble" id="toc-tibble" class="nav-link" data-scroll-target="#tibble"><span class="header-section-number">12.8</span> Tibble</a>
   <ul class="collapse">
-  <li><a href="#useful-tibble-functions" id="toc-useful-tibble-functions" class="nav-link" data-scroll-target="#useful-tibble-functions"><span class="header-section-number">9.8.1</span> Useful tibble functions</a></li>
+  <li><a href="#useful-tibble-functions" id="toc-useful-tibble-functions" class="nav-link" data-scroll-target="#useful-tibble-functions"><span class="header-section-number">12.8.1</span> Useful tibble functions</a></li>
   </ul></li>
-  <li><a href="#drop_na" id="toc-drop_na" class="nav-link" data-scroll-target="#drop_na"><span class="header-section-number">9.9</span> Drop_na</a></li>
+  <li><a href="#drop_na" id="toc-drop_na" class="nav-link" data-scroll-target="#drop_na"><span class="header-section-number">12.9</span> Drop_na</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./loading_packages_and_data.html">Part 2: R fundamentals</a></li><li class="breadcrumb-item"><a href="./basic_functions_extended.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">A bit more about basic functions</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./loading_packages_and_data.html">Part 3: R fundamentals</a></li><li class="breadcrumb-item"><a href="./basic_functions_extended.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">A bit more about basic functions</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">A bit more about basic functions</span></h1>
+<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">A bit more about basic functions</span></h1>
 </div>
 
 
@@ -387,8 +410,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="filter" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="filter"><span class="header-section-number">9.1</span> Filter</h2>
+<section id="filter" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="filter"><span class="header-section-number">12.1</span> Filter</h2>
 <p>The <code>filter()</code> function allows you to pick rows in a data set. To use this function you simply need to specify the requirement/condition by which you want to filter your data.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -411,8 +434,8 @@ You do this by writing:
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>rodents <span class="sc">|&gt;</span> </span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(species_id<span class="sc">==</span><span class="st">"NL"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="useful-filter-functions-and-parameters" class="level3" data-number="9.1.1">
-<h3 data-number="9.1.1" class="anchored" data-anchor-id="useful-filter-functions-and-parameters"><span class="header-section-number">9.1.1</span> Useful filter functions and parameters</h3>
+<section id="useful-filter-functions-and-parameters" class="level3" data-number="12.1.1">
+<h3 data-number="12.1.1" class="anchored" data-anchor-id="useful-filter-functions-and-parameters"><span class="header-section-number">12.1.1</span> Useful filter functions and parameters</h3>
 <blockquote class="blockquote">
 <ul>
 <li><code>is.na()</code> - Allows you to check for missing values.</li>
@@ -423,8 +446,8 @@ You do this by writing:
 <hr>
 </section>
 </section>
-<section id="select" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="select"><span class="header-section-number">9.2</span> Select</h2>
+<section id="select" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="select"><span class="header-section-number">12.2</span> Select</h2>
 <p>The <code>select()</code> function allows you to pick/keep specific columns from a data set.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -447,8 +470,8 @@ You do this by writing:
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>rodents <span class="sc">|&gt;</span> </span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(species_id)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="useful-select-functions" class="level3" data-number="9.2.1">
-<h3 data-number="9.2.1" class="anchored" data-anchor-id="useful-select-functions"><span class="header-section-number">9.2.1</span> Useful select functions</h3>
+<section id="useful-select-functions" class="level3" data-number="12.2.1">
+<h3 data-number="12.2.1" class="anchored" data-anchor-id="useful-select-functions"><span class="header-section-number">12.2.1</span> Useful select functions</h3>
 <blockquote class="blockquote">
 <ul>
 <li><code>c()</code> - Allows you to combine different selections.</li>
@@ -460,8 +483,8 @@ You do this by writing:
 <hr>
 </section>
 </section>
-<section id="count" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="count"><span class="header-section-number">9.3</span> Count</h2>
+<section id="count" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="count"><span class="header-section-number">12.3</span> Count</h2>
 <p>The <code>count()</code> function counts the number of occurrences of all distinct elements in a column.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -484,8 +507,8 @@ You do this by writing:
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>rodents <span class="sc">|&gt;</span> </span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(species_id)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="useful-count-parameters-and-functions" class="level3" data-number="9.3.1">
-<h3 data-number="9.3.1" class="anchored" data-anchor-id="useful-count-parameters-and-functions"><span class="header-section-number">9.3.1</span> Useful count parameters and functions</h3>
+<section id="useful-count-parameters-and-functions" class="level3" data-number="12.3.1">
+<h3 data-number="12.3.1" class="anchored" data-anchor-id="useful-count-parameters-and-functions"><span class="header-section-number">12.3.1</span> Useful count parameters and functions</h3>
 <blockquote class="blockquote">
 <ul>
 <li><code>sort = TRUE/FALSE</code> - This parameters dictates the order in which the variables will be arranged, TRUE will order the counts in a descending order, wile FALSE will order the counts in an ascending order.</li>
@@ -494,8 +517,8 @@ You do this by writing:
 <hr>
 </section>
 </section>
-<section id="mutate" class="level2" data-number="9.4">
-<h2 data-number="9.4" class="anchored" data-anchor-id="mutate"><span class="header-section-number">9.4</span> Mutate</h2>
+<section id="mutate" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="mutate"><span class="header-section-number">12.4</span> Mutate</h2>
 <p>The <code>mutate()</code> function allows you to create and modify columns from a data set. - It can create new columns as functions of existing variables.</p>
 <ul>
 <li>It can modify existing columns.</li>
@@ -514,8 +537,8 @@ You do this by writing:
 <p>mutate(data set name, new/existing column name = function/expression)</p>
 </div>
 </div>
-<section id="useful-mutate-functions" class="level3" data-number="9.4.1">
-<h3 data-number="9.4.1" class="anchored" data-anchor-id="useful-mutate-functions"><span class="header-section-number">9.4.1</span> Useful mutate functions</h3>
+<section id="useful-mutate-functions" class="level3" data-number="12.4.1">
+<h3 data-number="12.4.1" class="anchored" data-anchor-id="useful-mutate-functions"><span class="header-section-number">12.4.1</span> Useful mutate functions</h3>
 <blockquote class="blockquote">
 <ul>
 <li><code>+</code>, <code>-</code>, <code>log()</code>, <code>*</code>, <code>/</code> - Mathematical opperators</li>
@@ -540,8 +563,8 @@ You do this by writing:
 <hr>
 </section>
 </section>
-<section id="arrange" class="level2" data-number="9.5">
-<h2 data-number="9.5" class="anchored" data-anchor-id="arrange"><span class="header-section-number">9.5</span> Arrange</h2>
+<section id="arrange" class="level2" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="arrange"><span class="header-section-number">12.5</span> Arrange</h2>
 <p>The <code>arrange()</code> function allows for the ordering of the data by different variables. - If you input multiple columns they will be sorted hierarchically.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -564,8 +587,8 @@ You do this by writing:
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>rodents <span class="sc">|&gt;</span> </span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(species_id, sex)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="useful-arrange-functions" class="level3" data-number="9.5.1">
-<h3 data-number="9.5.1" class="anchored" data-anchor-id="useful-arrange-functions"><span class="header-section-number">9.5.1</span> Useful arrange functions</h3>
+<section id="useful-arrange-functions" class="level3" data-number="12.5.1">
+<h3 data-number="12.5.1" class="anchored" data-anchor-id="useful-arrange-functions"><span class="header-section-number">12.5.1</span> Useful arrange functions</h3>
 <blockquote class="blockquote">
 <p><code>desc()</code> - Allows you to sort in descending order as the default order of the <code>arrange()</code> funcrion is ascending.</p>
 </blockquote>
@@ -576,8 +599,8 @@ You do this by writing:
 <hr>
 </section>
 </section>
-<section id="group_by" class="level2" data-number="9.6">
-<h2 data-number="9.6" class="anchored" data-anchor-id="group_by"><span class="header-section-number">9.6</span> Group_by</h2>
+<section id="group_by" class="level2" data-number="12.6">
+<h2 data-number="12.6" class="anchored" data-anchor-id="group_by"><span class="header-section-number">12.6</span> Group_by</h2>
 <p>The <code>group_by()</code> function uses an existing table to form a grouped table by splitting the data sate based on one or more variables.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -602,8 +625,8 @@ You do this by writing:
 </div>
 <hr>
 </section>
-<section id="summarise" class="level2" data-number="9.7">
-<h2 data-number="9.7" class="anchored" data-anchor-id="summarise"><span class="header-section-number">9.7</span> Summarise</h2>
+<section id="summarise" class="level2" data-number="12.7">
+<h2 data-number="12.7" class="anchored" data-anchor-id="summarise"><span class="header-section-number">12.7</span> Summarise</h2>
 <p>The <code>summarise()</code> function allows you to calculate summary statistics and is usually used on grouped data produced by <code>group_by()</code>, as it creates one row for each combination of grouping variables.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -618,8 +641,8 @@ You do this by writing:
 <p>summarise(data set name, new column name = function(column name))</p>
 </div>
 </div>
-<section id="useful-summary-functions-and-parameters" class="level3" data-number="9.7.1">
-<h3 data-number="9.7.1" class="anchored" data-anchor-id="useful-summary-functions-and-parameters"><span class="header-section-number">9.7.1</span> Useful summary functions and parameters</h3>
+<section id="useful-summary-functions-and-parameters" class="level3" data-number="12.7.1">
+<h3 data-number="12.7.1" class="anchored" data-anchor-id="useful-summary-functions-and-parameters"><span class="header-section-number">12.7.1</span> Useful summary functions and parameters</h3>
 <ul>
 <li><code>mean()</code></li>
 <li><code>median()</code></li>
@@ -641,8 +664,8 @@ You do this by writing:
 <hr>
 </section>
 </section>
-<section id="tibble" class="level2" data-number="9.8">
-<h2 data-number="9.8" class="anchored" data-anchor-id="tibble"><span class="header-section-number">9.8</span> Tibble</h2>
+<section id="tibble" class="level2" data-number="12.8">
+<h2 data-number="12.8" class="anchored" data-anchor-id="tibble"><span class="header-section-number">12.8</span> Tibble</h2>
 <p>The <code>tibble()</code> function allows you to create new data frames.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -657,8 +680,8 @@ You do this by writing:
 <p>tibble(data set name, column name 1 = variables, comuln name 2 = variables, …)</p>
 </div>
 </div>
-<section id="useful-tibble-functions" class="level3" data-number="9.8.1">
-<h3 data-number="9.8.1" class="anchored" data-anchor-id="useful-tibble-functions"><span class="header-section-number">9.8.1</span> Useful tibble functions</h3>
+<section id="useful-tibble-functions" class="level3" data-number="12.8.1">
+<h3 data-number="12.8.1" class="anchored" data-anchor-id="useful-tibble-functions"><span class="header-section-number">12.8.1</span> Useful tibble functions</h3>
 <blockquote class="blockquote">
 <ul>
 <li><code>c()</code> - Allows you to combine different selections.</li>
@@ -680,8 +703,8 @@ You do this by writing:
 <hr>
 </section>
 </section>
-<section id="drop_na" class="level2" data-number="9.9">
-<h2 data-number="9.9" class="anchored" data-anchor-id="drop_na"><span class="header-section-number">9.9</span> Drop_na</h2>
+<section id="drop_na" class="level2" data-number="12.9">
+<h2 data-number="12.9" class="anchored" data-anchor-id="drop_na"><span class="header-section-number">12.9</span> Drop_na</h2>
 <p>The <code>drop_na()</code> function allows you to to drop all the rows containing missing values.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1317,12 +1340,12 @@ window.onload = function() {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./basic_functions.html" class="pagination-link" aria-label="Basic R functions">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Basic R functions</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Basic R functions</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./joining_functions_extended.html" class="pagination-link" aria-label="Joining functions">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Joining functions</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Joining functions</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

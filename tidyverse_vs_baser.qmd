@@ -1,0 +1,9 @@
+# Tidyverse vs base R
+
+This book is almost entirely written with the `tidyverse` dialect of R in mind, using RStudio as an integrated development environment (IDE). Base R is only mentioned when we get to square brackets' indexing of lists in the advanced chapters on functions and loops (which we do not teach until the final year). The reason is that I consider `tidyverse` to be easier for beginners to grasp and 99% of what we need to do this year is available through `tidyverse`. `Tidyverse` packages have better help sources available online and they are consistent: operating on data frames with relatively small number of usefully-named functions makes it easier to climb the learning curve. Our recommended textbook to accompany the classes is the second edition of [R for Data Science](https://r4ds.hadley.nz) by Hadley Wickham, Mine Cetinkaya-Rundel and Garett Grolemund, which is freely available online.
+
+For students, I highly recommend reading the following sources to understand the base R vs. `tidyverse` story:
+
+- For the historical overview, read ([or watch](https://www.youtube.com/watch?v=5033jBHFiHE)) Roger Penn's [Teaching R to New Users - From tapply to the Tidyverse](https://simplystatistics.org/posts/2018-07-12-use-r-keynote-2018/).
+- David Robinson's [Teach the tidyverse to beginners](http://varianceexplained.org/r/teach-tidyverse/) post that first inspired me to switch to `tidyverse` after a year of teaching base R + `ggplot`.
+- Not everyone agrees that `tidyverse` is better, or is better for teaching R, and the two recent contrarian views come from Norm Matloff ([Teaching R in a Kinder, Gentler, More Effective Manner](https://github.com/matloff/TidyverseSkeptic)) and Robert München ([Why R is Hard to Learn](https://r4stats.com/articles/why-r-is-hard-to-learn/)).

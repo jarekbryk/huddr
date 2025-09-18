@@ -1,0 +1,11 @@
+# Note on the LLMs
+
+We are aware of the 800-pound _Gorilla gorilla gorilla_ in the room: we live in times where any basic programming task can be effectively (if not efficiently or exactly correctly) completed by a large language model. However, in order to use LLMs effectively, students must understand what they are doing, which is not the case for the majority of them in the first few weeks of coding. Without understanding why and how things work, students are unable to judge the LLM's output; even when they copy-paste the code and it works, they will not be able to solve a similar or related task next time.
+
+This phenomenon - that LLMs are useful only if you already have a good idea what you need to do - is discussed very well by prof. Ethan Mallick in his post [15 Times to use AI, and 5 Not to](https://www.oneusefulthing.org/p/15-times-to-use-ai-and-5-not-to). His final paragraph (emphasis mine):
+
+> Knowing when to use AI turns out to be a form of wisdom, not just technical knowledge. _Like most wisdom, it's somewhat paradoxical: AI is often most useful where we're already expert enough to spot its mistakes, yet least helpful in the deep work that made us experts in the first place. It works best for tasks we could do ourselves but shouldn't waste time on, yet can actively harm our learning when we use it to skip necessary struggles._ 
+
+Secondly, with support from the LLMs readily available, students can concentrate on extracting meaning from data, effectively using their existing knowledge of biological systems to interpret patterns identified in the data (potentially with help of the LLMs).
+
+At this point, however, we do not directly _teach_ the use of LLMs for coding, as we consider the purpose of these sessions to be to acquire fundamental competencies in programmatic data analysis.

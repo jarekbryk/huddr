@@ -1,0 +1,4 @@
+# Improving this book
+
+This book is open source. It is published under a very generous MIT License so you may use it and its contents however you like (we would appreciate if you let us know if you do!). If you find a mistake or you want to expand it or suggest a better way of explaining things, please either get in touch with Jarek or, even better, submit a pull request directly [on GitHub](https://github.com/jarekbryk/huddr).
+

@@ -6,15 +6,19 @@ book:
     Villa and Jarek Bryk
   date: '2025-02-14'
   chapters:
-  - index.qmd
-  - introduction.qmd
-  - part: 'Part 1: Preparations'
+  - part: 'Part 1: Introduction'
     chapters:
+    - index.qmd
+    - tidyverse_vs_baser.qmd
+    - llms.qmd
+    - how_to_contribute.qmd
+  - part: 'Part 2: Preparations'
+    chapters:
+    - how_to_use_a_computer.qmd
     - installation.qmd
     - setup.qmd
     - posit_cloud.qmd
-    - how_to_use_a_computer.qmd
-  - part: 'Part 2: R fundamentals'
+  - part: 'Part 3: R fundamentals'
     chapters:
     - loading_packages_and_data.qmd
     - dealing_with_missing_data.qmd
@@ -23,14 +27,14 @@ book:
     - joining_functions_extended.qmd
     - pivot_functions_extended.qmd
     - graph_functions_extended.qmd
-  - part: 'Part 3: Statistical tests'
+  - part: 'Part 4: Statistical tests'
     chapters:
     - basic_statistics.qmd
-  - part: 'Part 4: Additional Exercises'
+  - part: 'Part 5: Additional Exercises'
     chapters:
     - practice_questions.qmd
-  - part: 'Part 5: Functions and loops'
-  - part: 'Part 6: Topic-specific approaches'
+  - part: 'Part 6: Functions and loops'
+  - part: 'Part 7: Topic-specific approaches'
     chapters:
     - quality_control.qmd
     - limit_of_detection.qmd

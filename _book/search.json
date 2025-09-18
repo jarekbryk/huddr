@@ -4,95 +4,54 @@
     "href": "index.html",
     "title": "Hudd-R book",
     "section": "",
-    "text": "Preface\nThis is an online book created to facilitate learning R by students at the University of Huddersfield’s Division of Biomedical and Life Sciences. However, unlike other books with tutorials on R, this book is thought of as a quick reference, with lists of core functions, their parameters and code syntax all in one place. We hope that it will help students learning R to overcome the challenges of figuring out how to analyse the data and how to translate this plan into code.",
+    "text": "1 Introduction\nThis is an online book created to facilitate learning R by students at the University of Huddersfield’s Division of Biomedical and Life Sciences. However, unlike other books with tutorials on R, this book is thought of as a quick reference, with lists of core functions, their parameters and code syntax all in one place. We hope that it will help students learning R to overcome the challenges of figuring out how to analyse the data and how to translate this plan into code.\nThis book was co-designed and co-written with a group of second-year students at the University of Huddersfield’s Division of Biomedical and Life Sciences in 24/25, as a resource for themselves and other students to learn R. As it happened, I had a template for the book ready, as I was trying to do it myself for the past two years :-), and the five of us got it done much more effectively. Technically speaking, practically everything in this book can be found in R help pages, but our idea was to put all of the information that we use in the class in a single place to make it easier to find and use.",
     "crumbs": [
-      "Preface"
-    ]
-  },
-  {
-    "objectID": "introduction.html",
-    "href": "introduction.html",
-    "title": "1  Introduction",
-    "section": "",
-    "text": "1.1 How this book is organised\nThis book was co-designed and co-written with a group of second-year students at the University of Huddersfield’s Division of Biomedical and Life Sciences in 24/25, as a resource for themselves and other students to learn R. As it happened, I had a template for the book ready, as I was trying to do it myself for the past two years :-), and the five of us got it done much more effectively. Technically speaking, practically everything in this book can be found in R help pages, but our idea was to put all of the information that we use in the class in a single place to make it easier to find and use.\nThis book is roughly divided into three major sections:",
-    "crumbs": [
+      "Part 1: Introduction",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
   },
   {
-    "objectID": "introduction.html#how-this-book-is-organised",
-    "href": "introduction.html#how-this-book-is-organised",
-    "title": "1  Introduction",
-    "section": "",
-    "text": "1.1.1 Section 1\n\nPart 1 deals with preparing your computer for R - installing it, adjusting interface of RStudio, installing packages we use in the class and setting up the working environment in the browser for those who can only use Chromebooks or tablets. This part also contains an important chapter on how to use a computer, with information on fundamental operations on files and folders in Windows or macOS.\n\n\n\n1.1.2 Section 2\n\nPart 2 contains the key content of the book: information on the functions we use (including plotting with ggplot) and their parameters, examples of their use, as well as information on loading data and dealing with missing data. We anticipate that this is the part that students will be using most often.\nPart 3 contains information on statistical tests, but it is not a statistics textbook. This part concentrates on how to run statistical tests that you learned last year in R, rather than explaining when to run them, how to check their assumptions and how to interpret their results.\nPart 4 contains self-checking exercises that run entirely in the browser and are useful to make sure you are “getting it” as you go along.\n\n\n\n1.1.3 Section 3\n\nPart 5 deals with loops and functions, topics we introduce fully in the final year, but which occasionally come up in the second year during the analyses. This part is not developed yet, but when it will be, it will be using the “nest-function-map” approach from the purrr package.\nPart 6 contains several chapters, each of which deals with a specific topic, useful in other modules or specific assignments. Currently chapters on quality control and limits of detection are ready (both useful in Professional Skills module assignments), with chapters on genomics and phylogenetics not developed yet (both will be useful in the Current Topics in Molecular Life Sciences assginments).\n\n\n\n1.1.4 Tidyverse vs base R\nThis book is almost entirely written with the tidyverse dialect of R in mind, using RStudio as an integrated development environment (IDE). Base R is only mentioned when we get to square brackets’ indexing of lists in the advanced chapters on functions and loops (which we do not teach until the final year). The reason is that I consider tidyverse to be easier for beginners to grasp and 99% of what we need to do this year is available through tidyverse. Tidyverse packages have better help sources available online and they are consistent: operating on data frames with relatively small number of usefully-named functions makes it easier to climb the learning curve. Our recommended textbook to accompany the classes is the second edition of R for Data Science by Hadley Wickham, Mine Cetinkaya-Rundel and Garett Grolemund, which is freely available online.\nFor students, I highly recommend reading the following sources to understand the base R vs. tidyverse story:\n\nFor the historical overview, read (or watch) Roger Penn’s Teaching R to New Users - From tapply to the Tidyverse.\nDavid Robinson’s Teach the tidyverse to beginners post that first inspired me to switch to tidyverse after a year of teaching base R + ggplot.\nNot everyone agrees that tidyverse is better, or is better for teaching R, and the two recent contrarian views come from Norm Matloff (Teaching R in a Kinder, Gentler, More Effective Manner) and Robert München (Why R is Hard to Learn).\n\n\n\n1.1.5 How to use a computer\nNotably (and importantly for me as a tutor and module leader of the module where we teach R), this book contains a chapter on how to use a computer. In my experience in teaching R to undergraduates, many students struggle with operating a computer, which makes learning the hard stuff (data science and programming in R) even trickier. In a recent talk (discussing students’ attitudes to learning coding) I presented this slide, which listed common issues I witness every year:\n\nThe chapter How to use a computer contains guidelines and animated gifs demonstrating how to accomplish basic operations on files and folders, and explaining the key concepts of paths and file system hierarchy. We very much hope this will be helpful.\nFrom a teaching perspective, a very useful reading in this context is this 30 year-old text (!) by Phil Agre: How to Help Someone Use a Computer. All of his recommendations are still valid today (! again).\n\n\n1.1.6 Note on the LLMs\nWe are aware of the 800-pound Gorilla gorilla gorilla in the room: we live in times where any basic programming task can be effectively (if not efficiently or exactly correctly) completed by a large language model. However, in order to use LLMs effectively, students must understand what they are doing, which is not the case for the majority of them in the first few weeks of coding. Without understanding why and how things work, students are unable to judge the LLM’s output; even when they copy-paste the code and it works, they will not be able to solve a similar or related task next time.\nThis phenomenon - that LLMs are useful only if you already have a good idea what you need to do - is discussed very well by prof. Ethan Mallick in his post 15 Times to use AI, and 5 Not to. His final paragraph (emphasis mine):\n\nKnowing when to use AI turns out to be a form of wisdom, not just technical knowledge. Like most wisdom, it’s somewhat paradoxical: AI is often most useful where we’re already expert enough to spot its mistakes, yet least helpful in the deep work that made us experts in the first place. It works best for tasks we could do ourselves but shouldn’t waste time on, yet can actively harm our learning when we use it to skip necessary struggles.\n\nSecondly, with support from the LLMs readily available, students can concentrate on extracting meaning from data, effectively using their existing knowledge of biological systems to interpret patterns identified in the data (potentially with help of the LLMs).\nAt this point, however, we do not directly teach the use of LLMs for coding, as we consider the purpose of these sessions to be to acquire fundamental competencies in programmatic data analysis.\n\n\n1.1.7 Improving this book\nThis book is open source. It is published under a very generous MIT License so you may use it and its contents however you like (we would appreciate if you let us know if you do!). If you find a mistake or you want to expand it or suggest a better way of explaining things, please either get in touch with Jarek or, even better, submit a pull request directly on GitHub.",
+    "objectID": "index.html#how-this-book-is-organised",
+    "href": "index.html#how-this-book-is-organised",
+    "title": "Hudd-R book",
+    "section": "1.1 How this book is organised",
+    "text": "1.1 How this book is organised\nThis book is roughly divided into three major sections:\n\n1.1.1 Section 1\n\nPart 1 deals with preparing your computer for R - installing it, adjusting interface of RStudio, installing packages we use in the class and setting up the working environment in the browser for those who can only use Chromebooks or tablets. This part also contains an important chapter on how to use a computer, with information on fundamental operations on files and folders in Windows or macOS.\n\n\n\n1.1.2 Section 2\n\nPart 2 contains the key content of the book: information on the functions we use (including plotting with ggplot) and their parameters, examples of their use, as well as information on loading data and dealing with missing data. We anticipate that this is the part that students will be using most often.\nPart 3 contains information on statistical tests, but it is not a statistics textbook. This part concentrates on how to run statistical tests that you learned last year in R, rather than explaining when to run them, how to check their assumptions and how to interpret their results.\nPart 4 contains self-checking exercises that run entirely in the browser and are useful to make sure you are “getting it” as you go along.\n\n\n\n1.1.3 Section 3\n\nPart 5 deals with loops and functions, topics we introduce fully in the final year, but which occasionally come up in the second year during the analyses. This part is not developed yet, but when it will be, it will be using the “nest-function-map” approach from the purrr package.\nPart 6 contains several chapters, each of which deals with a specific topic, useful in other modules or specific assignments. Currently chapters on quality control and limits of detection are ready (both useful in Professional Skills module assignments), with chapters on genomics and phylogenetics not developed yet (both will be useful in the Current Topics in Molecular Life Sciences assginments).\n\n\n\n1.1.4 How to use a computer\nNotably (and importantly for me as a tutor and module leader of the module where we teach R), this book contains a chapter on how to use a computer. In my experience in teaching R to undergraduates, many students struggle with operating a computer, which makes learning the hard stuff (data science and programming in R) even trickier. In a recent talk (discussing students’ attitudes to learning coding) I presented this slide, which listed common issues I witness every year:\n\nThe chapter How to use a computer contains guidelines and animated gifs demonstrating how to accomplish basic operations on files and folders, and explaining the key concepts of paths and file system hierarchy. We very much hope this will be helpful.\nFrom a teaching perspective, a very useful reading in this context is this 30 year-old text (!) by Phil Agre: How to Help Someone Use a Computer. All of his recommendations are still valid today (! again).",
     "crumbs": [
+      "Part 1: Introduction",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
   },
   {
-    "objectID": "installation.html",
-    "href": "installation.html",
-    "title": "2  Installing R and RStudio on your computer",
+    "objectID": "tidyverse_vs_baser.html",
+    "href": "tidyverse_vs_baser.html",
+    "title": "2  Tidyverse vs base R",
     "section": "",
-    "text": "2.1 Installation instructions\nThis step-by-step guide will show you how to install R and R Studio on your personal computer.\nIf you are not familiar with concepts of cloud, file and folder paths and unzipping archived files on your computer, please read the chapter How to use a computer first.\nIn order for your computer to be ready for the installation of R and RStudio, you need to install RTools first (if you are on Windows) or Command Line Tools (if you are on macOS). Please proceed through these instructions in order.\nOnce you have successfully installed RTools, R and RStudio on your computer, go to the next section Setting up R and RStudio",
+    "text": "This book is almost entirely written with the tidyverse dialect of R in mind, using RStudio as an integrated development environment (IDE). Base R is only mentioned when we get to square brackets’ indexing of lists in the advanced chapters on functions and loops (which we do not teach until the final year). The reason is that I consider tidyverse to be easier for beginners to grasp and 99% of what we need to do this year is available through tidyverse. Tidyverse packages have better help sources available online and they are consistent: operating on data frames with relatively small number of usefully-named functions makes it easier to climb the learning curve. Our recommended textbook to accompany the classes is the second edition of R for Data Science by Hadley Wickham, Mine Cetinkaya-Rundel and Garett Grolemund, which is freely available online.\nFor students, I highly recommend reading the following sources to understand the base R vs. tidyverse story:\n\nFor the historical overview, read (or watch) Roger Penn’s Teaching R to New Users - From tapply to the Tidyverse.\nDavid Robinson’s Teach the tidyverse to beginners post that first inspired me to switch to tidyverse after a year of teaching base R + ggplot.\nNot everyone agrees that tidyverse is better, or is better for teaching R, and the two recent contrarian views come from Norm Matloff (Teaching R in a Kinder, Gentler, More Effective Manner) and Robert München (Why R is Hard to Learn).",
     "crumbs": [
-      "Part 1: Preparations",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing R and RStudio on your computer</span>"
+      "Part 1: Introduction",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Tidyverse vs base R</span>"
     ]
   },
   {
-    "objectID": "installation.html#installation-instructions",
-    "href": "installation.html#installation-instructions",
-    "title": "2  Installing R and RStudio on your computer",
+    "objectID": "llms.html",
+    "href": "llms.html",
+    "title": "3  Note on the LLMs",
     "section": "",
-    "text": "For WindowsFor macOS\n\n\n\n2.1.1 Download and install RTools\nInstructions are available at https://cran.r-project.org/bin/windows/Rtools/. Remember to download the latest version of RTools.\n\n\n2.1.2 Download and install R\nUse this link to download and install R: https://www.stats.bris.ac.uk/R/bin/windows/base/\n\n\n2.1.3 Download and install RStudio\nUse this link: https://posit.co/download/rstudio-desktop/ and click on the button “Install RStudio”.\n\n\n\n\n2.1.4 Download and install Command Line Tools\n\nOpen the Terminal app on your Mac.\nCopy and paste (or type) the following command: xcode-select --install, then press “Enter”.\nFollow the instructions. Note that the download may take a while as it is a large file.\n\n\n\n2.1.5 Download and install R\nUse this link to download and install R: https://www.stats.bris.ac.uk/R/bin/macosx/base/\n\n\n2.1.6 Download and install RStudio\nUse this link: https://posit.co/download/rstudio-desktop/. Click on the button “Install RStudio”.",
+    "text": "We are aware of the 800-pound Gorilla gorilla gorilla in the room: we live in times where any basic programming task can be effectively (if not efficiently or exactly correctly) completed by a large language model. However, in order to use LLMs effectively, students must understand what they are doing, which is not the case for the majority of them in the first few weeks of coding. Without understanding why and how things work, students are unable to judge the LLM’s output; even when they copy-paste the code and it works, they will not be able to solve a similar or related task next time.\nThis phenomenon - that LLMs are useful only if you already have a good idea what you need to do - is discussed very well by prof. Ethan Mallick in his post 15 Times to use AI, and 5 Not to. His final paragraph (emphasis mine):\n\nKnowing when to use AI turns out to be a form of wisdom, not just technical knowledge. Like most wisdom, it’s somewhat paradoxical: AI is often most useful where we’re already expert enough to spot its mistakes, yet least helpful in the deep work that made us experts in the first place. It works best for tasks we could do ourselves but shouldn’t waste time on, yet can actively harm our learning when we use it to skip necessary struggles.\n\nSecondly, with support from the LLMs readily available, students can concentrate on extracting meaning from data, effectively using their existing knowledge of biological systems to interpret patterns identified in the data (potentially with help of the LLMs).\nAt this point, however, we do not directly teach the use of LLMs for coding, as we consider the purpose of these sessions to be to acquire fundamental competencies in programmatic data analysis.",
     "crumbs": [
-      "Part 1: Preparations",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing R and RStudio on your computer</span>"
+      "Part 1: Introduction",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Note on the LLMs</span>"
     ]
   },
   {
-    "objectID": "setup.html",
-    "href": "setup.html",
-    "title": "3  Setting up RStudio",
+    "objectID": "how_to_contribute.html",
+    "href": "how_to_contribute.html",
+    "title": "4  Improving this book",
     "section": "",
-    "text": "Once R and RStudio are installed, go through the following steps to prepare them for work on the module. But before you begin, make sure about these things:\n\n\n\n\n\n\nTip\n\n\n\nDo not put spaces in file or folder names. Use - or _ or DifferentCase to separate different parts of the name, for example: Research-Skills not Research Skills.\n\n\n\n\n\n\n\n\nTip\n\n\n\nIf you put your project folder on OneDrive (or other cloud service platform), you will be able to access your files and data from any computer where you are logged in to OneDrive, not just from computers in the computer labs.\n\n\n\n3.0.1 Set up project structure for the module\nAn animation showing the whole process:\n\n\n3.0.1.1 Step by step instructions\n\nOpen RStudio.\nSelect File → New project located on the top left of the screen (if you are using a Mac put your mouse to the top and that will make the options appear) and then, in the window that appears, select New directory, then again select New project.\nIn the form that appears, under Directory name:, give your project directory a useful name (I recommend format modulecode_year, e.g. SIB2001_2425), and under Create a project under subdirectory of: select a convenient place on your computer to put it (I strongly recommend your university folder (OneDrive - University of Huddersfield)). Then click Create Project. RStudio will create your project folder and refresh the main window.\nIn the RStudio bottom-right panel, click New Folder and create the first folder; name it code. Repeat this step twice more to add folders: data and output.\n\n\n\n\n3.0.2 Adjust the RStudio interface\n\n\nSelect menu Tools → Global Options and then uncheck option Restore .RData into workspace at startup and set Save workspace to .RData on exit to Never.\nSelect the section Code on the left side of the window and select the option Use native pipe operator\nConfirm by clicking OK (in the bottom right corder of the window)\n\n\n\n\n\n\n\nYou are now ready\n\n\n\nYou can now follow all the code that we do in the class and in the other resources mentioned on Brightspace.",
+    "text": "This book is open source. It is published under a very generous MIT License so you may use it and its contents however you like (we would appreciate if you let us know if you do!). If you find a mistake or you want to expand it or suggest a better way of explaining things, please either get in touch with Jarek or, even better, submit a pull request directly on GitHub.",
     "crumbs": [
-      "Part 1: Preparations",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Setting up RStudio</span>"
-    ]
-  },
-  {
-    "objectID": "posit_cloud.html",
-    "href": "posit_cloud.html",
-    "title": "4  Using RStudio in a web browser",
-    "section": "",
-    "text": "4.1 posit.cloud\nIf you cannot install R and RStudio on your computer, if your computer is a Chromebook or a tablet, or if you want to practice but don’t have your computer with you, the company that makes RStudio also makes a cloud version of it, available for free at https://posit.cloud/. You need to sign up for a free account (allowing you to use it for 25 hours per month) and you will be able to run RStudio in a web browser (any web browser, on any computer) without the need to install RTools, Xcode, R or RStudio.",
-    "crumbs": [
-      "Part 1: Preparations",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Using RStudio in a web browser</span>"
-    ]
-  },
-  {
-    "objectID": "posit_cloud.html#sign-up-for-an-account",
-    "href": "posit_cloud.html#sign-up-for-an-account",
-    "title": "4  Using RStudio in a web browser",
-    "section": "4.2 Sign up for an account",
-    "text": "4.2 Sign up for an account\n\nFollow the link https://posit.cloud/.\nGet started.\nChoose a plan (there is a free option).\nSign up with your university email address.",
-    "crumbs": [
-      "Part 1: Preparations",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Using RStudio in a web browser</span>"
-    ]
-  },
-  {
-    "objectID": "posit_cloud.html#create-an-r-project-structure",
-    "href": "posit_cloud.html#create-an-r-project-structure",
-    "title": "4  Using RStudio in a web browser",
-    "section": "4.3 Create an R project structure",
-    "text": "4.3 Create an R project structure\nOnce you sign up and the rstudio.cloud opens in the browser, click “New Project” on the right and enter a new name for it (I recommend modulecode_year, e.g. SIB2001_2425). In the panel Files on the bottom-right, click New Folder button and create three folders: code, data and output. Finally, in the panel on the left or bottom-left (called “Console”), copy-paste the following code and press Enter: install.packages(c(\"tidyverse\", \"here\", \"rstatix\", \"janitor\", \"datapasta\",  \"palmerpenguins\")).\nIt will take up to several minutes for all the packages to be downloaded and installed. You may be asked a question during the installation, to which you should agree. There will be a lot of red text scrolling through the window, but this is all normal. Any actual errors will terminate the installation. When the installation is over, you are ready: you can now follow all the code we do in the class and in the other resources on Brightspace.",
-    "crumbs": [
-      "Part 1: Preparations",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Using RStudio in a web browser</span>"
+      "Part 1: Introduction",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Improving this book</span>"
     ]
   },
   {
@@ -102,503 +61,569 @@
     "section": "",
     "text": "In my experience, one of the biggest barriers to learning programming for students today is not the complexity of coding itself, but rather the lack of fundamental computer skills. This chapter covers the most common issues that I encounter.\n\n5.0.1 For Windows\n\n\n5.0.2 File Explorer, folders and file\n\nFile explorer allows you to see all the files saved to your computer stored in different sections like Downloads or Desktop. There is a search bar in the top right hand corner which allows you to search for a document or folder by name.\n\nA folder is shown by a folder icon next to the name of the folder, it also says File Folder under type.\n\nA file is shown by an icon of the File type and the name of the File. The type of file is also written under type - in this case a Microsoft Excel workbook titled Book1 and a Microsoft Word Document titled Essay plan\n\n\n\n\n5.0.3 Paths and hierarchies\n\nTo find your file you need to follow the path through the hierarchy. To start you need to know if your file is saved to your hard drive or One Drive. from there you can either click on the file or the folder it is saved in.\n\nThe box in the image above shows the path to the file, the video below shows how to get there\n\n\n\n5.0.4 One Drive vs hard drive\nOne Drive stores your files in the cloud allowing you to access them from anywhere by logging into your account. you will have a One drive account connected to your university email that will show when using the university computers, by saving your files here you can also work on them on personal devices. the Hard Drive is storage built into the computer your using, saving files here saves them to that device.\n\n\n5.0.5 How to unzip a file/folder\n\nTo make large files easier to transfer we can compress them (zip them). These files will need to be unzipped before you can use the content inside. this can be done 2 ways. the first way is by entering the zipped file and pressing the unzip button in the tip right corner. the next way is to right click on the zipped folder before entering it and clicking on unzip from the menu.\n\n\n\n5.0.6 How to move/copy files from one folder to another\n\n\n5.0.7 File extensions and default programes to open files\n\n\n5.0.8 Concepts of paths and hierarchies\n\n\n5.0.9 Folders and files, and how to use File Explorer or Finder\n\n\n5.0.10 File extensions and default programmes to open files\n\n\n5.0.11 How to move or copy files from one folder to another\n\n\n5.0.12 Difference between OneDrive and a hard drive\n\n\n5.0.13 How to unzip a file/folder",
     "crumbs": [
-      "Part 1: Preparations",
+      "Part 2: Preparations",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>How to use a computer</span>"
+    ]
+  },
+  {
+    "objectID": "installation.html",
+    "href": "installation.html",
+    "title": "6  Installing R and RStudio on your computer",
+    "section": "",
+    "text": "6.1 Installation instructions\nThis step-by-step guide will show you how to install R and R Studio on your personal computer.\nIf you are not familiar with concepts of cloud, file and folder paths and unzipping archived files on your computer, please read the chapter How to use a computer first.\nIn order for your computer to be ready for the installation of R and RStudio, you need to install RTools first (if you are on Windows) or Command Line Tools (if you are on macOS). Please proceed through these instructions in order.\nOnce you have successfully installed RTools, R and RStudio on your computer, go to the next section Setting up R and RStudio",
+    "crumbs": [
+      "Part 2: Preparations",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Installing R and RStudio on your computer</span>"
+    ]
+  },
+  {
+    "objectID": "installation.html#installation-instructions",
+    "href": "installation.html#installation-instructions",
+    "title": "6  Installing R and RStudio on your computer",
+    "section": "",
+    "text": "For WindowsFor macOS\n\n\n\n6.1.1 Download and install RTools\nInstructions are available at https://cran.r-project.org/bin/windows/Rtools/. Remember to download the latest version of RTools.\n\n\n6.1.2 Download and install R\nUse this link to download and install R: https://www.stats.bris.ac.uk/R/bin/windows/base/\n\n\n6.1.3 Download and install RStudio\nUse this link: https://posit.co/download/rstudio-desktop/ and click on the button “Install RStudio”.\n\n\n\n\n6.1.4 Download and install Command Line Tools\n\nOpen the Terminal app on your Mac.\nCopy and paste (or type) the following command: xcode-select --install, then press “Enter”.\nFollow the instructions. Note that the download may take a while as it is a large file.\n\n\n\n6.1.5 Download and install R\nUse this link to download and install R: https://www.stats.bris.ac.uk/R/bin/macosx/base/\n\n\n6.1.6 Download and install RStudio\nUse this link: https://posit.co/download/rstudio-desktop/. Click on the button “Install RStudio”.",
+    "crumbs": [
+      "Part 2: Preparations",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Installing R and RStudio on your computer</span>"
+    ]
+  },
+  {
+    "objectID": "setup.html",
+    "href": "setup.html",
+    "title": "7  Setting up RStudio",
+    "section": "",
+    "text": "Once R and RStudio are installed, go through the following steps to prepare them for work on the module. But before you begin, make sure about these things:\n\n\n\n\n\n\nTip\n\n\n\nDo not put spaces in file or folder names. Use - or _ or DifferentCase to separate different parts of the name, for example: Research-Skills not Research Skills.\n\n\n\n\n\n\n\n\nTip\n\n\n\nIf you put your project folder on OneDrive (or other cloud service platform), you will be able to access your files and data from any computer where you are logged in to OneDrive, not just from computers in the computer labs.\n\n\n\n7.0.1 Set up project structure for the module\nAn animation showing the whole process:\n\n\n7.0.1.1 Step by step instructions\n\nOpen RStudio.\nSelect File → New project located on the top left of the screen (if you are using a Mac put your mouse to the top and that will make the options appear) and then, in the window that appears, select New directory, then again select New project.\nIn the form that appears, under Directory name:, give your project directory a useful name (I recommend format modulecode_year, e.g. SIB2001_2425), and under Create a project under subdirectory of: select a convenient place on your computer to put it (I strongly recommend your university folder (OneDrive - University of Huddersfield)). Then click Create Project. RStudio will create your project folder and refresh the main window.\nIn the RStudio bottom-right panel, click New Folder and create the first folder; name it code. Repeat this step twice more to add folders: data and output.\n\n\n\n\n7.0.2 Adjust the RStudio interface\n\n\nSelect menu Tools → Global Options and then uncheck option Restore .RData into workspace at startup and set Save workspace to .RData on exit to Never.\nSelect the section Code on the left side of the window and select the option Use native pipe operator\nConfirm by clicking OK (in the bottom right corder of the window)\n\n\n\n\n\n\n\nYou are now ready\n\n\n\nYou can now follow all the code that we do in the class and in the other resources mentioned on Brightspace.",
+    "crumbs": [
+      "Part 2: Preparations",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Setting up RStudio</span>"
+    ]
+  },
+  {
+    "objectID": "posit_cloud.html",
+    "href": "posit_cloud.html",
+    "title": "8  Using RStudio in a web browser",
+    "section": "",
+    "text": "8.1 posit.cloud\nIf you cannot install R and RStudio on your computer, if your computer is a Chromebook or a tablet, or if you want to practice but don’t have your computer with you, the company that makes RStudio also makes a cloud version of it, available for free at https://posit.cloud/. You need to sign up for a free account (allowing you to use it for 25 hours per month) and you will be able to run RStudio in a web browser (any web browser, on any computer) without the need to install RTools, Xcode, R or RStudio.",
+    "crumbs": [
+      "Part 2: Preparations",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Using RStudio in a web browser</span>"
+    ]
+  },
+  {
+    "objectID": "posit_cloud.html#sign-up-for-an-account",
+    "href": "posit_cloud.html#sign-up-for-an-account",
+    "title": "8  Using RStudio in a web browser",
+    "section": "8.2 Sign up for an account",
+    "text": "8.2 Sign up for an account\n\nFollow the link https://posit.cloud/.\nGet started.\nChoose a plan (there is a free option).\nSign up with your university email address.",
+    "crumbs": [
+      "Part 2: Preparations",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Using RStudio in a web browser</span>"
+    ]
+  },
+  {
+    "objectID": "posit_cloud.html#create-an-r-project-structure",
+    "href": "posit_cloud.html#create-an-r-project-structure",
+    "title": "8  Using RStudio in a web browser",
+    "section": "8.3 Create an R project structure",
+    "text": "8.3 Create an R project structure\nOnce you sign up and the rstudio.cloud opens in the browser, click “New Project” on the right and enter a new name for it (I recommend modulecode_year, e.g. SIB2001_2425). In the panel Files on the bottom-right, click New Folder button and create three folders: code, data and output. Finally, in the panel on the left or bottom-left (called “Console”), copy-paste the following code and press Enter: install.packages(c(\"tidyverse\", \"here\", \"rstatix\", \"janitor\", \"datapasta\",  \"palmerpenguins\")).\nIt will take up to several minutes for all the packages to be downloaded and installed. You may be asked a question during the installation, to which you should agree. There will be a lot of red text scrolling through the window, but this is all normal. Any actual errors will terminate the installation. When the installation is over, you are ready: you can now follow all the code we do in the class and in the other resources on Brightspace.",
+    "crumbs": [
+      "Part 2: Preparations",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Using RStudio in a web browser</span>"
     ]
   },
   {
     "objectID": "loading_packages_and_data.html",
     "href": "loading_packages_and_data.html",
-    "title": "6  Loading and Installing Packages",
+    "title": "9  Loading and Installing Packages",
     "section": "",
-    "text": "6.1 1. Loading and Installing Packages\nThe first step after you create a document in R should always be loading all the required packages (and installing them if needed).\ninstall.packages(\"rstatix\")\nOnce you have installed a package it will not be immediately available for you to use, but you’ll have to load it by using the library() function as in the example below:\nlibrary(tidyverse)\nlibrary(here)",
+    "text": "9.1 1. Loading and Installing Packages\nThe first step after you create a document in R should always be loading all the required packages (and installing them if needed).\ninstall.packages(\"rstatix\")\nOnce you have installed a package it will not be immediately available for you to use, but you’ll have to load it by using the library() function as in the example below:\nlibrary(tidyverse)\nlibrary(here)",
     "crumbs": [
-      "Part 2: R fundamentals",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Loading and Installing Packages</span>"
+      "Part 3: R fundamentals",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Loading and Installing Packages</span>"
     ]
   },
   {
     "objectID": "loading_packages_and_data.html#loading-and-installing-packages",
     "href": "loading_packages_and_data.html#loading-and-installing-packages",
-    "title": "6  Loading and Installing Packages",
+    "title": "9  Loading and Installing Packages",
     "section": "",
     "text": "What is a package? You should think of a package as a collection of functions, data and help files that you can download and install in R.\nYou can do this by using the function install.packages() and always remember to put the name of the package in quotation marks as in the example below:\n\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nAlways start a quarto document by loading tidyverse and here",
     "crumbs": [
-      "Part 2: R fundamentals",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Loading and Installing Packages</span>"
+      "Part 3: R fundamentals",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Loading and Installing Packages</span>"
     ]
   },
   {
     "objectID": "loading_packages_and_data.html#loading-your-data",
     "href": "loading_packages_and_data.html#loading-your-data",
-    "title": "6  Loading and Installing Packages",
-    "section": "6.2 2. Loading your data",
-    "text": "6.2 2. Loading your data\nThe second step should be to load your data into R (otherwise you’ll have nothing to work with). To do this you first have to check what type of file your data set is (is it .txt, .csv, .xlsx?). Depending on the type of file you have is the function that you are going to use:\n\n\nread_csv() reads comma separated files\nread_csv2() reads semicolon separated files\nread_tsv() reads tab separated files\nread_xlsx reads excel files (for this function you’ll need to load library(readxl))\nread_delim() reads files with any delimiter\n\n\nNow that you know which function to use, you’ll have to follow three easy steps to load your data set:\n\nName the data and input an arrow signing to the data &lt;-\nUse the relevant function for your file type\nUse function here to tell R where you file is saved and what’s the name (Remember to always save you file in the data folder!)\n\nHere’s and example for you:\n\nrodents &lt;- read_tsv(here(\"data\", \"rodents_full.txt\"))\n\nIf you want to use read_delim() you’ll need to specify what delimiter you want to use (e.g. delim = “;”)\n\nsquirrels &lt;- read_delim (here(\"data\", \"squirrels.csv\"), delim = \";\")\nsquirrels",
+    "title": "9  Loading and Installing Packages",
+    "section": "9.2 2. Loading your data",
+    "text": "9.2 2. Loading your data\nThe second step should be to load your data into R (otherwise you’ll have nothing to work with). To do this you first have to check what type of file your data set is (is it .txt, .csv, .xlsx?). Depending on the type of file you have is the function that you are going to use:\n\n\nread_csv() reads comma separated files\nread_csv2() reads semicolon separated files\nread_tsv() reads tab separated files\nread_xlsx reads excel files (for this function you’ll need to load library(readxl))\nread_delim() reads files with any delimiter\n\n\nNow that you know which function to use, you’ll have to follow three easy steps to load your data set:\n\nName the data and input an arrow signing to the data &lt;-\nUse the relevant function for your file type\nUse function here to tell R where you file is saved and what’s the name (Remember to always save you file in the data folder!)\n\nHere’s and example for you:\n\nrodents &lt;- read_tsv(here(\"data\", \"rodents_full.txt\"))\n\nIf you want to use read_delim() you’ll need to specify what delimiter you want to use (e.g. delim = “;”)\n\nsquirrels &lt;- read_delim (here(\"data\", \"squirrels.csv\"), delim = \";\")\nsquirrels",
     "crumbs": [
-      "Part 2: R fundamentals",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Loading and Installing Packages</span>"
+      "Part 3: R fundamentals",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Loading and Installing Packages</span>"
     ]
   },
   {
     "objectID": "dealing_with_missing_data.html",
     "href": "dealing_with_missing_data.html",
-    "title": "7  Deadling with missing data",
+    "title": "10  Deadling with missing data",
     "section": "",
     "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
     "crumbs": [
-      "Part 2: R fundamentals",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Deadling with missing data</span>"
+      "Part 3: R fundamentals",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Deadling with missing data</span>"
     ]
   },
   {
     "objectID": "basic_functions.html",
     "href": "basic_functions.html",
-    "title": "8  Basic R functions",
+    "title": "11  Basic R functions",
     "section": "",
-    "text": "8.1 Joining functions\nIn this short chapter you will find a summary of some of the basic and most useful functions and operators from the tidyverse package that you will be using in R studio. If you want to learn a bit more about a specific function from this chapter simply click on the function, and it will take you to a page with additional information.",
+    "text": "11.1 Joining functions\nIn this short chapter you will find a summary of some of the basic and most useful functions and operators from the tidyverse package that you will be using in R studio. If you want to learn a bit more about a specific function from this chapter simply click on the function, and it will take you to a page with additional information.",
     "crumbs": [
-      "Part 2: R fundamentals",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Basic R functions</span>"
+      "Part 3: R fundamentals",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Basic R functions</span>"
     ]
   },
   {
     "objectID": "basic_functions.html#joining-functions",
     "href": "basic_functions.html#joining-functions",
-    "title": "8  Basic R functions",
+    "title": "11  Basic R functions",
     "section": "",
     "text": "Functions\n\n\n\n\nleft_join()- Keeps all the values from the left table and matching rows from the right table.\nright_join()- Keeps all the values from the right table and matching rows from the left table.\ninner_join()- Keeps all values that have matching keys in both tables.\nfull_join()- Keeps all values from both tables.",
     "crumbs": [
-      "Part 2: R fundamentals",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Basic R functions</span>"
+      "Part 3: R fundamentals",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Basic R functions</span>"
     ]
   },
   {
     "objectID": "basic_functions.html#pivot-functions",
     "href": "basic_functions.html#pivot-functions",
-    "title": "8  Basic R functions",
-    "section": "8.2 Pivot functions",
-    "text": "8.2 Pivot functions\n\n\n\n\n\n\nFunctions\n\n\n\n\npivot_longer()- Allows you to lengthen your data set from a wide format to a long format by reducing the number of columns and increasing the number of rows.\npivot_wider()- Allows you to widen your data set from a long format to a wide format by reducing the number of rows and increasing the number of columns.",
+    "title": "11  Basic R functions",
+    "section": "11.2 Pivot functions",
+    "text": "11.2 Pivot functions\n\n\n\n\n\n\nFunctions\n\n\n\n\npivot_longer()- Allows you to lengthen your data set from a wide format to a long format by reducing the number of columns and increasing the number of rows.\npivot_wider()- Allows you to widen your data set from a long format to a wide format by reducing the number of rows and increasing the number of columns.",
     "crumbs": [
-      "Part 2: R fundamentals",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Basic R functions</span>"
+      "Part 3: R fundamentals",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Basic R functions</span>"
     ]
   },
   {
     "objectID": "basic_functions.html#useful-operators",
     "href": "basic_functions.html#useful-operators",
-    "title": "8  Basic R functions",
-    "section": "8.3 Useful operators",
-    "text": "8.3 Useful operators\n|&gt; or %\\&gt;%\n\n\n\n\n\n\n\nThis is a pipe operator that allows you to apply multiple functions to your data set in a chain like sequence.\nYou can type this operator by pressing: shift + control + M\n\n\n\n\nHere you can see an example of how to use the pipe operator to chain different functions:\n\nrodents |&gt; \n  filter(species_id==\"NL\") |&gt; \n  select(species_id, hindfoot_length, sex)\n\n%in%\n\n\n\n\n\n\n\nThis is a logical operator that allows you to check if an element from one vector is present in another vector.\n\n\n\n\n!\n\n\n\n\n\n\n\nThis is a negation operator, which allows you to tell a function to do the opposite.\n\n\n\n\nThis is an example of how you can oppose the filter() in order to filter out variables:\n\nrodents |&gt; \n  filter(!species_id==\"NL\")\n\n+, -, log(), *, /\n\n\n\n\n\n\n\nThese are all mathematical operators.",
+    "title": "11  Basic R functions",
+    "section": "11.3 Useful operators",
+    "text": "11.3 Useful operators\n|&gt; or %\\&gt;%\n\n\n\n\n\n\n\nThis is a pipe operator that allows you to apply multiple functions to your data set in a chain like sequence.\nYou can type this operator by pressing: shift + control + M\n\n\n\n\nHere you can see an example of how to use the pipe operator to chain different functions:\n\nrodents |&gt; \n  filter(species_id==\"NL\") |&gt; \n  select(species_id, hindfoot_length, sex)\n\n%in%\n\n\n\n\n\n\n\nThis is a logical operator that allows you to check if an element from one vector is present in another vector.\n\n\n\n\n!\n\n\n\n\n\n\n\nThis is a negation operator, which allows you to tell a function to do the opposite.\n\n\n\n\nThis is an example of how you can oppose the filter() in order to filter out variables:\n\nrodents |&gt; \n  filter(!species_id==\"NL\")\n\n+, -, log(), *, /\n\n\n\n\n\n\n\nThese are all mathematical operators.",
     "crumbs": [
-      "Part 2: R fundamentals",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Basic R functions</span>"
+      "Part 3: R fundamentals",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Basic R functions</span>"
     ]
   },
   {
     "objectID": "basic_functions.html#data-overview-functions",
     "href": "basic_functions.html#data-overview-functions",
-    "title": "8  Basic R functions",
-    "section": "8.4 Data overview functions",
-    "text": "8.4 Data overview functions\n\n\n\n\n\n\nFunctions\n\n\n\n\nclass() - It provides just the class of the specified object.\nstr() - It shows you the type of content in each column.\nglipmse() - While still detailed, it is easier to glance through than str().",
+    "title": "11  Basic R functions",
+    "section": "11.4 Data overview functions",
+    "text": "11.4 Data overview functions\n\n\n\n\n\n\nFunctions\n\n\n\n\nclass() - It provides just the class of the specified object.\nstr() - It shows you the type of content in each column.\nglipmse() - While still detailed, it is easier to glance through than str().",
     "crumbs": [
-      "Part 2: R fundamentals",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Basic R functions</span>"
+      "Part 3: R fundamentals",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Basic R functions</span>"
     ]
   },
   {
     "objectID": "basic_functions.html#graph-functions",
     "href": "basic_functions.html#graph-functions",
-    "title": "8  Basic R functions",
-    "section": "8.5 Graph functions",
-    "text": "8.5 Graph functions\nggplot() is the function that will allow you to plot your datasets.\nNow, in order to get a plot you should think about three main components:\n\nData + Aesthetics + Geometry\n\n\n\n\n\n\n\n\nData is a data frame you want to use (you can write it inside the ggplot() function of you can directly pipe ggplot() from your dataset.\nAesthetics is used to indicate x and y variables and it can also be used to control the color of the plot.\n\naes()\n\nGeometry refers totype of plot you want to make:\n\ngeom_boxplot()\ngeom_point()\ngeom_line()\ngeom_col()\ngeom_histogram()\ngeom_jitter()\ngeom_bar()\n\n\n\n\n\nHere you can see two examples of how to do a plot (one with pipe operator and one without):\n\nggplot(rodents) + aes(x= species_id, y=hindfoot_length) + geom_boxplot()\n\n\n\n\n\n\n\nrodents |&gt; \n  ggplot() + aes(x= species_id, y=hindfoot_length) + geom_boxplot()\n\n\n\n\n\n\n\n\n\n8.5.1 Further Graph functions\n\n\n\n\n\n\nFunctions\n\n\n\n\nfacet_wrap() - Allows for the visualization of individual categories in their own graph.\nlabs() - Change axis labels and legend titles.\nscale_x_continous() / scale_y_continous() - default scales for continuous x and y aesthetics, which can be transform these axes.\ntheme() - Modify a single plot’s theme.\ntheme_update() - Modify the active theme, to affect all subsequent plots.\ntheme_minimal() - Applies a simplified theme of the plot, with no background shading.\nview() - Allows you to display your data.",
+    "title": "11  Basic R functions",
+    "section": "11.5 Graph functions",
+    "text": "11.5 Graph functions\nggplot() is the function that will allow you to plot your datasets.\nNow, in order to get a plot you should think about three main components:\n\nData + Aesthetics + Geometry\n\n\n\n\n\n\n\n\nData is a data frame you want to use (you can write it inside the ggplot() function of you can directly pipe ggplot() from your dataset.\nAesthetics is used to indicate x and y variables and it can also be used to control the color of the plot.\n\naes()\n\nGeometry refers totype of plot you want to make:\n\ngeom_boxplot()\ngeom_point()\ngeom_line()\ngeom_col()\ngeom_histogram()\ngeom_jitter()\ngeom_bar()\n\n\n\n\n\nHere you can see two examples of how to do a plot (one with pipe operator and one without):\n\nggplot(rodents) + aes(x= species_id, y=hindfoot_length) + geom_boxplot()\n\n\n\n\n\n\n\nrodents |&gt; \n  ggplot() + aes(x= species_id, y=hindfoot_length) + geom_boxplot()\n\n\n\n\n\n\n\n\n\n11.5.1 Further Graph functions\n\n\n\n\n\n\nFunctions\n\n\n\n\nfacet_wrap() - Allows for the visualization of individual categories in their own graph.\nlabs() - Change axis labels and legend titles.\nscale_x_continous() / scale_y_continous() - default scales for continuous x and y aesthetics, which can be transform these axes.\ntheme() - Modify a single plot’s theme.\ntheme_update() - Modify the active theme, to affect all subsequent plots.\ntheme_minimal() - Applies a simplified theme of the plot, with no background shading.\nview() - Allows you to display your data.",
     "crumbs": [
-      "Part 2: R fundamentals",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Basic R functions</span>"
+      "Part 3: R fundamentals",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Basic R functions</span>"
     ]
   },
   {
     "objectID": "basic_functions_extended.html",
     "href": "basic_functions_extended.html",
-    "title": "9  A bit more about basic functions",
+    "title": "12  A bit more about basic functions",
     "section": "",
-    "text": "9.1 Filter\nThe filter() function allows you to pick rows in a data set. To use this function you simply need to specify the requirement/condition by which you want to filter your data.\nIn this example you can see both ways to use the filter() function in a data set:\n# Filter rodents data set for variables that are of the NL species.\nfilter(rodents, species_id==\"NL\")\n\nrodents |&gt; \n  filter(species_id==\"NL\")",
+    "text": "12.1 Filter\nThe filter() function allows you to pick rows in a data set. To use this function you simply need to specify the requirement/condition by which you want to filter your data.\nIn this example you can see both ways to use the filter() function in a data set:\n# Filter rodents data set for variables that are of the NL species.\nfilter(rodents, species_id==\"NL\")\n\nrodents |&gt; \n  filter(species_id==\"NL\")",
     "crumbs": [
-      "Part 2: R fundamentals",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>A bit more about basic functions</span>"
+      "Part 3: R fundamentals",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>A bit more about basic functions</span>"
     ]
   },
   {
     "objectID": "basic_functions_extended.html#filter",
     "href": "basic_functions_extended.html#filter",
-    "title": "9  A bit more about basic functions",
+    "title": "12  A bit more about basic functions",
     "section": "",
-    "text": "You do this by writing:\n\n\n\nfilter(data set name, column name == condition you want to filter)\n\n\n\n\n\n9.1.1 Useful filter functions and parameters\n\n\nis.na() - Allows you to check for missing values.\nc() - Allows you to combine different filtering variables.\nna.rm = TRUE - This parameter instructs functions to ignore missing values.",
+    "text": "You do this by writing:\n\n\n\nfilter(data set name, column name == condition you want to filter)\n\n\n\n\n\n12.1.1 Useful filter functions and parameters\n\n\nis.na() - Allows you to check for missing values.\nc() - Allows you to combine different filtering variables.\nna.rm = TRUE - This parameter instructs functions to ignore missing values.",
     "crumbs": [
-      "Part 2: R fundamentals",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>A bit more about basic functions</span>"
+      "Part 3: R fundamentals",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>A bit more about basic functions</span>"
     ]
   },
   {
     "objectID": "basic_functions_extended.html#select",
     "href": "basic_functions_extended.html#select",
-    "title": "9  A bit more about basic functions",
-    "section": "9.2 Select",
-    "text": "9.2 Select\nThe select() function allows you to pick/keep specific columns from a data set.\n\n\n\n\n\n\nYou do this by writing:\n\n\n\nselect(data set name, column name/s)\n\n\nIn this example you can see both ways to use the select() function in a data set:\n\n# Select the species_id column from the rodents data set.\nselect(rodents, species_id)\n\nrodents |&gt; \n  select(species_id)\n\n\n9.2.1 Useful select functions\n\n\nc() - Allows you to combine different selections.\nstarts_with() - Allows you to select variables that start with a specific prefix.\nends_with() - Allows you to select variables that end with a specific suffix\ncontains() - Allows you to select variables that contain a specific string.",
+    "title": "12  A bit more about basic functions",
+    "section": "12.2 Select",
+    "text": "12.2 Select\nThe select() function allows you to pick/keep specific columns from a data set.\n\n\n\n\n\n\nYou do this by writing:\n\n\n\nselect(data set name, column name/s)\n\n\nIn this example you can see both ways to use the select() function in a data set:\n\n# Select the species_id column from the rodents data set.\nselect(rodents, species_id)\n\nrodents |&gt; \n  select(species_id)\n\n\n12.2.1 Useful select functions\n\n\nc() - Allows you to combine different selections.\nstarts_with() - Allows you to select variables that start with a specific prefix.\nends_with() - Allows you to select variables that end with a specific suffix\ncontains() - Allows you to select variables that contain a specific string.",
     "crumbs": [
-      "Part 2: R fundamentals",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>A bit more about basic functions</span>"
+      "Part 3: R fundamentals",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>A bit more about basic functions</span>"
     ]
   },
   {
     "objectID": "basic_functions_extended.html#count",
     "href": "basic_functions_extended.html#count",
-    "title": "9  A bit more about basic functions",
-    "section": "9.3 Count",
-    "text": "9.3 Count\nThe count() function counts the number of occurrences of all distinct elements in a column.\n\n\n\n\n\n\nYou do this by writing:\n\n\n\ncount(data set name, column name)\n\n\nIn this example you can see both ways to use the count() function in a data set:\n\n# Select the species_id column from the rodents data set.\ncount(rodents, species_id)\n\nrodents |&gt; \n  count(species_id)\n\n\n9.3.1 Useful count parameters and functions\n\n\nsort = TRUE/FALSE - This parameters dictates the order in which the variables will be arranged, TRUE will order the counts in a descending order, wile FALSE will order the counts in an ascending order.",
+    "title": "12  A bit more about basic functions",
+    "section": "12.3 Count",
+    "text": "12.3 Count\nThe count() function counts the number of occurrences of all distinct elements in a column.\n\n\n\n\n\n\nYou do this by writing:\n\n\n\ncount(data set name, column name)\n\n\nIn this example you can see both ways to use the count() function in a data set:\n\n# Select the species_id column from the rodents data set.\ncount(rodents, species_id)\n\nrodents |&gt; \n  count(species_id)\n\n\n12.3.1 Useful count parameters and functions\n\n\nsort = TRUE/FALSE - This parameters dictates the order in which the variables will be arranged, TRUE will order the counts in a descending order, wile FALSE will order the counts in an ascending order.",
     "crumbs": [
-      "Part 2: R fundamentals",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>A bit more about basic functions</span>"
+      "Part 3: R fundamentals",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>A bit more about basic functions</span>"
     ]
   },
   {
     "objectID": "basic_functions_extended.html#mutate",
     "href": "basic_functions_extended.html#mutate",
-    "title": "9  A bit more about basic functions",
-    "section": "9.4 Mutate",
-    "text": "9.4 Mutate\nThe mutate() function allows you to create and modify columns from a data set. - It can create new columns as functions of existing variables.\n\nIt can modify existing columns.\nIt can delete columns by setting them to NULL.\n\n\n\n\n\n\n\nYou do this by writing:\n\n\n\nmutate(data set name, new/existing column name = function/expression)\n\n\n\n9.4.1 Useful mutate functions\n\n\n+, -, log(), *, / - Mathematical opperators\nifelse() - This function will return one value if a condition is TRUE and another if FALSE.\ncase_when() - This function allows you to evaluate multiple conditions and assign them individual values.\n\n\nIn this examples you can see different ways you can use the mutate() function in a data set:\n\n# Use mutate to create a new column that will show a 1 for females and a 2 for males\nrodents |&gt; \n  mutate(new_column = case_when(sex == \"F\" ~ 1, sex == \"M\" ~ 2))\n\n# Use mutate to create a new weight_kg column that converts the values on the weight column (in grams) into kilograms by dividing them\nrodents |&gt; \n  mutate(wight_kg=weight/1000)\n\n# Use mutate to set the delete the hindfoot_length column\nrodents |&gt; \n  mutate(hindfoot_length = NULL)",
+    "title": "12  A bit more about basic functions",
+    "section": "12.4 Mutate",
+    "text": "12.4 Mutate\nThe mutate() function allows you to create and modify columns from a data set. - It can create new columns as functions of existing variables.\n\nIt can modify existing columns.\nIt can delete columns by setting them to NULL.\n\n\n\n\n\n\n\nYou do this by writing:\n\n\n\nmutate(data set name, new/existing column name = function/expression)\n\n\n\n12.4.1 Useful mutate functions\n\n\n+, -, log(), *, / - Mathematical opperators\nifelse() - This function will return one value if a condition is TRUE and another if FALSE.\ncase_when() - This function allows you to evaluate multiple conditions and assign them individual values.\n\n\nIn this examples you can see different ways you can use the mutate() function in a data set:\n\n# Use mutate to create a new column that will show a 1 for females and a 2 for males\nrodents |&gt; \n  mutate(new_column = case_when(sex == \"F\" ~ 1, sex == \"M\" ~ 2))\n\n# Use mutate to create a new weight_kg column that converts the values on the weight column (in grams) into kilograms by dividing them\nrodents |&gt; \n  mutate(wight_kg=weight/1000)\n\n# Use mutate to set the delete the hindfoot_length column\nrodents |&gt; \n  mutate(hindfoot_length = NULL)",
     "crumbs": [
-      "Part 2: R fundamentals",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>A bit more about basic functions</span>"
+      "Part 3: R fundamentals",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>A bit more about basic functions</span>"
     ]
   },
   {
     "objectID": "basic_functions_extended.html#arrange",
     "href": "basic_functions_extended.html#arrange",
-    "title": "9  A bit more about basic functions",
-    "section": "9.5 Arrange",
-    "text": "9.5 Arrange\nThe arrange() function allows for the ordering of the data by different variables. - If you input multiple columns they will be sorted hierarchically.\n\n\n\n\n\n\nYou do this by writing:\n\n\n\narrange(data set name, column name/s)\n\n\nIn this example you can see both ways to use the arrange() function in a data set:\n\n#Arrange the rows so that they sorted by species_id (ascending) and then by sex (ascending) \narrange(rodents, species_id, sex)\n\nrodents |&gt; \n  arrange(species_id, sex)\n\n\n9.5.1 Useful arrange functions\n\ndesc() - Allows you to sort in descending order as the default order of the arrange() funcrion is ascending.\n\n\nrodents |&gt; \n  arrange(desc(year))",
+    "title": "12  A bit more about basic functions",
+    "section": "12.5 Arrange",
+    "text": "12.5 Arrange\nThe arrange() function allows for the ordering of the data by different variables. - If you input multiple columns they will be sorted hierarchically.\n\n\n\n\n\n\nYou do this by writing:\n\n\n\narrange(data set name, column name/s)\n\n\nIn this example you can see both ways to use the arrange() function in a data set:\n\n#Arrange the rows so that they sorted by species_id (ascending) and then by sex (ascending) \narrange(rodents, species_id, sex)\n\nrodents |&gt; \n  arrange(species_id, sex)\n\n\n12.5.1 Useful arrange functions\n\ndesc() - Allows you to sort in descending order as the default order of the arrange() funcrion is ascending.\n\n\nrodents |&gt; \n  arrange(desc(year))",
     "crumbs": [
-      "Part 2: R fundamentals",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>A bit more about basic functions</span>"
+      "Part 3: R fundamentals",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>A bit more about basic functions</span>"
     ]
   },
   {
     "objectID": "basic_functions_extended.html#group_by",
     "href": "basic_functions_extended.html#group_by",
-    "title": "9  A bit more about basic functions",
-    "section": "9.6 Group_by",
-    "text": "9.6 Group_by\nThe group_by() function uses an existing table to form a grouped table by splitting the data sate based on one or more variables.\n\n\n\n\n\n\nYou do this by writing:\n\n\n\ngroup_by(data set name, column name/s)\n\n\nIn this example you can see both ways to use the group_by() function in a data set:\n\n# Group the data set by species_id\ngroup_by(rodents, species_id)\n\nrodents |&gt; \n  group_by(species_id)",
+    "title": "12  A bit more about basic functions",
+    "section": "12.6 Group_by",
+    "text": "12.6 Group_by\nThe group_by() function uses an existing table to form a grouped table by splitting the data sate based on one or more variables.\n\n\n\n\n\n\nYou do this by writing:\n\n\n\ngroup_by(data set name, column name/s)\n\n\nIn this example you can see both ways to use the group_by() function in a data set:\n\n# Group the data set by species_id\ngroup_by(rodents, species_id)\n\nrodents |&gt; \n  group_by(species_id)",
     "crumbs": [
-      "Part 2: R fundamentals",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>A bit more about basic functions</span>"
+      "Part 3: R fundamentals",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>A bit more about basic functions</span>"
     ]
   },
   {
     "objectID": "basic_functions_extended.html#summarise",
     "href": "basic_functions_extended.html#summarise",
-    "title": "9  A bit more about basic functions",
-    "section": "9.7 Summarise",
-    "text": "9.7 Summarise\nThe summarise() function allows you to calculate summary statistics and is usually used on grouped data produced by group_by(), as it creates one row for each combination of grouping variables.\n\n\n\n\n\n\nYou do this by writing:\n\n\n\nsummarise(data set name, new column name = function(column name))\n\n\n\n9.7.1 Useful summary functions and parameters\n\nmean()\nmedian()\nsd()\nmin()\nmax()\nn()\nn_distinct()\nna.rm = TRUE - This parameter instructs functions to ignore missing values.\n\nIn this example you can see both ways to use the summarise() function in a data set:\n\n# Take the mean hindfoot length\nsummarise(rodents, mean_hindfoot_length = mean(hindfoot_length, na.rm = TRUE))\n\nrodents |&gt; \n  summarise(mean_hindfoot_length = mean(hindfoot_length, na.rm = TRUE))",
+    "title": "12  A bit more about basic functions",
+    "section": "12.7 Summarise",
+    "text": "12.7 Summarise\nThe summarise() function allows you to calculate summary statistics and is usually used on grouped data produced by group_by(), as it creates one row for each combination of grouping variables.\n\n\n\n\n\n\nYou do this by writing:\n\n\n\nsummarise(data set name, new column name = function(column name))\n\n\n\n12.7.1 Useful summary functions and parameters\n\nmean()\nmedian()\nsd()\nmin()\nmax()\nn()\nn_distinct()\nna.rm = TRUE - This parameter instructs functions to ignore missing values.\n\nIn this example you can see both ways to use the summarise() function in a data set:\n\n# Take the mean hindfoot length\nsummarise(rodents, mean_hindfoot_length = mean(hindfoot_length, na.rm = TRUE))\n\nrodents |&gt; \n  summarise(mean_hindfoot_length = mean(hindfoot_length, na.rm = TRUE))",
     "crumbs": [
-      "Part 2: R fundamentals",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>A bit more about basic functions</span>"
+      "Part 3: R fundamentals",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>A bit more about basic functions</span>"
     ]
   },
   {
     "objectID": "basic_functions_extended.html#tibble",
     "href": "basic_functions_extended.html#tibble",
-    "title": "9  A bit more about basic functions",
-    "section": "9.8 Tibble",
-    "text": "9.8 Tibble\nThe tibble() function allows you to create new data frames.\n\n\n\n\n\n\nYou do this by writing:\n\n\n\ntibble(data set name, column name 1 = variables, comuln name 2 = variables, …)\n\n\n\n9.8.1 Useful tibble functions\n\n\nc() - Allows you to combine different selections.\n\n\n\ntibble(\n  Teams = c(\"Blue\", \"Red\", \"Purple\"),\n  Score = c(100, 85, 99))\n\n# A tibble: 3 × 2\n  Teams  Score\n  &lt;chr&gt;  &lt;dbl&gt;\n1 Blue     100\n2 Red       85\n3 Purple    99",
+    "title": "12  A bit more about basic functions",
+    "section": "12.8 Tibble",
+    "text": "12.8 Tibble\nThe tibble() function allows you to create new data frames.\n\n\n\n\n\n\nYou do this by writing:\n\n\n\ntibble(data set name, column name 1 = variables, comuln name 2 = variables, …)\n\n\n\n12.8.1 Useful tibble functions\n\n\nc() - Allows you to combine different selections.\n\n\n\ntibble(\n  Teams = c(\"Blue\", \"Red\", \"Purple\"),\n  Score = c(100, 85, 99))\n\n# A tibble: 3 × 2\n  Teams  Score\n  &lt;chr&gt;  &lt;dbl&gt;\n1 Blue     100\n2 Red       85\n3 Purple    99",
     "crumbs": [
-      "Part 2: R fundamentals",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>A bit more about basic functions</span>"
+      "Part 3: R fundamentals",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>A bit more about basic functions</span>"
     ]
   },
   {
     "objectID": "basic_functions_extended.html#drop_na",
     "href": "basic_functions_extended.html#drop_na",
-    "title": "9  A bit more about basic functions",
-    "section": "9.9 Drop_na",
-    "text": "9.9 Drop_na\nThe drop_na() function allows you to to drop all the rows containing missing values.\n\n\n\n\n\n\nYou do this by writing:\n\n\n\ndrop_na(data set name, column name)\n\n\nIn this example you can see both ways to use the drop_na() function in a data set:\n\n# Drop all the variables that have missing values in the hindfoot length column\ndrop_na(rodents, hindfoot_length)\n\nrodents |&gt; \n  drop_na(hindfoot_length)",
+    "title": "12  A bit more about basic functions",
+    "section": "12.9 Drop_na",
+    "text": "12.9 Drop_na\nThe drop_na() function allows you to to drop all the rows containing missing values.\n\n\n\n\n\n\nYou do this by writing:\n\n\n\ndrop_na(data set name, column name)\n\n\nIn this example you can see both ways to use the drop_na() function in a data set:\n\n# Drop all the variables that have missing values in the hindfoot length column\ndrop_na(rodents, hindfoot_length)\n\nrodents |&gt; \n  drop_na(hindfoot_length)",
     "crumbs": [
-      "Part 2: R fundamentals",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>A bit more about basic functions</span>"
+      "Part 3: R fundamentals",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>A bit more about basic functions</span>"
     ]
   },
   {
     "objectID": "joining_functions_extended.html",
     "href": "joining_functions_extended.html",
-    "title": "10  Joining functions",
+    "title": "13  Joining functions",
     "section": "",
-    "text": "The joining functions allow you to merge separate data sets based on matching keys.\n\nleft_join() - Keeps all the values from the left table and matching rows from the right table. All unmatched rows in the right table will be NA.\nright_join() - Keeps all the values from the right table and matching rows from the left table. All unmatched rows in the left table will be NA.\ninner_join() - Keeps all values that have matching keys in both tables.\nfull_join() - Keeps all values from both tables and all unmatched rows will be NA.\n\n\n10.0.1 Useful functions and parameters\n\n\nby - Specifies the key column/s to join on.\nc() - Allows you to combine different joining keys if they don’t have the same name.\n\n\n\n\n\n\n\n\nYou do this by writing:\n\n\n\njoining_function(left data set, right data set, by = “column name”)\njoining_function(left data set, right data set, by = c(left column name= right column name))\n\n\nHere you can see an example of how to join to data sets:\n\ninner_join(band_members, band_instruments, by = \"name\")\n\nleft_join(band_members, band_instruments, by = \"name\")\n\nright_join(band_members, band_instruments, by = \"name\")\n\nfull_join(band_members, band_instruments, by = \"name\")",
+    "text": "The joining functions allow you to merge separate data sets based on matching keys.\n\nleft_join() - Keeps all the values from the left table and matching rows from the right table. All unmatched rows in the right table will be NA.\nright_join() - Keeps all the values from the right table and matching rows from the left table. All unmatched rows in the left table will be NA.\ninner_join() - Keeps all values that have matching keys in both tables.\nfull_join() - Keeps all values from both tables and all unmatched rows will be NA.\n\n\n13.0.1 Useful functions and parameters\n\n\nby - Specifies the key column/s to join on.\nc() - Allows you to combine different joining keys if they don’t have the same name.\n\n\n\n\n\n\n\n\nYou do this by writing:\n\n\n\njoining_function(left data set, right data set, by = “column name”)\njoining_function(left data set, right data set, by = c(left column name= right column name))\n\n\nHere you can see an example of how to join to data sets:\n\ninner_join(band_members, band_instruments, by = \"name\")\n\nleft_join(band_members, band_instruments, by = \"name\")\n\nright_join(band_members, band_instruments, by = \"name\")\n\nfull_join(band_members, band_instruments, by = \"name\")",
     "crumbs": [
-      "Part 2: R fundamentals",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Joining functions</span>"
+      "Part 3: R fundamentals",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Joining functions</span>"
     ]
   },
   {
     "objectID": "pivot_functions_extended.html",
     "href": "pivot_functions_extended.html",
-    "title": "11  Even more about pivot functions",
+    "title": "14  Even more about pivot functions",
     "section": "",
     "text": "The pivot functions allow you to reshape your data sets, which is useful when preparing your data for analysis or visualization.\n\npivot_longer() - Allows you to lengthen your data set from a wide format to a long format by reducing the number of columns and increasing the number of rows.\npivot_wider() - Allows you to widen your data set from a long format to a wide format by reducing the number of rows and increasing the number of columns.\n\n\n\n\n\n\n\nYou do this by writing:\n\n\n\npivot_function(data set name, cols = (column name : column name), names_to = “name”, values_to = “value”)\n\n\n\ncols - The columns you want to pivot.\nnames_to - The new column name where you want all the variable names to go.\nvalues_to - The new column name where you want all the values to go.\n\nHere you can see an example of how you can use the pivot_longer() function in a data set:\n\npivot_longer(rodents, cols= (\"hindfoot_length\" : \"weight\"), names_to = \"type_measurement\", values_to = \"measurements\")\n\nrodents |&gt; \n  pivot_longer(cols= (\"hindfoot_length\" : \"weight\"), names_to = \"type_measurement\", values_to = \"measurements\")",
     "crumbs": [
-      "Part 2: R fundamentals",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Even more about pivot functions</span>"
+      "Part 3: R fundamentals",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Even more about pivot functions</span>"
     ]
   },
   {
     "objectID": "basic_statistics.html",
     "href": "basic_statistics.html",
-    "title": "13  Descriptive statistics",
+    "title": "16  Descriptive statistics",
     "section": "",
-    "text": "13.1 T-tests\nThe t_test() function allows you to performs one and two sample t-tests.",
+    "text": "16.1 T-tests\nThe t_test() function allows you to performs one and two sample t-tests.",
     "crumbs": [
-      "Part 3: Statistical tests",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Descriptive statistics</span>"
+      "Part 4: Statistical tests",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Descriptive statistics</span>"
     ]
   },
   {
     "objectID": "basic_statistics.html#t-tests",
     "href": "basic_statistics.html#t-tests",
-    "title": "13  Descriptive statistics",
+    "title": "16  Descriptive statistics",
     "section": "",
-    "text": "You do this by writing:\n\n\n\nt_test(data set name, column name (numeric variable) ~ column name (grouping variable))\n\n\n\n13.1.1 Useful parameters\n\n\npaired = TRUE/FALSE - This parameter indicates whether you want a paired (TRUE) or unpaired (FALSE) test.\nvar.equal = TURE/FALSE - This parameter indicates whether you want to treat the two variances as equal using the pooled variance (TRUE), or to use the Welch (or Satterthwaite) method to approximate the degrees of freedom (FALSE).\nalternative = - This parameter specifies the alternative hypothesis and can be either \"two.sided\" (default), \"greater\" or \"less\".\nconf.level = - This parameter specifies the confidence level.\nmu = - This parameter specifies the null hypothesis mean against which to test your sample mean.\n\n\nHere you can see an example of how to perform different t-tests using the t_test() function with different parameters:\n\n# One-sample test\nrodents |&gt; \nt_test(weight~sex, mu = 0)\n\n# Two-samples unpaired test\nrodents |&gt; \nt_test(weight~sex)\n\n# Two-samples paired test\nrodents |&gt;  \nt_test(weight~sex, paired = TRUE)",
+    "text": "You do this by writing:\n\n\n\nt_test(data set name, column name (numeric variable) ~ column name (grouping variable))\n\n\n\n16.1.1 Useful parameters\n\n\npaired = TRUE/FALSE - This parameter indicates whether you want a paired (TRUE) or unpaired (FALSE) test.\nvar.equal = TURE/FALSE - This parameter indicates whether you want to treat the two variances as equal using the pooled variance (TRUE), or to use the Welch (or Satterthwaite) method to approximate the degrees of freedom (FALSE).\nalternative = - This parameter specifies the alternative hypothesis and can be either \"two.sided\" (default), \"greater\" or \"less\".\nconf.level = - This parameter specifies the confidence level.\nmu = - This parameter specifies the null hypothesis mean against which to test your sample mean.\n\n\nHere you can see an example of how to perform different t-tests using the t_test() function with different parameters:\n\n# One-sample test\nrodents |&gt; \nt_test(weight~sex, mu = 0)\n\n# Two-samples unpaired test\nrodents |&gt; \nt_test(weight~sex)\n\n# Two-samples paired test\nrodents |&gt;  \nt_test(weight~sex, paired = TRUE)",
     "crumbs": [
-      "Part 3: Statistical tests",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Descriptive statistics</span>"
+      "Part 4: Statistical tests",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Descriptive statistics</span>"
     ]
   },
   {
     "objectID": "basic_statistics.html#shapiro-wilk-normality-test",
     "href": "basic_statistics.html#shapiro-wilk-normality-test",
-    "title": "13  Descriptive statistics",
-    "section": "13.2 Shapiro-Wilk Normality Test",
-    "text": "13.2 Shapiro-Wilk Normality Test\nThe shapiro_test() function allows you to performs Shapiro-Wilk test of normality.\n\n\n\n\n\n\nYou do this by writing:\n\n\n\nshapiro_test(data set name, column names)\n\n\nHere you can see an example of how to use the shapiro_test() function:\n\n# One-sample test\nrodents |&gt; \nwilcox_test(weight~sex, mu = 0)\n\n# Two-samples unpaired test\nrodents |&gt; \nwilcox_test(weight~sex)\n\n# Two-samples paired test\nrodents |&gt;  \nwilcox_test(weight~sex, paired = TRUE)\n\n# Shapiro Wilk normality test for one variable\niris %&gt;% shapiro_test(Sepal.Length)\n\n# Shapiro Wilk normality test for two variables\niris %&gt;% shapiro_test(Sepal.Length, Petal.Width)\n\n# Multivariate normality test\nmshapiro_test(iris[, 1:3])",
+    "title": "16  Descriptive statistics",
+    "section": "16.2 Shapiro-Wilk Normality Test",
+    "text": "16.2 Shapiro-Wilk Normality Test\nThe shapiro_test() function allows you to performs Shapiro-Wilk test of normality.\n\n\n\n\n\n\nYou do this by writing:\n\n\n\nshapiro_test(data set name, column names)\n\n\nHere you can see an example of how to use the shapiro_test() function:\n\n# One-sample test\nrodents |&gt; \nwilcox_test(weight~sex, mu = 0)\n\n# Two-samples unpaired test\nrodents |&gt; \nwilcox_test(weight~sex)\n\n# Two-samples paired test\nrodents |&gt;  \nwilcox_test(weight~sex, paired = TRUE)\n\n# Shapiro Wilk normality test for one variable\niris %&gt;% shapiro_test(Sepal.Length)\n\n# Shapiro Wilk normality test for two variables\niris %&gt;% shapiro_test(Sepal.Length, Petal.Width)\n\n# Multivariate normality test\nmshapiro_test(iris[, 1:3])",
     "crumbs": [
-      "Part 3: Statistical tests",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Descriptive statistics</span>"
+      "Part 4: Statistical tests",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Descriptive statistics</span>"
     ]
   },
   {
     "objectID": "basic_statistics.html#wilcoxon-tests",
     "href": "basic_statistics.html#wilcoxon-tests",
-    "title": "13  Descriptive statistics",
-    "section": "13.3 Wilcoxon Tests",
-    "text": "13.3 Wilcoxon Tests\nThe wilcox_test function allows you to perform one and two sample Wilcoxon tests.\n\n\n\n\n\n\nYou do this by writing:\n\n\n\nwilcox_test(data set name, column name (numeric variable) ~ column name (grouping variable))\n\n\n\n13.3.1 Useful parameters\n\n\npaired = TRUE/FALSE - This parameter indicates whether you want a paired (TRUE) or unpaired (FALSE) test.\nalternative = - This parameter specifies the alternative hypothesis and can be either \"two.sided\" (default), \"greater\" or \"less\".\nconf.level = - This parameter specifies the confidence level.\nmu = - This parameter specifies the null hypothesis mean against which to test your sample mean.\n\n\nHere you can see an example of how to use the wilcox_test() function with different parameters:\n\n# One-sample test\nrodents |&gt; \nwilcox_test(weight~sex, mu = 0)\n\n# Two-samples unpaired test\nrodents |&gt; \nwilcox_test(weight~sex)\n\n# Two-samples paired test\nrodents |&gt;  \nwilcox_test(weight~sex, paired = TRUE)",
+    "title": "16  Descriptive statistics",
+    "section": "16.3 Wilcoxon Tests",
+    "text": "16.3 Wilcoxon Tests\nThe wilcox_test function allows you to perform one and two sample Wilcoxon tests.\n\n\n\n\n\n\nYou do this by writing:\n\n\n\nwilcox_test(data set name, column name (numeric variable) ~ column name (grouping variable))\n\n\n\n16.3.1 Useful parameters\n\n\npaired = TRUE/FALSE - This parameter indicates whether you want a paired (TRUE) or unpaired (FALSE) test.\nalternative = - This parameter specifies the alternative hypothesis and can be either \"two.sided\" (default), \"greater\" or \"less\".\nconf.level = - This parameter specifies the confidence level.\nmu = - This parameter specifies the null hypothesis mean against which to test your sample mean.\n\n\nHere you can see an example of how to use the wilcox_test() function with different parameters:\n\n# One-sample test\nrodents |&gt; \nwilcox_test(weight~sex, mu = 0)\n\n# Two-samples unpaired test\nrodents |&gt; \nwilcox_test(weight~sex)\n\n# Two-samples paired test\nrodents |&gt;  \nwilcox_test(weight~sex, paired = TRUE)",
     "crumbs": [
-      "Part 3: Statistical tests",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Descriptive statistics</span>"
+      "Part 4: Statistical tests",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Descriptive statistics</span>"
     ]
   },
   {
     "objectID": "basic_statistics.html#kruskal-wallis-test",
     "href": "basic_statistics.html#kruskal-wallis-test",
-    "title": "13  Descriptive statistics",
-    "section": "13.4 Kruskal-Wallis Test",
-    "text": "13.4 Kruskal-Wallis Test\nThe kruskal_test() function allows you to perform Kruskal-Wallis rank sum test.\n\n\n\n\n\n\nYou do this by writing:\n\n\n\nkruskal_test(data set name, column name (numeric variable) ~ column name (grouping variable))\n\n\nHere you can see an example of how to use the kruskal_test() function:\n\nrodents |&gt; \nkruskal_test(weight~sex)",
+    "title": "16  Descriptive statistics",
+    "section": "16.4 Kruskal-Wallis Test",
+    "text": "16.4 Kruskal-Wallis Test\nThe kruskal_test() function allows you to perform Kruskal-Wallis rank sum test.\n\n\n\n\n\n\nYou do this by writing:\n\n\n\nkruskal_test(data set name, column name (numeric variable) ~ column name (grouping variable))\n\n\nHere you can see an example of how to use the kruskal_test() function:\n\nrodents |&gt; \nkruskal_test(weight~sex)",
     "crumbs": [
-      "Part 3: Statistical tests",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Descriptive statistics</span>"
+      "Part 4: Statistical tests",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Descriptive statistics</span>"
     ]
   },
   {
     "objectID": "basic_statistics.html#levenes-test",
     "href": "basic_statistics.html#levenes-test",
-    "title": "13  Descriptive statistics",
-    "section": "13.5 Levene’s Test",
-    "text": "13.5 Levene’s Test\nThe levene_test() function allows you to perform Levene’s test assesses whether the variances of two or more groups are equal.\n\n\n\n\n\n\nYou do this by writing:\n\n\n\nlevene_test(data set name, column name (numeric variable) ~ column name (grouping variable))\n\n\n\n13.5.1 Useful parameters\n\n\ncenter = - This parameter specifies the center of each group, either mean (original Levene’s test) or median.\n\n\nHere you can see an example of how to use the levene_test() function with different parameters:\n\nrodents |&gt; \nlevene_test(weight~sex)",
+    "title": "16  Descriptive statistics",
+    "section": "16.5 Levene’s Test",
+    "text": "16.5 Levene’s Test\nThe levene_test() function allows you to perform Levene’s test assesses whether the variances of two or more groups are equal.\n\n\n\n\n\n\nYou do this by writing:\n\n\n\nlevene_test(data set name, column name (numeric variable) ~ column name (grouping variable))\n\n\n\n16.5.1 Useful parameters\n\n\ncenter = - This parameter specifies the center of each group, either mean (original Levene’s test) or median.\n\n\nHere you can see an example of how to use the levene_test() function with different parameters:\n\nrodents |&gt; \nlevene_test(weight~sex)",
     "crumbs": [
-      "Part 3: Statistical tests",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Descriptive statistics</span>"
+      "Part 4: Statistical tests",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Descriptive statistics</span>"
     ]
   },
   {
     "objectID": "basic_statistics.html#anova-test",
     "href": "basic_statistics.html#anova-test",
-    "title": "13  Descriptive statistics",
-    "section": "13.6 Anova Test",
-    "text": "13.6 Anova Test\nThe anova_test() function allows you to perform different types of ANOVA tests.\n\n\n\n\n\n\nYou do this by writing:\n\n\n\nanova_test(data set name, column name (numeric variable) ~ column name (grouping variable))\n\n\nHere you can see an example of how to use the anova_test() function:\n\n# One-way ANOVA test\nrodents |&gt; \nanova_test(weight~sex)\n\n# Two-way ANOVA test\nrodents |&gt; \nanova_test(weight~sex*genus)",
+    "title": "16  Descriptive statistics",
+    "section": "16.6 Anova Test",
+    "text": "16.6 Anova Test\nThe anova_test() function allows you to perform different types of ANOVA tests.\n\n\n\n\n\n\nYou do this by writing:\n\n\n\nanova_test(data set name, column name (numeric variable) ~ column name (grouping variable))\n\n\nHere you can see an example of how to use the anova_test() function:\n\n# One-way ANOVA test\nrodents |&gt; \nanova_test(weight~sex)\n\n# Two-way ANOVA test\nrodents |&gt; \nanova_test(weight~sex*genus)",
     "crumbs": [
-      "Part 3: Statistical tests",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Descriptive statistics</span>"
+      "Part 4: Statistical tests",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Descriptive statistics</span>"
     ]
   },
   {
     "objectID": "basic_statistics.html#chi-squared-test",
     "href": "basic_statistics.html#chi-squared-test",
-    "title": "13  Descriptive statistics",
-    "section": "13.7 Chi-squared Test",
-    "text": "13.7 Chi-squared Test\nThe chisq_test() function allows you to perform chi-squared tests (Goodness-of-Fit Test and Test for Independence) to assess whether there is a significant correlation between categorical variables.\n\n\n\n\n\n\nYou do this by writing:\n\n\n\nchisq_test(data set name, column name (numeric variable))\n\n\n\n13.7.1 Useful parameters\n\n\np = - This parameter specifies the vector of expected probabilities, which have to be of the same length as x.\n\n\nHere you can see an example of how to use the chisq_test() function with different parameters:\n\nrodents |&gt; \nchisq_test(weight)\n\n\n\n\n\n\n\n\nImportant\n\n\n\nTo use all these functions you will need to load library(rstatix)!!!",
+    "title": "16  Descriptive statistics",
+    "section": "16.7 Chi-squared Test",
+    "text": "16.7 Chi-squared Test\nThe chisq_test() function allows you to perform chi-squared tests (Goodness-of-Fit Test and Test for Independence) to assess whether there is a significant correlation between categorical variables.\n\n\n\n\n\n\nYou do this by writing:\n\n\n\nchisq_test(data set name, column name (numeric variable))\n\n\n\n16.7.1 Useful parameters\n\n\np = - This parameter specifies the vector of expected probabilities, which have to be of the same length as x.\n\n\nHere you can see an example of how to use the chisq_test() function with different parameters:\n\nrodents |&gt; \nchisq_test(weight)\n\n\n\n\n\n\n\n\nImportant\n\n\n\nTo use all these functions you will need to load library(rstatix)!!!",
     "crumbs": [
-      "Part 3: Statistical tests",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Descriptive statistics</span>"
+      "Part 4: Statistical tests",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Descriptive statistics</span>"
     ]
   },
   {
     "objectID": "practice_questions.html",
     "href": "practice_questions.html",
-    "title": "14  Practice Questions",
+    "title": "17  Practice Questions",
     "section": "",
-    "text": "14.1 Mastering the Basics\nWhat function loads a package that is already on your computer? install.packageinstall.packageslibrarylibraries\nWhat library do you need to load in your data set? tidyverserodents_fullhereselect from computer\nWhich function should I use to load in a comma separated dataset? read_csvread_tsvheread_xsxl\nWhat function is used to select specific columns from a dataset? filterselectcolumngroup_by\nWhat function is used to select specific rows from a dataset? filterarrangesummariseselect\nWhich function is used to add new columns or modify existing ones? summarisetibblesummarymutate\nWhich symbol is used for filter c()%in%all of the above==\nWhat is this symbol used for? |&gt; Makes the function run in accordance with previous functionIt stores the output of a function as a variable but does not allow it to be used as an argument in another function.Takes the output of one function and passes it into another function as an argumentIt executes multiple functions simultaneously\nWhich ggplot function would give me a scatterplot? geom_point()ggplot(scatterplot)geom_graph()geom_scatter",
+    "text": "17.1 Mastering the Basics\nWhat function loads a package that is already on your computer? install.packageinstall.packageslibrarylibraries\nWhat library do you need to load in your data set? tidyverserodents_fullhereselect from computer\nWhich function should I use to load in a comma separated dataset? read_csvread_tsvheread_xsxl\nWhat function is used to select specific columns from a dataset? filterselectcolumngroup_by\nWhat function is used to select specific rows from a dataset? filterarrangesummariseselect\nWhich function is used to add new columns or modify existing ones? summarisetibblesummarymutate\nWhich symbol is used for filter c()%in%all of the above==\nWhat is this symbol used for? |&gt; Makes the function run in accordance with previous functionIt stores the output of a function as a variable but does not allow it to be used as an argument in another function.Takes the output of one function and passes it into another function as an argumentIt executes multiple functions simultaneously\nWhich ggplot function would give me a scatterplot? geom_point()ggplot(scatterplot)geom_graph()geom_scatter",
     "crumbs": [
-      "Part 4: Additional Exercises",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Practice Questions</span>"
+      "Part 5: Additional Exercises",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Practice Questions</span>"
     ]
   },
   {
     "objectID": "practice_questions.html#mastering-the-basics",
     "href": "practice_questions.html#mastering-the-basics",
-    "title": "14  Practice Questions",
+    "title": "17  Practice Questions",
     "section": "",
     "text": "What are the steps to follow every time you start a new quatro doc?\n\n A B C D\n\n\nOpen Quarto and create a new document. Load in the necessary libraries. Load the dataset. Make sure progress is saved to OneDrive or on your computer.\nDelete all previous Quarto documents. Load the dataset before installing any necessary libraries. Restart your computer to ensure a clean workspace. Save the document only after completing all analyses.\nOpen Quarto and immediately run all code chunks without checking the dataset. Load random libraries that might not be needed. Manually enter data instead of loading a dataset. Save the file as a text document instead of a Quarto file.\nLoad the dataset before opening Quarto. Write a full report before installing or loading any libraries. Save the document only in temporary storage. Run analyses without checking if the dataset loaded correctly.",
     "crumbs": [
-      "Part 4: Additional Exercises",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Practice Questions</span>"
+      "Part 5: Additional Exercises",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Practice Questions</span>"
     ]
   },
   {
     "objectID": "practice_questions.html#manipulating-data-sets",
     "href": "practice_questions.html#manipulating-data-sets",
-    "title": "14  Practice Questions",
-    "section": "14.2 Manipulating data sets",
-    "text": "14.2 Manipulating data sets\n\nfilter can be used to group rows: TRUEFALSE\nWhich is the correct form?\n\n filter(species_id = 'GM') filter(species_id %in% c(DM, NL) filter(species_id == %in% c(DM, NL)",
+    "title": "17  Practice Questions",
+    "section": "17.2 Manipulating data sets",
+    "text": "17.2 Manipulating data sets\n\nfilter can be used to group rows: TRUEFALSE\nWhich is the correct form?\n\n filter(species_id = 'GM') filter(species_id %in% c(DM, NL) filter(species_id == %in% c(DM, NL)",
     "crumbs": [
-      "Part 4: Additional Exercises",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Practice Questions</span>"
+      "Part 5: Additional Exercises",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Practice Questions</span>"
     ]
   },
   {
     "objectID": "practice_questions.html#working-with-ggplot",
     "href": "practice_questions.html#working-with-ggplot",
-    "title": "14  Practice Questions",
-    "section": "14.3 Working with ggplot",
-    "text": "14.3 Working with ggplot",
+    "title": "17  Practice Questions",
+    "section": "17.3 Working with ggplot",
+    "text": "17.3 Working with ggplot",
     "crumbs": [
-      "Part 4: Additional Exercises",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Practice Questions</span>"
+      "Part 5: Additional Exercises",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Practice Questions</span>"
     ]
   },
   {
     "objectID": "quality_control.html",
     "href": "quality_control.html",
-    "title": "15  Quality control analysis",
+    "title": "18  Quality control analysis",
     "section": "",
-    "text": "15.1 The Levey-Jennings Chart and Westgard Rules\nLevey-Jennings (LJ) charts are widely used in clinical and analytical laboratories as part of their quality control (QC) processes. They provide a visual representation of repeated experimental measurements of a known standard (an analyte of known concentration). These measurements are often taken daily (or every 12 hours in a 24-hour environment). The LJ chart allows the scientist to assess the consistency and reliability of an experimental procedure. Outliers, (or violations) are identified by following a set of rules. NHS pathology services and many analytical laboratories follow the Westgard Rules. These outliers may indicate that the experimental procedure is not performing to the required standard. However, as we shall see below, occasional outliers are expected even under normal conditions, as random variation in data following a normal distribution will produce such values.\nBelow, we will generate a Levey-Jennings chart and apply a set of rules to identify outliers. First, install the ggQC package and load the libraries that we need.\n# If you don't have ggQC package installed, uncheck the line below and run the install.packages() command to install ggQC package; then delete this line or check it back\n# install.packages(\"ggQC\")\nlibrary (ggQC)\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\nWe need to generate some sample data.. The “run” is the day of the assay (1-30) The “value” is the result of the assay.\nrun &lt;- c(1:30)\nvalue &lt;- c(50.0, 49.1, 53.1, 52.9, 50.6, 49.4, 51.3, 52.3, 50.2, 50.1, 49.8, 49.2,  49.2, 51.4, 50.3, 51.2, 51.8, 49.1, 49.2, 49.9, 49.4, 49.0, 49.6, 49.4, 48.2, 49.4, 48.0, 50.4, 51.2, 54.4)\ndf &lt;- tibble(run = run, value = value)\nWe will now generate a Levey-Jennings plot of the data using the code below. The blue line in the centre is the mean. The red lines indicate 1, 2 or 3 standard deviations from the mean. In this case, both the mean and SD are calculated from the data. Sometimes a LJ chart is generated using a previously established true value of the standard with an associated SD. Many other options are available as part of the ggQC package. In addition, you can generate different types of quality control charts. You can read more here\ndf |&gt; ggplot(aes(x = run, y = value)) + #start ggplot\n  geom_point() + geom_line() + # add the data points and the line\n    stat_QC(method = \"XmR\",    # XmR is for individual data points with a moving Range\n    auto.label = TRUE,         # Use Autolabels\n    label.digits = 1,          # Use one digit in the label\n    show.1n2.sigma = TRUE)     # Show 1 and 2 sigma (SD) lines\nLook at the plot above and compare these results to the Westgard Rules\nIn the data above, three of the Westgard rules have been violated. Can you identify the runs that are a problem? No code is required here, simply look at the plot above and compare the result to the Westgard Rules on the website above.\nCheck your answer by running the code below. This generates a facet plot, highlighting violations in red.\n#create facet plot with QC violations\nggplot(df, aes(x = run, y = value)) + #init ggplot\n  stat_qc_violations(method = \"XmR\" )\nNow, place your cursor over “stat_qc_violations” and press F1. You will see that the QC violations in the ggQC package are based on these rules below:\nNotice that the first of these rules is not identical to the Westgard rule. For rule 1, this package is slightly more sensitive as it highlights violations where there are 8 or more consecutive same-side points, while the equivalent Westgard rule states 10 or more same-side points. The other 3 rules above have an equivalent Westgard rule.\nThis is important as various sets of rules for detecting out-of-control or non-random conditions have been proposed and used for different applications:",
+    "text": "18.1 The Levey-Jennings Chart and Westgard Rules\nLevey-Jennings (LJ) charts are widely used in clinical and analytical laboratories as part of their quality control (QC) processes. They provide a visual representation of repeated experimental measurements of a known standard (an analyte of known concentration). These measurements are often taken daily (or every 12 hours in a 24-hour environment). The LJ chart allows the scientist to assess the consistency and reliability of an experimental procedure. Outliers, (or violations) are identified by following a set of rules. NHS pathology services and many analytical laboratories follow the Westgard Rules. These outliers may indicate that the experimental procedure is not performing to the required standard. However, as we shall see below, occasional outliers are expected even under normal conditions, as random variation in data following a normal distribution will produce such values.\nBelow, we will generate a Levey-Jennings chart and apply a set of rules to identify outliers. First, install the ggQC package and load the libraries that we need.\n# If you don't have ggQC package installed, uncheck the line below and run the install.packages() command to install ggQC package; then delete this line or check it back\n# install.packages(\"ggQC\")\nlibrary (ggQC)\nlibrary(tidyverse)\n\nWarning: package 'ggplot2' was built under R version 4.4.1\n\n\nWarning: package 'tibble' was built under R version 4.4.1\n\n\nWarning: package 'purrr' was built under R version 4.4.1\n\n\nWarning: package 'lubridate' was built under R version 4.4.1\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.2     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\nWe need to generate some sample data.. The “run” is the day of the assay (1-30) The “value” is the result of the assay.\nrun &lt;- c(1:30)\nvalue &lt;- c(50.0, 49.1, 53.1, 52.9, 50.6, 49.4, 51.3, 52.3, 50.2, 50.1, 49.8, 49.2,  49.2, 51.4, 50.3, 51.2, 51.8, 49.1, 49.2, 49.9, 49.4, 49.0, 49.6, 49.4, 48.2, 49.4, 48.0, 50.4, 51.2, 54.4)\ndf &lt;- tibble(run = run, value = value)\nWe will now generate a Levey-Jennings plot of the data using the code below. The blue line in the centre is the mean. The red lines indicate 1, 2 or 3 standard deviations from the mean. In this case, both the mean and SD are calculated from the data. Sometimes a LJ chart is generated using a previously established true value of the standard with an associated SD. Many other options are available as part of the ggQC package. In addition, you can generate different types of quality control charts. You can read more here\ndf |&gt; ggplot(aes(x = run, y = value)) + #start ggplot\n  geom_point() + geom_line() + # add the data points and the line\n    stat_QC(method = \"XmR\",    # XmR is for individual data points with a moving Range\n    auto.label = TRUE,         # Use Autolabels\n    label.digits = 1,          # Use one digit in the label\n    show.1n2.sigma = TRUE)     # Show 1 and 2 sigma (SD) lines\nLook at the plot above and compare these results to the Westgard Rules\nIn the data above, three of the Westgard rules have been violated. Can you identify the runs that are a problem? No code is required here, simply look at the plot above and compare the result to the Westgard Rules on the website above.\nCheck your answer by running the code below. This generates a facet plot, highlighting violations in red.\n#create facet plot with QC violations\nggplot(df, aes(x = run, y = value)) + #init ggplot\n  stat_qc_violations(method = \"XmR\" )\nNow, place your cursor over “stat_qc_violations” and press F1. You will see that the QC violations in the ggQC package are based on these rules below:\nNotice that the first of these rules is not identical to the Westgard rule. For rule 1, this package is slightly more sensitive as it highlights violations where there are 8 or more consecutive same-side points, while the equivalent Westgard rule states 10 or more same-side points. The other 3 rules above have an equivalent Westgard rule.\nThis is important as various sets of rules for detecting out-of-control or non-random conditions have been proposed and used for different applications:",
     "crumbs": [
-      "Part 6: Topic-specific approaches",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Quality control analysis</span>"
+      "Part 7: Topic-specific approaches",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Quality control analysis</span>"
     ]
   },
   {
     "objectID": "quality_control.html#the-levey-jennings-chart-and-westgard-rules",
     "href": "quality_control.html#the-levey-jennings-chart-and-westgard-rules",
-    "title": "15  Quality control analysis",
+    "title": "18  Quality control analysis",
     "section": "",
     "text": "Violation Same Side: 8 or more consecutive, same-side points\nViolation 1 Sigma: 4 or more consecutive, same-side points exceeding 1 sigma\nViolation 2 Sigma: 2 or more consecutive, same-side points exceeding 2 sigma\nViolation 3 Sigma: any points exceeding 3 sigma\n\n\n\n\nWalter A. Shewhart (1923) Economic Control Of Quality Of Manufactured Product\nWestern Electric Rules- Western Electric Company (1956), Statistical Quality Control Handbook. (1 ed.)\nNelson Rules (1984)\nWestgard Rules (1981)\n\n\n\n\n\n\n\nImportant\n\n\n\nAlways follow the protocol and quality control processes that are used in your workplace – it will vary!",
     "crumbs": [
-      "Part 6: Topic-specific approaches",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Quality control analysis</span>"
+      "Part 7: Topic-specific approaches",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Quality control analysis</span>"
     ]
   },
   {
     "objectID": "quality_control.html#testing-for-outliers-using-normally-distributed-data",
     "href": "quality_control.html#testing-for-outliers-using-normally-distributed-data",
-    "title": "15  Quality control analysis",
-    "section": "15.2 Testing for outliers using normally distributed data",
-    "text": "15.2 Testing for outliers using normally distributed data\nThe data provided above was deliberately manipulated to introduce three rule violations. If this was your actual data from one month in an analytical laboratory, it would indicate that serious errors are occurring on a regular basis. You would need to rectify the problem(s) before running any real samples. If your data is from a normal distribution then outliers detected by these rules are quite rare, but they do happen, even if nothing is wrong with the equipment or the user. Use the code below to generate QC plots of 30 data points from a normal distribution with a mean of 40 and SD = 2. Run this code 12 times to see how often outliers might occur in one year under ideal conditions. Remember, if any outliers are detected, even at these rare intevals, you would still need to check all of your equipment and reagents, as you would have no way of knowing if it is a malfunction or just random noise.\n\n# Generate some random data and plot it\ntibble(run = c(1:30),\n      value = rnorm(30, mean =40, sd =2),) |&gt; \n  ggplot (aes(x = run, y = value)) + \n  stat_qc_violations(method = \"XmR\" )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion\n\n\n\nHow many times were outliers detected? Why are these rules designed so that outliers are rare?",
+    "title": "18  Quality control analysis",
+    "section": "18.2 Testing for outliers using normally distributed data",
+    "text": "18.2 Testing for outliers using normally distributed data\nThe data provided above was deliberately manipulated to introduce three rule violations. If this was your actual data from one month in an analytical laboratory, it would indicate that serious errors are occurring on a regular basis. You would need to rectify the problem(s) before running any real samples. If your data is from a normal distribution then outliers detected by these rules are quite rare, but they do happen, even if nothing is wrong with the equipment or the user. Use the code below to generate QC plots of 30 data points from a normal distribution with a mean of 40 and SD = 2. Run this code 12 times to see how often outliers might occur in one year under ideal conditions. Remember, if any outliers are detected, even at these rare intevals, you would still need to check all of your equipment and reagents, as you would have no way of knowing if it is a malfunction or just random noise.\n\n# Generate some random data and plot it\ntibble(run = c(1:30),\n      value = rnorm(30, mean =40, sd =2),) |&gt; \n  ggplot (aes(x = run, y = value)) + \n  stat_qc_violations(method = \"XmR\" )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion\n\n\n\nHow many times were outliers detected? Why are these rules designed so that outliers are rare?",
     "crumbs": [
-      "Part 6: Topic-specific approaches",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Quality control analysis</span>"
+      "Part 7: Topic-specific approaches",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Quality control analysis</span>"
     ]
   },
   {
     "objectID": "quality_control.html#further-work",
     "href": "quality_control.html#further-work",
-    "title": "15  Quality control analysis",
-    "section": "15.3 Further Work",
-    "text": "15.3 Further Work\nYou may have noticed that in the first graph above, the mean was 50.3. This value was calculated from the data. In many analytical processes, the standard will be of a known concentration and the process will have a well established standard deviation. Let us assume that for the data above, the known standard should be 50 units with a standard deviation of 1.3. Can you write R-code to generate a plot of the same data but with:\n\nwith a blue dashed horizontal line at exactly 50 units, label it “50” or “mean”\nwith faint red dashed lines to indicate 1, 2 or 3 standard deviations from 50. Label these lines with “-1 SD”, “+1 SD”, “-2 SD”, “+2 SD” etc.\n\n\n\n\n\n\n\nTips\n\n\n\nuse geom_seqment rather than geom_hline as this allows you to control the endpoint with xend = 30\nuse annotate to add a text label. Set the x = 30.5 as this is the right-side of the plot. Set the y-value to the correct numerical values to get -1 SD, +1 SD, -2 SD, +2 SD etc\n\n\n\n#this is to get you started\ndf |&gt; ggplot(aes(x= run, y=value))+ geom_line()+geom_point()+\n  geom_segment(aes(x = 1, xend = 30, y = 50, yend = 50), # sets the start and end points\n               color = \"blue\",                           # makes it blue\n               linetype = \"dashed\",                     # dashed\n               linewidth = 0.5) +                            # fine \n  annotate(\"text\", x = 30.5, y = 50, label = \"50\", hjust = 0, color = \"blue\") # adds the label \"50\"\n\nWarning in geom_segment(aes(x = 1, xend = 30, y = 50, yend = 50), color = \"blue\", : All aesthetics have length 1, but the data has 30 rows.\nℹ Please consider using `annotate()` or provide this layer with data containing\n  a single row.",
+    "title": "18  Quality control analysis",
+    "section": "18.3 Further Work",
+    "text": "18.3 Further Work\nYou may have noticed that in the first graph above, the mean was 50.3. This value was calculated from the data. In many analytical processes, the standard will be of a known concentration and the process will have a well established standard deviation. Let us assume that for the data above, the known standard should be 50 units with a standard deviation of 1.3. Can you write R-code to generate a plot of the same data but with:\n\nwith a blue dashed horizontal line at exactly 50 units, label it “50” or “mean”\nwith faint red dashed lines to indicate 1, 2 or 3 standard deviations from 50. Label these lines with “-1 SD”, “+1 SD”, “-2 SD”, “+2 SD” etc.\n\n\n\n\n\n\n\nTips\n\n\n\nuse geom_seqment rather than geom_hline as this allows you to control the endpoint with xend = 30\nuse annotate to add a text label. Set the x = 30.5 as this is the right-side of the plot. Set the y-value to the correct numerical values to get -1 SD, +1 SD, -2 SD, +2 SD etc\n\n\n\n#this is to get you started\ndf |&gt; ggplot(aes(x= run, y=value))+ geom_line()+geom_point()+\n  geom_segment(aes(x = 1, xend = 30, y = 50, yend = 50), # sets the start and end points\n               color = \"blue\",                           # makes it blue\n               linetype = \"dashed\",                     # dashed\n               linewidth = 0.5) +                            # fine \n  annotate(\"text\", x = 30.5, y = 50, label = \"50\", hjust = 0, color = \"blue\") # adds the label \"50\"\n\nWarning in geom_segment(aes(x = 1, xend = 30, y = 50, yend = 50), color = \"blue\", : All aesthetics have length 1, but the data has 30 rows.\nℹ Please consider using `annotate()` or provide this layer with data containing\n  a single row.",
     "crumbs": [
-      "Part 6: Topic-specific approaches",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Quality control analysis</span>"
+      "Part 7: Topic-specific approaches",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Quality control analysis</span>"
     ]
   },
   {
     "objectID": "quality_control.html#references",
     "href": "quality_control.html#references",
-    "title": "15  Quality control analysis",
-    "section": "15.4 References",
-    "text": "15.4 References\n\nLevey, S., & Jennings, E. R. (1950). The use of control charts in the clinical laboratory. American Journal of Clinical Pathology, 20(11), 1059–1066. https://doi.org/10.1093/ajcp/20.11_ts.1059\nNelson, L. S. (1984). The Shewhart Control Chart—Tests for Special Causes. Journal of Quality Technology, 16(4), 237–239. https://doi.org/10.1080/00224065.1984.11978921\nShewhart, W.A., (1923) Economic Control Of Quality Of Manufactured Product\nWestgard, J. O., Barry, P. L., Hunt, M. R., & Groth, T. (1981). A multi-rule Shewhart chart for quality control in clinical chemistry. Clinical Chemistry, 27(3), 493–501.\nWestern Electric Rules - Western Electric Company (1956), Statistical Quality Control Handbook (1 ed.).",
+    "title": "18  Quality control analysis",
+    "section": "18.4 References",
+    "text": "18.4 References\n\nLevey, S., & Jennings, E. R. (1950). The use of control charts in the clinical laboratory. American Journal of Clinical Pathology, 20(11), 1059–1066. https://doi.org/10.1093/ajcp/20.11_ts.1059\nNelson, L. S. (1984). The Shewhart Control Chart—Tests for Special Causes. Journal of Quality Technology, 16(4), 237–239. https://doi.org/10.1080/00224065.1984.11978921\nShewhart, W.A., (1923) Economic Control Of Quality Of Manufactured Product\nWestgard, J. O., Barry, P. L., Hunt, M. R., & Groth, T. (1981). A multi-rule Shewhart chart for quality control in clinical chemistry. Clinical Chemistry, 27(3), 493–501.\nWestern Electric Rules - Western Electric Company (1956), Statistical Quality Control Handbook (1 ed.).",
     "crumbs": [
-      "Part 6: Topic-specific approaches",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Quality control analysis</span>"
+      "Part 7: Topic-specific approaches",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Quality control analysis</span>"
     ]
   },
   {
     "objectID": "limit_of_detection.html",
     "href": "limit_of_detection.html",
-    "title": "16  Limit of Detection",
+    "title": "19  Limit of Detection",
     "section": "",
-    "text": "16.0.1 Getting the data\nThe aim of this guide is to show you how to calculate the Limit of Detection (LOD) and the Limit of Quantitation (LOQ) using R. For a detailed explanation of these terms, please see Armbruster and Pry 2008.\nFirst, install the packages and load the libraries that we need.\nThe sample data below is from an ELISA standard curve. You can read about this ELISA here. The absorbance was measured at 450 nm for seven known concentrations of albumin (ng per ml). The manufacturer claims that this kit “Detects albumin levels from 3.125 ng/ml)”. Lets see if our real student data compares with this. Load in the data below.\nalbumin_concentration &lt;- c(0.0, 1.4, 2.8, 5.6, 11.1, 22.2, 44.4)\nabsorbance &lt;- c(0.135, 0.215, 0.156, 0.240, 0.324, 0.557, 0.891)\ndf &lt;- tibble(albumin_concentration = albumin_concentration, absorbance = absorbance)\nTake a quick look at the data.\ndf |&gt; \nggplot(aes(x = albumin_concentration, y = absorbance)) +\n  geom_point() +\n  geom_line() +\n  xlab(\"[Albumin] (ng/ml)\") +\n  ylab(\"Absorbance (450 nm)\")",
+    "text": "19.0.1 Getting the data\nThe aim of this guide is to show you how to calculate the Limit of Detection (LOD) and the Limit of Quantitation (LOQ) using R. For a detailed explanation of these terms, please see Armbruster and Pry 2008.\nFirst, install the packages and load the libraries that we need.\nThe sample data below is from an ELISA standard curve. You can read about this ELISA here. The absorbance was measured at 450 nm for seven known concentrations of albumin (ng per ml). The manufacturer claims that this kit “Detects albumin levels from 3.125 ng/ml)”. Lets see if our real student data compares with this. Load in the data below.\nalbumin_concentration &lt;- c(0.0, 1.4, 2.8, 5.6, 11.1, 22.2, 44.4)\nabsorbance &lt;- c(0.135, 0.215, 0.156, 0.240, 0.324, 0.557, 0.891)\ndf &lt;- tibble(albumin_concentration = albumin_concentration, absorbance = absorbance)\nTake a quick look at the data.\ndf |&gt; \nggplot(aes(x = albumin_concentration, y = absorbance)) +\n  geom_point() +\n  geom_line() +\n  xlab(\"[Albumin] (ng/ml)\") +\n  ylab(\"Absorbance (450 nm)\")",
     "crumbs": [
-      "Part 6: Topic-specific approaches",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Limit of Detection</span>"
-    ]
-  },
-  {
-    "objectID": "limit_of_detection.html#references",
-    "href": "limit_of_detection.html#references",
-    "title": "16  Limit of Detection",
-    "section": "16.3 References",
-    "text": "16.3 References\n\nArmbruster, D. A., & Pry, T. (2008). Limit of blank, limit of detection and limit of quantitation. The Clinical biochemist. Reviews, 29 (Suppl 1), S49–S52",
-    "crumbs": [
-      "Part 6: Topic-specific approaches",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Limit of Detection</span>"
-    ]
-  },
-  {
-    "objectID": "genomics.html",
-    "href": "genomics.html",
-    "title": "17  Genomics",
-    "section": "",
-    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
-    "crumbs": [
-      "Part 6: Topic-specific approaches",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Genomics</span>"
-    ]
-  },
-  {
-    "objectID": "phylogenetics.html",
-    "href": "phylogenetics.html",
-    "title": "18  Phylogenetics",
-    "section": "",
-    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
-    "crumbs": [
-      "Part 6: Topic-specific approaches",
-      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Phylogenetics</span>"
+      "Part 7: Topic-specific approaches",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Limit of Detection</span>"
     ]
   },
   {
     "objectID": "limit_of_detection.html#adding-the-equation-of-the-line",
     "href": "limit_of_detection.html#adding-the-equation-of-the-line",
-    "title": "16  Limit of Detection",
-    "section": "16.1 Adding the equation of the line",
-    "text": "16.1 Adding the equation of the line\nWe will now use stat_poly_eq from the ggpmisc package to display the equation of the line. We specify a linear model using y ~ x.\nAlthough we could still use geom_smooth here, for consistency we will use the stat_poly_line function to add the line. Notice that we use the same equation y ~ x on both lines.\n\ndf |&gt; \n  ggplot(aes(x = albumin_concentration, y = absorbance)) +\n  geom_point() +\n  stat_poly_line(formula = y ~ x) +\n  stat_poly_eq(use_label(\"eq\", \"R2\"), formula = y ~ x) +\n  xlab(\"[Albumin] (ng/ml)\") +\n  ylab(\"Absorbance (450 nm)\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat about non-linear data?\n\n\n\nPress F1 on the stat_poly_eq function, run the example given with a polynomial function.\n\n\nIt looks better with the R-squared value positioned under the equation. We can add label.x and label.y values to control the positions of “eq” and “R2” separately.\n\ndf |&gt; \n  ggplot(aes(x = albumin_concentration, y = absorbance)) +\n  geom_point() +\n  stat_poly_line(formula = y ~ x) +\n  stat_poly_eq(use_label(\"eq\"), formula = y ~ x, label.y = 0.9, label.x = 0.05) +\n  stat_poly_eq(use_label(\"R2\"), formula = y ~ x, label.y = 0.85, label.x = 0.05)+\n  xlab(\"[Albumin] (ng/ml)\") +\n  ylab(\"Absorbance (450 nm)\")",
+    "title": "19  Limit of Detection",
+    "section": "19.1 Adding the equation of the line",
+    "text": "19.1 Adding the equation of the line\nWe will now use stat_poly_eq from the ggpmisc package to display the equation of the line. We specify a linear model using y ~ x.\nAlthough we could still use geom_smooth here, for consistency we will use the stat_poly_line function to add the line. Notice that we use the same equation y ~ x on both lines.\n\ndf |&gt; \n  ggplot(aes(x = albumin_concentration, y = absorbance)) +\n  geom_point() +\n  stat_poly_line(formula = y ~ x) +\n  stat_poly_eq(use_label(\"eq\", \"R2\"), formula = y ~ x) +\n  xlab(\"[Albumin] (ng/ml)\") +\n  ylab(\"Absorbance (450 nm)\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat about non-linear data?\n\n\n\nPress F1 on the stat_poly_eq function, run the example given with a polynomial function.\n\n\nIt looks better with the R-squared value positioned under the equation. We can add label.x and label.y values to control the positions of “eq” and “R2” separately.\n\ndf |&gt; \n  ggplot(aes(x = albumin_concentration, y = absorbance)) +\n  geom_point() +\n  stat_poly_line(formula = y ~ x) +\n  stat_poly_eq(use_label(\"eq\"), formula = y ~ x, label.y = 0.9, label.x = 0.05) +\n  stat_poly_eq(use_label(\"R2\"), formula = y ~ x, label.y = 0.85, label.x = 0.05)+\n  xlab(\"[Albumin] (ng/ml)\") +\n  ylab(\"Absorbance (450 nm)\")",
     "crumbs": [
-      "Part 6: Topic-specific approaches",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Limit of Detection</span>"
+      "Part 7: Topic-specific approaches",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Limit of Detection</span>"
     ]
   },
   {
     "objectID": "limit_of_detection.html#the-linear-model",
     "href": "limit_of_detection.html#the-linear-model",
-    "title": "16  Limit of Detection",
-    "section": "16.2 The linear model",
-    "text": "16.2 The linear model\nTo calculate the limit of detection, we need to fit a linear model to the data and write all the parameters of this model to an object called “linear_model”. This object is a list of 12 things and it includes the original data (click on linear_model to view all the parameters).\n\n#fit a linear model to the data\nlinear_model &lt;- lm(absorbance ~ albumin_concentration, data = df)\nlinear_model\n\n\nCall:\nlm(formula = absorbance ~ albumin_concentration, data = df)\n\nCoefficients:\n          (Intercept)  albumin_concentration  \n              0.14691                0.01702  \n\n\nNotice that the coefficients above match with the equation we added to the plot earlier.\n\n16.2.1 The LOD calculation\nWe will now use the chemCal package to calculate the limit of detection (LOD). The LOD is the lowest amount of analyte (or signal) that can be reliably detected by a method. It is defined based on the probability of making a type II error — also known as a false negative. A type II error happens when the analyte is actually present, but the method fails to detect it (like type II fun).\nThe default values of the lod function from chemCal are the ones recommended by IUPAC. We can simply run this function on the linear_model from earlier.\n\nlod(linear_model)\n\n$albumin_concentration\n[1] 8.122929\n\n$absorbance\n[1] 0.2851984\n\n\nBelow are the default values. You can read about these in the help section. The probability of a false negative is given by ‘beta’ and has the default value of 0.05 (a 5% chance of a false negative).\n\n#with default values\nlod(linear_model, \n    alpha = 0.05,\n    beta = 0.05,\n    method = \"default\",\n    tol = \"default\")\n\n$albumin_concentration\n[1] 8.122929\n\n$absorbance\n[1] 0.2851984\n\n\nThe output you see is a list of two values corresponding to the two axes. The LOD is normally stated in units of concentration (the x-axis). You can extract the albumin concentration from the list using the $ sign as below.\n\nlod(linear_model)$albumin_concentration\n\n[1] 8.122929\n\n\nThe units of this value are the same as the x-axis. So…\n\npaste(\"Limit of Detection = \", \n      round(lod(linear_model)$albumin_concentration, 2), #rounds to 2 d.p.\n      \"ng/ml\",\n      sep = \" \") # adds a space between each of the above\n\n[1] \"Limit of Detection =  8.12 ng/ml\"\n\n\nIn the same way, you calculate the Limit of Quantitation using “loq”\n\npaste(\"Limit of Quantitation = \", \n      round(loq(linear_model)$albumin_concentration, 2), #rounds to 2 d.p.\n      \"ng/ml\",\n      sep = \" \") # adds a space between each of the above\n\n[1] \"Limit of Quantitation =  15.2 ng/ml\"\n\n\n\n\n\n\n\n\nImportant\n\n\n\nAlways check your answer looks sensible. Look where the LOD and LOQ values are on the graph and compare it to the data.\n\n\nThe chemCal package has a function for generating a plot of your linear_model object with 95% confidence limits.\n\n#generate a graph\ncalplot(linear_model, xlab = \"[Albumin] (ng/ml)\", ylab = \"Absorbance (450 nm)\")\n\n\n\n\n\n\n\n\nThe two kinds of uncertainty bands around the calibration fitted line are 95% confidence and prediction bands (if you use the default settings). Confidence bands show the uncertainty in the estimate of the average response at each concentration of albumin (or other analyte) — how sure we are about the position of the calibration curve itself. These bands are relatively narrow as they only reflect uncertainty in the fitted regression line.\nPrediction bands show the range where we expect new individual measurements to fall at a given concentration. They are always wider because they include not just the uncertainty in the calibration line but also the natural scatter of measurements around that line. Prediction intervals are crucial for LOD: they indicate how much a single absorbance reading could vary at low analyte concentrations, and therefore how confidently we can distinguish a true signal from background noise.\nHere is the same plot generated with tidyverse functions, starting with the same linear model of the df dataset; you will need package broom to extract fitted and predicted values from the model object:\n\nlibrary(broom)\n\n# Confidence band\nconfidence_df &lt;- augment(linear_model, df, interval = \"confidence\") |&gt;\n  select(albumin_concentration, fitted = .fitted, conf_lower = .lower, conf_upper = .upper)\n\n# Prediction band\nprediction_df &lt;- augment(linear_model, newdata = df, interval = \"prediction\") |&gt;\n  select(albumin_concentration, pred_lower = .lower, pred_upper = .upper)\n\n# Combine the two datasets\nplot_df &lt;- full_join(confidence_df, prediction_df, by = \"albumin_concentration\")\n\n# Plot with both confidence and prediction intervals\nplot_df |&gt;\n    ggplot() + aes(x = albumin_concentration, y = fitted) + geom_line() +\n    stat_poly_line(formula = y ~ x) +\n    stat_poly_eq(use_label(\"eq\"), formula = y ~ x, label.y = 0.9, label.x = 0.05) +\n    stat_poly_eq(use_label(\"R2\"), formula = y ~ x, label.y = 0.85, label.x = 0.05) +\n    geom_ribbon(aes(x = albumin_concentration, ymin = pred_lower, ymax = pred_upper, fill = \"Prediction (95%)\"), alpha = 0.15) +\n    geom_ribbon(aes(x = albumin_concentration, ymin = conf_lower, ymax = conf_upper, fill = \"Confidence (95%)\"), alpha = 0.15) +\n    labs(x = \"[Albumin] (ng/ml)\", y = \"Absorbance (450 nm)\", fill = NULL) + \n    theme_minimal()",
+    "title": "19  Limit of Detection",
+    "section": "19.2 The linear model",
+    "text": "19.2 The linear model\nTo calculate the limit of detection, we need to fit a linear model to the data and write all the parameters of this model to an object called “linear_model”. This object is a list of 12 things and it includes the original data (click on linear_model to view all the parameters).\n\n#fit a linear model to the data\nlinear_model &lt;- lm(absorbance ~ albumin_concentration, data = df)\nlinear_model\n\n\nCall:\nlm(formula = absorbance ~ albumin_concentration, data = df)\n\nCoefficients:\n          (Intercept)  albumin_concentration  \n              0.14691                0.01702  \n\n\nNotice that the coefficients above match with the equation we added to the plot earlier.\n\n19.2.1 The LOD calculation\nWe will now use the chemCal package to calculate the limit of detection (LOD). The LOD is the lowest amount of analyte (or signal) that can be reliably detected by a method. It is defined based on the probability of making a type II error — also known as a false negative. A type II error happens when the analyte is actually present, but the method fails to detect it (like type II fun).\nThe default values of the lod function from chemCal are the ones recommended by IUPAC. We can simply run this function on the linear_model from earlier.\n\nlod(linear_model)\n\n$albumin_concentration\n[1] 8.122929\n\n$absorbance\n[1] 0.2851984\n\n\nBelow are the default values. You can read about these in the help section. The probability of a false negative is given by ‘beta’ and has the default value of 0.05 (a 5% chance of a false negative).\n\n#with default values\nlod(linear_model, \n    alpha = 0.05,\n    beta = 0.05,\n    method = \"default\",\n    tol = \"default\")\n\n$albumin_concentration\n[1] 8.122929\n\n$absorbance\n[1] 0.2851984\n\n\nThe output you see is a list of two values corresponding to the two axes. The LOD is normally stated in units of concentration (the x-axis). You can extract the albumin concentration from the list using the $ sign as below.\n\nlod(linear_model)$albumin_concentration\n\n[1] 8.122929\n\n\nThe units of this value are the same as the x-axis. So…\n\npaste(\"Limit of Detection = \", \n      round(lod(linear_model)$albumin_concentration, 2), #rounds to 2 d.p.\n      \"ng/ml\",\n      sep = \" \") # adds a space between each of the above\n\n[1] \"Limit of Detection =  8.12 ng/ml\"\n\n\nIn the same way, you calculate the Limit of Quantitation using “loq”\n\npaste(\"Limit of Quantitation = \", \n      round(loq(linear_model)$albumin_concentration, 2), #rounds to 2 d.p.\n      \"ng/ml\",\n      sep = \" \") # adds a space between each of the above\n\n[1] \"Limit of Quantitation =  15.2 ng/ml\"\n\n\n\n\n\n\n\n\nImportant\n\n\n\nAlways check your answer looks sensible. Look where the LOD and LOQ values are on the graph and compare it to the data.\n\n\nThe chemCal package has a function for generating a plot of your linear_model object with 95% confidence limits.\n\n#generate a graph\ncalplot(linear_model, xlab = \"[Albumin] (ng/ml)\", ylab = \"Absorbance (450 nm)\")\n\n\n\n\n\n\n\n\nThe two kinds of uncertainty bands around the calibration fitted line are 95% confidence and prediction bands (if you use the default settings). Confidence bands show the uncertainty in the estimate of the average response at each concentration of albumin (or other analyte) — how sure we are about the position of the calibration curve itself. These bands are relatively narrow as they only reflect uncertainty in the fitted regression line.\nPrediction bands show the range where we expect new individual measurements to fall at a given concentration. They are always wider because they include not just the uncertainty in the calibration line but also the natural scatter of measurements around that line. Prediction intervals are crucial for LOD: they indicate how much a single absorbance reading could vary at low analyte concentrations, and therefore how confidently we can distinguish a true signal from background noise.\nHere is the same plot generated with tidyverse functions, starting with the same linear model of the df dataset; you will need package broom to extract fitted and predicted values from the model object:\n\nlibrary(broom)\n\n# Confidence band\nconfidence_df &lt;- augment(linear_model, df, interval = \"confidence\") |&gt;\n  select(albumin_concentration, fitted = .fitted, conf_lower = .lower, conf_upper = .upper)\n\n# Prediction band\nprediction_df &lt;- augment(linear_model, newdata = df, interval = \"prediction\") |&gt;\n  select(albumin_concentration, pred_lower = .lower, pred_upper = .upper)\n\n# Combine the two datasets\nplot_df &lt;- full_join(confidence_df, prediction_df, by = \"albumin_concentration\")\n\n# Plot with both confidence and prediction intervals\nplot_df |&gt;\n    ggplot() + aes(x = albumin_concentration, y = fitted) + geom_line() +\n    stat_poly_line(formula = y ~ x) +\n    stat_poly_eq(use_label(\"eq\"), formula = y ~ x, label.y = 0.9, label.x = 0.05) +\n    stat_poly_eq(use_label(\"R2\"), formula = y ~ x, label.y = 0.85, label.x = 0.05) +\n    geom_ribbon(aes(x = albumin_concentration, ymin = pred_lower, ymax = pred_upper, fill = \"Prediction (95%)\"), alpha = 0.15) +\n    geom_ribbon(aes(x = albumin_concentration, ymin = conf_lower, ymax = conf_upper, fill = \"Confidence (95%)\"), alpha = 0.15) +\n    labs(x = \"[Albumin] (ng/ml)\", y = \"Absorbance (450 nm)\", fill = NULL) + \n    theme_minimal()",
     "crumbs": [
-      "Part 6: Topic-specific approaches",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Limit of Detection</span>"
+      "Part 7: Topic-specific approaches",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Limit of Detection</span>"
+    ]
+  },
+  {
+    "objectID": "limit_of_detection.html#references",
+    "href": "limit_of_detection.html#references",
+    "title": "19  Limit of Detection",
+    "section": "19.3 References",
+    "text": "19.3 References\n\nArmbruster, D. A., & Pry, T. (2008). Limit of blank, limit of detection and limit of quantitation. The Clinical biochemist. Reviews, 29 (Suppl 1), S49–S52",
+    "crumbs": [
+      "Part 7: Topic-specific approaches",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Limit of Detection</span>"
+    ]
+  },
+  {
+    "objectID": "genomics.html",
+    "href": "genomics.html",
+    "title": "20  Genomics",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "Part 7: Topic-specific approaches",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Genomics</span>"
+    ]
+  },
+  {
+    "objectID": "phylogenetics.html",
+    "href": "phylogenetics.html",
+    "title": "21  Phylogenetics",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "Part 7: Topic-specific approaches",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Phylogenetics</span>"
     ]
   }
 ]
