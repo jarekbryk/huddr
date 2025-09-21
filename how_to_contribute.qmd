@@ -1,4 +1,31 @@
 # Improving this book
 
-This book is open source. It is published under a very generous MIT License so you may use it and its contents however you like (we would appreciate if you let us know if you do!). If you find a mistake or you want to expand it or suggest a better way of explaining things, please either get in touch with Jarek or, even better, submit a pull request directly [on GitHub](https://github.com/jarekbryk/huddr).
+This book is open source. It is published under a [MIT License](https://choosealicense.com/licenses/mit/) so you may use it and its contents however you like (we would appreciate if you [let us know if you do](mailto:j.bryk@hud.ac.uk))!). It also means anyone can suggest improvements or fix mistakes.
 
+We would be very happy if you let us know about errors that you spotted, or if you have suggestions to improve or expand the book. You do **not** need to be an expert in programming to contribute — even spotting a missing word or pointing out a confusing explanation will be helpful to us!
+
+There are two main ways to contribute:
+
+::: callout-important
+You will need to sign up for a free GitHub account to suggest changes to the book: [https://github.com/signup](https://github.com/signup).
+:::
+
+- **Open an issue** — this is like leaving a note online. For example: *“There’s a typo in Part 2, Chapter 3”* or *“I found the explanation of loops unclear.”* Issues are the simplest way to give us feedback. 👉 [Open a new issue here](https://github.com/jarekbryk/huddr/issues) by clicking the green button "New issue" on the right.
+
+- **Submit a pull request (PR)** — this is a way to propose an actual edit of any piece of content in the book (for example, fixing the typo directly, rephrasing a paragraph, etc.). This requires a few extra steps but can all be accomplished in the browser, just like the issues (and we can then fix it more easily). Don't worry, you can't "break" the book this way :-). The steps to submit your proposed changes to be consider by the book's editor (i.e. Jarek) are as follows:
+
+1. **Go to the page for this book’s files:** [https://github.com/jarekbryk/huddr](https://github.com/jarekbryk/huddr)
+2. **Find the file** that you want to modify (for example, a `basic_functions.qmd` file) and click it.
+3. On the file page, click the **pencil icon** to edit the file in the browser.
+4. **Make your change** in the editor (fix the text, add a link, etc.).
+5. Scroll down to **“Propose changes”** and write a short message like *“Fix typo in introduction”*.
+6. Click **“Propose changes”**. GitHub will show you a page with a button **“Create pull request”** — click it.
+7. Add a short title/description (why this improves the book) and click **“Create pull request.”**
+
+The editor will consider your suggestions and may incorporate them in the text - you will get a notification when this happens.
+
+::: callout-tip
+## Learn more
+
+If you want to read a bit more about pull request and version control (fundamental processes in modern software development), and other features of Git and GitHub, this guide is relatively accessible: [Using GitHub without the command line](https://pixelpioneers.co/blog/2017/using-github-without-the-command-line).
+:::

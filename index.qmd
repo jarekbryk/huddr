@@ -1,15 +1,15 @@
-# Introduction
+# About this book
 
-This is an online book created to facilitate learning R by students at the University of Huddersfield's Division of Biomedical and Life Sciences. However, unlike other books with tutorials on R, this book is thought of as a quick reference, with lists of core functions, their parameters and code syntax all in one place. We hope that it will help students learning R to overcome the challenges of figuring out how to analyse the data and how to translate this plan into code.
+This is an online book created to facilitate learning R by students at the University of Huddersfield's Division of Biomedical and Life Sciences. Unlike other books with tutorials on R, this book is thought of as a quick reference, with lists of core functions, their parameters and code syntax all in one place. Even though practically everything in this book can be found in R help pages, we tailored the contents to challenges often faced by the learners in our classes.
 
-This book was co-designed and co-written with a group of second-year students at the University of Huddersfield's Division of Biomedical and Life Sciences in 24/25, as a resource for themselves and other students to learn R. As it happened, I had a template for the book ready, as I was trying to do it myself for the past two years :-), and the five of us got it done much more effectively. Technically speaking, practically everything in this book can be found in R help pages, but our idea was to put all of the information that we use in the class in a single place to make it easier to find and use.
+This book was co-designed and co-written with a group of second-year students in 24/25, and should be considered a work in progress, to evolve and change each year depending on students' input. We would encourage every user of these materials to let us know about typos, errors and misunderstandings that we missed, and letting us know about their own suggestions for improving and expanding the content. If you would like to contribute to this book, [read about the ways to do it](how_to_contribute.html).
 
 ## How this book is organised
 
 This book is roughly divided into three major sections:
 
 ### Section 1
-- *Part 1* deals with preparing your computer for R - installing it, adjusting interface of RStudio, installing packages we use in the class and setting up the working environment in the browser for those who can only use Chromebooks or tablets. This part also contains an important chapter on how to use a computer, with information on fundamental operations on files and folders in Windows or macOS.
+- *Part 1* deals with preparing your computer for R - installing it, adjusting interface of RStudio, installing packages that we use in the class and setting up the working environment in the browser for those who can only use Chromebooks or tablets. This part also contains a chapter on how to use a computer, with information on fundamental operations on files and folders in Windows and macOS.
 
 ### Section 2
 - *Part 2* contains the key content of the book: information on the functions we use (including plotting with `ggplot`) and their parameters, examples of their use, as well as information on loading data and dealing with missing data. We anticipate that this is the part that students will be using most often.
@@ -20,14 +20,15 @@ This book is roughly divided into three major sections:
 - *Part 5* deals with loops and functions, topics we introduce fully in the final year, but which occasionally come up in the second year during the analyses. This part is not developed yet, but when it will be, it will be using the "nest-function-map" approach from the `purrr` package.
 - *Part 6* contains several chapters, each of which deals with a specific topic, useful in other modules or specific assignments. Currently chapters on quality control and limits of detection are ready (both useful in Professional Skills module assignments), with chapters on genomics and phylogenetics not developed yet (both will be useful in the Current Topics in Molecular Life Sciences assginments).
 
+Throughout the class, we almost exclusively use the `tidyverse` dialect of R. For the justification, see the page on [Tidyverse vs base R](tidyverse_vs_baser.html).
 
-### How to use a computer
+## Textbooks
 
-Notably (and importantly for me as a tutor and module leader of the module where we teach R), this book contains a chapter on [how to use a computer](how_to_use_a_computer.html). In my experience in teaching R to undergraduates, many students struggle with _operating_ a computer, which makes learning _the hard stuff_ (data science and programming in R) even trickier. In a recent talk (discussing students' attitudes to learning coding) I presented this slide, which listed common issues I witness every year:
+::: callout-important
+## Textbooks for our classes
+Our recommended textbook to accompany the classes is the second edition of [R for Data Science](https://r4ds.hadley.nz) by Hadley Wickham, Mine Cetinkaya-Rundel and Garett Grolemund.
 
-![](images/windows_101_slide.png)
+The second texbook is dedicated to using `ggplot`, the package that we use to make all the plots and visualisations of data in the class: [R Graphics Cookbook](https://r-graphics.org) (2nd edition) by Winston Chang. 
 
-The chapter [How to use a computer](how_to_use_a_computer.html) contains guidelines and animated gifs demonstrating how to accomplish basic operations on files and folders, and explaining the key concepts of paths and file system hierarchy. We very much hope this will be helpful.
-
-From a teaching perspective, a very useful reading in this context is this 30 year-old text (!) by Phil Agre: [How to Help Someone Use a Computer](https://www.librarian.net/stax/4965/how-to-help-someone-use-a-computer-by-phil-agre/). All of his recommendations are still valid today (! again).
-
+Both are freely available online.
+:::
