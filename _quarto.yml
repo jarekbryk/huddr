@@ -27,15 +27,15 @@ book:
     - joining_functions_extended.qmd
     - pivot_functions_extended.qmd
     - graph_functions_extended.qmd
-  - part: 'Part 4: Statistical tests'
-    chapters:
     - basic_statistics.qmd
-  - part: 'Part 5: Additional Exercises'
-    chapters:
+    - functions_and_loops.qmd
     - practice_questions.qmd
-  - part: 'Part 6: Functions and loops'
-  - part: 'Part 7: Topic-specific approaches'
+  - part: 'Part 4: Content from classes'
     chapters:
+    - code_from_class.qmd
+  - part: 'Part 5: Topic-specific content'
+    chapters:
+    - code_from_class.qmd
     - quality_control.qmd
     - limit_of_detection.qmd
     - genomics.qmd

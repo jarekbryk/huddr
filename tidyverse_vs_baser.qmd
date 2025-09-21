@@ -1,8 +1,8 @@
 # Tidyverse vs base R
 
-This book is almost entirely written with the `tidyverse` dialect of R in mind, using RStudio as an integrated development environment (IDE). Base R is only mentioned when we get to square brackets' indexing of lists in the advanced chapters on functions and loops (which we do not teach until the final year). Many of the plotting options described in the [R Graphics Cookbook](https://r-graphics.org) textbook also use base R (in addition to ggplot). 
+This book is almost entirely written with the [`tidyverse`](https://www.tidyverse.org) dialect of R in mind, using [RStudio](https://posit.co/products/open-source/rstudio/?sid=1) as an integrated development environment (IDE). Base R is only mentioned when we get to square brackets' indexing of lists in the advanced chapters on functions and loops (which we do not teach until the final year). Many of the plotting options described in the [R Graphics Cookbook](https://r-graphics.org) textbook also use base R (in addition to ggplot). 
 
-The reason for our preference for tidyverse is that we consider `tidyverse` to be easier for beginners to grasp. 99% of what we need to do in the year is available through `tidyverse`. `tidyverse` packages have better help sources available online and they are consistent: operating on data frames with relatively small number of usefully-named functions makes it easier to climb the learning curve. 
+The reason for our preference for tidyverse is that we consider `tidyverse` to be easier for beginners to grasp. 99% of what we need to do in the year is available through `tidyverse`. `tidyverse` packages have better help sources available online and they are consistent: operating on data frames with a relatively small number of usefully-named functions makes it easier to climb the learning curve. 
 
 ::: callout-tip
 ## Recommended reading

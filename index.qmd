@@ -1,26 +1,36 @@
 # About this book
 
-This is an online book created to facilitate learning R by students at the University of Huddersfield's Division of Biomedical and Life Sciences. Unlike other books with tutorials on R, this book is thought of as a quick reference, with lists of core functions, their parameters and code syntax all in one place. Even though practically everything in this book can be found in R help pages, we tailored the contents to challenges often faced by the learners in our classes.
+This is an online book created to facilitate learning R by students at the University of Huddersfield's Division of Biomedical and Life Sciences. Unlike other books with tutorials on R, this book is thought of as a quick reference, with lists of core functions, their parameters and code syntax all in one place. Even though practically everything in this book can be found in R help pages, we tailored the contents to the curriculum and to help with common challenges faced by the learners in our classes.
 
 This book was co-designed and co-written with a group of second-year students in 24/25, and should be considered a work in progress, to evolve and change each year depending on students' input. We would encourage every user of these materials to let us know about typos, errors and misunderstandings that we missed, and letting us know about their own suggestions for improving and expanding the content. If you would like to contribute to this book, [read about the ways to do it](how_to_contribute.html).
 
 ## How this book is organised
 
-This book is roughly divided into three major sections:
+This book is roughly divided into four major sections:
 
 ### Section 1
-- *Part 1* deals with preparing your computer for R - installing it, adjusting interface of RStudio, installing packages that we use in the class and setting up the working environment in the browser for those who can only use Chromebooks or tablets. This part also contains a chapter on how to use a computer, with information on fundamental operations on files and folders in Windows and macOS.
+- *Introduction* - the page you are reading right now. Describes our idea for the book, encourages you to contribute to its development, and explains a couple of more esoteric ([`tidyverse` vs base R](tidyverse_vs_baser.html) and fundamental ([large language models](llms.html)) ideas about our approach to teaching R. 
 
 ### Section 2
-- *Part 2* contains the key content of the book: information on the functions we use (including plotting with `ggplot`) and their parameters, examples of their use, as well as information on loading data and dealing with missing data. We anticipate that this is the part that students will be using most often.
-- *Part 3* contains information on statistical tests, but it is _not_ a statistics textbook. This part concentrates on _how to_ run statistical tests that you learned last year in R, rather than explaining when to run them, how to check their assumptions and how to interpret their results.
-- *Part 4* contains self-checking exercises that run entirely in the browser and are useful to make sure you are "getting it" as you go along.
+- *Part 2* deals with preparing your computer for R - installing it, adjusting interface of RStudio, installing packages that we use in the class and setting up the working environment in the browser for those who can only use Chromebooks or tablets. This part also contains a chapter on how to use a computer, with information on fundamental operations on files and folders in Windows and macOS.
 
 ### Section 3
-- *Part 5* deals with loops and functions, topics we introduce fully in the final year, but which occasionally come up in the second year during the analyses. This part is not developed yet, but when it will be, it will be using the "nest-function-map" approach from the `purrr` package.
-- *Part 6* contains several chapters, each of which deals with a specific topic, useful in other modules or specific assignments. Currently chapters on quality control and limits of detection are ready (both useful in Professional Skills module assignments), with chapters on genomics and phylogenetics not developed yet (both will be useful in the Current Topics in Molecular Life Sciences assginments).
 
-Throughout the class, we almost exclusively use the `tidyverse` dialect of R. For the justification, see the page on [Tidyverse vs base R](tidyverse_vs_baser.html).
+The key content of the book:
+
+- *Part 3* contains information on the functions we use (including plotting with `ggplot`) and their parameters, examples of their use, as well as information on loading data and dealing with missing data. We anticipate that this is the part that students will be using most often.
+- *Part 4* contains information on statistical tests, but it is _not_ a statistics textbook. This part concentrates on _how to_ run statistical tests that you learned last year in R, rather than explaining when to run them, how to check their assumptions and how to interpret their results.
+- *Part 5* contains self-checking exercises that run entirely in the browser and are useful to make sure you are "getting it" as you go along.
+- *Part 6* deals with loops and functions, topics we introduce fully in the final year, but which occasionally come up in the second year during the analyses. This part is not developed yet, but when it will be, it will be using the "nest-function-map" approach from the `purrr` package.
+
+### Section 4
+
+- *Part 7* contains prettified content from the second year modules where R is introduced for the first time. Every week, a curated version of that week's class content will be uploaded to build this part of the textbook.
+
+### Section 5
+- *Part 8* contains several chapters, each of which deals with a specific topic, useful in other modules or specific assignments. Currently chapters on quality control and limits of detection are ready (both useful in Professional Skills module assignments), with chapters on genomics and phylogenetics not developed yet (both will be useful in the Current Topics in Molecular Life Sciences assginments).
+
+Throughout the book and the classes we almost exclusively use the `tidyverse` dialect of R. For the justification, see the page on [tidyverse vs base R](tidyverse_vs_baser.html).
 
 ## Textbooks
 
