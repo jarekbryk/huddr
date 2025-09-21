@@ -2,7 +2,7 @@ project:
   type: book
 book:
   title: Hudd-R book
-  author: Fern Compston, Chantay Robinson Livingston, Sofia Covini Schob, Layane Soufan, Ana Salgado
+  authors: Fern Compston, Chantay Robinson Livingston, Sofia Covini Schob, Layane Soufan, Ana Salgado
     Villa and Jarek Bryk
   date: '2025-02-14'
   chapters:
