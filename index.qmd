@@ -14,6 +14,8 @@ This book is roughly divided into four major sections:
 ### Section 2
 - *Part 2* deals with preparing your computer for R - installing it, adjusting interface of RStudio, installing packages that we use in the class and setting up the working environment in the browser for those who can only use Chromebooks or tablets. This part also contains a chapter on how to use a computer, with information on fundamental operations on files and folders in Windows and macOS.
 
+Once you have the tools ready, we will get you from zero to the first complex plot with statistical analysis in less than 20 minutes :-)
+
 ### Section 3
 
 The key content of the book:
@@ -32,13 +34,9 @@ The key content of the book:
 
 Throughout the book and the classes we almost exclusively use the `tidyverse` dialect of R. For the justification, see the page on [tidyverse vs base R](tidyverse_vs_baser.html).
 
-## Textbooks
-
-::: callout-important
 ## Textbooks for our classes
 Our recommended textbook to accompany the classes is the second edition of [R for Data Science](https://r4ds.hadley.nz) by Hadley Wickham, Mine Cetinkaya-Rundel and Garett Grolemund.
 
-The second texbook is dedicated to using `ggplot`, the package that we use to make all the plots and visualisations of data in the class: [R Graphics Cookbook](https://r-graphics.org) (2nd edition) by Winston Chang. 
+The second texbook is dedicated to using `ggplot`, the package that we use to make all the plots and visualisations of data in the class: [R Graphics Cookbook](https://r-graphics.org) (second edition) by Winston Chang. 
 
 Both are freely available online.
-:::
