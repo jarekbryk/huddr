@@ -315,8 +315,15 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#openning-an-issue" id="toc-openning-an-issue" class="nav-link active" data-scroll-target="#openning-an-issue"><span class="header-section-number">4.1</span> Openning an issue</a></li>
+  <li><a href="#submitting-a-pull-request-pr" id="toc-submitting-a-pull-request-pr" class="nav-link" data-scroll-target="#submitting-a-pull-request-pr"><span class="header-section-number">4.2</span> Submitting a pull request (PR)</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/jarekbryk/huddr/edit/main/how_to_contribute.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jarekbryk/huddr/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/jarekbryk/huddr/blob/main/how_to_contribute.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -340,8 +347,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This book is open source. It is published under a <a href="https://choosealicense.com/licenses/mit/">MIT License</a> so you may use it and its contents however you like (we would appreciate if you <a href="mailto:j.bryk@hud.ac.uk">let us know if you do</a>)!). It also means anyone can suggest improvements or fix mistakes.</p>
-<p>We would be very happy if you let us know about errors that you spotted, or if you have suggestions to improve or expand the book. You do <strong>not</strong> need to be an expert in programming to contribute — even spotting a missing word or pointing out a confusing explanation will be helpful to us!</p>
+<p>This book is open source. It is published under a <a href="https://choosealicense.com/licenses/mit/">MIT License</a> so you may use its contents however you like (we would appreciate if you <a href="mailto:j.bryk@hud.ac.uk">let us know if you do</a>)!). It also means anyone can suggest improvements or fix mistakes.</p>
+<p>We would be very happy if you let us know about errors that that you spotted, or if you have suggestions to improve or expand the book. You do not need to be an expert in programming to contribute and you cannot break the book by doing so — even spotting a missing word or pointing out a confusing explanation will be helpful to us!</p>
 <p>There are two main ways to contribute:</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -356,18 +363,22 @@ Important
 <p>You will need to sign up for a free GitHub account to suggest changes to the book: <a href="https://github.com/signup">https://github.com/signup</a>.</p>
 </div>
 </div>
-<ul>
-<li><p><strong>Open an issue</strong> — this is like leaving a note online. For example: <em>“There’s a typo in Part 2, Chapter 3”</em> or <em>“I found the explanation of loops unclear.”</em> Issues are the simplest way to give us feedback. 👉 <a href="https://github.com/jarekbryk/huddr/issues">Open a new issue here</a> by clicking the green button “New issue” on the right.</p></li>
-<li><p><strong>Submit a pull request (PR)</strong> — this is a way to propose an actual edit of any piece of content in the book (for example, fixing the typo directly, rephrasing a paragraph, etc.). This requires a few extra steps but can all be accomplished in the browser, just like the issues (and we can then fix it more easily). Don’t worry, you can’t “break” the book this way :-). The steps to submit your proposed changes to be consider by the book’s editor (i.e.&nbsp;Jarek) are as follows:</p></li>
-</ul>
+<section id="openning-an-issue" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="openning-an-issue"><span class="header-section-number">4.1</span> Openning an issue</h2>
+<p>This is like leaving a note online. For example: <em>There’s a typo in Part 2, Chapter 3</em> or <em>I found the explanation of loops unclear</em>. Issues are the simplest way to give us feedback and <a href="https://github.com/jarekbryk/huddr/issues">they can be opened here</a> by clicking the green button “New issue” on the right.</p>
+<p><img src="images/open_issue.png" class="img-fluid"></p>
+</section>
+<section id="submitting-a-pull-request-pr" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="submitting-a-pull-request-pr"><span class="header-section-number">4.2</span> Submitting a pull request (PR)</h2>
+<p>This is a way to propose an actual edit of any piece of content in the book (for example, fixing the typo directly, rephrasing a paragraph, etc.). This requires a few extra steps but can all be accomplished in the browser and we can then apply the fix more easily). The steps to submit your proposed changes to be consider by the book’s editor (i.e.&nbsp;Jarek) are as follows:</p>
 <ol type="1">
-<li><strong>Go to the page for this book’s files:</strong> <a href="https://github.com/jarekbryk/huddr">https://github.com/jarekbryk/huddr</a></li>
-<li><strong>Find the file</strong> that you want to modify (for example, a <code>basic_functions.qmd</code> file) and click it.</li>
-<li>On the file page, click the <strong>pencil icon</strong> to edit the file in the browser.</li>
-<li><strong>Make your change</strong> in the editor (fix the text, add a link, etc.).</li>
-<li>Scroll down to <strong>“Propose changes”</strong> and write a short message like <em>“Fix typo in introduction”</em>.</li>
-<li>Click <strong>“Propose changes”</strong>. GitHub will show you a page with a button <strong>“Create pull request”</strong> — click it.</li>
-<li>Add a short title/description (why this improves the book) and click <strong>“Create pull request.”</strong></li>
+<li>Go to the page for this book’s files: <a href="https://github.com/jarekbryk/huddr">https://github.com/jarekbryk/huddr</a> or click the “edit this page” button at the bottom of each page.</li>
+<li>Find the file that you want to modify (for example, a <code>basic_functions.qmd</code> file) and click it.</li>
+<li>On the file page, click the pencil icon to edit the file in the browser.</li>
+<li>Make your change in the editor (fix the text, add a link, etc.).</li>
+<li>Scroll down to “Propose changes” and write a short message like “Fix typo in the filter function”.</li>
+<li>Click “Propose changes”. GitHub will show you a page with a button “Create pull request” — click it.</li>
+<li>Add a short title/description (why this improves the book) and click “Create pull request.”</li>
 </ol>
 <p>The editor will consider your suggestions and may incorporate them in the text - you will get a notification when this happens.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -380,11 +391,12 @@ Learn more
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If you want to read a bit more about pull request and version control (fundamental processes in modern software development), and other features of Git and GitHub, this guide is relatively accessible: <a href="https://pixelpioneers.co/blog/2017/using-github-without-the-command-line">Using GitHub without the command line</a>.</p>
+<p>If you want to read a bit more about pull request and version control (fundamental components of modern software development), and other features of Git and GitHub, this guide is relatively accessible: <a href="https://pixelpioneers.co/blog/2017/using-github-without-the-command-line">Using GitHub without the command line</a>.</p>
 </div>
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script>
@@ -1009,4 +1021,4 @@ window.onload = function() {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/jarekbryk/huddr/edit/main/how_to_contribute.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jarekbryk/huddr/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/jarekbryk/huddr/blob/main/how_to_contribute.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jarekbryk/huddr/edit/main/how_to_contribute.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jarekbryk/huddr/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/jarekbryk/huddr/blob/main/how_to_contribute.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div></div></footer></body></html>

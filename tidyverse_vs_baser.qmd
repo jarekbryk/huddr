@@ -9,6 +9,6 @@ The reason for our preference for tidyverse is that we consider `tidyverse` to b
 We highly recommend reading the following sources to understand the base R vs. `tidyverse` story:
 
 - For the historical overview, read ([or watch](https://www.youtube.com/watch?v=5033jBHFiHE)) Roger Penn's [Teaching R to New Users - From tapply to the Tidyverse](https://simplystatistics.org/posts/2018-07-12-use-r-keynote-2018/).
-- David Robinson's [Teach the tidyverse to beginners](http://varianceexplained.org/r/teach-tidyverse/) post that first inspired me to switch to `tidyverse` after a year of teaching base R + `ggplot`.
+- David Robinson's [Teach the tidyverse to beginners](http://varianceexplained.org/r/teach-tidyverse/) post that first inspired Jarek to switch to `tidyverse` after a year of teaching base R + `ggplot`.
 - Not everyone agrees that `tidyverse` is better, or is better for teaching R, and the two recent contrarian views come from Norm Matloff ([Teaching R in a Kinder, Gentler, More Effective Manner](https://github.com/matloff/TidyverseSkeptic)) and Robert München ([Why R is Hard to Learn](https://r4stats.com/articles/why-r-is-hard-to-learn/)).
 :::
