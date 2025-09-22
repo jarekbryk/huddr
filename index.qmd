@@ -1,6 +1,6 @@
 # About this book
 
-This online book supports students in the Division of Biomedical and Life Sciences at the University of Huddersfield as they learn R. Unlike step-by-step tutorials, it is designed as a **quick reference**: core functions, key parameters, and example syntax collected in one place. While most details also exist in R’s help pages, we’ve tailored the content to our curriculum and the common challenges students face.
+This online book supports students in the Division of Biomedical and Life Sciences at the University of Huddersfield as they learn R. Unlike step-by-step tutorials, it is designed as a quick reference: core functions, key parameters, and example syntax collected in one place. While most details also exist in R’s help pages, we’ve tailored the content to our curriculum and the common challenges students face.
 
 The book was co-designed and co-written with second-year students in 2024/25 and will continue to evolve each year based on student input. If you spot typos, errors, or unclear explanations—or have ideas to improve or extend the content—please [see how to contribute](how_to_contribute.qmd).
 
