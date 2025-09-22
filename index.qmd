@@ -34,13 +34,13 @@ Both are freely available online.
 
 Ah, yes, [we are glad you asked](llms.html).
 
-![](images/blueberry_chatgpt.png "Screenshot of a particularly puzzling chatGPT conversation. Source: [Kieran Healy](https://kieranhealy.org/blog/archives/2025/08/07/blueberry-hill/)"){fig-alt="Screenshot of a chatGPT conversation, in which it claims there are three letters "b" in word "blueberry"}
+![](images/blueberry_chatgpt.png)
 
 ## How to learn R
 
 R is difficult for beginners and there is no way to sugarcoat it. The learning curve is steep, but we do not think it is very long: once you master a handful of commands and syntax principles, your own curiosity will drive you to transform, analyse and visualise your own data. There is only one principle we must emphasise for all students: **practice**.
 
-![](images/how_to_learn_r.png "Exactly what it says on the cover."){fig-alt="Screenshot of a fake book covers in style of O'Reilly books, with title "Changing stuff and seeing what happens", with a tagline: "How to actually learn any news programmning concept.""}
+![](images/how_to_learn_r.png)
 
 It cannot be overstated how important is your own practice to learning R. Run the examples as you read, then try to change them — alter a number, rename a variable, or add a new line — and see what happens. One of the great advantages of coding is that you can always check your workings - run the code in a different way, or on modified data, and see whether the output you get is the one you expect. Computers are stupid and they are very particular about the way instructions to them have to be written, so the vast majority of the errors you will encounter initially will be typos and mispaired brackets and not errors in the actual intent of the code. The more often you experiment, the faster you will become comfortable with R, and the sooner you will be able to use it for your own explorations.
 
