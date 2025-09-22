@@ -1,18 +1,10 @@
 # How to use a computer
 
-In my experience, one of the biggest barriers to learning programming for students today is not the complexity of coding itself, but rather the lack of fundamental computer skills. This chapter covers the most common issues that I encounter.
-
-
-### How to use a computer
-
-Notably (and importantly for me as a tutor and module leader of the module where we teach R), this book contains a chapter on [how to use a computer](how_to_use_a_computer.html). In my experience in teaching R to undergraduates, many students struggle with _operating_ a computer, which makes learning _the hard stuff_ (data science and programming in R) even trickier. In a recent talk (discussing students' attitudes to learning coding) I presented this slide, which listed common issues I witness every year:
+In our experience, one of the biggest barriers to learning programming for students today is not the complexity of coding itself, but rather the lack of fundamental computer skills. Many students struggle with _operating_ a computer, which makes learning _the hard stuff_ (data science and programming in R) even trickier. Here is a screenshot from a recent talk in which Jarek listed common issues:
 
 ![](images/windows_101_slide.png)
 
-The chapter [How to use a computer](how_to_use_a_computer.html) contains guidelines and animated gifs demonstrating how to accomplish basic operations on files and folders, and explaining the key concepts of paths and file system hierarchy. We very much hope this will be helpful.
-
 From a teaching perspective, a very useful reading in this context is this 30 year-old text (!) by Phil Agre: [How to Help Someone Use a Computer](https://www.librarian.net/stax/4965/how-to-help-someone-use-a-computer-by-phil-agre/). All of his recommendations are still valid today (! again).
-
 
 ### For Windows
 
@@ -50,16 +42,4 @@ One Drive stores your files in the cloud allowing you to access them from anywhe
 
 ### File extensions and default programes to open files
 
-
-### Concepts of paths and hierarchies
-
 ### Folders and files, and how to use File Explorer or Finder
-
-### File extensions and default programmes to open files
-
-### How to move or copy files from one folder to another
-
-### Difference between OneDrive and a hard drive
-
-### How to unzip a file/folder
-
