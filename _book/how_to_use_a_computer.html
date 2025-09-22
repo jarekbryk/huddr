@@ -42,6 +42,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -321,15 +324,14 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#onedrive-vs-hard-drive" id="toc-onedrive-vs-hard-drive" class="nav-link active" data-scroll-target="#onedrive-vs-hard-drive"><span class="header-section-number">5.1</span> OneDrive vs hard drive</a></li>
-  <li><a href="#but-what-is-cloud-anyway" id="toc-but-what-is-cloud-anyway" class="nav-link" data-scroll-target="#but-what-is-cloud-anyway"><span class="header-section-number">5.2</span> But what is “cloud” anyway?</a></li>
-  <li><a href="#file-explorer-folders-and-files" id="toc-file-explorer-folders-and-files" class="nav-link" data-scroll-target="#file-explorer-folders-and-files"><span class="header-section-number">5.3</span> File Explorer, folders and files</a></li>
-  <li><a href="#file-extensions" id="toc-file-extensions" class="nav-link" data-scroll-target="#file-extensions"><span class="header-section-number">5.4</span> File extensions</a>
+  <li><a href="#file-explorer-folders-and-files" id="toc-file-explorer-folders-and-files" class="nav-link" data-scroll-target="#file-explorer-folders-and-files"><span class="header-section-number">5.2</span> File Explorer, folders and files</a></li>
+  <li><a href="#file-extensions" id="toc-file-extensions" class="nav-link" data-scroll-target="#file-extensions"><span class="header-section-number">5.3</span> File extensions</a>
   <ul class="collapse">
-  <li><a href="#paths-and-hierarchies" id="toc-paths-and-hierarchies" class="nav-link" data-scroll-target="#paths-and-hierarchies"><span class="header-section-number">5.4.1</span> Paths and hierarchies</a></li>
-  <li><a href="#how-to-unzip-a-filefolder" id="toc-how-to-unzip-a-filefolder" class="nav-link" data-scroll-target="#how-to-unzip-a-filefolder"><span class="header-section-number">5.4.2</span> How to unzip a file/folder</a></li>
-  <li><a href="#how-to-movecopy-files-from-one-folder-to-another" id="toc-how-to-movecopy-files-from-one-folder-to-another" class="nav-link" data-scroll-target="#how-to-movecopy-files-from-one-folder-to-another"><span class="header-section-number">5.4.3</span> How to move/copy files from one folder to another</a></li>
-  <li><a href="#file-extensions-and-default-programes-to-open-files" id="toc-file-extensions-and-default-programes-to-open-files" class="nav-link" data-scroll-target="#file-extensions-and-default-programes-to-open-files"><span class="header-section-number">5.4.4</span> File extensions and default programes to open files</a></li>
-  <li><a href="#folders-and-files-and-how-to-use-file-explorer-or-finder" id="toc-folders-and-files-and-how-to-use-file-explorer-or-finder" class="nav-link" data-scroll-target="#folders-and-files-and-how-to-use-file-explorer-or-finder"><span class="header-section-number">5.4.5</span> Folders and files, and how to use File Explorer or Finder</a></li>
+  <li><a href="#to-enable-visibility-of-file-extensions" id="toc-to-enable-visibility-of-file-extensions" class="nav-link" data-scroll-target="#to-enable-visibility-of-file-extensions"><span class="header-section-number">5.3.1</span> To enable visibility of file extensions</a></li>
+  <li><a href="#to-specify-which-programme-should-open-rmdqmd-files" id="toc-to-specify-which-programme-should-open-rmdqmd-files" class="nav-link" data-scroll-target="#to-specify-which-programme-should-open-rmdqmd-files"><span class="header-section-number">5.3.2</span> To specify which programme should open Rmd/qmd files</a></li>
+  <li><a href="#paths-and-hierarchies" id="toc-paths-and-hierarchies" class="nav-link" data-scroll-target="#paths-and-hierarchies"><span class="header-section-number">5.3.3</span> Paths and hierarchies</a></li>
+  <li><a href="#how-to-unzip-a-filefolder" id="toc-how-to-unzip-a-filefolder" class="nav-link" data-scroll-target="#how-to-unzip-a-filefolder"><span class="header-section-number">5.3.4</span> How to unzip a file/folder</a></li>
+  <li><a href="#how-to-movecopy-files-from-one-folder-to-another" id="toc-how-to-movecopy-files-from-one-folder-to-another" class="nav-link" data-scroll-target="#how-to-movecopy-files-from-one-folder-to-another"><span class="header-section-number">5.3.5</span> How to move/copy files from one folder to another</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/jarekbryk/huddr/edit/main/how_to_use_a_computer.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jarekbryk/huddr/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/jarekbryk/huddr/blob/main/how_to_use_a_computer.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
@@ -359,56 +361,148 @@ ul.task-list li input[type="checkbox"] {
 <p>In our experience, one of the biggest barriers to learning programming for students today is not the complexity of coding itself, but rather the lack of fundamental computer skills. Many students struggle with <em>operating</em> a computer, which makes learning the hard stuff (data science and programming in R) even trickier. Here is a screenshot from a recent talk in which Jarek listed common issues:</p>
 <p><img src="images/windows_101_slide.png" class="img-fluid"></p>
 <p>From a teaching perspective, a very useful reading in this context is this 30 year-old text (!) by Phil Agre: <a href="https://www.librarian.net/stax/4965/how-to-help-someone-use-a-computer-by-phil-agre/">How to Help Someone Use a Computer</a>. All of his recommendations are still valid today (! again).</p>
+<p>Below is the list with explanations of the common challenges and solutions to modify various settings in the operating system to minimise confusion. We hope you will find them useful.</p>
 <section id="onedrive-vs-hard-drive" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="onedrive-vs-hard-drive"><span class="header-section-number">5.1</span> OneDrive vs hard drive</h2>
-<p>Microsoft’s cloud storage system OneDrive is the default on all university computers. When you log in to your account on a university computer, your “home” folder is located on OneDrive. This has an important advantage: by saving your files there you will be able to access them from any computer that is connected to the internet. So you can continue working on the same files on your home computer after the class, and you don’t have to copy files back and forth (or email them to yourself). Another advantage of this setup is backup: OneDrive files are backed up by Microsoft; but you should treat it only as secondary backup and protect your files independently (e.g.&nbsp;by coping them to another disk, or another cloud storage system).</p>
+<p>Microsoft’s cloud storage system OneDrive is the default on all university computers. When you log in to your account on a university computer, your “home” folder is located on OneDrive. This has an important advantage: by saving your files there you will be able to access them from any computer that is connected to the internet. So you can continue working on the same files on your home computer after the class, and you don’t have to copy files back and forth (or email them to yourself). Another advantage of this setup is backup: OneDrive files are backed up by Microsoft; but, really, you should treat it only as secondary backup and protect your files independently (e.g.&nbsp;by regularly coping them to another disk, or another cloud storage system).</p>
 <p><a href="https://simple.wikipedia.org/wiki/Hard_disk">“Hard drive”</a> (a.k.a. Hard Drisk Drive, or HDD) is a physical data storage device in a computer. They were once semi-mechanical devices with small disks spinning at a very high speed, and data read off them using magnets. Now they are most often base on flash memory and have no moving parts: they are called “SSD” (<a href="https://simple.wikipedia.org/wiki/Solid-state_drive">“Solid State Drive”</a>) and you can find them in every kind of electronic device.</p>
-<p>To be clear: computers in the classroom and computers that manage OneDrive system in the cloud all use some form of data storage (HDD and SDD). The difference between OneDrive and hard drive is only in the place where the main storage device is located.</p>
-</section>
-<section id="but-what-is-cloud-anyway" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="but-what-is-cloud-anyway"><span class="header-section-number">5.2</span> But what is “cloud” anyway?</h2>
+<p>To be clear: computers in the classroom and computers that manage OneDrive system in the cloud all use some form of data storage (HDD and/or SDD). The difference between OneDrive and hard drive is only in the place where the main storage device is located.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+But what is “cloud” anyway?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>“Cloud” is an unfortunate name, as nothing that it stands for is related to clouds (except maybe the general fuzziness of the term). By using the name “cloud” we simply mean that the data (files, folders etc.) that you see on a computer in front of you is not actually stored on that computer. Instead, it is regularly copied (“synced”) to computers physically located elsewhere (often in massive data centres all around the world). Think about a Netflix film that you may be watching on your phone: the film is not stored on your phone’s SSD unless you had downloaded it. It is being streamed from a HDD or SSD no a computer “in the cloud” somewhere almost in real time.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="file-explorer-folders-and-files" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="file-explorer-folders-and-files"><span class="header-section-number">5.3</span> File Explorer, folders and files</h2>
+<section id="file-explorer-folders-and-files" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="file-explorer-folders-and-files"><span class="header-section-number">5.2</span> File Explorer, folders and files</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>All images on this page can be clicked to be enlarged.</p>
+</div>
+</div>
 <p>File Explorer allows you to see all the files saved to your computer stored in different folders (also known as directories) like Downloads or Desktop, whether locally or in the cloud. There is a search bar in the top right hand corner which allows you to search for a document or folder by name.</p>
-<ul>
-<li><img src="images/Screenshot 2025-01-27 141717.png" class="img-fluid"></li>
-</ul>
-<p>A folder is shown by a folder icon next to the name of the folder, it also says File Folder under type.</p>
-<pre><code>![](images/Screenshot%202025-01-27%20142022.png)</code></pre>
-<p>A file is shown by an icon of the File type and the name of the File. The type of file is also written under type - in this case a Microsoft Excel workbook titled Book1 and a Microsoft Word Document titled Essay plan</p>
-<p><img src="images/Screenshot 2025-01-27 142052.png" class="img-fluid"></p>
+<p><a href="images/Screenshot 2025-01-27 141717.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/Screenshot 2025-01-27 141717.png" class="img-fluid"></a></p>
+<p>A folder is shown by a folder icon next to the name of the folder, and it is cleverly called “File folder” in the “Type” column.</p>
+<p><a href="images/Screenshot 2025-01-27 142022.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/Screenshot 2025-01-27 142022.png" class="img-fluid"></a></p>
+<p>A file is shown by an icon of the programme associated with it (see section 5.3 below). The type of file is also specified in the “Type” column - in this case, a Microsoft Excel workbook titled “Book1” and a Microsoft Word Document titled “Essay plan”.</p>
+<p><a href="images/Screenshot 2025-01-27 142052.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/Screenshot 2025-01-27 142052.png" class="img-fluid"></a></p>
 </section>
-<section id="file-extensions" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="file-extensions"><span class="header-section-number">5.4</span> File extensions</h2>
+<section id="file-extensions" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="file-extensions"><span class="header-section-number">5.3</span> File extensions</h2>
 <p>Many operating systems use file extensions as indicators of what kind of file type a file is. For example, text files have an extension “txt”, Excel files have an extension “xlsx”, and so on. Operating systems will often make an educated guess about which programme opens which file, using the extension as a hint, so that “eml” files are opened by Outlook, for example (or another mail client).</p>
-<p>There are two common problems with the file extension system: 1) MS Windows by default hides file extensions and 2) multiple programmes can use the same file type (also, this system can be hijacked for nefarious purposes). On some university computers, *.Rmd files that are used by R Studio to open R project folders are also used by Endnote (a reference manager), which takes a preference over R Studio. Endnote has no idea how to use R Studio’s Rmd files, and it gets annoying very quickly as it tries to open these files - unsuccessfully.</p>
-<p>To fix the first issue:</p>
-<p>INSERT GIF HERE</p>
-<p>To fix the second:</p>
-<p>INSERT GIF HERE</p>
-<section id="paths-and-hierarchies" class="level3" data-number="5.4.1">
-<h3 data-number="5.4.1" class="anchored" data-anchor-id="paths-and-hierarchies"><span class="header-section-number">5.4.1</span> Paths and hierarchies</h3>
-<p>To know where your file is in the computer (regardless of whether it is local or in the cloud), operating systems use <em>paths</em> that indicate location of files in a (mostly) hierarchical way. To start you need to know if your file is saved to your hard drive or One Drive. from there you can either click on the file or the folder it is saved in.</p>
-<pre><code>![](images/Screenshot%202025-02-05%20141435.png)</code></pre>
-<p>The box in the image above shows the path to the file, the video below shows how to get there</p>
+<p>There are two common problems with the file extension system: 1) MS Windows by default hides file extensions (as you can see in the image in the above section) and 2) multiple programmes can use the same file type (both features make this system vulnerable to spoofing for nefarious purposes). On a minority of university computers, *.Rmd and *.qmd files that are used by RStudio to open R files are also used by Endnote (a reference manager), which takes a preference over RStudio. Endnote has no idea how to use RStudio’s files, and its unsuccessful attempts to open them get annoying very quickly.</p>
+<section id="to-enable-visibility-of-file-extensions" class="level3" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="to-enable-visibility-of-file-extensions"><span class="header-section-number">5.3.1</span> To enable visibility of file extensions</h3>
+<ol type="1">
+<li>Open File Explorer (Win + E).</li>
+<li>In the top toolbar, click View → Show.</li>
+<li>Tick ✅ “File name extensions”.</li>
+</ol>
+<p><a href="gifs/make_extensions_visible.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="gifs/make_extensions_visible.gif" class="img-fluid"></a></p>
 </section>
-<section id="how-to-unzip-a-filefolder" class="level3" data-number="5.4.2">
-<h3 data-number="5.4.2" class="anchored" data-anchor-id="how-to-unzip-a-filefolder"><span class="header-section-number">5.4.2</span> How to unzip a file/folder</h3>
-<p>To make large files easier to transfer (and save storage space) we can compress them (or “zip” them, so called after one of <a href="https://simple.wikipedia.org/wiki/ZIP_(file_format)">the most common file formats that support data compression/uncompression</a>. These files will need to be uncompressed unzipped before you can use the content inside. this can be done 2 ways. the first way is by entering the zipped file and pressing the unzip button in the tip right corner. the next way is to right click on the zipped folder before entering it and clicking on unzip from the menu.</p>
-<p>Please note that</p>
+<section id="to-specify-which-programme-should-open-rmdqmd-files" class="level3" data-number="5.3.2">
+<h3 data-number="5.3.2" class="anchored" data-anchor-id="to-specify-which-programme-should-open-rmdqmd-files"><span class="header-section-number">5.3.2</span> To specify which programme should open Rmd/qmd files</h3>
+<ol type="1">
+<li>In the File Explorer, right-click the file you want to associate with a programme (e.g.&nbsp;<code>week1_code.qmd</code>).</li>
+<li>Choose Open with → Choose another app.</li>
+<li>Select the program you want (e.g.&nbsp;RStudio).</li>
+<li>Click Always art the bottom.</li>
+<li>If necessary (rarely), repeat this process for every file extension that you want to associate with a new programme.</li>
+</ol>
+<p><a href="gifs/associate_files.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="gifs/associate_files.gif" class="img-fluid"></a></p>
 </section>
-<section id="how-to-movecopy-files-from-one-folder-to-another" class="level3" data-number="5.4.3">
-<h3 data-number="5.4.3" class="anchored" data-anchor-id="how-to-movecopy-files-from-one-folder-to-another"><span class="header-section-number">5.4.3</span> How to move/copy files from one folder to another</h3>
+<section id="paths-and-hierarchies" class="level3" data-number="5.3.3">
+<h3 data-number="5.3.3" class="anchored" data-anchor-id="paths-and-hierarchies"><span class="header-section-number">5.3.3</span> Paths and hierarchies</h3>
+<p>To know where your file is in the computer (regardless of whether it is local or in the cloud), operating systems use <em>paths</em> that indicate location of files in a (mostly) hierarchical way. You can always view the whole path of each file or folder in the address bar of File Explorer:</p>
+<p><a href="images/Screenshot 2025-02-05 141435.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="images/Screenshot 2025-02-05 141435.png" class="img-fluid"></a></p>
+<p>You can also copy the path to your file or folder by copying the text in the address bar, or by right-clicking the file or folder name and selecting “Copy as a path (Ctrl-Shift-C)”. Similarly, you can <em>type</em> a path to a folder in the address bar and the File Explorer will take you there.</p>
+<p>In Windows, different levels of folder hierarchy are separated by backslash (), so if you wanted to get to a “test_project” folder located in the folder “Documents”, you would type <code>Documents\test_project\</code> in the File Explorer’s address bar. Note that there are some folders “above” the Documents that Windows hides from you by default, so if you click the address bar, the full path would be something like <code>C:\Users\Jarek\Documents\test_project</code>.</p>
+<p><code>C</code> drive is very commonly the top level position in the Windows’ system’s hierarchy, unless you are on OneDrive, in which case OneDrive will be the top level folder and there will be no <code>C</code> drive level at all.</p>
+<p><a href="gifs/paths_address_bar.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="gifs/paths_address_bar.gif" class="img-fluid"></a></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Where is my file?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The path always uniquely identifies each file in your computer. If you don’t know where a given file or folder is, click the address bar in File Explorer and the full path to the file/folder will be revealed.</p>
+</div>
+</div>
 </section>
-<section id="file-extensions-and-default-programes-to-open-files" class="level3" data-number="5.4.4">
-<h3 data-number="5.4.4" class="anchored" data-anchor-id="file-extensions-and-default-programes-to-open-files"><span class="header-section-number">5.4.4</span> File extensions and default programes to open files</h3>
+<section id="how-to-unzip-a-filefolder" class="level3" data-number="5.3.4">
+<h3 data-number="5.3.4" class="anchored" data-anchor-id="how-to-unzip-a-filefolder"><span class="header-section-number">5.3.4</span> How to unzip a file/folder</h3>
+<p>To make large files easier to transfer (and save storage space) we can compress them (or “zip” them, so called after one of <a href="https://simple.wikipedia.org/wiki/ZIP_(file_format)">the most common file formats that support data compression/uncompression</a>. These files will need to be uncompressed (“unzipped”) before the content inside could be used.</p>
+<p>Unzipping a file takes two steps:</p>
+<ol type="1">
+<li>Double click the zip file. By default, File Explorer will show you the <em>contents</em> of the archive, but <em>it will not be unzipped</em> yet.</li>
+<li>Click the “Extract all” button above right and and specify the destination for the unzipped file. It is a good practice to remove the last level of the path that Windows proposes to unzip the file to (e.g.&nbsp;if Windows proposes to unzip the file to <code>Downloads\test</code>, change it to <code>Downloads\</code>). This will avoid nesting of folders with the same name.</li>
+</ol>
+<p><a href="gifs/unzipping.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="gifs/unzipping.gif" class="img-fluid"></a></p>
 </section>
-<section id="folders-and-files-and-how-to-use-file-explorer-or-finder" class="level3" data-number="5.4.5">
-<h3 data-number="5.4.5" class="anchored" data-anchor-id="folders-and-files-and-how-to-use-file-explorer-or-finder"><span class="header-section-number">5.4.5</span> Folders and files, and how to use File Explorer or Finder</h3>
+<section id="how-to-movecopy-files-from-one-folder-to-another" class="level3" data-number="5.3.5">
+<h3 data-number="5.3.5" class="anchored" data-anchor-id="how-to-movecopy-files-from-one-folder-to-another"><span class="header-section-number">5.3.5</span> How to move/copy files from one folder to another</h3>
+<p>In the class, you will often be downloading files from Brightspace or the internet to open them in RStudio. In order to make working with these files in your RStudio easier, you should move these files to an apropriate place in your RStudio project folder (e.g.&nbsp;<code>code</code> or <code>data</code>). There are four ways of accomplishing this:</p>
+<section id="method-1-drag-and-drop" class="level4" data-number="5.3.5.1">
+<h4 data-number="5.3.5.1" class="anchored" data-anchor-id="method-1-drag-and-drop"><span class="header-section-number">5.3.5.1</span> Method 1: Drag and drop</h4>
+<ol type="1">
+<li>Open File Explorer (Win + E).</li>
+<li>Find the file or folder you want to move or copy.</li>
+<li>Drag it with the mouse to the new location. If the new location is on the same drive, dragging will move it. If the new location is on a different drive (e.g.&nbsp;C: → USB stick), dragging will copy it. You can hold Ctrl key while dragging to enforce copy, or hold Shift key while dragging to enforce moving.</li>
+</ol>
+</section>
+<section id="method-2-right-click-menu" class="level4" data-number="5.3.5.2">
+<h4 data-number="5.3.5.2" class="anchored" data-anchor-id="method-2-right-click-menu"><span class="header-section-number">5.3.5.2</span> Method 2: Right-click menu</h4>
+<ol type="1">
+<li>Right-click the file/folder.</li>
+<li>Choose Copy (to copy) or Cut (to move).</li>
+<li>Navigate to the new location.</li>
+<li>Right-click in empty space and choose Paste.</li>
+</ol>
+</section>
+<section id="method-3-interface-buttons" class="level4" data-number="5.3.5.3">
+<h4 data-number="5.3.5.3" class="anchored" data-anchor-id="method-3-interface-buttons"><span class="header-section-number">5.3.5.3</span> Method 3: Interface buttons</h4>
+<ol type="1">
+<li>Select file/folder.</li>
+<li>Click the copy icon to copy or scissors to cut (move).</li>
+<li>Navigate to the new location.</li>
+<li>Click the Paste icon.</li>
+</ol>
+<p><a href="gifs/copy_paste_move.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="gifs/copy_paste_move.gif" class="img-fluid"></a></p>
+</section>
+<section id="method-4-keyboard-shortcuts-recommended" class="level4" data-number="5.3.5.4">
+<h4 data-number="5.3.5.4" class="anchored" data-anchor-id="method-4-keyboard-shortcuts-recommended"><span class="header-section-number">5.3.5.4</span> Method 4: Keyboard shortcuts (recommended)</h4>
+<ol type="1">
+<li>Select the file/folder.</li>
+<li>Press Ctrl+C (copy) or Ctrl+X (cut = move).</li>
+<li>Go to the new location in File Explorer.</li>
+<li>Press Ctrl+V to paste.</li>
+</ol>
 
 
+</section>
 </section>
 </section>
 
@@ -1031,8 +1125,40 @@ window.onload = function() {
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jarekbryk/huddr/edit/main/how_to_use_a_computer.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jarekbryk/huddr/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/jarekbryk/huddr/blob/main/how_to_use_a_computer.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jarekbryk/huddr/edit/main/how_to_use_a_computer.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jarekbryk/huddr/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/jarekbryk/huddr/blob/main/how_to_use_a_computer.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div></div></footer></body></html>
+</body></html>
