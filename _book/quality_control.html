@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>21&nbsp; Quality control analysis – Hudd-R book</title>
+<title>20&nbsp; Quality control analysis – Hudd-R book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -118,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./code_from_class.html">Part 5: Topic-specific content</a></li><li class="breadcrumb-item"><a href="./quality_control.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Quality control analysis</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quality_control.html">Part 5: Topic-specific content</a></li><li class="breadcrumb-item"><a href="./quality_control.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Quality control analysis</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -134,6 +134,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Hudd-R book</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/jarekbryk/huddr" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -312,32 +315,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./code_from_class.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Code from class</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./quality_control.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Quality control analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Quality control analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./limit_of_detection.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Limit of Detection</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Limit of Detection</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./genomics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Genomics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Genomics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./phylogenetics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Phylogenetics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Phylogenetics</span></span></a>
   </div>
 </li>
       </ul>
@@ -358,19 +355,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-levey-jennings-chart-and-westgard-rules" id="toc-the-levey-jennings-chart-and-westgard-rules" class="nav-link active" data-scroll-target="#the-levey-jennings-chart-and-westgard-rules"><span class="header-section-number">21.1</span> The Levey-Jennings Chart and Westgard Rules</a></li>
-  <li><a href="#testing-for-outliers-using-normally-distributed-data" id="toc-testing-for-outliers-using-normally-distributed-data" class="nav-link" data-scroll-target="#testing-for-outliers-using-normally-distributed-data"><span class="header-section-number">21.2</span> Testing for outliers using normally distributed data</a></li>
-  <li><a href="#further-work" id="toc-further-work" class="nav-link" data-scroll-target="#further-work"><span class="header-section-number">21.3</span> Further Work</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">21.4</span> References</a></li>
+  <li><a href="#the-levey-jennings-chart-and-westgard-rules" id="toc-the-levey-jennings-chart-and-westgard-rules" class="nav-link active" data-scroll-target="#the-levey-jennings-chart-and-westgard-rules"><span class="header-section-number">20.1</span> The Levey-Jennings Chart and Westgard Rules</a></li>
+  <li><a href="#testing-for-outliers-using-normally-distributed-data" id="toc-testing-for-outliers-using-normally-distributed-data" class="nav-link" data-scroll-target="#testing-for-outliers-using-normally-distributed-data"><span class="header-section-number">20.2</span> Testing for outliers using normally distributed data</a></li>
+  <li><a href="#further-work" id="toc-further-work" class="nav-link" data-scroll-target="#further-work"><span class="header-section-number">20.3</span> Further Work</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">20.4</span> References</a></li>
   </ul>
-</nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/jarekbryk/huddr/edit/main/quality_control.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jarekbryk/huddr/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/jarekbryk/huddr/blob/main/quality_control.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./code_from_class.html">Part 5: Topic-specific content</a></li><li class="breadcrumb-item"><a href="./quality_control.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Quality control analysis</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quality_control.html">Part 5: Topic-specific content</a></li><li class="breadcrumb-item"><a href="./quality_control.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Quality control analysis</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Quality control analysis</span></h1>
+<h1 class="title"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Quality control analysis</span></h1>
 </div>
 
 
@@ -387,8 +384,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="the-levey-jennings-chart-and-westgard-rules" class="level2" data-number="21.1">
-<h2 data-number="21.1" class="anchored" data-anchor-id="the-levey-jennings-chart-and-westgard-rules"><span class="header-section-number">21.1</span> The Levey-Jennings Chart and Westgard Rules</h2>
+<section id="the-levey-jennings-chart-and-westgard-rules" class="level2" data-number="20.1">
+<h2 data-number="20.1" class="anchored" data-anchor-id="the-levey-jennings-chart-and-westgard-rules"><span class="header-section-number">20.1</span> The Levey-Jennings Chart and Westgard Rules</h2>
 <p>Levey-Jennings (LJ) charts are widely used in clinical and analytical laboratories as part of their quality control (QC) processes. They provide a visual representation of repeated experimental measurements of a known standard (an analyte of known concentration). These measurements are often taken daily (or every 12 hours in a 24-hour environment). The LJ chart allows the scientist to assess the consistency and reliability of an experimental procedure. Outliers, (or violations) are identified by following a set of rules. NHS pathology services and many analytical laboratories follow the <a href="https://westgard.com/westgard-rules.html" target="_blank">Westgard Rules</a>. These outliers may indicate that the experimental procedure is not performing to the required standard. However, as we shall see below, occasional outliers are expected even under normal conditions, as random variation in data following a normal distribution will produce such values.</p>
 <p>Below, we will generate a Levey-Jennings chart and apply a set of rules to identify outliers. First, install the ggQC package and load the libraries that we need.</p>
 <div class="cell">
@@ -487,8 +484,8 @@ Important
 </div>
 </div>
 </section>
-<section id="testing-for-outliers-using-normally-distributed-data" class="level2" data-number="21.2">
-<h2 data-number="21.2" class="anchored" data-anchor-id="testing-for-outliers-using-normally-distributed-data"><span class="header-section-number">21.2</span> Testing for outliers using normally distributed data</h2>
+<section id="testing-for-outliers-using-normally-distributed-data" class="level2" data-number="20.2">
+<h2 data-number="20.2" class="anchored" data-anchor-id="testing-for-outliers-using-normally-distributed-data"><span class="header-section-number">20.2</span> Testing for outliers using normally distributed data</h2>
 <p>The data provided above was deliberately manipulated to introduce three rule violations. If this was your actual data from one month in an analytical laboratory, it would indicate that serious errors are occurring on a regular basis. You would need to rectify the problem(s) before running any real samples. If your data is from a normal distribution then outliers detected by these rules are quite rare, but they do happen, even if nothing is wrong with the equipment or the user. Use the code below to generate QC plots of 30 data points from a normal distribution with a mean of 40 and SD = 2. Run this code 12 times to see how often outliers might occur in one year under ideal conditions.<br> Remember, if any outliers are detected, even at these rare intevals, you would still need to check all of your equipment and reagents, as you would have no way of knowing if it is a malfunction or just random noise.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate some random data and plot it</span></span>
@@ -518,8 +515,8 @@ Question
 </div>
 </div>
 </section>
-<section id="further-work" class="level2" data-number="21.3">
-<h2 data-number="21.3" class="anchored" data-anchor-id="further-work"><span class="header-section-number">21.3</span> Further Work</h2>
+<section id="further-work" class="level2" data-number="20.3">
+<h2 data-number="20.3" class="anchored" data-anchor-id="further-work"><span class="header-section-number">20.3</span> Further Work</h2>
 <p>You may have noticed that in the first graph above, the mean was 50.3. This value was calculated from the data. In many analytical processes, the standard will be of a known concentration and the process will have a well established standard deviation. Let us assume that for the data above, the known standard should be 50 units with a standard deviation of 1.3. Can you write R-code to generate a plot of the same data but with:</p>
 <ul>
 <li>with a blue dashed horizontal line at exactly 50 units, label it “50” or “mean”</li>
@@ -561,8 +558,8 @@ Tips
 </div>
 </div>
 </section>
-<section id="references" class="level2" data-number="21.4">
-<h2 data-number="21.4" class="anchored" data-anchor-id="references"><span class="header-section-number">21.4</span> References</h2>
+<section id="references" class="level2" data-number="20.4">
+<h2 data-number="20.4" class="anchored" data-anchor-id="references"><span class="header-section-number">20.4</span> References</h2>
 <ul>
 <li>Levey, S., &amp; Jennings, E. R. (1950). The use of control charts in the clinical laboratory. <em>American Journal of Clinical Pathology</em>, 20(11), 1059–1066. <a href="https://doi.org/10.1093/ajcp/20.11_ts.1059">https://doi.org/10.1093/ajcp/20.11_ts.1059</a></li>
 <li>Nelson, L. S. (1984). The Shewhart Control Chart—Tests for Special Causes. <em>Journal of Quality Technology</em>, 16(4), 237–239. <a href="https://doi.org/10.1080/00224065.1984.11978921">https://doi.org/10.1080/00224065.1984.11978921</a></li>
@@ -1188,7 +1185,7 @@ window.onload = function() {
   </div>
   <div class="nav-page nav-page-next">
       <a href="./limit_of_detection.html" class="pagination-link" aria-label="Limit of Detection">
-        <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Limit of Detection</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Limit of Detection</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1197,4 +1194,4 @@ window.onload = function() {
 
 
 
-</body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jarekbryk/huddr/edit/main/quality_control.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jarekbryk/huddr/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/jarekbryk/huddr/blob/main/quality_control.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div></div></footer></body></html>

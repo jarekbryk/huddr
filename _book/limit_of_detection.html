@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>22&nbsp; Limit of Detection – Hudd-R book</title>
+<title>21&nbsp; Limit of Detection – Hudd-R book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -118,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./code_from_class.html">Part 5: Topic-specific content</a></li><li class="breadcrumb-item"><a href="./limit_of_detection.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Limit of Detection</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quality_control.html">Part 5: Topic-specific content</a></li><li class="breadcrumb-item"><a href="./limit_of_detection.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Limit of Detection</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -134,6 +134,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Hudd-R book</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/jarekbryk/huddr" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -312,32 +315,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./code_from_class.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Code from class</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./quality_control.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Quality control analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Quality control analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./limit_of_detection.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Limit of Detection</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Limit of Detection</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./genomics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Genomics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Genomics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./phylogenetics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Phylogenetics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Phylogenetics</span></span></a>
   </div>
 </li>
       </ul>
@@ -358,22 +355,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#getting-the-data" id="toc-getting-the-data" class="nav-link active" data-scroll-target="#getting-the-data"><span class="header-section-number">22.0.1</span> Getting the data</a></li>
-  <li><a href="#adding-the-equation-of-the-line" id="toc-adding-the-equation-of-the-line" class="nav-link" data-scroll-target="#adding-the-equation-of-the-line"><span class="header-section-number">22.1</span> Adding the equation of the line</a></li>
-  <li><a href="#the-linear-model" id="toc-the-linear-model" class="nav-link" data-scroll-target="#the-linear-model"><span class="header-section-number">22.2</span> The linear model</a>
+  <li><a href="#getting-the-data" id="toc-getting-the-data" class="nav-link active" data-scroll-target="#getting-the-data"><span class="header-section-number">21.0.1</span> Getting the data</a></li>
+  <li><a href="#adding-the-equation-of-the-line" id="toc-adding-the-equation-of-the-line" class="nav-link" data-scroll-target="#adding-the-equation-of-the-line"><span class="header-section-number">21.1</span> Adding the equation of the line</a></li>
+  <li><a href="#the-linear-model" id="toc-the-linear-model" class="nav-link" data-scroll-target="#the-linear-model"><span class="header-section-number">21.2</span> The linear model</a>
   <ul class="collapse">
-  <li><a href="#the-lod-calculation" id="toc-the-lod-calculation" class="nav-link" data-scroll-target="#the-lod-calculation"><span class="header-section-number">22.2.1</span> The LOD calculation</a></li>
+  <li><a href="#the-lod-calculation" id="toc-the-lod-calculation" class="nav-link" data-scroll-target="#the-lod-calculation"><span class="header-section-number">21.2.1</span> The LOD calculation</a></li>
   </ul></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">22.3</span> References</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">21.3</span> References</a></li>
   </ul>
-</nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/jarekbryk/huddr/edit/main/limit_of_detection.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jarekbryk/huddr/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/jarekbryk/huddr/blob/main/limit_of_detection.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./code_from_class.html">Part 5: Topic-specific content</a></li><li class="breadcrumb-item"><a href="./limit_of_detection.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Limit of Detection</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quality_control.html">Part 5: Topic-specific content</a></li><li class="breadcrumb-item"><a href="./limit_of_detection.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Limit of Detection</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Limit of Detection</span></h1>
+<h1 class="title"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Limit of Detection</span></h1>
 </div>
 
 
@@ -423,8 +420,8 @@ The following object is masked from 'package:ggplot2':
     annotate</code></pre>
 </div>
 </div>
-<section id="getting-the-data" class="level3" data-number="22.0.1">
-<h3 data-number="22.0.1" class="anchored" data-anchor-id="getting-the-data"><span class="header-section-number">22.0.1</span> Getting the data</h3>
+<section id="getting-the-data" class="level3" data-number="21.0.1">
+<h3 data-number="21.0.1" class="anchored" data-anchor-id="getting-the-data"><span class="header-section-number">21.0.1</span> Getting the data</h3>
 <p>The sample data below is from an ELISA standard curve. You can <a href="https://www.abcam.com/en-us/products/elisa-kits/human-albumin-elisa-kit-ab108788">read about this ELISA here</a>. The absorbance was measured at 450 nm for seven known concentrations of albumin (ng per ml). The manufacturer claims that this kit “Detects albumin levels from 3.125 ng/ml)”. Lets see if our real student data compares with this. Load in the data below.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>albumin_concentration <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">1.4</span>, <span class="fl">2.8</span>, <span class="fl">5.6</span>, <span class="fl">11.1</span>, <span class="fl">22.2</span>, <span class="fl">44.4</span>)</span>
@@ -448,8 +445,8 @@ The following object is masked from 'package:ggplot2':
 </div>
 </div>
 </section>
-<section id="adding-the-equation-of-the-line" class="level2" data-number="22.1">
-<h2 data-number="22.1" class="anchored" data-anchor-id="adding-the-equation-of-the-line"><span class="header-section-number">22.1</span> Adding the equation of the line</h2>
+<section id="adding-the-equation-of-the-line" class="level2" data-number="21.1">
+<h2 data-number="21.1" class="anchored" data-anchor-id="adding-the-equation-of-the-line"><span class="header-section-number">21.1</span> Adding the equation of the line</h2>
 <p>We will now use stat_poly_eq from the ggpmisc package to display the equation of the line. We specify a linear model using y ~ x.<br>
 Although we could still use geom_smooth here, for consistency we will use the stat_poly_line function to add the line. Notice that we use the same equation y ~ x on both lines.</p>
 <div class="cell">
@@ -500,8 +497,8 @@ What about non-linear data?
 </div>
 </div>
 </section>
-<section id="the-linear-model" class="level2" data-number="22.2">
-<h2 data-number="22.2" class="anchored" data-anchor-id="the-linear-model"><span class="header-section-number">22.2</span> The linear model</h2>
+<section id="the-linear-model" class="level2" data-number="21.2">
+<h2 data-number="21.2" class="anchored" data-anchor-id="the-linear-model"><span class="header-section-number">21.2</span> The linear model</h2>
 <p>To calculate the limit of detection, we need to fit a linear model to the data and write all the parameters of this model to an object called “linear_model”. This object is a list of 12 things and it includes the original data (click on linear_model to view all the parameters).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#fit a linear model to the data</span></span>
@@ -518,8 +515,8 @@ Coefficients:
 </div>
 </div>
 <p>Notice that the coefficients above match with the equation we added to the plot earlier.</p>
-<section id="the-lod-calculation" class="level3" data-number="22.2.1">
-<h3 data-number="22.2.1" class="anchored" data-anchor-id="the-lod-calculation"><span class="header-section-number">22.2.1</span> The LOD calculation</h3>
+<section id="the-lod-calculation" class="level3" data-number="21.2.1">
+<h3 data-number="21.2.1" class="anchored" data-anchor-id="the-lod-calculation"><span class="header-section-number">21.2.1</span> The LOD calculation</h3>
 <p>We will now use the chemCal package to calculate the limit of detection (LOD). The LOD is the lowest amount of analyte (or signal) that can be reliably detected by a method. It is defined based on the probability of making a type II error — also known as a false negative. A type II error happens when the analyte is actually present, but the method fails to detect it (like type II fun).</p>
 <p>The default values of the lod function from chemCal are the ones recommended by IUPAC. We can simply run this function on the linear_model from earlier.</p>
 <div class="cell">
@@ -637,8 +634,8 @@ Important
 </div>
 </section>
 </section>
-<section id="references" class="level2" data-number="22.3">
-<h2 data-number="22.3" class="anchored" data-anchor-id="references"><span class="header-section-number">22.3</span> References</h2>
+<section id="references" class="level2" data-number="21.3">
+<h2 data-number="21.3" class="anchored" data-anchor-id="references"><span class="header-section-number">21.3</span> References</h2>
 <ul>
 <li>Armbruster, D. A., &amp; Pry, T. (2008). Limit of blank, limit of detection and limit of quantitation. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2556583/#sec3">The Clinical biochemist. Reviews, 29 (Suppl 1), S49–S52</a></li>
 </ul>
@@ -1255,12 +1252,12 @@ window.onload = function() {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./quality_control.html" class="pagination-link" aria-label="Quality control analysis">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Quality control analysis</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Quality control analysis</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./genomics.html" class="pagination-link" aria-label="Genomics">
-        <span class="nav-page-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Genomics</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Genomics</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1269,4 +1266,4 @@ window.onload = function() {
 
 
 
-</body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jarekbryk/huddr/edit/main/limit_of_detection.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jarekbryk/huddr/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/jarekbryk/huddr/blob/main/limit_of_detection.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div></div></footer></body></html>

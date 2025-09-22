@@ -1,42 +1,42 @@
 # About this book
 
-This is an online book created to facilitate learning R by students at the University of Huddersfield's Division of Biomedical and Life Sciences. Unlike other books with tutorials on R, this book is thought of as a quick reference, with lists of core functions, their parameters and code syntax all in one place. Even though practically everything in this book can be found in R help pages, we tailored the contents to the curriculum and to help with common challenges faced by the learners in our classes.
+This online book supports students in the Division of Biomedical and Life Sciences at the University of Huddersfield as they learn R. Unlike step-by-step tutorials, it is designed as a **quick reference**: core functions, key parameters, and example syntax collected in one place. While most details also exist in R’s help pages, we’ve tailored the content to our curriculum and the common challenges students face.
 
-This book was co-designed and co-written with a group of second-year students in 24/25, and should be considered a work in progress, to evolve and change each year depending on students' input. We would encourage every user of these materials to let us know about typos, errors and misunderstandings that we missed, and letting us know about their own suggestions for improving and expanding the content. If you would like to contribute to this book, [read about the ways to do it](how_to_contribute.html).
+The book was co-designed and co-written with second-year students in 2024/25 and will continue to evolve each year based on student input. If you spot typos, errors, or unclear explanations—or have ideas to improve or extend the content—please [see how to contribute](how_to_contribute.qmd).
 
 ## How this book is organised
 
-This book is roughly divided into four major sections:
+This book has five parts:
 
-### Section 1
-- *Introduction* - the page you are reading right now. Describes our idea for the book, encourages you to contribute to its development, and explains a couple of more esoteric ([`tidyverse` vs base R](tidyverse_vs_baser.html) and fundamental ([large language models](llms.html)) ideas about our approach to teaching R. 
+- **Part 1: Introduction** — (this page) describes our idea for the book, how it’s organised, and brief context on our approach to teaching R (see [tidyverse vs base R](tidyverse_vs_base.html) and [LLMs in learning R](llms.html)). It also encourages you to [contribute to the development of the book](how_to_contribute.html).
 
-### Section 2
-- *Part 2* deals with preparing your computer for R - installing it, adjusting interface of RStudio, installing packages that we use in the class and setting up the working environment in the browser for those who can only use Chromebooks or tablets. This part also contains a chapter on how to use a computer, with information on fundamental operations on files and folders in Windows and macOS.
+- **Part 2: Preparations** — deals with preparing your computer: installing R, adjusting the RStudio interface, getting required packages, and using Posit Cloud for those who can only use Chromebooks or iPads. It also contains an important practical chapter on **how to use a computer** for fundamental operations on files and folders in Windows and macOS.
 
-Once you have the tools ready, we will get you from zero to the first complex plot with statistical analysis in less than 20 minutes :-)
+- **Part 3: R fundamentals** — the key content that you will use the most: reference on loading data, handling missing values, essential functions and their parameters, reshaping and joining data, visualisation with `ggplot2`, running basic statistical tests, and an introduction to functions and loops. It also contains a chapter with self-checking exercises that run entirely in the browser and are useful to make sure you are "getting it" as you go along.
 
-### Section 3
+- **Part 4: Content from classes** — contains curated code and notes from weekly sessions where R is introduced.
 
-The key content of the book:
+- **Part 5: Topic-specific content** — comprises of several independent chapters that support other modules and assignments (e.g., quality control and limits of detection for the Profesional Skills 2; genomics and phylogenetics for the Current Topics in Molecular and Life Sciences (in preparation)).
 
-- *Part 3* contains information on the functions we use (including plotting with `ggplot`) and their parameters, examples of their use, as well as information on loading data and dealing with missing data. We anticipate that this is the part that students will be using most often.
-- *Part 4* contains information on statistical tests, but it is _not_ a statistics textbook. This part concentrates on _how to_ run statistical tests that you learned last year in R, rather than explaining when to run them, how to check their assumptions and how to interpret their results.
-- *Part 5* contains self-checking exercises that run entirely in the browser and are useful to make sure you are "getting it" as you go along.
-- *Part 6* deals with loops and functions, topics we introduce fully in the final year, but which occasionally come up in the second year during the analyses. This part is not developed yet, but when it will be, it will be using the "nest-function-map" approach from the `purrr` package.
-
-### Section 4
-
-- *Part 7* contains prettified content from the second year modules where R is introduced for the first time. Every week, a curated version of that week's class content will be uploaded to build this part of the textbook.
-
-### Section 5
-- *Part 8* contains several chapters, each of which deals with a specific topic, useful in other modules or specific assignments. Currently chapters on quality control and limits of detection are ready (both useful in Professional Skills module assignments), with chapters on genomics and phylogenetics not developed yet (both will be useful in the Current Topics in Molecular Life Sciences assginments).
-
-Throughout the book and the classes we almost exclusively use the `tidyverse` dialect of R. For the justification, see the page on [tidyverse vs base R](tidyverse_vs_baser.html).
+Once your tools are ready, our aim is to take you from zero to a first meaningful plot (with a simple statistical summary) in under 20 minutes 💪🏽.
 
 ## Textbooks for our classes
-Our recommended textbook to accompany the classes is the second edition of [R for Data Science](https://r4ds.hadley.nz) by Hadley Wickham, Mine Cetinkaya-Rundel and Garett Grolemund.
 
-The second texbook is dedicated to using `ggplot`, the package that we use to make all the plots and visualisations of data in the class: [R Graphics Cookbook](https://r-graphics.org) (second edition) by Winston Chang. 
+Throughout the book and the classes we almost exclusively use the `tidyverse` dialect of R. For the justification, see the page on [tidyverse vs base R](tidyverse_vs_baser.html). Our recommended textbooks to accompany the classes are:
+
+- [R for Data Science](https://r4ds.hadley.nz) (second edition) by Hadley Wickham, Mine Cetinkaya-Rundel and Garett Grolemund, for all kinds of practical information on data sciecne and a lot of explanations on every aspect of the code that we will be learning. An essential reading and a practical source - all the code from the book can be executed, followed by and modified in your R Studio.
+
+- [R Graphics Cookbook](https://r-graphics.org) (second edition) by Winston Chang, dedicated entirely to using `ggplot`, the package that we use to make all the plots and visualisations of data in the class. Contains recipe-like code snippets on how to make and modify almost every plot that we will be making in class.
 
 Both are freely available online.
+
+## How to learn R
+
+R is difficult for beginners and there is no way to sugarcoat it. The learning curve is steep, but we do not think it is very long: once you master a handful of commands and syntax principles, your own curiosity will drive you to transform, analyse and visualise your own data. There is only one principle we must emphasise for all students: **practice**.
+
+It cannot be overstated how important is your own practice to learning R. Run the examples as you read, then try to change them — alter a number, rename a variable, or add a new line — and see what happens. One of the great advantages of coding is that you can always check your workings - run the code in a different way, or on modified data, and see whether the output you get is the one you expect. Computers are stupid and they are very particular about the way instructions to them have to be written, so the vast majority of the errors you will encounter initially will be typos and mispaired brackets and not errors in the actual intent of the code. The more often you experiment, the faster you will become comfortable with R, and the sooner you will be able to use it for your own explorations.
+
+...and try to enjoy the process :-) - R is extremely powerful, and there is rarely a limit in what can be done in it with your data. Let's go!
+
+
+

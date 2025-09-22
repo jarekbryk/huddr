@@ -2,9 +2,16 @@ project:
   type: book
 book:
   title: Hudd-R book
-  author: Fern Compston, Chantay Robinson Livingston, Sofia Covini Schob, Layane Soufan, Ana Salgado
-    Villa and Jarek Bryk
-  date: '2025-02-14'
+  author: 
+    - "Fern Compston"
+    - "Chantay Robinson Livingston"
+    - "Sofia Covini Schob"
+    - "Layane Soufan"
+    - "Ana Salgado Villa"
+    - "Jarek Bryk"
+  date: "2025-02-14"
+  repo-url: https://github.com/jarekbryk/huddr
+  repo-actions: [edit, issue, source]
   chapters:
   - part: 'Part 1: Introduction'
     chapters:
@@ -35,7 +42,6 @@ book:
     - code_from_class.qmd
   - part: 'Part 5: Topic-specific content'
     chapters:
-    - code_from_class.qmd
     - quality_control.qmd
     - limit_of_detection.qmd
     - genomics.qmd
