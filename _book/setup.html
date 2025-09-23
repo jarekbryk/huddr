@@ -42,6 +42,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -320,8 +323,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#set-up-project-structure-for-the-module" id="toc-set-up-project-structure-for-the-module" class="nav-link active" data-scroll-target="#set-up-project-structure-for-the-module"><span class="header-section-number">7.0.1</span> Set up project structure for the module</a></li>
-  <li><a href="#adjust-the-rstudio-interface" id="toc-adjust-the-rstudio-interface" class="nav-link" data-scroll-target="#adjust-the-rstudio-interface"><span class="header-section-number">7.0.2</span> Adjust the RStudio interface</a></li>
+  <li><a href="#set-up-rstudio-project-structure" id="toc-set-up-rstudio-project-structure" class="nav-link active" data-scroll-target="#set-up-rstudio-project-structure"><span class="header-section-number">7.1</span> Set up RStudio project structure</a></li>
+  <li><a href="#adjust-rstudio-interface" id="toc-adjust-rstudio-interface" class="nav-link" data-scroll-target="#adjust-rstudio-interface"><span class="header-section-number">7.2</span> Adjust RStudio interface</a></li>
+  <li><a href="#open-rstudio-project" id="toc-open-rstudio-project" class="nav-link" data-scroll-target="#open-rstudio-project"><span class="header-section-number">7.3</span> Open RStudio project</a></li>
+  <li><a href="#thats-it" id="toc-thats-it" class="nav-link" data-scroll-target="#thats-it"><span class="header-section-number">7.4</span> That’s it!</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/jarekbryk/huddr/edit/main/setup.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jarekbryk/huddr/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/jarekbryk/huddr/blob/main/setup.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
@@ -348,6 +353,32 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Once R and RStudio are installed, go through the following steps to prepare them for work on the module. But before you begin, make sure about these things:</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+No spaces in file or folder names
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Do not put spaces in file or folder names. Use <strong>-</strong> or <strong>_</strong> or <strong>D</strong>ifferent<strong>C</strong>ase to separate different parts of the name, for example: Research-Skills, or Research_Skills or ResearchSkills, but not Research Skills.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Use OneDrive for your project folder
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you put your project folder on OneDrive (or other cloud service platform), you will be able to access your files and data from any computer where you are logged in to it, not just from computers in the computer labs.</p>
+</div>
+</div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -358,57 +389,53 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Do not put spaces in file or folder names. Use <strong>-</strong> or <strong>_</strong> or <strong>D</strong>ifferent<strong>C</strong>ase to separate different parts of the name, for example: Research-Skills not Research Skills.</p>
+<p>All images on this page can be clicked to be enlarged.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you put your project folder on OneDrive (or other cloud service platform), you will be able to access your files and data from any computer where you are logged in to OneDrive, not just from computers in the computer labs.</p>
-</div>
-</div>
-<section id="set-up-project-structure-for-the-module" class="level3" data-number="7.0.1">
-<h3 data-number="7.0.1" class="anchored" data-anchor-id="set-up-project-structure-for-the-module"><span class="header-section-number">7.0.1</span> Set up project structure for the module</h3>
-<p>An animation showing the whole process:</p>
-<p><img src="gifs/StepOne.gif" class="img-fluid"></p>
-<section id="step-by-step-instructions" class="level4" data-number="7.0.1.1">
-<h4 data-number="7.0.1.1" class="anchored" data-anchor-id="step-by-step-instructions"><span class="header-section-number">7.0.1.1</span> Step by step instructions</h4>
+<section id="set-up-rstudio-project-structure" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="set-up-rstudio-project-structure"><span class="header-section-number">7.1</span> Set up RStudio project structure</h2>
+<p><a href="gifs/setting_up_project_structure.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="gifs/setting_up_project_structure.gif" class="img-fluid"></a></p>
 <ol type="1">
 <li><p>Open RStudio.</p></li>
-<li><p>Select <code>File → New project</code> located on the top left of the screen (if you are using a Mac put your mouse to the top and that will make the options appear) and then, in the window that appears, select <code>New directory</code>, then again select <code>New project</code>.</p></li>
-<li><p>In the form that appears, under <code>Directory name:</code>, give your project directory a useful name (I recommend format modulecode_year, e.g.&nbsp;SIB2001_2425), and under <code>Create a project under subdirectory of:</code> select a convenient place on your computer to put it (I strongly recommend your university folder (OneDrive - University of Huddersfield)). Then click <code>Create Project</code>. RStudio will create your project folder and refresh the main window.</p></li>
+<li><p>Select <code>File → New Project</code> located on the top left of the screen and then, in the window that appears, select <code>New Directory</code>, then again select <code>New Project</code>.</p></li>
+<li><p>In the form that appears, under <code>Directory name:</code>, give your project directory a useful name (I recommend format modulecode_year, e.g.&nbsp;SIB2001_2425), and under <code>Create a project under subdirectory of:</code> select your university OneDrive folder (<code>OneDrive - University of Huddersfield</code>) (note that it is not on the gif above). Then click <code>Create Project</code>. RStudio will create your project folder and refresh the main window.</p></li>
 <li><p>In the RStudio bottom-right panel, click <code>New Folder</code> and create the first folder; name it <code>code</code>. Repeat this step twice more to add folders: <code>data</code> and <code>output</code>.</p></li>
 </ol>
 </section>
-</section>
-<section id="adjust-the-rstudio-interface" class="level3" data-number="7.0.2">
-<h3 data-number="7.0.2" class="anchored" data-anchor-id="adjust-the-rstudio-interface"><span class="header-section-number">7.0.2</span> Adjust the RStudio interface</h3>
-<p><img src="gifs/StepTwo.gif" class="img-fluid"></p>
+<section id="adjust-rstudio-interface" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="adjust-rstudio-interface"><span class="header-section-number">7.2</span> Adjust RStudio interface</h2>
+<p><a href="gifs/adjust_interface.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="gifs/adjust_interface.gif" class="img-fluid"></a></p>
 <ol type="1">
-<li>Select menu <code>Tools → Global Options</code> and then <em>uncheck</em> option <code>Restore .RData into workspace at startup</code> and set <code>Save workspace to .RData on exit</code> to <code>Never</code>.</li>
+<li>Select menu <code>Tools → Global Options</code> and then ❎ <em>uncheck</em> option <code>Restore .RData into workspace at startup</code> and set <code>Save workspace to .RData on exit</code> to <code>Never</code>.</li>
 <li>Select the section <code>Code</code> on the left side of the window and select the option <code>Use native pipe operator</code></li>
 <li>Confirm by clicking <code>OK</code> (in the bottom right corder of the window)</li>
 </ol>
-<div class="callout callout-style-default callout-note callout-titled">
+</section>
+<section id="open-rstudio-project" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="open-rstudio-project"><span class="header-section-number">7.3</span> Open RStudio project</h2>
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-You are now ready
+Are you in the right project folder?
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You can now follow all the code that we do in the class and in the other resources mentioned on Brightspace.</p>
+<p>Always make sure that your RStudio uses the correct project folder. Some of the important functions that we use throughout the class assume that you are working in your project and break if you don’t.</p>
 </div>
 </div>
+<p>Now, every time RStudio starts, it should open the project folder you had set up last (you may have noticed a setting for this behaviour in Tools → Global options). The project folder name (e.g.&nbsp;SIB2001_2526) should be in the top right corner of the RStudio window and in the menu bar at the top left. If it isn’t (when it says: Project: None), you must open your project before you do anything else. There are two ways to do it:</p>
+<ol type="1">
+<li>Go to <code>File → Recent Projects</code>, and click the project name. RStudio window will refresh and open your project.</li>
+<li>Alternatively, go to File Explorer and find your project folder there. Then double click your project file <code>Rproj</code> file (e.g.&nbsp;SIB2001_2526.Rproj). RStudio will open your project. Make sure that only the correct RStudio window is opened, and close any other RStudio windows.</li>
+</ol>
+</section>
+<section id="thats-it" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="thats-it"><span class="header-section-number">7.4</span> That’s it!</h2>
+<p>You can now follow all the code from the class and in the other resources mentioned on Brightspace.</p>
+<p><img src="gifs/iga_yay2.gif" class="img-fluid"></p>
 
 
 </section>
@@ -1032,8 +1059,40 @@ window.onload = function() {
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jarekbryk/huddr/edit/main/setup.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jarekbryk/huddr/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/jarekbryk/huddr/blob/main/setup.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jarekbryk/huddr/edit/main/setup.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jarekbryk/huddr/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/jarekbryk/huddr/blob/main/setup.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div></div></footer></body></html>
+</body></html>

@@ -20,7 +20,7 @@ To be clear: computers in the classroom and computers that manage OneDrive syste
 ## But what is "cloud" anyway?
 
 "Cloud" is an unfortunate name, as nothing that it stands for is related to clouds (except maybe the general fuzziness of the term). By using the name "cloud" we simply mean that the data (files, folders etc.) that you see on a computer in front of you is not actually stored on that computer. Instead, it is regularly copied ("synced") to computers physically located elsewhere (often in massive data centres all around the world). 
-Think about a Netflix film that you may be watching on your phone: the film is not stored on your phone's SSD  unless you had downloaded it. It is being streamed from a HDD or SSD no a computer "in the cloud" somewhere almost in real time.
+Think about a Netflix film that you may be watching on your phone: the film is not stored on your phone's SSD  unless you had downloaded it. It is being streamed from a HDD or SSD no a computer "in the cloud" somewhere (actually on a set of disks in a massive warehouse somewhere) almost in real time.
 :::
 
 ## File Explorer, folders and files
@@ -31,21 +31,23 @@ All images on this page can be clicked to be enlarged.
 
 File Explorer allows you to see all the files saved to your computer stored in different folders (also known as directories) like Downloads or Desktop, whether locally or in the cloud. There is a search bar in the top right hand corner which allows you to search for a document or folder by name.
 
-![](images/Screenshot%202025-01-27%20141717.png){.lightbox}
+![](images/file_explorer_window.png){.lightbox}
 
-A folder is shown by a folder icon next to the name of the folder, and it is cleverly called "File folder" in the "Type" column.
+A folder is depicted by a folder icon next to the name of the folder, and it is cleverly called "File folder" in the "Type" column.
 
-![](images/Screenshot%202025-01-27%20142022.png){.lightbox}
+![](images/folders_file_explorer){.lightbox}
 
-A file is shown by an icon of the programme associated with it (see section 5.3 below). The type of file is also specified in the "Type" column - in this case, a Microsoft Excel workbook titled "Book1" and a Microsoft Word Document titled "Essay plan".
+A file is depicted by an icon of the programme associated with it (see section 5.3 below). The type of file is also specified in the "Type" column - in this case, a Microsoft Excel workbook titled "Book1" and a Microsoft Word Document titled "Essay plan".
 
-![](images/Screenshot%202025-01-27%20142052.png){.lightbox}
+![](images/files_file_explorer.png){.lightbox}
 
 ## File extensions
 
 Many operating systems use file extensions as indicators of what kind of file type a file is. For example, text files have an extension "txt", Excel files have an extension "xlsx", and so on. Operating systems will often make an educated guess about which programme opens which file, using the extension as a hint, so that "eml" files are opened by Outlook, for example (or another mail client).
 
-There are two common problems with the file extension system: 1) MS Windows by default hides file extensions (as you can see in the image in the above section) and 2) multiple programmes can use the same file type (both features make this system vulnerable to spoofing for nefarious purposes). On a minority of university computers, \*.Rmd and \*.qmd files that are used by RStudio to open R files are also used by Endnote (a reference manager), which takes a preference over RStudio. Endnote has no idea how to use RStudio's files, and its unsuccessful attempts to open them get annoying very quickly.
+There are two common problems with the file extension system: 1) MS Windows by default hides file extensions (as you can see in the image in the above section) and 2) multiple programmes can use the same file type (both features make this system vulnerable to spoofing for nefarious purposes). 
+
+On a minority of university computers, \*.Rmd and \*.qmd files that are used by RStudio to open R files are also used by Endnote (a reference manager), which takes a precedence over RStudio. Endnote has no idea how to use RStudio's files, and its unsuccessful attempts to open them get annoying very quickly.
 
 ### To enable visibility of file extensions
 
@@ -60,8 +62,10 @@ There are two common problems with the file extension system: 1) MS Windows by d
 1. In the File Explorer, right-click the file you want to associate with a programme (e.g. `week1_code.qmd`).
 2. Choose Open with → Choose another app.
 3. Select the program you want (e.g. RStudio).
-4. Click Always art the bottom.
+4. Click Always at the bottom.
 5. If necessary (rarely), repeat this process for every file extension that you want to associate with a new programme.
+
+(Note that on the gif below my qmd files are already associated with RStudio, as I have no Endnote on my computer.)
 
 ![](gifs/associate_files.gif){.lightbox}
 
@@ -69,13 +73,13 @@ There are two common problems with the file extension system: 1) MS Windows by d
 
 To know where your file is in the computer (regardless of whether it is local or in the cloud), operating systems use _paths_ that indicate location of files in a (mostly) hierarchical way. You can always view the whole path of each file or folder in the address bar of File Explorer:
 
-![](images/Screenshot%202025-02-05%20141435.png){.lightbox}
+![](images/paths_file_explorer.png){.lightbox}
 
 You can also copy the path to your file or folder by copying the text in the address bar, or by right-clicking the file or folder name and selecting "Copy as a path (Ctrl-Shift-C)". Similarly, you can _type_ a path to a folder in the address bar and the File Explorer will take you there. 
 
-In Windows, different levels of folder hierarchy are separated by backslash (\), so if you wanted to get to a "test_project" folder located in the folder "Documents", you would type `Documents\test_project\` in the File Explorer's address bar. Note that there are some folders "above" the Documents that Windows hides from you by default, so if you click the address bar, the full path would be something like `C:\Users\Jarek\Documents\test_project`. 
+In Windows, different levels of folder hierarchy are separated by backslash (\\), so if you wanted to get to a "test_project" folder located in the folder "Documents", you would type `Documents\test_project` in the File Explorer's address bar. Note that there are some folders "above" the Documents that Windows hides from you by default, so if you click the address bar, the full path would be something like `C:\Users\Jarek\Documents\test_project`. 
 
-`C` drive is very commonly the top level position in the Windows' system's hierarchy, unless you are on OneDrive, in which case OneDrive will be the top level folder and there will be no `C` drive level at all.
+`C` drive is very commonly the top level position in the Windows' system's hierarchy, unless you are on OneDrive, in which case OneDrive will be the top level folder and there will be no `C` drive level at all (as in the screenshot above).
 
 ![](gifs/paths_address_bar.gif){.lightbox}
 
@@ -99,32 +103,35 @@ Unzipping a file takes two steps:
 
 In the class, you will often be downloading files from Brightspace or the internet to open them in RStudio. In order to make working with these files in your RStudio easier, you should move these files to an apropriate place in your RStudio project folder (e.g. `code` or `data`). There are four ways of accomplishing this:
 
-**Method 1: Drag and drop**
+**Method 1: Keyboard shortcuts (recommended)**
 
-1. Open File Explorer (Win + E).
-2. Find the file or folder you want to move or copy.
-3. Drag it with the mouse to the new location. If the new location is on the same drive, dragging will move it. If the new location is on a different drive (e.g. C: → USB stick), dragging will copy it. You can hold Ctrl key while dragging to enforce copy, or hold Shift key while dragging to enforce moving.
+1. Select the file/folder. You can select multiple files/folder if you cold Ctrl key while selecting.
+2. Press Ctrl+C (copy) or Ctrl+X (cut = move).
+3. Go to the new location in File Explorer.
+4. Press Ctrl+V to paste.
 
 **Method 2: Right-click menu**
+
 1. Right-click the file/folder.
 2. Choose Copy (to copy) or Cut (to move).
 3. Navigate to the new location.
 4. Right-click in empty space and choose Paste.
 
 **Method 3: Interface buttons**
-1. Select file/folder.
+
+1. Select file/folder. You can select multiple files/folder if you cold Ctrl key while selecting.
 2. Click the copy icon to copy or scissors to cut (move).
 3. Navigate to the new location.
 4. Click the Paste icon.
 
 ![](gifs/copy_paste_move.gif){.lightbox}
 
-**Method 4: Keyboard shortcuts (recommended)**
-1. Select the file/folder.
-2. Press Ctrl+C (copy) or Ctrl+X (cut = move).
-3. Go to the new location in File Explorer.
-4. Press Ctrl+V to paste.
+**Method 4: Drag and drop**
 
-### You are good to go!
+1. Open two windows of File Explorer (Win + E), one for the source of the file/folder, the other for the destination.
+2. Find the file or folder you want to move or copy.
+3. Drag it with the mouse to the new location. If the new location is on the same drive, dragging will move it. If the new location is on a different drive (e.g. C: → USB stick), dragging will copy it. You can hold Ctrl key while dragging to enforce copy, or hold Shift key while dragging to enforce moving.
+
+## You are good to go!
 
 ![](gifs/iga_yay.gif){.lightbox}

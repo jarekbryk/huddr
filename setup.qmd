@@ -2,39 +2,53 @@
 
 Once R and RStudio are installed, go through the following steps to prepare them for work on the module. But before you begin, make sure about these things:
 
-::: callout-tip
-Do not put spaces in file or folder names. Use **-** or **\_** or **D**ifferent**C**ase to separate different parts of the name, for example: Research-Skills not Research Skills.
+::: callout-important
+## No spaces in file or folder names
+Do not put spaces in file or folder names. Use **-** or **\_** or **D**ifferent**C**ase to separate different parts of the name, for example: Research-Skills, or Research_Skills or ResearchSkills, but not Research Skills.
 :::
 
 ::: callout-tip
-If you put your project folder on OneDrive (or other cloud service platform), you will be able to access your files and data from any computer where you are logged in to OneDrive, not just from computers in the computer labs.
+## Use OneDrive for your project folder
+If you put your project folder on OneDrive (or other cloud service platform), you will be able to access your files and data from any computer where you are logged in to it, not just from computers in the computer labs.
 :::
 
-### Set up project structure for the module
+:::  callout-tip
+All images on this page can be clicked to be enlarged.
+:::
 
-An animation showing the whole process:
+## Set up RStudio project structure
 
-![](gifs/StepOne.gif)
-
-#### Step by step instructions
+![](gifs/setting_up_project_structure.gif){.lightbox}
 
 1. Open RStudio.
-2. Select `File → New project` located on the top left of the screen (if you are using a Mac put your mouse to the top and that will make the options appear) and then, in the window that appears, select `New directory`, then again select `New project`.
-3. In the form that appears, under `Directory name:`, give your project directory a useful name (I recommend format modulecode_year, e.g. SIB2001_2425), and under `Create a project under subdirectory of:` select a convenient place on your computer to put it (I strongly recommend your university folder (OneDrive - University of Huddersfield)). Then click `Create Project`. RStudio will create your project folder and refresh the main window.
+2. Select `File → New Project` located on the top left of the screen and then, in the window that appears, select `New Directory`, then again select `New Project`.
+3. In the form that appears, under `Directory name:`, give your project directory a useful name (I recommend format modulecode_year, e.g. SIB2001_2425), and under `Create a project under subdirectory of:` select your university OneDrive folder (`OneDrive - University of Huddersfield`) (note that it is not on the gif above). Then click `Create Project`. RStudio will create your project folder and refresh the main window.
 
 4. In the RStudio bottom-right panel, click `New Folder` and create the first folder; name it `code`. Repeat this step twice more to add folders: `data` and `output`.
 
-### Adjust the RStudio interface
+## Adjust RStudio interface
 
-![](gifs/StepTwo.gif)
+![](gifs/adjust_interface.gif){.lightbox}
 
-1. Select menu `Tools → Global Options` and then _uncheck_ option `Restore .RData into workspace at startup` and set `Save workspace to .RData on exit` to `Never`.
+1. Select menu `Tools → Global Options` and then ❎ _uncheck_ option `Restore .RData into workspace at startup` and set `Save workspace to .RData on exit` to `Never`.
 2. Select the section `Code` on the left side of the window and select the option `Use native pipe operator`
 3. Confirm by clicking `OK` (in the bottom right corder of the window)
 
-::: callout-note
-### You are now ready
-You can now follow all the code that we do in the class and in the other resources mentioned on Brightspace.
+## Open RStudio project
+
+::: callout-important
+## Are you in the right project folder?
+Always make sure that your RStudio uses the correct project folder. Some of the important functions that we use throughout the class assume that you are working in your project and break if you don't.
 :::
 
+Now, every time RStudio starts, it should open the project folder you had set up last (you may have noticed a setting for this behaviour in Tools → Global options). The project folder name (e.g. SIB2001_2526) should be in the top right corner of the RStudio window and in the menu bar at the top left. If it isn't (when it says: Project: None), you must open your project before you do anything else. There are two ways to do it:
+
+1. Go to `File → Recent Projects`, and click the project name. RStudio window will refresh and open your project.
+2. Alternatively, go to File Explorer and find your project folder there. Then double click your project file `Rproj` file (e.g. SIB2001_2526.Rproj). RStudio will open your project. Make sure that only the correct RStudio window is opened, and close any other RStudio windows.
+
+## That's it!
+
+You can now follow all the code from the class and in the other resources mentioned on Brightspace.
+
+![](gifs/iga_yay2.gif)
 

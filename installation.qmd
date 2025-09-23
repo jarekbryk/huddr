@@ -13,20 +13,15 @@ Note: if your personal computer is a Chromebook or a tablet, these instructions 
 :::
 
 ::: callout-important
-### Why do I need to install this on my computer?
-To be capable of using R well, you will need to practice extensively beyond what we do in class, hence why it is highly recommended to install R on your personal devices.
-:::
-
-::: callout-important
 ### Notes for OneDrive users
-You must not install the RTools, R or RStudio in your OneDrive (or any other cloud-based) folder. These applications must be on your actual hard drive (often known as C drive). 
+You **must not** install the RTools, R or RStudio in your OneDrive (or any other cloud-based) folder. These applications must be on your actual hard drive (often known as C drive). 
 :::
 
 If you are not familiar with concepts of cloud, file and folder paths and unzipping archived files on your computer, please read the chapter [How to use a computer](how_to_use_a_computer.html) first.
 
-In order for your computer to be ready for the installation of R and RStudio, you need to install RTools first (if you are on Windows) or Command Line Tools (if you are on macOS). Please proceed through these instructions in order.
-
 ## Installation instructions 
+
+For your computer to be ready for the installation of R and RStudio, you need to install RTools first (if you are on Windows) or Command Line Tools (if you are on macOS). Please proceed through these instructions in order.
 
 ::: {.panel-tabset}
 
@@ -50,7 +45,7 @@ Use this link: [https://posit.co/download/rstudio-desktop/](https://posit.co/dow
 
 1.  Open the Terminal app on your Mac.
 2.  Copy and paste (or type) the following command: `xcode-select --install`, then press "Enter".
-3.  Follow the instructions. Note that the download may take a while as it is a large file.
+3.  Follow the instructions. Note that the download may take a while, as it is a large file.
 
 ### Download and install R
 
