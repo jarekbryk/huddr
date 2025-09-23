@@ -329,7 +329,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#about-this-book" id="toc-about-this-book" class="nav-link active" data-scroll-target="#about-this-book"><span class="header-section-number">1</span> About this book</a>
   <ul class="collapse">
   <li><a href="#how-this-book-is-organised" id="toc-how-this-book-is-organised" class="nav-link" data-scroll-target="#how-this-book-is-organised"><span class="header-section-number">1.1</span> How this book is organised</a></li>
-  <li><a href="#textbooks-for-our-classes" id="toc-textbooks-for-our-classes" class="nav-link" data-scroll-target="#textbooks-for-our-classes"><span class="header-section-number">1.2</span> Textbooks for our classes</a>
+  <li><a href="#learning-resources-for-our-classes" id="toc-learning-resources-for-our-classes" class="nav-link" data-scroll-target="#learning-resources-for-our-classes"><span class="header-section-number">1.2</span> Learning resources for our classes</a>
   <ul class="collapse">
   <li><a href="#what-about-large-language-models" id="toc-what-about-large-language-models" class="nav-link" data-scroll-target="#what-about-large-language-models"><span class="header-section-number">1.2.1</span> What about large language models?</a></li>
   </ul></li>
@@ -385,35 +385,45 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="1.1" class="anchored" data-anchor-id="how-this-book-is-organised"><span class="header-section-number">1.1</span> How this book is organised</h2>
 <p>This book has five parts:</p>
 <ul>
-<li><p><strong>Part 1: Introduction</strong> — (this page) describes our idea for the book, how it’s organised, and brief context on our approach to teaching R (see <a href="tidyverse_vs_base.html">tidyverse vs base R</a> and <a href="llms.html">LLMs in learning R</a>). It also encourages you to contribute to the development of the book.</p></li>
-<li><p><strong>Part 2: Preparations</strong> — deals with preparing your computer: installing R, adjusting the RStudio interface, getting required packages, and using Posit Cloud for those who can only use Chromebooks or iPads. It also contains an important practical chapter on how to use a computer for mission-critical operations on files and folders in Windows and macOS.</p></li>
-<li><p><strong>Part 3: R fundamentals</strong> — the key content that you will use the most: references on loading data, handling missing values, essential functions and their parameters, reshaping and joining data, visualisation with <code>ggplot2</code>, running basic statistical tests, and an introduction to functions and loops. It also contains a chapter with self-checking exercises that run entirely in the browser and are useful to make sure you are “getting it” as you go along.</p></li>
-<li><p><strong>Part 4: Content from classes</strong> — contains curated code and notes from weekly sessions where R is introduced.</p></li>
-<li><p><strong>Part 5: Topic-specific content</strong> — comprises of several independent chapters that support other modules and assignments (e.g., quality control and limits of detection for the Professional Skills 2; genomics and phylogenetics for the Current Topics in Molecular and Life Sciences (in preparation)).</p></li>
+<li><strong>Part 1: Introduction</strong> — (this page) describes our idea for the book, how it’s organised, and brief context on our approach to teaching R (see <a href="./tidyverse_vs_baser.html">tidyverse vs base R</a> and <a href="./llms.html">LLMs in learning R</a>). It also encourages you to contribute to the development of the book.</li>
+<li><strong>Part 2: Preparations</strong> — deals with preparing your computer: installing R, adjusting the <code>RStudio</code> interface, getting required packages, and using <code>Posit Cloud</code> for those who can only use Chromebooks or iPads. It also contains an important practical chapter on how to use a computer for operations on files and folders in Windows and macOS.</li>
+<li><strong>Part 3: R fundamentals</strong> — the key content that you will use the most: references on loading data, handling missing values, essential functions and their parameters, reshaping and joining data, visualisation with <code>ggplot2</code>, running basic statistical tests, and an introduction to functions and loops. It also contains a chapter with self-checking exercises that run entirely in the browser and are useful to make sure you are “getting it” as you go along.</li>
+<li><strong>Part 4: Content from classes</strong> — contains curated code and notes from weekly sessions where R is introduced.</li>
+<li><strong>Part 5: Topic-specific content</strong> — comprises several independent chapters that support other modules and assignments (e.g., quality control and limits of detection for the Professional Skills 2; genomics and phylogenetics for the Current Topics in Molecular and Life Sciences (in preparation)).</li>
 </ul>
-<p>Once your tools are ready, our aim is to take you from zero to a first meaningful plot with a simple statistical summary in under 20 minutes 💪🏽.</p>
+<p>Once your tools are ready, our aim is to take you from zero to a first meaningful plot with a simple statistical summary in under 20 minutes.</p>
 </section>
-<section id="textbooks-for-our-classes" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="textbooks-for-our-classes"><span class="header-section-number">1.2</span> Textbooks for our classes</h2>
-<p>Throughout the book and the classes we almost exclusively use the <code>tidyverse</code> dialect of R. For the justification, see the page on <a href="tidyverse_vs_baser.html">tidyverse vs base R</a>. Our recommended textbooks to accompany the classes are:</p>
+<section id="learning-resources-for-our-classes" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="learning-resources-for-our-classes"><span class="header-section-number">1.2</span> Learning resources for our classes</h2>
+<p>Throughout the book and the classes we almost exclusively use the <code>tidyverse</code> dialect of R. For the justification, see the page on <a href="./tidyverse_vs_baser.html">tidyverse vs base R</a>. Our recommended textbooks to accompany the classes are:</p>
 <ul>
-<li><p><a href="https://r4ds.hadley.nz">R for Data Science</a> (second edition) by Hadley Wickham, Mine Cetinkaya-Rundel and Garett Grolemund, for all kinds of practical information on data sciecne and a lot of explanations on every aspect of the code that we will be learning. An essential reading and a practical source - all the code from the book can be executed, followed by and modified in your R Studio.</p></li>
-<li><p><a href="https://r-graphics.org">R Graphics Cookbook</a> (second edition) by Winston Chang, dedicated entirely to using <code>ggplot</code>, the package that we use to make all the plots and visualisations of data in the class. Contains recipe-like code snippets on how to make and modify almost every plot that we will be making in class.</p></li>
+<li><a href="https://r4ds.hadley.nz"><em>R for Data Science</em></a> (second edition) by Hadley Wickham, Mine Çetinkaya-Rundel and Garrett Grolemund, for all kinds of practical information on data science and many explanations of the code that we will be learning. An essential reading and a practical source — all the code from the book can be executed, followed and modified in your <code>RStudio</code>.</li>
+<li><a href="https://r-graphics.org"><em>R Graphics Cookbook</em></a> (second edition) by Winston Chang, dedicated entirely to using <code>ggplot2</code>, the package that we use to make all the plots and visualisations of data in the class. Contains recipe-like code snippets on how to make and modify almost every plot that we will be making in class.</li>
 </ul>
-<p>Both are freely available online.</p>
+<p>Both are freely available online. In addition, there is a wealth of free, online resources, guides and tutorials on learning R - the strenght of online community is one of the great advantages of R over other languages. Feel free to use those resources in your practice, and if you find something particularly useful, <a href="how_to_contribute.html">let us know</a>!</p>
 <section id="what-about-large-language-models" class="level3" data-number="1.2.1">
 <h3 data-number="1.2.1" class="anchored" data-anchor-id="what-about-large-language-models"><span class="header-section-number">1.2.1</span> What about large language models?</h3>
-<p>Ah, yes, <a href="llms.html">we are glad you asked</a>.</p>
-<p><img src="images/blueberry_chatgpt.png" class="img-fluid"></p>
+<p>Ah, yes, we are glad you asked.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/blueberry_chatgpt.png" class="img-fluid figure-img"></p>
+<figcaption>Screenshot of a chat assistant incorrectly counting the letter ‘b’ in “blueberry” (shows “Total: 3”)</figcaption>
+</figure>
+</div>
 </section>
 </section>
 <section id="how-to-learn-r" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="how-to-learn-r"><span class="header-section-number">1.3</span> How to learn R</h2>
-<p>R is difficult for beginners and there is no way to sugarcoat it. The learning curve is steep, but we do not think it is very long: once you master a handful of commands and syntax principles, your own curiosity will drive you to transform, analyse and visualise your own data. There is only one principle we must emphasise for all students: <strong>practice</strong>.</p>
-<p><img src="images/how_to_learn_r.png" class="img-fluid"></p>
-<p><strong>It cannot be overstated how important is your own practice to learning R.</strong> Run the examples as you read, then try to change them — alter a number, rename a variable, or add a new line — and see what happens. One of the great advantages of coding is that you can always check your workings - run the code in a different way, or on modified data, and see whether the output you get is the one you expect.</p>
+<p>R is difficult for beginners and there is no way to sugarcoat it. The learning curve is steep, but we do not think it is very long: once you master a handful of commands and syntax principles, your own curiosity will drive you to transform, analyse and visualise your own data. There is only one principle we must emphasise for all students: practice.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/how_to_learn_r.png" class="img-fluid figure-img"></p>
+<figcaption>Humorous “O RLY?”-style cover with a kitten and the title “Changing Stuff and Seeing What Happens” — encouraging experimentation</figcaption>
+</figure>
+</div>
+<p><strong>It cannot be overstated how important is your own practice to learning R.</strong> Run the examples as you read, then try to change them — alter a number, rename a variable, or add a new line — and see what happens. One of the great advantages of coding is that you can always check your workings — run the code in a different way, or on modified data, and see whether the output you get is the one you expect.</p>
 <p>Computers are stupid and they are very particular about the way their instructions have to be written, so the vast majority of the errors you will encounter initially will be typos and mispaired brackets and not errors in the actual intent of the code. The more often you experiment, the faster you will become comfortable with R, and the sooner you will be able to use it for your own explorations.</p>
-<p>…and try to enjoy the process :-) - R is extremely powerful, and there is rarely a limit in what can be done in it with your data. Let’s go!</p>
+<p>…and try to enjoy the process :-) — R is extremely powerful, and there is rarely a limit in what can be done in it with your data. Let’s go!</p>
 
 
 </section>
