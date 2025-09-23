@@ -29,7 +29,7 @@ Both are freely available online. In addition, there is a wealth of free, online
 
 Ah, yes, we are glad you asked.
 
-![](images/blueberry_chatgpt.png){fig-alt="Screenshot of a chat assistant incorrectly counting the letter 'b' in “blueberry” (shows “Total: 3”)"}
+![](images/blueberry_chatgpt.png){fig-alt="Screenshot of a chatGPT incorrectly counting the letter 'b' in “blueberry” (shows “Total: 3”)"}
 
 ## How to learn R
 
