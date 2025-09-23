@@ -1,8 +1,6 @@
 # How to use a computer
 
-In our experience, one of the biggest barriers to learning programming for students today is not the complexity of coding itself, but rather the lack of fundamental computer skills. Many students struggle with _operating_ a computer, which makes learning the hard stuff (data science and programming in R) even trickier. Here is a screenshot from a recent talk in which Jarek listed common issues:
-
-![](images/windows_101_slide.png)
+In our experience, one of the biggest barriers to learning programming for students today is not the complexity of coding itself, but rather the lack of fundamental computer skills. Many students struggle with _operating_ a computer, which makes learning the hard stuff (data science and programming in R) even trickier. 
 
 From a teaching perspective, a very useful reading in this context is this 30 year-old text (!) by Phil Agre: [How to Help Someone Use a Computer](https://www.librarian.net/stax/4965/how-to-help-someone-use-a-computer-by-phil-agre/). All of his recommendations are still valid today (! again).
 
