@@ -37,7 +37,7 @@
     "href": "index.html#how-to-learn-r",
     "title": "Hudd-R book",
     "section": "1.3 How to learn R",
-    "text": "1.3 How to learn R\nR is difficult for beginners and there is no way to sugarcoat it. The learning curve is steep, but we do not think it is very long: once you master a handful of commands and syntax principles, your own curiosity will drive you to transform, analyse and visualise your own data. There is only one principle we must emphasise for all students: practice.\n\nIt cannot be overstated how important is your own practice to learning R. Run the examples as you read, then try to change them — alter a number, rename a variable, or add a new line — and see what happens. One of the great advantages of coding is that you can always check your workings - run the code in a different way, or on modified data, and see whether the output you get is the one you expect. Computers are stupid and they are very particular about the way instructions to them have to be written, so the vast majority of the errors you will encounter initially will be typos and mispaired brackets and not errors in the actual intent of the code. The more often you experiment, the faster you will become comfortable with R, and the sooner you will be able to use it for your own explorations.\n…and try to enjoy the process :-) - R is extremely powerful, and there is rarely a limit in what can be done in it with your data. Let’s go!",
+    "text": "1.3 How to learn R\nR is difficult for beginners and there is no way to sugarcoat it. The learning curve is steep, but we do not think it is very long: once you master a handful of commands and syntax principles, your own curiosity will drive you to transform, analyse and visualise your own data. There is only one principle we must emphasise for all students: practice.\n\nIt cannot be overstated how important is your own practice to learning R. Run the examples as you read, then try to change them — alter a number, rename a variable, or add a new line — and see what happens. One of the great advantages of coding is that you can always check your workings - run the code in a different way, or on modified data, and see whether the output you get is the one you expect.\nComputers are stupid and they are very particular about the way their instructions have to be written, so the vast majority of the errors you will encounter initially will be typos and mispaired brackets and not errors in the actual intent of the code. The more often you experiment, the faster you will become comfortable with R, and the sooner you will be able to use it for your own explorations.\n…and try to enjoy the process :-) - R is extremely powerful, and there is rarely a limit in what can be done in it with your data. Let’s go!",
     "crumbs": [
       "Part 1: Introduction",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>About this book</span>"
@@ -224,7 +224,7 @@
     "href": "posit_cloud.html",
     "title": "8  Using RStudio in a web browser",
     "section": "",
-    "text": "8.1 posit.cloud\nIf you cannot install R and RStudio on your computer, if your computer is a Chromebook or a tablet, or if you want to practice but don’t have your computer with you, the company that makes RStudio also makes a cloud version of it, available for free at https://posit.cloud/. You need to sign up for a free account (allowing you to use it for 25 hours per month) and you will be able to run RStudio in a web browser (any web browser, on any computer) without the need to install RTools, Xcode, R or RStudio.",
+    "text": "8.1 posit.cloud\nIf you cannot install R and RStudio on your computer, if your computer is a Chromebook or a tablet, or if you want to practice but don’t have your computer with you, the company that makes RStudio also makes a cloud version of it, available for free at https://posit.cloud/. You need to sign up for a free account (allowing you to use it for 25 hours per month for free) and you will be able to run RStudio in a web browser (any web browser, on any computer) without the need to install RTools, Command Line Tools, R or RStudio.",
     "crumbs": [
       "Part 2: Preparations",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Using RStudio in a web browser</span>"
@@ -767,6 +767,17 @@
     "crumbs": [
       "Part 5: Topic-specific content",
       "<span class='chapter-number'>23</span>  <span class='chapter-title'>Phylogenetics</span>"
+    ]
+  },
+  {
+    "objectID": "posit_cloud.html#set-up-rstudio-project-structure",
+    "href": "posit_cloud.html#set-up-rstudio-project-structure",
+    "title": "8  Using RStudio in a web browser",
+    "section": "8.3 Set up RStudio project structure",
+    "text": "8.3 Set up RStudio project structure\nOnce you sign up and the rstudio.cloud opens in the browser, click “New Project” on the right and enter a new name for it (I recommend modulecode_year, e.g. SIB2001_2526). In the panel Files on the bottom-right, click New Folder button and create three folders: code, data and output. Finally, in the panel on the left or bottom-left (called “Console”), copy-paste the following code and press Enter: install.packages(c(\"tidyverse\", \"here\", \"rstatix\", \"janitor\", \"datapasta\",  \"palmerpenguins\")).\nIt will take up to several minutes for all the packages to be downloaded and installed. You may be asked a question during the installation, to which you should agree. There will be a lot of red text scrolling through the window, but this is all normal. Any actual errors will terminate the installation. When the installation is over, you are ready: you can now follow all the code we do in the class and in the other resources on Brightspace.",
+    "crumbs": [
+      "Part 2: Preparations",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Using RStudio in a web browser</span>"
     ]
   }
 ]

@@ -42,7 +42,9 @@ R is difficult for beginners and there is no way to sugarcoat it. The learning c
 
 ![](images/how_to_learn_r.png)
 
-It cannot be overstated how important is your own practice to learning R. Run the examples as you read, then try to change them — alter a number, rename a variable, or add a new line — and see what happens. One of the great advantages of coding is that you can always check your workings - run the code in a different way, or on modified data, and see whether the output you get is the one you expect. Computers are stupid and they are very particular about the way instructions to them have to be written, so the vast majority of the errors you will encounter initially will be typos and mispaired brackets and not errors in the actual intent of the code. The more often you experiment, the faster you will become comfortable with R, and the sooner you will be able to use it for your own explorations.
+**It cannot be overstated how important is your own practice to learning R.** Run the examples as you read, then try to change them — alter a number, rename a variable, or add a new line — and see what happens. One of the great advantages of coding is that you can always check your workings - run the code in a different way, or on modified data, and see whether the output you get is the one you expect. 
+
+Computers are stupid and they are very particular about the way their instructions have to be written, so the vast majority of the errors you will encounter initially will be typos and mispaired brackets and not errors in the actual intent of the code. The more often you experiment, the faster you will become comfortable with R, and the sooner you will be able to use it for your own explorations.
 
 ...and try to enjoy the process :-) - R is extremely powerful, and there is rarely a limit in what can be done in it with your data. Let's go!
 
