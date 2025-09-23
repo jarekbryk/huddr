@@ -70,7 +70,7 @@
     "href": "how_to_contribute.html",
     "title": "4  Improving this book",
     "section": "",
-    "text": "4.1 Openning an issue\nThis book is open source. It is published under a MIT License so you may use its contents however you like (we would appreciate if you let us know if you do)!). It also means anyone can suggest improvements or fix mistakes.\nWe would be very happy if you let us know about errors that that you spotted, or if you have suggestions to improve or expand the book. You do not need to be an expert in programming to contribute and you cannot break the book by doing so — even spotting a missing word or pointing out a confusing explanation will be helpful to us!\nThere are two main ways to contribute:\nThis is like leaving a note online. For example: There’s a typo in Part 2, Chapter 3 or I found the explanation of loops unclear. Issues are the simplest way to give us feedback and they can be opened here by clicking the green button “New issue” on the right.",
+    "text": "4.1 Openning an issue\nThis book is open source. It is published under a MIT License so you may use its contents however you like (we would appreciate if you let us know if you do)!). It also means anyone can suggest improvements or fix mistakes.\nWe would be very happy if you let us know about errors that that you spotted, or if you have suggestions to improve or expand the book. You do not need to be an expert in programming to contribute and you cannot break the book by doing so — even spotting a missing word or pointing out a confusing explanation will be helpful to us!\nThere are two main ways to contribute:\nThis is like leaving a note online. For example: There’s a typo in Part 2, Chapter 3 or I found the explanation of loops unclear. Issues are the simplest way to give us feedback and they can be opened here by clicking the green button “New issue” on the right. Or you can click “Report an issue” on any page of this book.",
     "crumbs": [
       "Part 1: Introduction",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Improving this book</span>"
@@ -242,11 +242,11 @@
     ]
   },
   {
-    "objectID": "posit_cloud.html#create-an-r-project-structure",
-    "href": "posit_cloud.html#create-an-r-project-structure",
+    "objectID": "posit_cloud.html#set-up-rstudio-project-structure",
+    "href": "posit_cloud.html#set-up-rstudio-project-structure",
     "title": "8  Using RStudio in a web browser",
-    "section": "8.3 Create an R project structure",
-    "text": "8.3 Create an R project structure\nOnce you sign up and the rstudio.cloud opens in the browser, click “New Project” on the right and enter a new name for it (I recommend modulecode_year, e.g. SIB2001_2425). In the panel Files on the bottom-right, click New Folder button and create three folders: code, data and output. Finally, in the panel on the left or bottom-left (called “Console”), copy-paste the following code and press Enter: install.packages(c(\"tidyverse\", \"here\", \"rstatix\", \"janitor\", \"datapasta\",  \"palmerpenguins\")).\nIt will take up to several minutes for all the packages to be downloaded and installed. You may be asked a question during the installation, to which you should agree. There will be a lot of red text scrolling through the window, but this is all normal. Any actual errors will terminate the installation. When the installation is over, you are ready: you can now follow all the code we do in the class and in the other resources on Brightspace.",
+    "section": "8.3 Set up RStudio project structure",
+    "text": "8.3 Set up RStudio project structure\nOnce you sign up and the rstudio.cloud opens in the browser, click “New Project” on the right and enter a new name for it (I recommend modulecode_year, e.g. SIB2001_2526). In the panel Files on the bottom-right, click New Folder button and create three folders: code, data and output. Finally, in the panel on the left or bottom-left (called “Console”), copy-paste the following code and press Enter: install.packages(c(\"tidyverse\", \"here\", \"rstatix\", \"janitor\", \"datapasta\",  \"palmerpenguins\")).\nIt will take up to several minutes for all the packages to be downloaded and installed. You may be asked a question during the installation, to which you should agree. There will be a lot of red text scrolling through the window, but this is all normal. Any actual errors will terminate the installation. When the installation is over, you are ready: you can now follow all the code we do in the class and in the other resources on Brightspace.",
     "crumbs": [
       "Part 2: Preparations",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Using RStudio in a web browser</span>"
@@ -767,17 +767,6 @@
     "crumbs": [
       "Part 5: Topic-specific content",
       "<span class='chapter-number'>23</span>  <span class='chapter-title'>Phylogenetics</span>"
-    ]
-  },
-  {
-    "objectID": "posit_cloud.html#set-up-rstudio-project-structure",
-    "href": "posit_cloud.html#set-up-rstudio-project-structure",
-    "title": "8  Using RStudio in a web browser",
-    "section": "8.3 Set up RStudio project structure",
-    "text": "8.3 Set up RStudio project structure\nOnce you sign up and the rstudio.cloud opens in the browser, click “New Project” on the right and enter a new name for it (I recommend modulecode_year, e.g. SIB2001_2526). In the panel Files on the bottom-right, click New Folder button and create three folders: code, data and output. Finally, in the panel on the left or bottom-left (called “Console”), copy-paste the following code and press Enter: install.packages(c(\"tidyverse\", \"here\", \"rstatix\", \"janitor\", \"datapasta\",  \"palmerpenguins\")).\nIt will take up to several minutes for all the packages to be downloaded and installed. You may be asked a question during the installation, to which you should agree. There will be a lot of red text scrolling through the window, but this is all normal. Any actual errors will terminate the installation. When the installation is over, you are ready: you can now follow all the code we do in the class and in the other resources on Brightspace.",
-    "crumbs": [
-      "Part 2: Preparations",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Using RStudio in a web browser</span>"
     ]
   }
 ]

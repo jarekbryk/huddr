@@ -11,7 +11,7 @@ book:
     - "Jarek Bryk"
   date: "2025-02-14"
   repo-url: https://github.com/jarekbryk/huddr
-  repo-actions: [edit, issue, source]
+  repo-actions: [edit, issue]
   chapters:
   - part: 'Part 1: Introduction'
     chapters:

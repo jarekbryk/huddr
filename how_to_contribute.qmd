@@ -12,7 +12,7 @@ You will need to sign up for a free GitHub account to suggest changes to the boo
 
 ## Openning an issue
 
-This is like leaving a note online. For example: _There’s a typo in Part 2, Chapter 3_ or _I found the explanation of loops unclear_. Issues are the simplest way to give us feedback and [they can be opened here](https://github.com/jarekbryk/huddr/issues) by clicking the green button "New issue" on the right.
+This is like leaving a note online. For example: _There’s a typo in Part 2, Chapter 3_ or _I found the explanation of loops unclear_. Issues are the simplest way to give us feedback and [they can be opened here](https://github.com/jarekbryk/huddr/issues) by clicking the green button "New issue" on the right. Or you can click "Report an issue" on any page of this book.
 
 ![](images/open_issue.png)
 
