@@ -67,7 +67,7 @@ On a minority of university computers, \*.Rmd and \*.qmd files that are used by 
 
 ![](gifs/associate_files.gif){.lightbox}
 
-### Paths and hierarchies
+## Paths and hierarchies
 
 To know where your file is in the computer (regardless of whether it is local or in the cloud), operating systems use _paths_ that indicate location of files in a (mostly) hierarchical way. You can always view the whole path of each file or folder in the address bar of File Explorer:
 
@@ -86,7 +86,7 @@ In Windows, different levels of folder hierarchy are separated by backslash (\\)
 The path always uniquely identifies each file in your computer. If you don't know where a given file or folder is, click the address bar in File Explorer and the full path to the file/folder will be revealed.
 :::
 
-### How to unzip a file/folder
+## How to unzip a file/folder
 
 To make large files easier to transfer (and save storage space) we can compress them (or "zip" them, so called after one of [the most common file formats that support data compression/uncompression](https://simple.wikipedia.org/wiki/ZIP_(file_format)). These files will need to be uncompressed ("unzipped") before the content inside could be used. 
 
@@ -97,7 +97,7 @@ Unzipping a file takes two steps:
 
 ![](gifs/unzipping.gif){.lightbox}
 
-### How to move/copy files from one folder to another
+## How to move/copy files from one folder to another
 
 In the class, you will often be downloading files from Brightspace or the internet to open them in RStudio. In order to make working with these files in your RStudio easier, you should move these files to an apropriate place in your RStudio project folder (e.g. `code` or `data`). There are four ways of accomplishing this:
 
