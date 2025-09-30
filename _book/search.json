@@ -288,12 +288,12 @@
   {
     "objectID": "dealing_with_missing_data.html",
     "href": "dealing_with_missing_data.html",
-    "title": "10  Deadling with missing data",
+    "title": "10  Dealing with missing data",
     "section": "",
-    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
+    "text": "10.1 Reading in data that has missing values\nR is a bit unusual among programming languages in that it explicitly recognises missing data as a “natural” part of datasets and objects it manipulates. Your data will almost always be messy and missing data will be one of your issues. In fact, in almost any large data analysis project, you will spend most of the time on cleaning up and tidying up the data so that downstream analyses are possible.\nIn R, missing values are represented by a dedicated symbol NA (with variants like NA_integer_, NA_real_ and NA_character_). It also has a separate concept for “not a number” (NaN) and “infinite” (Inf) values.\nFrom a user point of view, they need to know how to make sure that missing data is properly recognised by R, and how to accommodate it when operating on data with missing values. The latter is particularly visible due to the fact that in R, missing values “propagate” - any operation on a missing value (or a set that includes even a missing value), results in NA. For example:\nMany standard functions that read in data, such as read_csv, have a parameter that allows it to recognise unusual values and turn it into correct NA upon import. For example, if all the missing values in your dataset are marked by a word “MISSING”, you can do read_csv(my_data, na = \"MISSING\") to turn all “MISSING” strings into NA.",
     "crumbs": [
       "Part 3: R fundamentals",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Deadling with missing data</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Dealing with missing data</span>"
     ]
   },
   {
@@ -811,6 +811,28 @@
     "crumbs": [
       "Part 2: Preparations",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>How to use a computer</span>"
+    ]
+  },
+  {
+    "objectID": "dealing_with_missing_data.html#dealing-with-nas-in-the-data",
+    "href": "dealing_with_missing_data.html#dealing-with-nas-in-the-data",
+    "title": "10  Dealing with missing data",
+    "section": "10.2 Dealing with NAs in the data",
+    "text": "10.2 Dealing with NAs in the data\nOnce you have a dataset with some missing values, there are about three ways of dealing with them:\n\nMany standard functions have a parameter to “ignore” missing values: na.rm = TRUE.\n\n\n# Now it produces a value of mean of all the non-missing elements\nmean(a, na.rm = TRUE)\n\n[1] 20.33333\n\n\n\nIf you have a dataframe with some observations missing, you can use drop_na to remove all rows with missing values in them, therefore turning your dataframe into a set of complete cases:\n\n\n# I am creating a tiny dataframe to illustrate my point about removing missing values\ndf &lt;- data.frame(\n  stringsAsFactors = FALSE,\n              col1 = c(\"one\", \"two\", \"three\", \"three and a half\"),\n              col2 = c(\"four\", NA, \"six\", \"six and a half\"),\n              col3 = c(\"seven\", \"eight\", NA, \"ten\")\n      )\n\ndf %&gt;% kable()\n\n\n\n\ncol1\ncol2\ncol3\n\n\n\n\none\nfour\nseven\n\n\ntwo\nNA\neight\n\n\nthree\nsix\nNA\n\n\nthree and a half\nsix and a half\nten\n\n\n\n\n\n\ndf %&gt;% \n    drop_na() %&gt;% \n    kable()\n\n\n\n\ncol1\ncol2\ncol3\n\n\n\n\none\nfour\nseven\n\n\nthree and a half\nsix and a half\nten\n\n\n\n\n\nNote, however, that drop_na removes entire rows where at least one value is missing - you are therefore loosing a lot of potentially valuable information (e.g. “two”, “eight”, “three” and “six”). If you only care about having no missing data in col2, you can provide it as an argument to drop_na, and it will remove rows with missing values only in this column:\n\ndf %&gt;% \n    drop_na(col2) %&gt;% \n    kable()\n\n\n\n\ncol1\ncol2\ncol3\n\n\n\n\none\nfour\nseven\n\n\nthree\nsix\nNA\n\n\nthree and a half\nsix and a half\nten\n\n\n\n\n\n(You may want to check base R functions such as complete.cases() and na.omit() as well.)\n\nFinally, you can simply filter the missing values using a Boolean function is.na with a negation operator !:\n\n\n# Give me only rows where there is no missing data in col2\ndf %&gt;% \n    filter(!is.na(col2)) %&gt;% \n    kable()\n\n\n\n\ncol1\ncol2\ncol3\n\n\n\n\none\nfour\nseven\n\n\nthree\nsix\nNA\n\n\nthree and a half\nsix and a half\nten",
+    "crumbs": [
+      "Part 3: R fundamentals",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Dealing with missing data</span>"
+    ]
+  },
+  {
+    "objectID": "dealing_with_missing_data.html#for-more-complex-cases-use-a-package",
+    "href": "dealing_with_missing_data.html#for-more-complex-cases-use-a-package",
+    "title": "10  Dealing with missing data",
+    "section": "10.3 For more complex cases, use a package",
+    "text": "10.3 For more complex cases, use a package\nIf your data is large, has a complicate structure of missingness, or you want to quicly visualise the pattern of missing data, you should check out a package naniar by Nicholas Tierney. Not only it contains convenient functions to normalise missing data in an object (e.g. replace_with_na()), or to have a statistical summary of variables with missing values (e.g. prop_miss_var()), but the package website contains useful guide of how to look at missingness in data.",
+    "crumbs": [
+      "Part 3: R fundamentals",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Dealing with missing data</span>"
     ]
   }
 ]

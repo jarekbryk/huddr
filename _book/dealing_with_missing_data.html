@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>10&nbsp; Deadling with missing data – Hudd-R book</title>
+<title>10&nbsp; Dealing with missing data – Hudd-R book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -118,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./loading_packages_and_data.html">Part 3: R fundamentals</a></li><li class="breadcrumb-item"><a href="./dealing_with_missing_data.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Deadling with missing data</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./loading_packages_and_data.html">Part 3: R fundamentals</a></li><li class="breadcrumb-item"><a href="./dealing_with_missing_data.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Dealing with missing data</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -234,7 +234,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dealing_with_missing_data.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Deadling with missing data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Dealing with missing data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -350,15 +350,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#reading-in-data-that-has-missing-values" id="toc-reading-in-data-that-has-missing-values" class="nav-link active" data-scroll-target="#reading-in-data-that-has-missing-values"><span class="header-section-number">10.1</span> Reading in data that has missing values</a></li>
+  <li><a href="#dealing-with-nas-in-the-data" id="toc-dealing-with-nas-in-the-data" class="nav-link" data-scroll-target="#dealing-with-nas-in-the-data"><span class="header-section-number">10.2</span> Dealing with NAs in the data</a></li>
+  <li><a href="#for-more-complex-cases-use-a-package" id="toc-for-more-complex-cases-use-a-package" class="nav-link" data-scroll-target="#for-more-complex-cases-use-a-package"><span class="header-section-number">10.3</span> For more complex cases, use a package</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/jarekbryk/huddr/edit/main/dealing_with_missing_data.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jarekbryk/huddr/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./loading_packages_and_data.html">Part 3: R fundamentals</a></li><li class="breadcrumb-item"><a href="./dealing_with_missing_data.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Deadling with missing data</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./loading_packages_and_data.html">Part 3: R fundamentals</a></li><li class="breadcrumb-item"><a href="./dealing_with_missing_data.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Dealing with missing data</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Deadling with missing data</span></h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Dealing with missing data</span></h1>
 </div>
 
 
@@ -375,15 +383,200 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>In summary, this book has no content whatsoever.</p>
+<p>R is a bit unusual among programming languages in that it explicitly recognises missing data as a “natural” part of datasets and objects it manipulates. Your data will almost always be messy and missing data will be one of your issues. In fact, in almost any large data analysis project, you will spend most of the time on cleaning up and tidying up the data so that downstream analyses are possible.</p>
+<p>In R, missing values are represented by a dedicated symbol <code>NA</code> (with variants like <code>NA_integer_</code>, <code>NA_real_</code> and <code>NA_character_</code>). It also has a separate concept for “not a number” (<code>NaN</code>) and “infinite” (<code>Inf</code>) values.</p>
+<p>From a user point of view, they need to know how to make sure that missing data is properly recognised by R, and how to accommodate it when operating on data with missing values. The latter is particularly visible due to the fact that in R, missing values “propagate” - any operation on a missing value (or a set that includes even a missing value), results in <code>NA</code>. For example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">55</span>, <span class="cn">NA</span>, <span class="dv">4</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<pre><code>[1] NA</code></pre>
 </div>
 </div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>a<span class="sc">*</span><span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  200 5500   NA  400</code></pre>
+</div>
+</div>
+<section id="reading-in-data-that-has-missing-values" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="reading-in-data-that-has-missing-values"><span class="header-section-number">10.1</span> Reading in data that has missing values</h2>
+<p>Many standard functions that read in data, such as <code>read_csv</code>, have a parameter that allows it to recognise unusual values and turn it into correct <code>NA</code> upon import. For example, if all the missing values in your dataset are marked by a word “MISSING”, you can do <code>read_csv(my_data, na = "MISSING")</code> to turn all “MISSING” strings into <code>NA</code>.</p>
+</section>
+<section id="dealing-with-nas-in-the-data" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="dealing-with-nas-in-the-data"><span class="header-section-number">10.2</span> Dealing with NAs in the data</h2>
+<p>Once you have a dataset with some missing values, there are about three ways of dealing with them:</p>
+<ol type="1">
+<li>Many standard functions have a parameter to “ignore” missing values: <code>na.rm = TRUE</code>.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Now it produces a value of mean of all the non-missing elements</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(a, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 20.33333</code></pre>
+</div>
+</div>
+<ol start="2" type="1">
+<li>If you have a dataframe with some observations missing, you can use <code>drop_na</code> to remove all rows with missing values in them, therefore turning your dataframe into a set of complete cases:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># I am creating a tiny dataframe to illustrate my point about removing missing values</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">col1 =</span> <span class="fu">c</span>(<span class="st">"one"</span>, <span class="st">"two"</span>, <span class="st">"three"</span>, <span class="st">"three and a half"</span>),</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">col2 =</span> <span class="fu">c</span>(<span class="st">"four"</span>, <span class="cn">NA</span>, <span class="st">"six"</span>, <span class="st">"six and a half"</span>),</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">col3 =</span> <span class="fu">c</span>(<span class="st">"seven"</span>, <span class="st">"eight"</span>, <span class="cn">NA</span>, <span class="st">"ten"</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">col1</th>
+<th style="text-align: left;">col2</th>
+<th style="text-align: left;">col3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">one</td>
+<td style="text-align: left;">four</td>
+<td style="text-align: left;">seven</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">two</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">eight</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">three</td>
+<td style="text-align: left;">six</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">three and a half</td>
+<td style="text-align: left;">six and a half</td>
+<td style="text-align: left;">ten</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">col1</th>
+<th style="text-align: left;">col2</th>
+<th style="text-align: left;">col3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">one</td>
+<td style="text-align: left;">four</td>
+<td style="text-align: left;">seven</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">three and a half</td>
+<td style="text-align: left;">six and a half</td>
+<td style="text-align: left;">ten</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Note, however, that <code>drop_na</code> removes entire rows where at least one value is missing - you are therefore loosing a lot of potentially valuable information (e.g.&nbsp;“two”, “eight”, “three” and “six”). If you only care about having no missing data in <code>col2</code>, you can provide it as an argument to <code>drop_na</code>, and it will remove rows with missing values only in this column:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">drop_na</span>(col2) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">col1</th>
+<th style="text-align: left;">col2</th>
+<th style="text-align: left;">col3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">one</td>
+<td style="text-align: left;">four</td>
+<td style="text-align: left;">seven</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">three</td>
+<td style="text-align: left;">six</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">three and a half</td>
+<td style="text-align: left;">six and a half</td>
+<td style="text-align: left;">ten</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>(You may want to check <code>base R</code> functions such as <code>complete.cases()</code> and <code>na.omit()</code> as well.)</p>
+<ol start="3" type="1">
+<li>Finally, you can simply filter the missing values using a Boolean function <code>is.na</code> with a negation operator <code>!</code>:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Give me only rows where there is no missing data in col2</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(col2)) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">col1</th>
+<th style="text-align: left;">col2</th>
+<th style="text-align: left;">col3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">one</td>
+<td style="text-align: left;">four</td>
+<td style="text-align: left;">seven</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">three</td>
+<td style="text-align: left;">six</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">three and a half</td>
+<td style="text-align: left;">six and a half</td>
+<td style="text-align: left;">ten</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="for-more-complex-cases-use-a-package" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="for-more-complex-cases-use-a-package"><span class="header-section-number">10.3</span> For more complex cases, use a package</h2>
+<p>If your data is large, has a complicate structure of missingness, or you want to quicly visualise the pattern of missing data, you should check out <a href="https://naniar.njtierney.com/articles/naniar.html">a package <code>naniar</code></a> by Nicholas Tierney. Not only it contains convenient functions to normalise missing data in an object (e.g.&nbsp;<code>replace_with_na()</code>), or to have a statistical summary of variables with missing values (e.g.&nbsp;<code>prop_miss_var()</code>), but the package website contains useful guide of how to look at missingness in data.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script>
@@ -1008,4 +1201,4 @@ window.onload = function() {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/jarekbryk/huddr/edit/main/dealing_with_missing_data.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jarekbryk/huddr/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jarekbryk/huddr/edit/main/dealing_with_missing_data.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jarekbryk/huddr/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
