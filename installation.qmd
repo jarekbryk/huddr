@@ -33,7 +33,7 @@ Instructions are available at [https://cran.r-project.org/bin/windows/Rtools/](h
 
 ### Download and install R
 
-Use this link to download and install R: [https://www.stats.bris.ac.uk/R/bin/windows/base/](https://www.stats.bris.ac.uk/R/bin/windows/base/)
+Use this link: [https://cran.rstudio.com](https://cran.rstudio.com) and follow the link to "Download R for Windows".
 
 ### Download and install RStudio
 
@@ -49,7 +49,7 @@ Use this link: [https://posit.co/download/rstudio-desktop/](https://posit.co/dow
 
 ### Download and install R
 
-Use this link to download and install R: [https://www.stats.bris.ac.uk/R/bin/macosx/base/](https://www.stats.bris.ac.uk/R/bin/macosx/base/)
+Use this link to download and install R: Use this link: [https://cran.rstudio.com](https://cran.rstudio.com) and follow the link to "Download R for macOS".
 
 ### Download and install RStudio
 
