@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.28">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>4&nbsp; Improving this book – Hudd-R book</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -38,10 +41,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-b719d3d4935f2b08311a76135e2bf442.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -199,7 +202,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dealing_with_missing_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Deadling with missing data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Dealing with missing data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -320,7 +323,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#openning-an-issue" id="toc-openning-an-issue" class="nav-link active" data-scroll-target="#openning-an-issue"><span class="header-section-number">4.1</span> Openning an issue</a></li>
+  <li><a href="#opening-an-issue" id="toc-opening-an-issue" class="nav-link active" data-scroll-target="#opening-an-issue"><span class="header-section-number">4.1</span> Opening an issue</a></li>
   <li><a href="#submitting-a-pull-request-pr" id="toc-submitting-a-pull-request-pr" class="nav-link" data-scroll-target="#submitting-a-pull-request-pr"><span class="header-section-number">4.2</span> Submitting a pull request (PR)</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/jarekbryk/huddr/edit/main/how_to_contribute.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jarekbryk/huddr/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -363,8 +366,8 @@ Important
 <p>You will need to sign up for a free GitHub account to suggest changes to the book: <a href="https://github.com/signup">https://github.com/signup</a>.</p>
 </div>
 </div>
-<section id="openning-an-issue" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="openning-an-issue"><span class="header-section-number">4.1</span> Openning an issue</h2>
+<section id="opening-an-issue" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="opening-an-issue"><span class="header-section-number">4.1</span> Opening an issue</h2>
 <p>This is like leaving a note online. For example: <em>There’s a typo in Part 2, Chapter 3</em> or <em>I found the explanation of loops unclear</em>. Issues are the simplest way to give us feedback and <a href="https://github.com/jarekbryk/huddr/issues">they can be opened here</a> by clicking the green button “New issue” on the right. Or you can click “Report an issue” on any page of this book.</p>
 <p><img src="images/open_issue.png" class="img-fluid"></p>
 </section>
@@ -387,7 +390,7 @@ Important
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Learn more
+<span class="screen-reader-only">Tip</span>Learn more
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -656,13 +659,14 @@ window.onload = function() {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
