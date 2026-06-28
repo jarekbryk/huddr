@@ -7,10 +7,14 @@ Levey-Jennings (LJ) charts are widely used in clinical and analytical laboratori
 Below, we will generate a Levey-Jennings chart and apply a set of rules to identify outliers. First, install the ggQC package and load the libraries that we need.
 
 ```{r}
-# If you don't have ggQC package installed, uncheck the line below and run the install.packages() command to install ggQC package; then delete this line or check it back
-# install.packages("ggQC")
-library (ggQC)
 library(tidyverse)
+```
+
+```{r}
+#| eval: false
+# ggQC is no longer available on CRAN; the chunks below that use it are disabled until a replacement is found
+# install.packages("ggQC")
+library(ggQC)
 ```
 
 We need to generate some sample data.. The "run" is the day of the assay (1-30) The "value" is the result of the assay.
@@ -24,6 +28,7 @@ df <- tibble(run = run, value = value)
 We will now generate a Levey-Jennings plot of the data using the code below. The blue line in the centre is the mean. The red lines indicate 1, 2 or 3 standard deviations from the mean. In this case, both the mean and SD are calculated from the data. Sometimes a LJ chart is generated using a previously established true value of the standard with an associated SD.<br> Many other options are available as part of the ggQC package. In addition, you can generate different types of quality control charts. You can read more <a href="http://rcontrolcharts.com/index.html" target="_blank">here</a>
 
 ```{r}
+#| eval: false
 df |> ggplot(aes(x = run, y = value)) + #start ggplot
   geom_point() + geom_line() + # add the data points and the line
     stat_QC(method = "XmR",    # XmR is for individual data points with a moving Range
@@ -39,6 +44,7 @@ In the data above, three of the Westgard rules have been violated. Can you ident
 Check your answer by running the code below. This generates a facet plot, highlighting violations in red.
 
 ```{r}
+#| eval: false
 #create facet plot with QC violations
 ggplot(df, aes(x = run, y = value)) + #init ggplot
   stat_qc_violations(method = "XmR" )
@@ -71,10 +77,11 @@ Always follow the protocol and quality control processes that are used in your w
 The data provided above was deliberately manipulated to introduce three rule violations. If this was your actual data from one month in an analytical laboratory, it would indicate that serious errors are occurring on a regular basis. You would need to rectify the problem(s) before running any real samples. If your data is from a normal distribution then outliers detected by these rules are quite rare, but they do happen, even if nothing is wrong with the equipment or the user. Use the code below to generate QC plots of 30 data points from a normal distribution with a mean of 40 and SD = 2. Run this code 12 times to see how often outliers might occur in one year under ideal conditions.<br> Remember, if any outliers are detected, even at these rare intevals, you would still need to check all of your equipment and reagents, as you would have no way of knowing if it is a malfunction or just random noise.
 
 ```{r}
+#| eval: false
 # Generate some random data and plot it
 tibble(run = c(1:30),
-      value = rnorm(30, mean =40, sd =2),) |> 
-  ggplot (aes(x = run, y = value)) + 
+      value = rnorm(30, mean =40, sd =2),) |>
+  ggplot (aes(x = run, y = value)) +
   stat_qc_violations(method = "XmR" )
 ```
 
