@@ -543,10 +543,21 @@
     "href": "pivot_functions_extended.html",
     "title": "14  Even more about pivot functions",
     "section": "",
-    "text": "The pivot functions allow you to reshape your data sets, which is useful when preparing your data for analysis or visualization.\n\npivot_longer() - Allows you to lengthen your data set from a wide format to a long format by reducing the number of columns and increasing the number of rows.\npivot_wider() - Allows you to widen your data set from a long format to a wide format by reducing the number of rows and increasing the number of columns.\n\n\n\n\n\n\n\nTipYou do this by writing:\n\n\n\npivot_function(data set name, cols = (column name : column name), names_to = “name”, values_to = “value”)\n\n\n\ncols - The columns you want to pivot.\nnames_to - The new column name where you want all the variable names to go.\nvalues_to - The new column name where you want all the values to go.\n\nHere you can see an example of how you can use the pivot_longer() function in a data set:\n\npivot_longer(rodents, cols = hindfoot_length:weight, names_to = \"type_measurement\", values_to = \"measurements\")\n\nrodents |&gt;\n  pivot_longer(cols = hindfoot_length:weight, names_to = \"type_measurement\", values_to = \"measurements\")",
+    "text": "The pivot functions allow you to reshape your data sets, which is useful when preparing your data for analysis or visualization.\n\npivot_longer() - Allows you to lengthen your data set from a wide format to a long format by reducing the number of columns and increasing the number of rows.\npivot_wider() - Allows you to widen your data set from a long format to a wide format by reducing the number of rows and increasing the number of columns.\n\n\n\n\n\n\n\nTipYou do this by writing:\n\n\n\npivot_function(data set name, cols = (column name : column name), names_to = “name”, values_to = “value”)\n\n\n\ncols - The columns you want to pivot.\nnames_to - The new column name where you want all the variable names to go.\nvalues_to - The new column name where you want all the values to go.\n\nHere you can see an example of how you can use the pivot_longer() function in a data set:\n\npivot_longer(rodents, cols= (\"hindfoot_length\" : \"weight\"), names_to = \"type_measurement\", values_to = \"measurements\")\n\nrodents |&gt; \n  pivot_longer(cols= (\"hindfoot_length\" : \"weight\"), names_to = \"type_measurement\", values_to = \"measurements\")",
     "crumbs": [
       "Part 3: R fundamentals",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Even more about pivot functions</span>"
+    ]
+  },
+  {
+    "objectID": "graph_functions_extended.html",
+    "href": "graph_functions_extended.html",
+    "title": "15  Graph Functions",
+    "section": "",
+    "text": "NoteThis chapter is in development\n\n\n\nContent for this chapter is being written and will be added soon.",
+    "crumbs": [
+      "Part 3: R fundamentals",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Graph Functions</span>"
     ]
   },
   {
@@ -642,7 +653,7 @@
     "href": "functions_and_loops.html",
     "title": "17  Functions and loops",
     "section": "",
-    "text": "To be developed!",
+    "text": "NoteThis chapter is in development\n\n\n\nContent for this chapter is being written and will be added soon.",
     "crumbs": [
       "Part 3: R fundamentals",
       "<span class='chapter-number'>17</span>  <span class='chapter-title'>Functions and loops</span>"
@@ -697,7 +708,7 @@
     "href": "code_from_class.html",
     "title": "19  Code from class",
     "section": "",
-    "text": "To be uploaded…",
+    "text": "NoteThis chapter is in development\n\n\n\nContent for this chapter is being written and will be added soon.",
     "crumbs": [
       "Part 4: Content from classes",
       "<span class='chapter-number'>19</span>  <span class='chapter-title'>Code from class</span>"
@@ -807,7 +818,7 @@
     "href": "genomics.html",
     "title": "22  Genomics",
     "section": "",
-    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
+    "text": "NoteThis chapter is in development\n\n\n\nContent for this chapter is being written and will be added soon.",
     "crumbs": [
       "Part 5: Topic-specific content",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Genomics</span>"
@@ -818,7 +829,7 @@
     "href": "phylogenetics.html",
     "title": "23  Phylogenetics",
     "section": "",
-    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
+    "text": "NoteThis chapter is in development\n\n\n\nContent for this chapter is being written and will be added soon.",
     "crumbs": [
       "Part 5: Topic-specific content",
       "<span class='chapter-number'>23</span>  <span class='chapter-title'>Phylogenetics</span>"
