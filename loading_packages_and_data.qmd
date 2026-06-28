@@ -1,5 +1,22 @@
 # Loading and Installing Packages
 
+## 0. Creating a new Quarto document
+
+Every piece of work in this book is written in a **Quarto document** (`.qmd`). To create one in RStudio:
+
+1. Go to **File → New File → Quarto Document…**
+2. Give it a title and leave the output format as HTML, then click **Create**.
+3. A template document opens. Delete everything below the first code chunk (the `setup` chunk) to start with a clean slate.
+4. Save the file into your project folder before you do anything else (**File → Save**, or **Ctrl+S** / **Cmd+S**).
+
+::: callout-tip
+## Keyboard shortcuts for running code
+
+-   **Ctrl+Enter** (Windows) / **Cmd+Enter** (macOS) — run the current line or selected code.
+-   **Ctrl+Shift+Enter** / **Cmd+Shift+Enter** — run the entire current code chunk.
+-   **Ctrl+Shift+K** / **Cmd+Shift+K** — render the whole document to HTML.
+:::
+
 ## 1. Loading and Installing Packages
 
 The first step after you create a document in R should always be loading all the required packages (and installing them if needed).
@@ -61,3 +78,29 @@ If you want to use `read_delim()` you'll need to specify what delimiter you want
 squirrels <- read_delim (here("data", "squirrels.csv"), delim = ";")
 squirrels
 ```
+
+## 3. Checking your data after loading
+
+Always inspect your data immediately after loading it — this is the quickest way to catch problems such as columns read as the wrong type, unexpected `NA` values, or data that did not load correctly.
+
+Three useful functions for a first look:
+
+```{r}
+#| eval: false
+# A compact summary: column names, types, and the first few values
+glimpse(rodents)
+
+# The first 6 rows as a table
+head(rodents)
+
+# Open the data in a spreadsheet-style viewer (RStudio only)
+View(rodents)
+```
+
+::: callout-tip
+## What to check
+
+-   Do the column names look right?
+-   Do the column types make sense? (e.g. a numeric column showing `<chr>` means R read it as text — often caused by a stray letter or comma in the data file)
+-   Does the number of rows match what you expect?
+:::

@@ -358,8 +358,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#loading-and-installing-packages" id="toc-loading-and-installing-packages" class="nav-link active" data-scroll-target="#loading-and-installing-packages"><span class="header-section-number">9.1</span> 1. Loading and Installing Packages</a></li>
-  <li><a href="#loading-your-data" id="toc-loading-your-data" class="nav-link" data-scroll-target="#loading-your-data"><span class="header-section-number">9.2</span> 2. Loading your data</a></li>
+  <li><a href="#creating-a-new-quarto-document" id="toc-creating-a-new-quarto-document" class="nav-link active" data-scroll-target="#creating-a-new-quarto-document"><span class="header-section-number">9.1</span> 0. Creating a new Quarto document</a></li>
+  <li><a href="#loading-and-installing-packages" id="toc-loading-and-installing-packages" class="nav-link" data-scroll-target="#loading-and-installing-packages"><span class="header-section-number">9.2</span> 1. Loading and Installing Packages</a></li>
+  <li><a href="#loading-your-data" id="toc-loading-your-data" class="nav-link" data-scroll-target="#loading-your-data"><span class="header-section-number">9.3</span> 2. Loading your data</a></li>
+  <li><a href="#checking-your-data-after-loading" id="toc-checking-your-data-after-loading" class="nav-link" data-scroll-target="#checking-your-data-after-loading"><span class="header-section-number">9.4</span> 3. Checking your data after loading</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/jarekbryk/huddr/edit/main/loading_packages_and_data.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jarekbryk/huddr/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -385,8 +387,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="loading-and-installing-packages" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="loading-and-installing-packages"><span class="header-section-number">9.1</span> 1. Loading and Installing Packages</h2>
+<section id="creating-a-new-quarto-document" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="creating-a-new-quarto-document"><span class="header-section-number">9.1</span> 0. Creating a new Quarto document</h2>
+<p>Every piece of work in this book is written in a <strong>Quarto document</strong> (<code>.qmd</code>). To create one in RStudio:</p>
+<ol type="1">
+<li>Go to <strong>File → New File → Quarto Document…</strong></li>
+<li>Give it a title and leave the output format as HTML, then click <strong>Create</strong>.</li>
+<li>A template document opens. Delete everything below the first code chunk (the <code>setup</code> chunk) to start with a clean slate.</li>
+<li>Save the file into your project folder before you do anything else (<strong>File → Save</strong>, or <strong>Ctrl+S</strong> / <strong>Cmd+S</strong>).</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Keyboard shortcuts for running code
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Ctrl+Enter</strong> (Windows) / <strong>Cmd+Enter</strong> (macOS) — run the current line or selected code.</li>
+<li><strong>Ctrl+Shift+Enter</strong> / <strong>Cmd+Shift+Enter</strong> — run the entire current code chunk.</li>
+<li><strong>Ctrl+Shift+K</strong> / <strong>Cmd+Shift+K</strong> — render the whole document to HTML.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="loading-and-installing-packages" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="loading-and-installing-packages"><span class="header-section-number">9.2</span> 1. Loading and Installing Packages</h2>
 <p>The first step after you create a document in R should always be loading all the required packages (and installing them if needed).</p>
 <ul>
 <li><p><strong>What is a package?</strong> You should think of a package as a collection of functions, data and help files that you can download and install in R.</p></li>
@@ -414,8 +443,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="loading-your-data" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="loading-your-data"><span class="header-section-number">9.2</span> 2. Loading your data</h2>
+<section id="loading-your-data" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="loading-your-data"><span class="header-section-number">9.3</span> 2. Loading your data</h2>
 <p>The second step should be to load your data into R (otherwise you’ll have nothing to work with). To do this you first have to check what type of file your data set is (is it .txt, .csv, .xlsx?). Depending on the type of file you have is the function that you are going to use:</p>
 <div>
 <ul>
@@ -440,6 +469,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>squirrels <span class="ot">&lt;-</span> <span class="fu">read_delim</span> (<span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"squirrels.csv"</span>), <span class="at">delim =</span> <span class="st">";"</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>squirrels</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="checking-your-data-after-loading" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="checking-your-data-after-loading"><span class="header-section-number">9.4</span> 3. Checking your data after loading</h2>
+<p>Always inspect your data immediately after loading it — this is the quickest way to catch problems such as columns read as the wrong type, unexpected <code>NA</code> values, or data that did not load correctly.</p>
+<p>Three useful functions for a first look:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A compact summary: column names, types, and the first few values</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(rodents)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># The first 6 rows as a table</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(rodents)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Open the data in a spreadsheet-style viewer (RStudio only)</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(rodents)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>What to check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Do the column names look right?</li>
+<li>Do the column types make sense? (e.g.&nbsp;a numeric column showing <code>&lt;chr&gt;</code> means R read it as text — often caused by a stray letter or comma in the data file)</li>
+<li>Does the number of rows match what you expect?</li>
+</ul>
+</div>
 </div>
 
 
