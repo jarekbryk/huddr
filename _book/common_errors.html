@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Improving this book – Hudd-R book</title>
+<title>19&nbsp; Common R errors and fixes – Hudd-R book</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -33,8 +68,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./how_to_use_a_computer.html" rel="next">
-<link href="./llms.html" rel="prev">
+<link href="./code_from_class.html" rel="next">
+<link href="./practice_questions.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -86,7 +121,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Part 1: Introduction</a></li><li class="breadcrumb-item"><a href="./how_to_contribute.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Improving this book</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./loading_packages_and_data.html">Part 3: R fundamentals</a></li><li class="breadcrumb-item"><a href="./common_errors.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Common R errors and fixes</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -143,7 +178,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./how_to_contribute.html" class="sidebar-item-text sidebar-link active">
+  <a href="./how_to_contribute.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Improving this book</span></span></a>
   </div>
 </li>
@@ -255,7 +290,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./common_errors.html" class="sidebar-item-text sidebar-link">
+  <a href="./common_errors.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Common R errors and fixes</span></span></a>
   </div>
 </li>
@@ -329,17 +364,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#opening-an-issue" id="toc-opening-an-issue" class="nav-link active" data-scroll-target="#opening-an-issue"><span class="header-section-number">4.1</span> Opening an issue</a></li>
-  <li><a href="#submitting-a-pull-request-pr" id="toc-submitting-a-pull-request-pr" class="nav-link" data-scroll-target="#submitting-a-pull-request-pr"><span class="header-section-number">4.2</span> Submitting a pull request (PR)</a></li>
+  <li><a href="#object-x-not-found" id="toc-object-x-not-found" class="nav-link active" data-scroll-target="#object-x-not-found"><span class="header-section-number">19.1</span> <code>object 'x' not found</code></a></li>
+  <li><a href="#could-not-find-function-x" id="toc-could-not-find-function-x" class="nav-link" data-scroll-target="#could-not-find-function-x"><span class="header-section-number">19.2</span> <code>could not find function "x"</code></a></li>
+  <li><a href="#there-is-no-package-called-x" id="toc-there-is-no-package-called-x" class="nav-link" data-scroll-target="#there-is-no-package-called-x"><span class="header-section-number">19.3</span> <code>there is no package called 'x'</code></a></li>
+  <li><a href="#error-unexpected-symbol-unexpected-unexpected" id="toc-error-unexpected-symbol-unexpected-unexpected" class="nav-link" data-scroll-target="#error-unexpected-symbol-unexpected-unexpected"><span class="header-section-number">19.4</span> <code>Error: unexpected symbol</code> / <code>unexpected ','</code> / <code>unexpected ')'</code></a></li>
+  <li><a href="#error-in-filefile-rt-cannot-open-the-connection" id="toc-error-in-filefile-rt-cannot-open-the-connection" class="nav-link" data-scroll-target="#error-in-filefile-rt-cannot-open-the-connection"><span class="header-section-number">19.5</span> <code>Error in file(file, "rt") : cannot open the connection</code></a></li>
+  <li><a href="#nas-introduced-by-coercion" id="toc-nas-introduced-by-coercion" class="nav-link" data-scroll-target="#nas-introduced-by-coercion"><span class="header-section-number">19.6</span> <code>NAs introduced by coercion</code></a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/jarekbryk/huddr/edit/main/how_to_contribute.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jarekbryk/huddr/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/jarekbryk/huddr/edit/main/common_errors.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jarekbryk/huddr/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Part 1: Introduction</a></li><li class="breadcrumb-item"><a href="./how_to_contribute.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Improving this book</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./loading_packages_and_data.html">Part 3: R fundamentals</a></li><li class="breadcrumb-item"><a href="./common_errors.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Common R errors and fixes</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Improving this book</span></h1>
+<h1 class="title"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Common R errors and fixes</span></h1>
 </div>
 
 
@@ -356,51 +395,101 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This book is open source. It is published under a <a href="https://choosealicense.com/licenses/mit/">MIT License</a> so you may use its contents however you like (we would appreciate if you <a href="mailto:j.bryk@hud.ac.uk">let us know if you do</a>)!). It also means anyone can suggest improvements or fix mistakes.</p>
-<p>We would be very happy if you let us know about errors that that you spotted, or if you have suggestions to improve or expand the book. You do not need to be an expert in programming to contribute and you cannot break the book by doing so — even spotting a missing word or pointing out a confusing explanation will be helpful to us!</p>
-<p>There are two main ways to contribute:</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p>This page collects the error messages you are most likely to see as a beginner, explains what they mean, and suggests how to fix them.</p>
+<section id="object-x-not-found" class="level2" data-number="19.1">
+<h2 data-number="19.1" class="anchored" data-anchor-id="object-x-not-found"><span class="header-section-number">19.1</span> <code>object 'x' not found</code></h2>
+<p><strong>What it means:</strong> R cannot find a variable or data frame with that name.</p>
+<p><strong>Common causes and fixes:</strong></p>
+<ul>
+<li>You have not run the line that creates it yet. Make sure you run your setup chunk (the one with <code>library()</code> and <code>read_tsv()</code>) before running any code that uses those objects. Use <strong>Ctrl+Shift+Enter</strong> to run a chunk.</li>
+<li>You made a typo. R is case-sensitive: <code>Rodents</code> and <code>rodents</code> are different objects. Check your spelling carefully.</li>
+<li>You are working in a new session and have not re-run your script from the top. Objects are not saved between sessions — you need to re-run everything.</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This will give "object 'rodents' not found" if you haven't run the line below first</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>rodents <span class="sc">|&gt;</span> <span class="fu">filter</span>(species_id <span class="sc">==</span> <span class="st">"NL"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Fix: run this first</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>rodents <span class="ot">&lt;-</span> <span class="fu">read_tsv</span>(<span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"rodents_full.txt"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You will need to sign up for a free GitHub account to suggest changes to the book: <a href="https://github.com/signup">https://github.com/signup</a>.</p>
-</div>
-</div>
-<section id="opening-an-issue" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="opening-an-issue"><span class="header-section-number">4.1</span> Opening an issue</h2>
-<p>This is like leaving a note online. For example: <em>There’s a typo in Part 2, Chapter 3</em> or <em>I found the explanation of loops unclear</em>. Issues are the simplest way to give us feedback and <a href="https://github.com/jarekbryk/huddr/issues">they can be opened here</a> by clicking the green button “New issue” on the right. Or you can click “Report an issue” on any page of this book.</p>
-<p><img src="images/open_issue.png" class="img-fluid"></p>
 </section>
-<section id="submitting-a-pull-request-pr" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="submitting-a-pull-request-pr"><span class="header-section-number">4.2</span> Submitting a pull request (PR)</h2>
-<p>This is a way to propose an actual edit of any piece of content in the book (for example, fixing the typo directly, rephrasing a paragraph, etc.). This requires a few extra steps but can all be accomplished in the browser and we can then apply the fix more easily). The steps to submit your proposed changes to be consider by the book’s editor (i.e.&nbsp;Jarek) are as follows:</p>
-<ol type="1">
-<li>Go to the page for this book’s files: <a href="https://github.com/jarekbryk/huddr">https://github.com/jarekbryk/huddr</a> or click the “edit this page” button at the bottom of each page.</li>
-<li>Find the file that you want to modify (for example, a <code>basic_functions.qmd</code> file) and click it.</li>
-<li>On the file page, click the pencil icon to edit the file in the browser.</li>
-<li>Make your change in the editor (fix the text, add a link, etc.).</li>
-<li>Scroll down to “Propose changes” and write a short message like “Fix typo in the filter function”.</li>
-<li>Click “Propose changes”. GitHub will show you a page with a button “Create pull request” — click it.</li>
-<li>Add a short title/description (why this improves the book) and click “Create pull request.”</li>
-</ol>
-<p>The editor will consider your suggestions and may incorporate them in the text - you will get a notification when this happens.</p>
+<section id="could-not-find-function-x" class="level2" data-number="19.2">
+<h2 data-number="19.2" class="anchored" data-anchor-id="could-not-find-function-x"><span class="header-section-number">19.2</span> <code>could not find function "x"</code></h2>
+<p><strong>What it means:</strong> R does not know the function you are trying to use, usually because the package that provides it has not been loaded.</p>
+<p><strong>Common causes and fixes:</strong></p>
+<ul>
+<li>You forgot to call <code>library()</code> at the top of your script. Add <code>library(tidyverse)</code> (or whichever package the function comes from) and re-run.</li>
+<li>You are using <code>%&gt;%</code> without loading <code>tidyverse</code> or <code>magrittr</code>. Switch to <code>|&gt;</code> (the native pipe, no package needed) or add <code>library(tidyverse)</code>.</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fix: always start your script with your library() calls</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="there-is-no-package-called-x" class="level2" data-number="19.3">
+<h2 data-number="19.3" class="anchored" data-anchor-id="there-is-no-package-called-x"><span class="header-section-number">19.3</span> <code>there is no package called 'x'</code></h2>
+<p><strong>What it means:</strong> The package has not been installed on your computer.</p>
+<p><strong>Fix:</strong> Install it once with <code>install.packages()</code>, then load it with <code>library()</code>. You only need to install once; you need to load every session.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"rstatix"</span>)   <span class="co"># install once</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rstatix)              <span class="co"># load every session</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="error-unexpected-symbol-unexpected-unexpected" class="level2" data-number="19.4">
+<h2 data-number="19.4" class="anchored" data-anchor-id="error-unexpected-symbol-unexpected-unexpected"><span class="header-section-number">19.4</span> <code>Error: unexpected symbol</code> / <code>unexpected ','</code> / <code>unexpected ')'</code></h2>
+<p><strong>What it means:</strong> R found something it did not expect — almost always a syntax error.</p>
+<p><strong>Common causes and fixes:</strong></p>
+<ul>
+<li>A missing or extra comma, bracket, or quotation mark. Check that every opening <code>(</code> has a closing <code>)</code>, and every <code>"</code> is paired.</li>
+<li>A line that ends with a pipe <code>|&gt;</code> but the next line is empty or missing. Each pipe must be followed by a function on the next line.</li>
+<li>Running an incomplete line (e.g.&nbsp;you selected only half an expression). Run the whole chunk instead.</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wrong: missing closing bracket</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(rodents, species_id <span class="sc">==</span> <span class="st">"NL"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Right:</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(rodents, species_id <span class="sc">==</span> <span class="st">"NL"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="error-in-filefile-rt-cannot-open-the-connection" class="level2" data-number="19.5">
+<h2 data-number="19.5" class="anchored" data-anchor-id="error-in-filefile-rt-cannot-open-the-connection"><span class="header-section-number">19.5</span> <code>Error in file(file, "rt") : cannot open the connection</code></h2>
+<p><strong>What it means:</strong> R cannot find the data file you are trying to read.</p>
+<p><strong>Common causes and fixes:</strong></p>
+<ul>
+<li>The file is not in the <code>data/</code> folder of your project. Move it there.</li>
+<li>You typed the filename incorrectly — check spelling and the file extension (<code>.txt</code> vs <code>.csv</code>, etc.).</li>
+<li>Your working directory is not set to your project folder. If you opened your <code>.Rproj</code> file, this should be automatic. If not, use <strong>Session → Set Working Directory → To Project Directory</strong> in RStudio.</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># here() builds the path relative to your project folder</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>rodents <span class="ot">&lt;-</span> <span class="fu">read_tsv</span>(<span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"rodents_full.txt"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="nas-introduced-by-coercion" class="level2" data-number="19.6">
+<h2 data-number="19.6" class="anchored" data-anchor-id="nas-introduced-by-coercion"><span class="header-section-number">19.6</span> <code>NAs introduced by coercion</code></h2>
+<p><strong>What it means:</strong> R tried to convert a column to a numeric type but found values it could not convert (such as text or blanks), so it replaced them with <code>NA</code>.</p>
+<p><strong>What to do:</strong> This is often a warning rather than an error, and can be harmless. Check the affected column with <code>glimpse()</code> or <code>View()</code> to see whether the <code>NA</code> values are a problem. If the column should be numeric but contains a stray text value, that value needs fixing in your data file.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Learn more
+<span class="screen-reader-only">Tip</span>General debugging tips
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If you want to read a bit more about pull request and version control (fundamental components of modern software development), and other features of Git and GitHub, this guide is relatively accessible: <a href="https://pixelpioneers.co/blog/2017/using-github-without-the-command-line">Using GitHub without the command line</a>.</p>
+<ol type="1">
+<li><strong>Read the error message carefully</strong> — it usually tells you the line number and what R expected vs what it found.</li>
+<li><strong>Run your script from the top</strong> — many errors are caused by running lines out of order.</li>
+<li><strong>Check for typos</strong> — R is case-sensitive and whitespace-sensitive in quoted strings.</li>
+<li><strong>Google the exact error message</strong> — add “R tidyverse” to your search to find relevant answers.</li>
+<li><strong>Ask an LLM</strong> — paste the error message and the code that produced it into ChatGPT or Claude and ask for an explanation. See the <a href="llms.html">LLMs chapter</a> for guidance.</li>
+</ol>
 </div>
 </div>
 
@@ -1016,13 +1105,13 @@ window.onload = function() {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./llms.html" class="pagination-link" aria-label="Note on the LLMs">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Note on the LLMs</span></span>
+      <a href="./practice_questions.html" class="pagination-link" aria-label="Practice Questions">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Practice Questions</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./how_to_use_a_computer.html" class="pagination-link" aria-label="How to use a computer">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">How to use a computer</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./code_from_class.html" class="pagination-link" aria-label="Code from class">
+        <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Code from class</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1031,4 +1120,4 @@ window.onload = function() {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jarekbryk/huddr/edit/main/how_to_contribute.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jarekbryk/huddr/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jarekbryk/huddr/edit/main/common_errors.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jarekbryk/huddr/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
