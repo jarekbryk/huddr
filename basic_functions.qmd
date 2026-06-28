@@ -44,17 +44,14 @@ In this short chapter you will find a summary of some of the basic and most usef
 
 ## Useful operators
 
-`|>` or `%\>%`
+`|>` or `%>%`
 
-::: callout
--   This is a pipe operator that allows you to apply multiple functions to your data set in a chain like sequence.
--   You can type this operator by pressing: **shift + control + M**
-:::
+The pipe operator lets you pass the result of one function directly into the next, reading left to right rather than from the inside out. This makes longer sequences of steps much easier to follow.
 
-Here you can see an example of how to use the pipe operator to chain different functions:
+Without a pipe, applying several steps in sequence produces deeply nested code that is hard to read:
 
 ```{r}
-#| include: false  
+#| include: false
 library(tidyverse)
 library(here)
 rodents <- read_tsv(here("data", "rodents_full.txt"))
@@ -62,10 +59,36 @@ rodents <- read_tsv(here("data", "rodents_full.txt"))
 
 ```{r}
 #| eval: false
-rodents |> 
-  filter(species_id=="NL") |> 
+select(filter(rodents, species_id == "NL"), species_id, hindfoot_length, sex)
+```
+
+With the pipe, the same steps read as a plain sentence — "take rodents, then filter, then select":
+
+```{r}
+#| eval: false
+rodents |>
+  filter(species_id == "NL") |>
   select(species_id, hindfoot_length, sex)
 ```
+
+::: callout-tip
+## Keyboard shortcut
+
+Type the pipe with **Ctrl + Shift + M** (Windows) or **Cmd + Shift + M** (macOS).
+:::
+
+::: callout-note
+## `|>` vs `%>%` — what is the difference?
+
+You will see both versions used online and in textbooks. `|>` is the **native pipe**, built into R since version 4.1 (2021) and requires no packages. `%>%` is the **magrittr pipe**, which comes from the `magrittr` package and is loaded automatically with `tidyverse`. They behave identically for the vast majority of everyday use, so do not worry about the difference for now. This book uses `|>`.
+:::
+
+::: callout-warning
+## Common pipe errors
+
+-   **`could not find function "%>%"`** — you are using `%>%` without loading `tidyverse` (or `magrittr`). Either add `library(tidyverse)` at the top of your script, or switch to `|>`.
+-   **`unexpected symbol` or `object not found` after a pipe** — a line break in the wrong place. Make sure each pipe `|>` is at the *end* of a line, not the start of the next one.
+:::
 
 `%in%`
 
