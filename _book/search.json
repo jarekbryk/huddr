@@ -543,7 +543,40 @@
     "href": "pivot_functions_extended.html",
     "title": "14  Even more about pivot functions",
     "section": "",
-    "text": "The pivot functions allow you to reshape your data sets, which is useful when preparing your data for analysis or visualization.\n\npivot_longer() - Allows you to lengthen your data set from a wide format to a long format by reducing the number of columns and increasing the number of rows.\npivot_wider() - Allows you to widen your data set from a long format to a wide format by reducing the number of rows and increasing the number of columns.\n\n\n\n\n\n\n\nTipYou do this by writing:\n\n\n\npivot_function(data set name, cols = (column name : column name), names_to = “name”, values_to = “value”)\n\n\n\ncols - The columns you want to pivot.\nnames_to - The new column name where you want all the variable names to go.\nvalues_to - The new column name where you want all the values to go.\n\nHere you can see an example of how you can use the pivot_longer() function in a data set:\n\npivot_longer(rodents, cols = hindfoot_length:weight, names_to = \"type_measurement\", values_to = \"measurements\")\n\nrodents |&gt;\n  pivot_longer(cols = hindfoot_length:weight, names_to = \"type_measurement\", values_to = \"measurements\")",
+    "text": "14.1 Wide vs long format\nThe pivot functions allow you to reshape your data sets, which is useful when preparing your data for analysis or visualization.\nIt helps to see what these words mean before looking at code. Imagine a small table recording hindfoot length and weight for two animals:\nWide format (one row per animal, measurements spread across columns):\nLong format (one row per measurement, a column for the measurement name and a column for the value):",
+    "crumbs": [
+      "Part 3: R fundamentals",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Even more about pivot functions</span>"
+    ]
+  },
+  {
+    "objectID": "pivot_functions_extended.html#wide-vs-long-format",
+    "href": "pivot_functions_extended.html#wide-vs-long-format",
+    "title": "14  Even more about pivot functions",
+    "section": "",
+    "text": "species_id\nhindfoot_length\nweight\n\n\n\n\nNL\n32\n165\n\n\nDM\n36\n43\n\n\n\n\n\n\n\nspecies_id\ntype_measurement\nmeasurements\n\n\n\n\nNL\nhindfoot_length\n32\n\n\nNL\nweight\n165\n\n\nDM\nhindfoot_length\n36\n\n\nDM\nweight\n43\n\n\n\n\n\n\n\n\n\nNoteWhen to use each\n\n\n\n\nUse pivot_longer() (wide → long) when you want to plot or summarise multiple measurements together — for example, drawing a boxplot of several numeric columns at once with ggplot2.\nUse pivot_wider() (long → wide) when you need one column per group for comparison — for example, to create a summary table where each species gets its own column.",
+    "crumbs": [
+      "Part 3: R fundamentals",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Even more about pivot functions</span>"
+    ]
+  },
+  {
+    "objectID": "pivot_functions_extended.html#pivot_longer",
+    "href": "pivot_functions_extended.html#pivot_longer",
+    "title": "14  Even more about pivot functions",
+    "section": "14.2 pivot_longer()",
+    "text": "14.2 pivot_longer()\n\n\n\n\n\n\nTipYou do this by writing:\n\n\n\npivot_longer(data, cols = first_col:last_col, names_to = “new_name_column”, values_to = “new_value_column”)\n\n\n\ncols - The columns you want to pivot (use an unquoted range like hindfoot_length:weight).\nnames_to - The name of the new column that will hold the old column names.\nvalues_to - The name of the new column that will hold the values.\n\n\nrodents |&gt;\n  pivot_longer(cols = hindfoot_length:weight, names_to = \"type_measurement\", values_to = \"measurements\")",
+    "crumbs": [
+      "Part 3: R fundamentals",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Even more about pivot functions</span>"
+    ]
+  },
+  {
+    "objectID": "pivot_functions_extended.html#pivot_wider",
+    "href": "pivot_functions_extended.html#pivot_wider",
+    "title": "14  Even more about pivot functions",
+    "section": "14.3 pivot_wider()",
+    "text": "14.3 pivot_wider()\n\n\n\n\n\n\nTipYou do this by writing:\n\n\n\npivot_wider(data, names_from = column_with_names, values_from = column_with_values)\n\n\n\nnames_from - The column whose values will become the new column names.\nvalues_from - The column whose values will fill those new columns.\n\n\n# Example: count captures per species per year, then spread years into columns\nrodents |&gt;\n  count(species_id, year) |&gt;\n  pivot_wider(names_from = year, values_from = n)",
     "crumbs": [
       "Part 3: R fundamentals",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Even more about pivot functions</span>"

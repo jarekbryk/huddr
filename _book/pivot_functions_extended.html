@@ -353,8 +353,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#wide-vs-long-format" id="toc-wide-vs-long-format" class="nav-link active" data-scroll-target="#wide-vs-long-format"><span class="header-section-number">14.1</span> Wide vs long format</a></li>
+  <li><a href="#pivot_longer" id="toc-pivot_longer" class="nav-link" data-scroll-target="#pivot_longer"><span class="header-section-number">14.2</span> <code>pivot_longer()</code></a></li>
+  <li><a href="#pivot_wider" id="toc-pivot_wider" class="nav-link" data-scroll-target="#pivot_wider"><span class="header-section-number">14.3</span> <code>pivot_wider()</code></a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/jarekbryk/huddr/edit/main/pivot_functions_extended.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jarekbryk/huddr/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -380,9 +388,85 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>The pivot functions allow you to reshape your data sets, which is useful when preparing your data for analysis or visualization.</p>
 <ul>
-<li><code>pivot_longer()</code> - Allows you to lengthen your data set from a wide format to a long format by reducing the number of columns and increasing the number of rows.</li>
-<li><code>pivot_wider()</code> - Allows you to widen your data set from a long format to a wide format by reducing the number of rows and increasing the number of columns.</li>
+<li><code>pivot_longer()</code> - Converts <strong>wide</strong> data to <strong>long</strong> format: fewer columns, more rows.</li>
+<li><code>pivot_wider()</code> - Converts <strong>long</strong> data to <strong>wide</strong> format: more columns, fewer rows.</li>
 </ul>
+<section id="wide-vs-long-format" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="wide-vs-long-format"><span class="header-section-number">14.1</span> Wide vs long format</h2>
+<p>It helps to see what these words mean before looking at code. Imagine a small table recording hindfoot length and weight for two animals:</p>
+<p><strong>Wide format</strong> (one row per animal, measurements spread across columns):</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>species_id</th>
+<th>hindfoot_length</th>
+<th>weight</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>NL</td>
+<td>32</td>
+<td>165</td>
+</tr>
+<tr class="even">
+<td>DM</td>
+<td>36</td>
+<td>43</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Long format</strong> (one row per measurement, a column for the measurement name and a column for the value):</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>species_id</th>
+<th>type_measurement</th>
+<th>measurements</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>NL</td>
+<td>hindfoot_length</td>
+<td>32</td>
+</tr>
+<tr class="even">
+<td>NL</td>
+<td>weight</td>
+<td>165</td>
+</tr>
+<tr class="odd">
+<td>DM</td>
+<td>hindfoot_length</td>
+<td>36</td>
+</tr>
+<tr class="even">
+<td>DM</td>
+<td>weight</td>
+<td>43</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>When to use each
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Use <strong><code>pivot_longer()</code></strong> (wide → long) when you want to plot or summarise multiple measurements together — for example, drawing a boxplot of several numeric columns at once with <code>ggplot2</code>.</li>
+<li>Use <strong><code>pivot_wider()</code></strong> (long → wide) when you need one column per group for comparison — for example, to create a summary table where each species gets its own column.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="pivot_longer" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="pivot_longer"><span class="header-section-number">14.2</span> <code>pivot_longer()</code></h2>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -393,23 +477,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>pivot_function(data set name, cols = (column name : column name), names_to = “name”, values_to = “value”)</p>
+<p>pivot_longer(data, cols = first_col:last_col, names_to = “new_name_column”, values_to = “new_value_column”)</p>
 </div>
 </div>
 <ul>
-<li><code>cols</code> - The columns you want to pivot.</li>
-<li><code>names_to</code> - The new column name where you want all the variable names to go.</li>
-<li><code>values_to</code> - The new column name where you want all the values to go.</li>
+<li><code>cols</code> - The columns you want to pivot (use an unquoted range like <code>hindfoot_length:weight</code>).</li>
+<li><code>names_to</code> - The name of the new column that will hold the old column names.</li>
+<li><code>values_to</code> - The name of the new column that will hold the values.</li>
 </ul>
-<p>Here you can see an example of how you can use the <code>pivot_longer()</code> function in a data set:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pivot_longer</span>(rodents, <span class="at">cols =</span> hindfoot_length<span class="sc">:</span>weight, <span class="at">names_to =</span> <span class="st">"type_measurement"</span>, <span class="at">values_to =</span> <span class="st">"measurements"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>rodents <span class="sc">|&gt;</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> hindfoot_length<span class="sc">:</span>weight, <span class="at">names_to =</span> <span class="st">"type_measurement"</span>, <span class="at">values_to =</span> <span class="st">"measurements"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>rodents <span class="sc">|&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> hindfoot_length<span class="sc">:</span>weight, <span class="at">names_to =</span> <span class="st">"type_measurement"</span>, <span class="at">values_to =</span> <span class="st">"measurements"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="pivot_wider" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="pivot_wider"><span class="header-section-number">14.3</span> <code>pivot_wider()</code></h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>You do this by writing:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>pivot_wider(data, names_from = column_with_names, values_from = column_with_values)</p>
+</div>
+</div>
+<ul>
+<li><code>names_from</code> - The column whose values will become the new column names.</li>
+<li><code>values_from</code> - The column whose values will fill those new columns.</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: count captures per species per year, then spread years into columns</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>rodents <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(species_id, year) <span class="sc">|&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> year, <span class="at">values_from =</span> n)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script>
@@ -1035,4 +1143,4 @@ window.onload = function() {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/jarekbryk/huddr/edit/main/pivot_functions_extended.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jarekbryk/huddr/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jarekbryk/huddr/edit/main/pivot_functions_extended.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jarekbryk/huddr/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
