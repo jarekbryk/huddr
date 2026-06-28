@@ -358,7 +358,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#useful-functions-and-parameters" id="toc-useful-functions-and-parameters" class="nav-link active" data-scroll-target="#useful-functions-and-parameters"><span class="header-section-number">13.0.1</span> Useful functions and parameters</a></li>
+  <li><a href="#the-four-join-types" id="toc-the-four-join-types" class="nav-link active" data-scroll-target="#the-four-join-types"><span class="header-section-number">13.1</span> The four join types</a></li>
+  <li><a href="#seeing-joins-in-action" id="toc-seeing-joins-in-action" class="nav-link" data-scroll-target="#seeing-joins-in-action"><span class="header-section-number">13.2</span> Seeing joins in action</a></li>
+  <li><a href="#joining-on-columns-with-different-names" id="toc-joining-on-columns-with-different-names" class="nav-link" data-scroll-target="#joining-on-columns-with-different-names"><span class="header-section-number">13.3</span> Joining on columns with different names</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/jarekbryk/huddr/edit/main/joining_functions_extended.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jarekbryk/huddr/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -384,21 +386,135 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>The joining functions allow you to merge separate data sets based on matching keys.</p>
-<ul>
-<li><code>left_join()</code> - Keeps all the values from the left table and matching rows from the right table. All unmatched rows in the right table will be NA.</li>
-<li><code>right_join()</code> - Keeps all the values from the right table and matching rows from the left table. All unmatched rows in the left table will be NA.</li>
-<li><code>inner_join()</code> - Keeps all values that have matching keys in both tables.</li>
-<li><code>full_join()</code> - Keeps all values from both tables and all unmatched rows will be NA.</li>
-</ul>
-<section id="useful-functions-and-parameters" class="level3" data-number="13.0.1">
-<h3 data-number="13.0.1" class="anchored" data-anchor-id="useful-functions-and-parameters"><span class="header-section-number">13.0.1</span> Useful functions and parameters</h3>
-<blockquote class="blockquote">
-<ul>
-<li><code>by</code> - Specifies the key column/s to join on.</li>
-<li><code>c()</code> - Allows you to combine different joining keys if they don’t have the same name.</li>
-</ul>
-</blockquote>
+<p>The joining functions allow you to merge separate data sets based on a shared <strong>key</strong> column — a column that appears in both tables and contains matching values, such as a species ID or a sample name.</p>
+<section id="the-four-join-types" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="the-four-join-types"><span class="header-section-number">13.1</span> The four join types</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Function</th>
+<th>Rows kept</th>
+<th>Use when…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>left_join()</code></td>
+<td>All rows from the <strong>left</strong> table; matching rows from the right</td>
+<td>You want to keep all your primary data and add extra columns where available</td>
+</tr>
+<tr class="even">
+<td><code>right_join()</code></td>
+<td>All rows from the <strong>right</strong> table; matching rows from the left</td>
+<td>Same idea, but your primary data is on the right</td>
+</tr>
+<tr class="odd">
+<td><code>inner_join()</code></td>
+<td>Only rows with a matching key <strong>in both</strong> tables</td>
+<td>You only want rows that exist in both data sets</td>
+</tr>
+<tr class="even">
+<td><code>full_join()</code></td>
+<td>All rows from <strong>both</strong> tables</td>
+<td>You want to keep everything and fill gaps with <code>NA</code></td>
+</tr>
+</tbody>
+</table>
+<p>Rows with no match in the other table get <code>NA</code> in the columns that came from that table.</p>
+</section>
+<section id="seeing-joins-in-action" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="seeing-joins-in-action"><span class="header-section-number">13.2</span> Seeing joins in action</h2>
+<p>The examples below use two small built-in dplyr data sets. Here is what they contain:</p>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>-- Attaching core tidyverse packages ------------------------ tidyverse 2.0.0 --
+v dplyr     1.2.1     v readr     2.2.0
+v forcats   1.0.1     v stringr   1.6.0
+v ggplot2   4.0.3     v tibble    3.3.1
+v lubridate 1.9.5     v tidyr     1.3.2
+v purrr     1.2.2     
+-- Conflicts ------------------------------------------ tidyverse_conflicts() --
+x dplyr::filter() masks stats::filter()
+x dplyr::lag()    masks stats::lag()
+i Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>band_members      <span class="co"># name + band</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 x 2
+  name  band   
+  &lt;chr&gt; &lt;chr&gt;  
+1 Mick  Stones 
+2 John  Beatles
+3 Paul  Beatles</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>band_instruments  <span class="co"># name + plays</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 x 2
+  name  plays 
+  &lt;chr&gt; &lt;chr&gt; 
+1 John  guitar
+2 Paul  bass  
+3 Keith guitar</code></pre>
+</div>
+</div>
+<p><code>Mick</code> is in <code>band_members</code> but not in <code>band_instruments</code>. <code>Keith</code> is in <code>band_instruments</code> but not in <code>band_members</code>. The key column is <code>name</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># inner_join: only Mick and John appear in both tables — only they are kept</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">inner_join</span>(band_members, band_instruments, <span class="at">by =</span> <span class="st">"name"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 x 3
+  name  band    plays 
+  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; 
+1 John  Beatles guitar
+2 Paul  Beatles bass  </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># left_join: all of band_members is kept; Keith (right only) is dropped</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">left_join</span>(band_members, band_instruments, <span class="at">by =</span> <span class="st">"name"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 x 3
+  name  band    plays 
+  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; 
+1 Mick  Stones  &lt;NA&gt;  
+2 John  Beatles guitar
+3 Paul  Beatles bass  </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># right_join: all of band_instruments is kept; Mick (left only) is dropped</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">right_join</span>(band_members, band_instruments, <span class="at">by =</span> <span class="st">"name"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 x 3
+  name  band    plays 
+  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; 
+1 John  Beatles guitar
+2 Paul  Beatles bass  
+3 Keith &lt;NA&gt;    guitar</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># full_join: everyone is kept; gaps filled with NA</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">full_join</span>(band_members, band_instruments, <span class="at">by =</span> <span class="st">"name"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 x 3
+  name  band    plays 
+  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; 
+1 Mick  Stones  &lt;NA&gt;  
+2 John  Beatles guitar
+3 Paul  Beatles bass  
+4 Keith &lt;NA&gt;    guitar</code></pre>
+</div>
+</div>
+</section>
+<section id="joining-on-columns-with-different-names" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="joining-on-columns-with-different-names"><span class="header-section-number">13.3</span> Joining on columns with different names</h2>
+<p>If the key column has a different name in each table, use <code>join_by()</code> to specify which columns match:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># key is called "name" on the left and "artist" on the right</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">left_join</span>(band_members, band_instruments2, <span class="at">by =</span> <span class="fu">join_by</span>(name <span class="sc">==</span> artist))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -409,19 +525,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>joining_function(left data set, right data set, by = “column name”)</p>
-<p>joining_function(left data set, right data set, by = c(left column name= right column name))</p>
+<p>joining_function(left_table, right_table, by = “shared_column_name”)</p>
+<p># or, if the key columns have different names:</p>
+<p>joining_function(left_table, right_table, by = join_by(left_col == right_col))</p>
 </div>
-</div>
-<p>Here you can see an example of how to join to data sets:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">inner_join</span>(band_members, band_instruments, <span class="at">by =</span> <span class="st">"name"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">left_join</span>(band_members, band_instruments, <span class="at">by =</span> <span class="st">"name"</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">right_join</span>(band_members, band_instruments, <span class="at">by =</span> <span class="st">"name"</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">full_join</span>(band_members, band_instruments, <span class="at">by =</span> <span class="st">"name"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 

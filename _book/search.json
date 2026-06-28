@@ -532,7 +532,40 @@
     "href": "joining_functions_extended.html",
     "title": "13  Joining functions",
     "section": "",
-    "text": "The joining functions allow you to merge separate data sets based on matching keys.\n\nleft_join() - Keeps all the values from the left table and matching rows from the right table. All unmatched rows in the right table will be NA.\nright_join() - Keeps all the values from the right table and matching rows from the left table. All unmatched rows in the left table will be NA.\ninner_join() - Keeps all values that have matching keys in both tables.\nfull_join() - Keeps all values from both tables and all unmatched rows will be NA.\n\n\n13.0.1 Useful functions and parameters\n\n\nby - Specifies the key column/s to join on.\nc() - Allows you to combine different joining keys if they don’t have the same name.\n\n\n\n\n\n\n\n\nTipYou do this by writing:\n\n\n\njoining_function(left data set, right data set, by = “column name”)\njoining_function(left data set, right data set, by = c(left column name= right column name))\n\n\nHere you can see an example of how to join to data sets:\n\ninner_join(band_members, band_instruments, by = \"name\")\n\nleft_join(band_members, band_instruments, by = \"name\")\n\nright_join(band_members, band_instruments, by = \"name\")\n\nfull_join(band_members, band_instruments, by = \"name\")",
+    "text": "13.1 The four join types\nThe joining functions allow you to merge separate data sets based on a shared key column — a column that appears in both tables and contains matching values, such as a species ID or a sample name.\nRows with no match in the other table get NA in the columns that came from that table.",
+    "crumbs": [
+      "Part 3: R fundamentals",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Joining functions</span>"
+    ]
+  },
+  {
+    "objectID": "joining_functions_extended.html#the-four-join-types",
+    "href": "joining_functions_extended.html#the-four-join-types",
+    "title": "13  Joining functions",
+    "section": "",
+    "text": "Function\nRows kept\nUse when…\n\n\n\n\nleft_join()\nAll rows from the left table; matching rows from the right\nYou want to keep all your primary data and add extra columns where available\n\n\nright_join()\nAll rows from the right table; matching rows from the left\nSame idea, but your primary data is on the right\n\n\ninner_join()\nOnly rows with a matching key in both tables\nYou only want rows that exist in both data sets\n\n\nfull_join()\nAll rows from both tables\nYou want to keep everything and fill gaps with NA",
+    "crumbs": [
+      "Part 3: R fundamentals",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Joining functions</span>"
+    ]
+  },
+  {
+    "objectID": "joining_functions_extended.html#seeing-joins-in-action",
+    "href": "joining_functions_extended.html#seeing-joins-in-action",
+    "title": "13  Joining functions",
+    "section": "13.2 Seeing joins in action",
+    "text": "13.2 Seeing joins in action\nThe examples below use two small built-in dplyr data sets. Here is what they contain:\n\n\n-- Attaching core tidyverse packages ------------------------ tidyverse 2.0.0 --\nv dplyr     1.2.1     v readr     2.2.0\nv forcats   1.0.1     v stringr   1.6.0\nv ggplot2   4.0.3     v tibble    3.3.1\nv lubridate 1.9.5     v tidyr     1.3.2\nv purrr     1.2.2     \n-- Conflicts ------------------------------------------ tidyverse_conflicts() --\nx dplyr::filter() masks stats::filter()\nx dplyr::lag()    masks stats::lag()\ni Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\n\nband_members      # name + band\n\n# A tibble: 3 x 2\n  name  band   \n  &lt;chr&gt; &lt;chr&gt;  \n1 Mick  Stones \n2 John  Beatles\n3 Paul  Beatles\n\nband_instruments  # name + plays\n\n# A tibble: 3 x 2\n  name  plays \n  &lt;chr&gt; &lt;chr&gt; \n1 John  guitar\n2 Paul  bass  \n3 Keith guitar\n\n\nMick is in band_members but not in band_instruments. Keith is in band_instruments but not in band_members. The key column is name.\n\n# inner_join: only Mick and John appear in both tables — only they are kept\ninner_join(band_members, band_instruments, by = \"name\")\n\n# A tibble: 2 x 3\n  name  band    plays \n  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; \n1 John  Beatles guitar\n2 Paul  Beatles bass  \n\n# left_join: all of band_members is kept; Keith (right only) is dropped\nleft_join(band_members, band_instruments, by = \"name\")\n\n# A tibble: 3 x 3\n  name  band    plays \n  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; \n1 Mick  Stones  &lt;NA&gt;  \n2 John  Beatles guitar\n3 Paul  Beatles bass  \n\n# right_join: all of band_instruments is kept; Mick (left only) is dropped\nright_join(band_members, band_instruments, by = \"name\")\n\n# A tibble: 3 x 3\n  name  band    plays \n  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; \n1 John  Beatles guitar\n2 Paul  Beatles bass  \n3 Keith &lt;NA&gt;    guitar\n\n# full_join: everyone is kept; gaps filled with NA\nfull_join(band_members, band_instruments, by = \"name\")\n\n# A tibble: 4 x 3\n  name  band    plays \n  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; \n1 Mick  Stones  &lt;NA&gt;  \n2 John  Beatles guitar\n3 Paul  Beatles bass  \n4 Keith &lt;NA&gt;    guitar",
+    "crumbs": [
+      "Part 3: R fundamentals",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Joining functions</span>"
+    ]
+  },
+  {
+    "objectID": "joining_functions_extended.html#joining-on-columns-with-different-names",
+    "href": "joining_functions_extended.html#joining-on-columns-with-different-names",
+    "title": "13  Joining functions",
+    "section": "13.3 Joining on columns with different names",
+    "text": "13.3 Joining on columns with different names\nIf the key column has a different name in each table, use join_by() to specify which columns match:\n\n# key is called \"name\" on the left and \"artist\" on the right\nleft_join(band_members, band_instruments2, by = join_by(name == artist))\n\n\n\n\n\n\n\nTipYou do this by writing:\n\n\n\njoining_function(left_table, right_table, by = “shared_column_name”)\n# or, if the key columns have different names:\njoining_function(left_table, right_table, by = join_by(left_col == right_col))",
     "crumbs": [
       "Part 3: R fundamentals",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>Joining functions</span>"

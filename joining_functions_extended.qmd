@@ -1,35 +1,64 @@
 # Joining functions
 
-The joining functions allow you to merge separate data sets based on matching keys.
+The joining functions allow you to merge separate data sets based on a shared **key** column — a column that appears in both tables and contains matching values, such as a species ID or a sample name.
 
--   `left_join()` - Keeps all the values from the left table and matching rows from the right table. All unmatched rows in the right table will be NA.
--   `right_join()` - Keeps all the values from the right table and matching rows from the left table. All unmatched rows in the left table will be NA.
--   `inner_join()` - Keeps all values that have matching keys in both tables.
--   `full_join()` - Keeps all values from both tables and all unmatched rows will be NA.
+## The four join types
 
-### Useful functions and parameters
+| Function | Rows kept | Use when… |
+|---|---|---|
+| `left_join()` | All rows from the **left** table; matching rows from the right | You want to keep all your primary data and add extra columns where available |
+| `right_join()` | All rows from the **right** table; matching rows from the left | Same idea, but your primary data is on the right |
+| `inner_join()` | Only rows with a matching key **in both** tables | You only want rows that exist in both data sets |
+| `full_join()` | All rows from **both** tables | You want to keep everything and fill gaps with `NA` |
 
-> -   `by` - Specifies the key column/s to join on.
-> -   `c()` - Allows you to combine different joining keys if they don't have the same name.
+Rows with no match in the other table get `NA` in the columns that came from that table.
+
+## Seeing joins in action
+
+The examples below use two small built-in dplyr data sets. Here is what they contain:
+
+```{r}
+#| echo: false
+library(tidyverse)
+```
+
+```{r}
+band_members      # name + band
+band_instruments  # name + plays
+```
+
+`Mick` is in `band_members` but not in `band_instruments`. `Keith` is in `band_instruments` but not in `band_members`. The key column is `name`.
+
+```{r}
+# inner_join: only Mick and John appear in both tables — only they are kept
+inner_join(band_members, band_instruments, by = "name")
+
+# left_join: all of band_members is kept; Keith (right only) is dropped
+left_join(band_members, band_instruments, by = "name")
+
+# right_join: all of band_instruments is kept; Mick (left only) is dropped
+right_join(band_members, band_instruments, by = "name")
+
+# full_join: everyone is kept; gaps filled with NA
+full_join(band_members, band_instruments, by = "name")
+```
+
+## Joining on columns with different names
+
+If the key column has a different name in each table, use `join_by()` to specify which columns match:
+
+```{r}
+#| eval: false
+# key is called "name" on the left and "artist" on the right
+left_join(band_members, band_instruments2, by = join_by(name == artist))
+```
 
 ::: callout-tip
 ## You do this by writing:
 
-joining_function(left data set, right data set, by = "column name")
+joining_function(left_table, right_table, by = "shared_column_name")
 
-joining_function(left data set, right data set, by = c(left column name= right column name))
+\# or, if the key columns have different names:
+
+joining_function(left_table, right_table, by = join_by(left_col == right_col))
 :::
-
-Here you can see an example of how to join to data sets:
-
-```{r}
-#| eval: false
-inner_join(band_members, band_instruments, by = "name")
-
-left_join(band_members, band_instruments, by = "name")
-
-right_join(band_members, band_instruments, by = "name")
-
-full_join(band_members, band_instruments, by = "name")
-
-```
