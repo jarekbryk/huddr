@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.28">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>6&nbsp; Installing R and RStudio on your computer – Hudd-R book</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -38,10 +41,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-b719d3d4935f2b08311a76135e2bf442.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -353,7 +356,7 @@ ul.task-list li input[type="checkbox"] {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Computer labs JPSG/17 and JPSG/26 are ready for R
+<span class="screen-reader-only">Note</span>Computer labs JPSG/17 and JPSG/26 are ready for R
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -366,7 +369,7 @@ Computer labs JPSG/17 and JPSG/26 are ready for R
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Do you have a Chromebook or a tablet?
+<span class="screen-reader-only">Important</span>Do you have a Chromebook or a tablet?
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -379,7 +382,7 @@ Do you have a Chromebook or a tablet?
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Notes for OneDrive users
+<span class="screen-reader-only">Important</span>Notes for OneDrive users
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -389,9 +392,9 @@ Notes for OneDrive users
 <p>If you are not familiar with concepts of cloud, file and folder paths and unzipping archived files on your computer, please read the chapter <a href="how_to_use_a_computer.html">How to use a computer</a> first.</p>
 <section id="installation-instructions" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="installation-instructions"><span class="header-section-number">6.1</span> Installation instructions</h2>
-<p>For your computer to be ready for the installation of R and RStudio, you need to install RTools first (if you are on Windows) or Command Line Tools (if you are on macOS). Please proceed through these instructions in order.</p>
+<p>For your computer to be ready for the installation of R and RStudio, you need to install a build toolchain first — RTools on Windows, or Command Line Tools on macOS. These provide compilers that R needs to install packages from source. <strong>Please follow the steps in order</strong>, as R must be installed before RStudio.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">For Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">For macOS</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">For Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">For macOS</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <section id="download-and-install-rtools" class="level3" data-number="6.1.1">
@@ -410,15 +413,16 @@ Notes for OneDrive users
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <section id="download-and-install-command-line-tools" class="level3" data-number="6.1.4">
 <h3 data-number="6.1.4" class="anchored" data-anchor-id="download-and-install-command-line-tools"><span class="header-section-number">6.1.4</span> Download and install Command Line Tools</h3>
+<p>Command Line Tools is a free Apple package that provides the compilers R needs. You do not need to install the full Xcode application.</p>
 <ol type="1">
-<li>Open the Terminal app on your Mac.</li>
+<li>Open the Terminal app on your Mac (search for “Terminal” in Spotlight).</li>
 <li>Copy and paste (or type) the following command: <code>xcode-select --install</code>, then press “Enter”.</li>
-<li>Follow the instructions. Note that the download may take a while, as it is a large file.</li>
+<li>A dialog box will appear asking you to install the tools — click “Install”. Note that the download may take a while, as it is a large file.</li>
 </ol>
 </section>
 <section id="download-and-install-r-1" class="level3" data-number="6.1.5">
 <h3 data-number="6.1.5" class="anchored" data-anchor-id="download-and-install-r-1"><span class="header-section-number">6.1.5</span> Download and install R</h3>
-<p>Use this link to download and install R: Use this link: <a href="https://cran.rstudio.com">https://cran.rstudio.com</a> and follow the link to “Download R for macOS”.</p>
+<p>Use this link: <a href="https://cran.rstudio.com">https://cran.rstudio.com</a> and follow the link to “Download R for macOS”.</p>
 </section>
 <section id="download-and-install-rstudio-1" class="level3" data-number="6.1.6">
 <h3 data-number="6.1.6" class="anchored" data-anchor-id="download-and-install-rstudio-1"><span class="header-section-number">6.1.6</span> Download and install RStudio</h3>
@@ -690,13 +694,14 @@ window.onload = function() {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
