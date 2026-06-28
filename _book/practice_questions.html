@@ -361,7 +361,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This exercise sheet is all about getting comfortable with RStudio and the tidyverse. In it you will find exercises ranging from individual use of functions to practicing exercises that will allow you to better manipulate data sets.</p>
+<p>This exercise sheet is all about getting comfortable with RStudio and the tidyverse. In it you will find exercises ranging from individual use of functions to practising exercises that will allow you to better manipulate data sets.</p>
 </div>
 </div>
 <section id="mastering-the-basics" class="level2" data-number="18.1">
@@ -373,19 +373,19 @@ Note
 <ol start="2" type="1">
 <li></li>
 </ol>
-<p>What library do you need to load in your data set? <select class="webex-select"><option value="blank"></option><option value="">tidyverse</option><option value="">rodents_full</option><option value="answer">here</option><option value="">select from computer</option></select></p>
+<p>What package provides the <code>here()</code> function for managing file paths when loading data? <select class="webex-select"><option value="blank"></option><option value="">tidyverse</option><option value="">rodents_full</option><option value="answer">here</option><option value="">readxl</option></select></p>
 <ol start="3" type="1">
 <li></li>
 </ol>
-<p>Which function should I use to load in a comma separated dataset? <select class="webex-select"><option value="blank"></option><option value="">read_csv</option><option value="">read_tsv</option><option value="answer">he</option><option value="">read_xsxl</option></select></p>
+<p>Which function should I use to load a comma-separated (.csv) dataset? <select class="webex-select"><option value="blank"></option><option value="answer">read_csv</option><option value="">read_tsv</option><option value="">read_excel</option><option value="">read_xsxl</option></select></p>
 <ol start="4" type="1">
 <li></li>
 </ol>
-<p>What function is used to select specific columns from a dataset? <select class="webex-select"><option value="blank"></option><option value="">filter</option><option value="answer">select</option><option value="">column</option><option value="">group_by</option></select></p>
+<p>What function is used to choose specific columns from a dataset? <select class="webex-select"><option value="blank"></option><option value="">filter</option><option value="answer">select</option><option value="">column</option><option value="">group_by</option></select></p>
 <ol start="5" type="1">
 <li></li>
 </ol>
-<p>What function is used to select specific rows from a dataset? <select class="webex-select"><option value="blank"></option><option value="answer">filter</option><option value="">arrange</option><option value="">summarise</option><option value="">select</option></select></p>
+<p>What function is used to keep only certain rows from a dataset? <select class="webex-select"><option value="blank"></option><option value="answer">filter</option><option value="">arrange</option><option value="">summarise</option><option value="">select</option></select></p>
 <ol start="6" type="1">
 <li></li>
 </ol>
@@ -393,21 +393,21 @@ Note
 <ol start="7" type="1">
 <li></li>
 </ol>
-<p>Which symbol is used for filter <select class="webex-select"><option value="blank"></option><option value="">c()</option><option value="">%in%</option><option value="answer">all of the above</option><option value="">==</option></select></p>
+<p>Which symbol is the pipe operator in base R? <select class="webex-select"><option value="blank"></option><option value="answer">|&gt;</option><option value="">%in%</option><option value="">==</option><option value="">-&gt;</option></select></p>
 <ol start="8" type="1">
 <li></li>
 </ol>
-<p>What is this symbol used for? |&gt; <select class="webex-select"><option value="blank"></option><option value="">Makes the function run in accordance with previous function</option><option value="">It stores the output of a function as a variable but does not allow it to be used as an argument in another function.</option><option value="answer">Takes the output of one function and passes it into another function as an argument</option><option value="">It executes multiple functions simultaneously </option></select></p>
+<p>What is the pipe operator <code>|&gt;</code> used for? <select class="webex-select"><option value="blank"></option><option value="">Makes the function run in accordance with previous function</option><option value="">It stores the output of a function as a variable but does not allow it to be used as an argument in another function.</option><option value="answer">Takes the output of one function and passes it into another function as an argument</option><option value="">It executes multiple functions simultaneously</option></select></p>
 <ol start="9" type="1">
 <li></li>
 </ol>
-<p>Which ggplot function would give me a scatterplot? <select class="webex-select"><option value="blank"></option><option value="answer">geom_point()</option><option value="">ggplot(scatterplot)</option><option value="">geom_graph()</option><option value="">geom_scatter</option></select></p>
+<p>Which ggplot function creates a scatterplot? <select class="webex-select"><option value="blank"></option><option value="answer">geom_point()</option><option value="">ggplot(scatterplot)</option><option value="">geom_graph()</option><option value="">geom_scatter()</option></select></p>
 <ol start="10" type="1">
 <li></li>
 </ol>
-What are the steps to follow every time you start a new quatro doc?
-<div id="radio_RQNHXLNYDH" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_RQNHXLNYDH" value="answer"> <span>A</span></label><label><input type="radio" autocomplete="off" name="radio_RQNHXLNYDH" value=""> <span>B</span></label><label><input type="radio" autocomplete="off" name="radio_RQNHXLNYDH" value=""> <span>C</span></label><label><input type="radio" autocomplete="off" name="radio_RQNHXLNYDH" value=""> <span>D</span></label>
+What are the steps to follow every time you start a new Quarto document?
+<div id="radio_ASHPBYQJNH" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_ASHPBYQJNH" value="answer"> <span>A</span></label><label><input type="radio" autocomplete="off" name="radio_ASHPBYQJNH" value=""> <span>B</span></label><label><input type="radio" autocomplete="off" name="radio_ASHPBYQJNH" value=""> <span>C</span></label><label><input type="radio" autocomplete="off" name="radio_ASHPBYQJNH" value=""> <span>D</span></label>
 </div>
 <ol type="A">
 <li><p>Open Quarto and create a new document. Load in the necessary libraries. Load the dataset. Make sure progress is saved to OneDrive or on your computer.</p></li>
@@ -419,35 +419,97 @@ What are the steps to follow every time you start a new quatro doc?
 <section id="manipulating-data-sets" class="level2" data-number="18.2">
 <h2 data-number="18.2" class="anchored" data-anchor-id="manipulating-data-sets"><span class="header-section-number">18.2</span> Manipulating data sets</h2>
 <div class="webex-check webex-box">
-<p>filter can be used to group rows: <select class="webex-select"><option value="blank"></option><option value="answer">TRUE</option><option value="">FALSE</option></select></p>
-Which is the correct form?
-<div id="radio_LTICYHINYG" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_LTICYHINYG" value=""> <span>filter(species_id = 'GM')</span></label><label><input type="radio" autocomplete="off" name="radio_LTICYHINYG" value="answer"> <span>filter(species_id %in% c(DM, NL)</span></label><label><input type="radio" autocomplete="off" name="radio_LTICYHINYG" value=""> <span>filter(species_id == %in% c(DM, NL)</span></label>
+<p><code>filter()</code> keeps only the rows that match a condition: <select class="webex-select"><option value="blank"></option><option value="answer">TRUE</option><option value="">FALSE</option></select></p>
+Which is the correct way to keep only rows where <code>species_id</code> is <code>'DM'</code>?
+<div id="radio_LIXGEYGDZK" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_LIXGEYGDZK" value=""> <span>filter(species_id = 'DM')</span></label><label><input type="radio" autocomplete="off" name="radio_LIXGEYGDZK" value="answer"> <span>filter(species_id == 'DM')</span></label><label><input type="radio" autocomplete="off" name="radio_LIXGEYGDZK" value=""> <span>filter(species_id %in% 'DM')</span></label>
 </div>
 </div>
 <ol start="2" type="1">
 <li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
+</ol>
+<p>Which function would you use to keep only rows where <code>sex == 'F'</code>? <select class="webex-select"><option value="blank"></option><option value="">select</option><option value="answer">filter</option><option value="">mutate</option><option value="">arrange</option></select></p>
+<ol start="3" type="1">
 <li></li>
 </ol>
+Which code correctly selects only the <code>species_id</code> and <code>weight</code> columns from <code>rodents</code>?
+<div id="radio_TBMMTIDITP" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_TBMMTIDITP" value="answer"> <span>select(rodents, species_id, weight)</span></label><label><input type="radio" autocomplete="off" name="radio_TBMMTIDITP" value=""> <span>filter(rodents, species_id, weight)</span></label><label><input type="radio" autocomplete="off" name="radio_TBMMTIDITP" value=""> <span>choose(rodents, species_id, weight)</span></label><label><input type="radio" autocomplete="off" name="radio_TBMMTIDITP" value=""> <span>mutate(rodents, species_id, weight)</span></label>
+</div>
+<ol start="4" type="1">
+<li></li>
+</ol>
+What does <code>group_by()</code> do?
+<div id="radio_IXDUXQONTQ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_IXDUXQONTQ" value="answer"> <span>Splits rows into groups so that subsequent operations (e.g.&nbsp;summarise) apply within each group</span></label><label><input type="radio" autocomplete="off" name="radio_IXDUXQONTQ" value=""> <span>Removes rows that belong to a group</span></label><label><input type="radio" autocomplete="off" name="radio_IXDUXQONTQ" value=""> <span>Arranges rows in alphabetical order by a grouping variable</span></label><label><input type="radio" autocomplete="off" name="radio_IXDUXQONTQ" value=""> <span>Selects columns that share a common name</span></label>
+</div>
+<ol start="5" type="1">
+<li></li>
+</ol>
+<p>Which function would you use to add a new column <code>weight_kg</code> that divides <code>weight</code> by 1000? <select class="webex-select"><option value="blank"></option><option value="">select</option><option value="">filter</option><option value="answer">mutate</option><option value="">summarise</option></select></p>
+<ol start="6" type="1">
+<li></li>
+</ol>
+<p>Which function would you use to calculate the mean weight for each species? <select class="webex-select"><option value="blank"></option><option value="answer">summarise</option><option value="">mutate</option><option value="">filter</option><option value="">select</option></select></p>
+<ol start="7" type="1">
+<li></li>
+</ol>
+Which code sorts <code>rodents</code> by <code>weight</code> from smallest to largest?
+<div id="radio_BUXHIAMTHY" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_BUXHIAMTHY" value="answer"> <span>arrange(rodents, weight)</span></label><label><input type="radio" autocomplete="off" name="radio_BUXHIAMTHY" value=""> <span>sort(rodents, weight)</span></label><label><input type="radio" autocomplete="off" name="radio_BUXHIAMTHY" value=""> <span>order(rodents, weight)</span></label><label><input type="radio" autocomplete="off" name="radio_BUXHIAMTHY" value=""> <span>filter(rodents, weight)</span></label>
+</div>
 </section>
 <section id="working-with-ggplot" class="level2" data-number="18.3">
 <h2 data-number="18.3" class="anchored" data-anchor-id="working-with-ggplot"><span class="header-section-number">18.3</span> Working with ggplot</h2>
 <ol type="1">
 <li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
+</ol>
+<p>Which function do you always call first to start a ggplot graph? <select class="webex-select"><option value="blank"></option><option value="answer">ggplot()</option><option value="">geom_point()</option><option value="">aes()</option><option value="">plot()</option></select></p>
+<ol start="2" type="1">
 <li></li>
 </ol>
+<p>What does the <code>aes</code> in <code>aes()</code> stand for? <select class="webex-select"><option value="blank"></option><option value="answer">aesthetics</option><option value="">arguments</option><option value="">analysis</option><option value="">attributes</option></select></p>
+<ol start="3" type="1">
+<li></li>
+</ol>
+<p>Which geom would you use to create a histogram? <select class="webex-select"><option value="blank"></option><option value="">geom_bar()</option><option value="answer">geom_histogram()</option><option value="">geom_col()</option><option value="">geom_density_plot()</option></select></p>
+<ol start="4" type="1">
+<li></li>
+</ol>
+<p>Which geom creates a box-and-whisker plot? <select class="webex-select"><option value="blank"></option><option value="answer">geom_boxplot()</option><option value="">geom_box()</option><option value="">geom_whisker()</option><option value="">geom_range()</option></select></p>
+<ol start="5" type="1">
+<li></li>
+</ol>
+What does the <code>+</code> sign do in a ggplot call?
+<div id="radio_QNCZRDSLKY" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_QNCZRDSLKY" value="answer"> <span>It adds a new layer (e.g.&nbsp;geom, theme, labels) to the plot</span></label><label><input type="radio" autocomplete="off" name="radio_QNCZRDSLKY" value=""> <span>It runs the ggplot code</span></label><label><input type="radio" autocomplete="off" name="radio_QNCZRDSLKY" value=""> <span>It adds the two data values together</span></label><label><input type="radio" autocomplete="off" name="radio_QNCZRDSLKY" value=""> <span>It connects points on a scatterplot</span></label>
+</div>
+<ol start="6" type="1">
+<li></li>
+</ol>
+Which code colours scatterplot points by the <code>species_id</code> variable?
+<div id="radio_TXDOLSHJCI" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_TXDOLSHJCI" value="answer"> <span>aes(colour = species_id)</span></label><label><input type="radio" autocomplete="off" name="radio_TXDOLSHJCI" value=""> <span>colour(species_id)</span></label><label><input type="radio" autocomplete="off" name="radio_TXDOLSHJCI" value=""> <span>geom_point(colour == species_id)</span></label><label><input type="radio" autocomplete="off" name="radio_TXDOLSHJCI" value=""> <span>set_colour(species_id)</span></label>
+</div>
+<ol start="7" type="1">
+<li></li>
+</ol>
+<p>What does <code>labs()</code> do? <select class="webex-select"><option value="blank"></option><option value="answer">Adds a title and axis labels to a plot</option><option value="">Loads the ggplot library</option><option value="">Changes the colour palette</option><option value="">Saves the plot to a file</option></select></p>
+<ol start="8" type="1">
+<li></li>
+</ol>
+What does <code>facet_wrap()</code> do?
+<div id="radio_NNIHTSBYUB" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_NNIHTSBYUB" value="answer"> <span>Splits the plot into small panels, one per level of a variable</span></label><label><input type="radio" autocomplete="off" name="radio_NNIHTSBYUB" value=""> <span>Changes the plot theme</span></label><label><input type="radio" autocomplete="off" name="radio_NNIHTSBYUB" value=""> <span>Wraps long axis labels onto multiple lines</span></label><label><input type="radio" autocomplete="off" name="radio_NNIHTSBYUB" value=""> <span>Adds a second y-axis</span></label>
+</div>
+<ol start="9" type="1">
+<li></li>
+</ol>
+<p>Which geom creates a scatterplot? <select class="webex-select"><option value="blank"></option><option value="">geom_scatter()</option><option value="answer">geom_point()</option><option value="">geom_dot()</option><option value="">scatter_plot()</option></select></p>
+<ol start="10" type="1">
+<li></li>
+</ol>
+<p>ggplot2 is part of the tidyverse: <select class="webex-select"><option value="blank"></option><option value="answer">TRUE</option><option value="">FALSE</option></select></p>
 
 
 </section>
