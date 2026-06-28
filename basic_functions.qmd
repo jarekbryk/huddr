@@ -144,7 +144,7 @@ Now, in order to get a plot you should think about three main components:
 -   **Data** is a data frame you want to use (you can write it inside the ggplot() function of you can directly pipe ggplot() from your dataset.
 -   **Aesthetics** is used to indicate x and y variables and it can also be used to control the color of the plot.
     -   `aes()`
--   **Geometry** refers totype of plot you want to make:
+-   **Geometry** refers to the type of plot you want to make:
     -   `geom_boxplot()`
     -   `geom_point()`
     -   `geom_line()`
@@ -182,5 +182,4 @@ rodents |>
 -   `theme()` - Modify a single plot's theme.
 -   `theme_update()` - Modify the active theme, to affect all subsequent plots.
 -   `theme_minimal()` - Applies a simplified theme of the plot, with no background shading.
--   `view()` - Allows you to display your data.
 :::
