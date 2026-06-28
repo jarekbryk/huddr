@@ -392,7 +392,7 @@ ul.task-list li input[type="checkbox"] {
 <p>If you are not familiar with concepts of cloud, file and folder paths and unzipping archived files on your computer, please read the chapter <a href="how_to_use_a_computer.html">How to use a computer</a> first.</p>
 <section id="installation-instructions" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="installation-instructions"><span class="header-section-number">6.1</span> Installation instructions</h2>
-<p>For your computer to be ready for the installation of R and RStudio, you need to install RTools first (if you are on Windows) or Command Line Tools (if you are on macOS). Please proceed through these instructions in order.</p>
+<p>For your computer to be ready for the installation of R and RStudio, you need to install a build toolchain first — RTools on Windows, or Command Line Tools on macOS. These provide compilers that R needs to install packages from source. <strong>Please follow the steps in order</strong>, as R must be installed before RStudio.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">For Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">For macOS</a></li></ul>
 <div class="tab-content">
@@ -413,15 +413,16 @@ ul.task-list li input[type="checkbox"] {
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <section id="download-and-install-command-line-tools" class="level3" data-number="6.1.4">
 <h3 data-number="6.1.4" class="anchored" data-anchor-id="download-and-install-command-line-tools"><span class="header-section-number">6.1.4</span> Download and install Command Line Tools</h3>
+<p>Command Line Tools is a free Apple package that provides the compilers R needs. You do not need to install the full Xcode application.</p>
 <ol type="1">
-<li>Open the Terminal app on your Mac.</li>
+<li>Open the Terminal app on your Mac (search for “Terminal” in Spotlight).</li>
 <li>Copy and paste (or type) the following command: <code>xcode-select --install</code>, then press “Enter”.</li>
-<li>Follow the instructions. Note that the download may take a while, as it is a large file.</li>
+<li>A dialog box will appear asking you to install the tools — click “Install”. Note that the download may take a while, as it is a large file.</li>
 </ol>
 </section>
 <section id="download-and-install-r-1" class="level3" data-number="6.1.5">
 <h3 data-number="6.1.5" class="anchored" data-anchor-id="download-and-install-r-1"><span class="header-section-number">6.1.5</span> Download and install R</h3>
-<p>Use this link to download and install R: Use this link: <a href="https://cran.rstudio.com">https://cran.rstudio.com</a> and follow the link to “Download R for macOS”.</p>
+<p>Use this link: <a href="https://cran.rstudio.com">https://cran.rstudio.com</a> and follow the link to “Download R for macOS”.</p>
 </section>
 <section id="download-and-install-rstudio-1" class="level3" data-number="6.1.6">
 <h3 data-number="6.1.6" class="anchored" data-anchor-id="download-and-install-rstudio-1"><span class="header-section-number">6.1.6</span> Download and install RStudio</h3>
