@@ -21,7 +21,7 @@ If you are not familiar with concepts of cloud, file and folder paths and unzipp
 
 ## Installation instructions 
 
-For your computer to be ready for the installation of R and RStudio, you need to install RTools first (if you are on Windows) or Command Line Tools (if you are on macOS). Please proceed through these instructions in order.
+For your computer to be ready for the installation of R and RStudio, you need to install a build toolchain first — RTools on Windows, or Command Line Tools on macOS. These provide compilers that R needs to install packages from source. **Please follow the steps in order**, as R must be installed before RStudio.
 
 ::: {.panel-tabset}
 
@@ -43,13 +43,15 @@ Use this link: [https://posit.co/download/rstudio-desktop/](https://posit.co/dow
 
 ### Download and install Command Line Tools
 
-1.  Open the Terminal app on your Mac.
+Command Line Tools is a free Apple package that provides the compilers R needs. You do not need to install the full Xcode application.
+
+1.  Open the Terminal app on your Mac (search for "Terminal" in Spotlight).
 2.  Copy and paste (or type) the following command: `xcode-select --install`, then press "Enter".
-3.  Follow the instructions. Note that the download may take a while, as it is a large file.
+3.  A dialog box will appear asking you to install the tools — click "Install". Note that the download may take a while, as it is a large file.
 
 ### Download and install R
 
-Use this link to download and install R: Use this link: [https://cran.rstudio.com](https://cran.rstudio.com) and follow the link to "Download R for macOS".
+Use this link: [https://cran.rstudio.com](https://cran.rstudio.com) and follow the link to "Download R for macOS".
 
 ### Download and install RStudio
 
