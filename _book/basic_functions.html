@@ -461,25 +461,59 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="useful-operators" class="level2" data-number="11.3">
 <h2 data-number="11.3" class="anchored" data-anchor-id="useful-operators"><span class="header-section-number">11.3</span> Useful operators</h2>
-<p><code>|&gt;</code> or <code>%\&gt;%</code></p>
-<div class="callout callout-style-simple callout-none no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<p><code>|&gt;</code> or <code>%&gt;%</code></p>
+<p>The pipe operator lets you pass the result of one function directly into the next, reading left to right rather than from the inside out. This makes longer sequences of steps much easier to follow.</p>
+<p>Without a pipe, applying several steps in sequence produces deeply nested code that is hard to read:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(<span class="fu">filter</span>(rodents, species_id <span class="sc">==</span> <span class="st">"NL"</span>), species_id, hindfoot_length, sex)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="callout-body-container">
+<p>With the pipe, the same steps read as a plain sentence — “take rodents, then filter, then select”:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>rodents <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(species_id <span class="sc">==</span> <span class="st">"NL"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(species_id, hindfoot_length, sex)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Keyboard shortcut
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Type the pipe with <strong>Ctrl + Shift + M</strong> (Windows) or <strong>Cmd + Shift + M</strong> (macOS).</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><code>|&gt;</code> vs <code>%&gt;%</code> — what is the difference?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You will see both versions used online and in textbooks. <code>|&gt;</code> is the <strong>native pipe</strong>, built into R since version 4.1 (2021) and requires no packages. <code>%&gt;%</code> is the <strong>magrittr pipe</strong>, which comes from the <code>magrittr</code> package and is loaded automatically with <code>tidyverse</code>. They behave identically for the vast majority of everyday use, so do not worry about the difference for now. This book uses <code>|&gt;</code>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Common pipe errors
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
-<li>This is a pipe operator that allows you to apply multiple functions to your data set in a chain like sequence.</li>
-<li>You can type this operator by pressing: <strong>shift + control + M</strong></li>
+<li><strong><code>could not find function "%&gt;%"</code></strong> — you are using <code>%&gt;%</code> without loading <code>tidyverse</code> (or <code>magrittr</code>). Either add <code>library(tidyverse)</code> at the top of your script, or switch to <code>|&gt;</code>.</li>
+<li><strong><code>unexpected symbol</code> or <code>object not found</code> after a pipe</strong> — a line break in the wrong place. Make sure each pipe <code>|&gt;</code> is at the <em>end</em> of a line, not the start of the next one.</li>
 </ul>
 </div>
-</div>
-</div>
-<p>Here you can see an example of how to use the pipe operator to chain different functions:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>rodents <span class="sc">|&gt;</span> </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(species_id<span class="sc">==</span><span class="st">"NL"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(species_id, hindfoot_length, sex)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><code>%in%</code></p>
 <div class="callout callout-style-simple callout-none no-icon">
@@ -509,8 +543,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>This is an example of how you can oppose the filter() in order to filter <strong>out</strong> variables:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>rodents <span class="sc">|&gt;</span> </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>species_id<span class="sc">==</span><span class="st">"NL"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>rodents <span class="sc">|&gt;</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>species_id<span class="sc">==</span><span class="st">"NL"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><code>+</code>, <code>-</code>, <code>log()</code>, <code>*</code>, <code>/</code></p>
 <div class="callout callout-style-simple callout-none no-icon">
@@ -583,20 +617,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Here you can see two examples of how to do a plot (one with pipe operator and one without):</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(rodents) <span class="sc">+</span> <span class="fu">aes</span>(<span class="at">x=</span> species_id, <span class="at">y=</span>hindfoot_length) <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(rodents) <span class="sc">+</span> <span class="fu">aes</span>(<span class="at">x=</span> species_id, <span class="at">y=</span>hindfoot_length) <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="basic_functions_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="basic_functions_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>rodents <span class="sc">|&gt;</span> </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">aes</span>(<span class="at">x=</span> species_id, <span class="at">y=</span>hindfoot_length) <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>rodents <span class="sc">|&gt;</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">aes</span>(<span class="at">x=</span> species_id, <span class="at">y=</span>hindfoot_length) <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="basic_functions_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="basic_functions_files/figure-html/unnamed-chunk-6-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
