@@ -19,8 +19,8 @@ Here you can see an example of how you can use the `pivot_longer()` function in 
 
 ```{r}
 #| eval: false
-pivot_longer(rodents, cols= ("hindfoot_length" : "weight"), names_to = "type_measurement", values_to = "measurements")
+pivot_longer(rodents, cols = hindfoot_length:weight, names_to = "type_measurement", values_to = "measurements")
 
-rodents |> 
-  pivot_longer(cols= ("hindfoot_length" : "weight"), names_to = "type_measurement", values_to = "measurements")
+rodents |>
+  pivot_longer(cols = hindfoot_length:weight, names_to = "type_measurement", values_to = "measurements")
 ```
