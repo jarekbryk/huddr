@@ -102,7 +102,7 @@ rodents |>
 
 -   `class()` - It provides just the class of the specified object.
 -   `str()` - It shows you the type of content in each column.
--   `glipmse()` - While still detailed, it is easier to glance through than str().
+-   `glimpse()` - While still detailed, it is easier to glance through than str().
 :::
 
 ------------------------------------------------------------------------
@@ -155,7 +155,7 @@ rodents |>
 
 -   `facet_wrap()` - Allows for the visualization of individual categories in their own graph.
 -   `labs()` - Change axis labels and legend titles.
--   `scale_x_continous() / scale_y_continous()` - default scales for continuous x and y aesthetics, which can be transform these axes.
+-   `scale_x_continuous() / scale_y_continuous()` - default scales for continuous x and y aesthetics, which can be used to transform these axes.
 -   `theme()` - Modify a single plot's theme.
 -   `theme_update()` - Modify the active theme, to affect all subsequent plots.
 -   `theme_minimal()` - Applies a simplified theme of the plot, with no background shading.

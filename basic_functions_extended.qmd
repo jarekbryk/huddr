@@ -109,7 +109,7 @@ mutate(data set name, new/existing column name = function/expression)
 
 ### Useful mutate functions
 
-> -   `+`, `-`, `log()`, `*`, `/` - Mathematical opperators
+> -   `+`, `-`, `log()`, `*`, `/` - Mathematical operators
 > -   `ifelse()` - This function will return one value if a condition is TRUE and another if FALSE.
 > -   `case_when()` - This function allows you to evaluate multiple conditions and assign them individual values.
 
