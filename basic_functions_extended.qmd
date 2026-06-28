@@ -32,8 +32,49 @@ rodents |>
 ### Useful filter functions and parameters
 
 > -   `is.na()` - Allows you to check for missing values.
-> -   `c()` - Allows you to combine different filtering variables.
+> -   `!is.na()` - Keeps only rows where a value is *not* missing (the `!` negates `is.na()`).
+> -   `%in%` - Checks whether a value belongs to a list of options.
+> -   `c()` - Combines multiple values into a list, used together with `%in%`.
 > -   `na.rm = TRUE` - This parameter instructs functions to ignore missing values.
+
+**Filtering for missing values**
+
+`is.na()` returns `TRUE` for any cell that is empty (`NA`). Use it inside `filter()` to keep only rows where a column has a missing value, or use `!is.na()` to drop them:
+
+```{r}
+#| eval: false
+# Keep only rows where hindfoot_length is missing
+rodents |>
+  filter(is.na(hindfoot_length))
+
+# Keep only rows where hindfoot_length is NOT missing
+rodents |>
+  filter(!is.na(hindfoot_length))
+```
+
+**Filtering for multiple values with `%in%`**
+
+Rather than chaining several `==` conditions with `|` (or), use `%in%` to check against a list of values in one step:
+
+```{r}
+#| eval: false
+# Keep rows where species_id is one of three species
+rodents |>
+  filter(species_id %in% c("NL", "DM", "PF"))
+
+# The equivalent using | is harder to read and easier to get wrong:
+rodents |>
+  filter(species_id == "NL" | species_id == "DM" | species_id == "PF")
+```
+
+You can also use `!` with `%in%` to *exclude* a set of values:
+
+```{r}
+#| eval: false
+# Keep all rows except those three species
+rodents |>
+  filter(!species_id %in% c("NL", "DM", "PF"))
+```
 
 ------------------------------------------------------------------------
 
