@@ -1,7 +1,98 @@
 # Graph Functions
 
-::: callout-note
-## This chapter is in development
+`ggplot2` builds plots in layers. You start with the data, then add aesthetics (which columns map to which visual properties), then a geometry (the type of plot), and optionally labels, scales, and a theme. Each layer is added with `+`.
 
-Content for this chapter is being written and will be added soon.
+```{r}
+#| include: false
+library(tidyverse)
+library(here)
+rodents <- read_tsv(here("data", "rodents_full.txt"))
+```
+
+## Building a plot layer by layer
+
+It helps to see a plot grow one layer at a time.
+
+**Step 1 — data only:** `ggplot()` sets up the coordinate system but draws nothing yet.
+
+```{r}
+ggplot(data = rodents)
+```
+
+**Step 2 — add aesthetics:** `aes()` tells ggplot which columns to use for x and y. Still nothing drawn.
+
+```{r}
+ggplot(data = rodents, aes(x = species_id, y = hindfoot_length))
+```
+
+**Step 3 — add a geometry:** `geom_boxplot()` draws the plot.
+
+```{r}
+#| warning: false
+ggplot(data = rodents, aes(x = species_id, y = hindfoot_length)) +
+  geom_boxplot()
+```
+
+**Step 4 — add labels:** `labs()` replaces the default column-name labels.
+
+```{r}
+#| warning: false
+ggplot(data = rodents, aes(x = species_id, y = hindfoot_length)) +
+  geom_boxplot() +
+  labs(x = "Species", y = "Hindfoot length (mm)", title = "Hindfoot length by species")
+```
+
+**Step 5 — apply a theme:** `theme_minimal()` removes the grey background for a cleaner look.
+
+```{r}
+#| warning: false
+ggplot(data = rodents, aes(x = species_id, y = hindfoot_length)) +
+  geom_boxplot() +
+  labs(x = "Species", y = "Hindfoot length (mm)", title = "Hindfoot length by species") +
+  theme_minimal()
+```
+
+## Colour
+
+Map a column to `colour` (for lines/points) or `fill` (for bars/boxes) inside `aes()` to colour by group:
+
+```{r}
+#| warning: false
+ggplot(data = rodents, aes(x = species_id, y = hindfoot_length, fill = sex)) +
+  geom_boxplot() +
+  labs(x = "Species", y = "Hindfoot length (mm)", fill = "Sex") +
+  theme_minimal()
+```
+
+## Faceting
+
+Faceting splits one plot into a grid of panels, one per group. It is often clearer than colouring by group when there are many categories. Use `facet_wrap()` with the column you want to split on, preceded by `~`:
+
+```{r}
+#| warning: false
+ggplot(data = rodents, aes(x = hindfoot_length)) +
+  geom_histogram(bins = 20) +
+  facet_wrap(~ sex) +
+  labs(x = "Hindfoot length (mm)", y = "Count") +
+  theme_minimal()
+```
+
+::: callout-tip
+## When to use faceting vs colour
+
+Use **colour** when you have two or three groups and want to compare them directly on the same axes.
+
+Use **`facet_wrap()`** when you have more groups, or when the groups overlap so much that colours become hard to read.
 :::
+
+## Common geometries
+
+| Function | Plot type |
+|---|---|
+| `geom_point()` | Scatter plot |
+| `geom_line()` | Line plot |
+| `geom_boxplot()` | Box plot |
+| `geom_histogram()` | Histogram |
+| `geom_bar()` | Bar chart (counts rows) |
+| `geom_col()` | Bar chart (uses a value column for height) |
+| `geom_jitter()` | Scatter with random horizontal spread (useful for discrete x) |
