@@ -130,6 +130,44 @@ rodents |>
 
 ------------------------------------------------------------------------
 
+## Built-in datasets
+
+R comes with a collection of ready-to-use datasets that are always available without loading a file. They are great for trying out a new function or following along with an example when you do not have your own data to hand.
+
+```{r}
+#| eval: false
+# List all built-in datasets
+data()
+
+# Load a specific dataset into your environment
+data(iris)
+data(mtcars)
+data(airquality)
+```
+
+Once loaded, you can inspect and use them exactly like any other data frame:
+
+```{r}
+#| eval: false
+glimpse(iris)
+head(mtcars)
+```
+
+A few datasets worth knowing:
+
+| Dataset | What it contains |
+|---|---|
+| `iris` | Petal and sepal measurements for three species of iris flower |
+| `mtcars` | Fuel consumption and other specs for 32 car models |
+| `airquality` | Daily air quality measurements in New York (includes `NA` values) |
+| `penguins` | Body measurements for three penguin species (from the `palmerpenguins` package) |
+
+::: callout-tip
+Built-in datasets are a safe space to practise. If something goes wrong you can always reload the original with `data(iris)` and start again.
+:::
+
+------------------------------------------------------------------------
+
 ## Graph functions
 
 `ggplot()` is the function that will allow you to plot your datasets.

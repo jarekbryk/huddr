@@ -362,9 +362,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#pivot-functions" id="toc-pivot-functions" class="nav-link" data-scroll-target="#pivot-functions"><span class="header-section-number">11.2</span> Pivot functions</a></li>
   <li><a href="#useful-operators" id="toc-useful-operators" class="nav-link" data-scroll-target="#useful-operators"><span class="header-section-number">11.3</span> Useful operators</a></li>
   <li><a href="#data-overview-functions" id="toc-data-overview-functions" class="nav-link" data-scroll-target="#data-overview-functions"><span class="header-section-number">11.4</span> Data overview functions</a></li>
-  <li><a href="#graph-functions" id="toc-graph-functions" class="nav-link" data-scroll-target="#graph-functions"><span class="header-section-number">11.5</span> Graph functions</a>
+  <li><a href="#built-in-datasets" id="toc-built-in-datasets" class="nav-link" data-scroll-target="#built-in-datasets"><span class="header-section-number">11.5</span> Built-in datasets</a></li>
+  <li><a href="#graph-functions" id="toc-graph-functions" class="nav-link" data-scroll-target="#graph-functions"><span class="header-section-number">11.6</span> Graph functions</a>
   <ul class="collapse">
-  <li><a href="#further-graph-functions" id="toc-further-graph-functions" class="nav-link" data-scroll-target="#further-graph-functions"><span class="header-section-number">11.5.1</span> Further Graph functions</a></li>
+  <li><a href="#further-graph-functions" id="toc-further-graph-functions" class="nav-link" data-scroll-target="#further-graph-functions"><span class="header-section-number">11.6.1</span> Further Graph functions</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/jarekbryk/huddr/edit/main/basic_functions.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jarekbryk/huddr/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -582,8 +583,71 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <hr>
 </section>
-<section id="graph-functions" class="level2" data-number="11.5">
-<h2 data-number="11.5" class="anchored" data-anchor-id="graph-functions"><span class="header-section-number">11.5</span> Graph functions</h2>
+<section id="built-in-datasets" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="built-in-datasets"><span class="header-section-number">11.5</span> Built-in datasets</h2>
+<p>R comes with a collection of ready-to-use datasets that are always available without loading a file. They are great for trying out a new function or following along with an example when you do not have your own data to hand.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List all built-in datasets</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>()</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Load a specific dataset into your environment</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(airquality)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Once loaded, you can inspect and use them exactly like any other data frame:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(iris)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mtcars)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>A few datasets worth knowing:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Dataset</th>
+<th>What it contains</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>iris</code></td>
+<td>Petal and sepal measurements for three species of iris flower</td>
+</tr>
+<tr class="even">
+<td><code>mtcars</code></td>
+<td>Fuel consumption and other specs for 32 car models</td>
+</tr>
+<tr class="odd">
+<td><code>airquality</code></td>
+<td>Daily air quality measurements in New York (includes <code>NA</code> values)</td>
+</tr>
+<tr class="even">
+<td><code>penguins</code></td>
+<td>Body measurements for three penguin species (from the <code>palmerpenguins</code> package)</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Built-in datasets are a safe space to practise. If something goes wrong you can always reload the original with <code>data(iris)</code> and start again.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="graph-functions" class="level2" data-number="11.6">
+<h2 data-number="11.6" class="anchored" data-anchor-id="graph-functions"><span class="header-section-number">11.6</span> Graph functions</h2>
 <p><code>ggplot()</code> is the function that will allow you to plot your datasets.</p>
 <p>Now, in order to get a plot you should think about three main components:</p>
 <div style="text-align: center;">
@@ -617,26 +681,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Here you can see two examples of how to do a plot (one with pipe operator and one without):</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(rodents) <span class="sc">+</span> <span class="fu">aes</span>(<span class="at">x=</span> species_id, <span class="at">y=</span>hindfoot_length) <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(rodents) <span class="sc">+</span> <span class="fu">aes</span>(<span class="at">x=</span> species_id, <span class="at">y=</span>hindfoot_length) <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="basic_functions_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="basic_functions_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>rodents <span class="sc">|&gt;</span> </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">aes</span>(<span class="at">x=</span> species_id, <span class="at">y=</span>hindfoot_length) <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>rodents <span class="sc">|&gt;</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">aes</span>(<span class="at">x=</span> species_id, <span class="at">y=</span>hindfoot_length) <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="basic_functions_files/figure-html/unnamed-chunk-6-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="basic_functions_files/figure-html/unnamed-chunk-8-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<section id="further-graph-functions" class="level3" data-number="11.5.1">
-<h3 data-number="11.5.1" class="anchored" data-anchor-id="further-graph-functions"><span class="header-section-number">11.5.1</span> Further Graph functions</h3>
+<section id="further-graph-functions" class="level3" data-number="11.6.1">
+<h3 data-number="11.6.1" class="anchored" data-anchor-id="further-graph-functions"><span class="header-section-number">11.6.1</span> Further Graph functions</h3>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
