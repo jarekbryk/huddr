@@ -37,6 +37,7 @@ book:
     - basic_statistics.qmd
     - functions_and_loops.qmd
     - practice_questions.qmd
+    - common_errors.qmd
   - part: 'Part 4: Content from classes'
     chapters:
     - code_from_class.qmd

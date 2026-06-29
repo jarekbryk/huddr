@@ -1,0 +1,103 @@
+# Common R errors and fixes
+
+This page collects the error messages you are most likely to see as a beginner, explains what they mean, and suggests how to fix them.
+
+## `object 'x' not found`
+
+**What it means:** R cannot find a variable or data frame with that name.
+
+**Common causes and fixes:**
+
+- You have not run the line that creates it yet. Make sure you run your setup chunk (the one with `library()` and `read_tsv()`) before running any code that uses those objects. Use **Ctrl+Shift+Enter** to run a chunk.
+- You made a typo. R is case-sensitive: `Rodents` and `rodents` are different objects. Check your spelling carefully.
+- You are working in a new session and have not re-run your script from the top. Objects are not saved between sessions — you need to re-run everything.
+
+```{r}
+#| eval: false
+# This will give "object 'rodents' not found" if you haven't run the line below first
+rodents |> filter(species_id == "NL")
+
+# Fix: run this first
+library(tidyverse)
+library(here)
+rodents <- read_tsv(here("data", "rodents_full.txt"))
+```
+
+## `could not find function "x"`
+
+**What it means:** R does not know the function you are trying to use, usually because the package that provides it has not been loaded.
+
+**Common causes and fixes:**
+
+- You forgot to call `library()` at the top of your script. Add `library(tidyverse)` (or whichever package the function comes from) and re-run.
+- You are using `%>%` without loading `tidyverse` or `magrittr`. Switch to `|>` (the native pipe, no package needed) or add `library(tidyverse)`.
+
+```{r}
+#| eval: false
+# Fix: always start your script with your library() calls
+library(tidyverse)
+library(here)
+```
+
+## `there is no package called 'x'`
+
+**What it means:** The package has not been installed on your computer.
+
+**Fix:** Install it once with `install.packages()`, then load it with `library()`. You only need to install once; you need to load every session.
+
+```{r}
+#| eval: false
+install.packages("rstatix")   # install once
+library(rstatix)              # load every session
+```
+
+## `Error: unexpected symbol` / `unexpected ','` / `unexpected ')'`
+
+**What it means:** R found something it did not expect — almost always a syntax error.
+
+**Common causes and fixes:**
+
+- A missing or extra comma, bracket, or quotation mark. Check that every opening `(` has a closing `)`, and every `"` is paired.
+- A line that ends with a pipe `|>` but the next line is empty or missing. Each pipe must be followed by a function on the next line.
+- Running an incomplete line (e.g. you selected only half an expression). Run the whole chunk instead.
+
+```{r}
+#| eval: false
+# Wrong: missing closing bracket
+filter(rodents, species_id == "NL"
+
+# Right:
+filter(rodents, species_id == "NL")
+```
+
+## `Error in file(file, "rt") : cannot open the connection`
+
+**What it means:** R cannot find the data file you are trying to read.
+
+**Common causes and fixes:**
+
+- The file is not in the `data/` folder of your project. Move it there.
+- You typed the filename incorrectly — check spelling and the file extension (`.txt` vs `.csv`, etc.).
+- Your working directory is not set to your project folder. If you opened your `.Rproj` file, this should be automatic. If not, use **Session → Set Working Directory → To Project Directory** in RStudio.
+
+```{r}
+#| eval: false
+# here() builds the path relative to your project folder
+rodents <- read_tsv(here("data", "rodents_full.txt"))
+```
+
+## `NAs introduced by coercion`
+
+**What it means:** R tried to convert a column to a numeric type but found values it could not convert (such as text or blanks), so it replaced them with `NA`.
+
+**What to do:** This is often a warning rather than an error, and can be harmless. Check the affected column with `glimpse()` or `View()` to see whether the `NA` values are a problem. If the column should be numeric but contains a stray text value, that value needs fixing in your data file.
+
+::: callout-tip
+## General debugging tips
+
+1. **Read the error message carefully** — it usually tells you the line number and what R expected vs what it found.
+2. **Run your script from the top** — many errors are caused by running lines out of order.
+3. **Check for typos** — R is case-sensitive and whitespace-sensitive in quoted strings.
+4. **Google the exact error message** — add "R tidyverse" to your search to find relevant answers.
+5. **Ask an LLM** — paste the error message and the code that produced it into ChatGPT or Claude and ask for an explanation. See the [LLMs chapter](llms.html) for guidance.
+:::
