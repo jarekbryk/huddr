@@ -432,8 +432,8 @@
     "objectID": "basic_functions.html#graph-functions",
     "href": "basic_functions.html#graph-functions",
     "title": "11  Basic R functions",
-    "section": "11.5 Graph functions",
-    "text": "11.5 Graph functions\nggplot() is the function that will allow you to plot your datasets.\nNow, in order to get a plot you should think about three main components:\n\nData + Aesthetics + Geometry\n\n\n\n\n\n\n\n\nData is a data frame you want to use (you can write it inside the ggplot() function of you can directly pipe ggplot() from your dataset.\nAesthetics is used to indicate x and y variables and it can also be used to control the color of the plot.\n\naes()\n\nGeometry refers to the type of plot you want to make:\n\ngeom_boxplot()\ngeom_point()\ngeom_line()\ngeom_col()\ngeom_histogram()\ngeom_jitter()\ngeom_bar()\n\n\n\n\n\nHere you can see two examples of how to do a plot (one with pipe operator and one without):\n\nggplot(rodents) + aes(x= species_id, y=hindfoot_length) + geom_boxplot()\n\n\n\n\n\n\n\nrodents |&gt; \n  ggplot() + aes(x= species_id, y=hindfoot_length) + geom_boxplot()\n\n\n\n\n\n\n\n\n\n11.5.1 Further Graph functions\n\n\n\n\n\n\nNoteFunctions\n\n\n\n\nfacet_wrap() - Allows for the visualization of individual categories in their own graph.\nlabs() - Change axis labels and legend titles.\nscale_x_continuous() / scale_y_continuous() - default scales for continuous x and y aesthetics, which can be used to transform these axes.\ntheme() - Modify a single plot’s theme.\ntheme_update() - Modify the active theme, to affect all subsequent plots.\ntheme_minimal() - Applies a simplified theme of the plot, with no background shading.",
+    "section": "11.6 Graph functions",
+    "text": "11.6 Graph functions\nggplot() is the function that will allow you to plot your datasets.\nNow, in order to get a plot you should think about three main components:\n\nData + Aesthetics + Geometry\n\n\n\n\n\n\n\n\nData is a data frame you want to use (you can write it inside the ggplot() function of you can directly pipe ggplot() from your dataset.\nAesthetics is used to indicate x and y variables and it can also be used to control the color of the plot.\n\naes()\n\nGeometry refers to the type of plot you want to make:\n\ngeom_boxplot()\ngeom_point()\ngeom_line()\ngeom_col()\ngeom_histogram()\ngeom_jitter()\ngeom_bar()\n\n\n\n\n\nHere you can see two examples of how to do a plot (one with pipe operator and one without):\n\nggplot(rodents) + aes(x= species_id, y=hindfoot_length) + geom_boxplot()\n\n\n\n\n\n\n\nrodents |&gt; \n  ggplot() + aes(x= species_id, y=hindfoot_length) + geom_boxplot()\n\n\n\n\n\n\n\n\n\n11.6.1 Further Graph functions\n\n\n\n\n\n\nNoteFunctions\n\n\n\n\nfacet_wrap() - Allows for the visualization of individual categories in their own graph.\nlabs() - Change axis labels and legend titles.\nscale_x_continuous() / scale_y_continuous() - default scales for continuous x and y aesthetics, which can be used to transform these axes.\ntheme() - Modify a single plot’s theme.\ntheme_update() - Modify the active theme, to affect all subsequent plots.\ntheme_minimal() - Applies a simplified theme of the plot, with no background shading.",
     "crumbs": [
       "Part 3: R fundamentals",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Basic R functions</span>"
@@ -1064,6 +1064,17 @@
     "crumbs": [
       "Part 6: Appendices",
       "<span class='chapter-number'>24</span>  <span class='chapter-title'>Quick Reference</span>"
+    ]
+  },
+  {
+    "objectID": "basic_functions.html#built-in-datasets",
+    "href": "basic_functions.html#built-in-datasets",
+    "title": "11  Basic R functions",
+    "section": "11.5 Built-in datasets",
+    "text": "11.5 Built-in datasets\nR comes with a collection of ready-to-use datasets that are always available without loading a file. They are great for trying out a new function or following along with an example when you do not have your own data to hand.\n\n# List all built-in datasets\ndata()\n\n# Load a specific dataset into your environment\ndata(iris)\ndata(mtcars)\ndata(airquality)\n\nOnce loaded, you can inspect and use them exactly like any other data frame:\n\nglimpse(iris)\nhead(mtcars)\n\nA few datasets worth knowing:\n\n\n\n\n\n\n\nDataset\nWhat it contains\n\n\n\n\niris\nPetal and sepal measurements for three species of iris flower\n\n\nmtcars\nFuel consumption and other specs for 32 car models\n\n\nairquality\nDaily air quality measurements in New York (includes NA values)\n\n\npenguins\nBody measurements for three penguin species (from the palmerpenguins package)\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nBuilt-in datasets are a safe space to practise. If something goes wrong you can always reload the original with data(iris) and start again.",
+    "crumbs": [
+      "Part 3: R fundamentals",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Basic R functions</span>"
     ]
   }
 ]
