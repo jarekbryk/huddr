@@ -955,5 +955,38 @@
       "Part 5: Topic-specific content",
       "<span class='chapter-number'>23</span>  <span class='chapter-title'>Phylogenetics</span>"
     ]
+  },
+  {
+    "objectID": "quick_reference.html",
+    "href": "quick_reference.html",
+    "title": "24  Quick Reference",
+    "section": "",
+    "text": "24.1 Keyboard shortcuts\nThis appendix collects the functions and keyboard shortcuts used most often in the book. Use it as a checklist when you are stuck, or as a revision aid before an exam.",
+    "crumbs": [
+      "Part 6: Appendices",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Quick Reference</span>"
+    ]
+  },
+  {
+    "objectID": "quick_reference.html#keyboard-shortcuts",
+    "href": "quick_reference.html#keyboard-shortcuts",
+    "title": "24  Quick Reference",
+    "section": "",
+    "text": "Action\nWindows\nmacOS\n\n\n\n\nRun current line or selection\nCtrl+Enter\nCmd+Enter\n\n\nRun entire code chunk\nCtrl+Shift+Enter\nCmd+Shift+Enter\n\n\nInsert a new code chunk\nCtrl+Alt+I\nCmd+Option+I\n\n\nRender document to HTML\nCtrl+Shift+K\nCmd+Shift+K\n\n\nInsert pipe \\|&gt;\nCtrl+Shift+M\nCmd+Shift+M\n\n\nSave file\nCtrl+S\nCmd+S\n\n\nUndo\nCtrl+Z\nCmd+Z\n\n\nAutocomplete (while typing)\nTab\nTab\n\n\nOpen help for function under cursor\nF1\nF1\n\n\nClear the console\nCtrl+L\nCtrl+L",
+    "crumbs": [
+      "Part 6: Appendices",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Quick Reference</span>"
+    ]
+  },
+  {
+    "objectID": "quick_reference.html#function-glossary",
+    "href": "quick_reference.html#function-glossary",
+    "title": "24  Quick Reference",
+    "section": "24.2 Function glossary",
+    "text": "24.2 Function glossary\n\n24.2.1 Packages and data\n\n\n\n\n\n\n\nFunction\nWhat it does\n\n\n\n\ninstall.packages(\"pkg\")\nDownloads and installs a package from CRAN (do once)\n\n\nlibrary(pkg)\nLoads an installed package so you can use its functions\n\n\nhere(\"folder\", \"file.csv\")\nBuilds a file path relative to your project root\n\n\nread_csv()\nReads a comma-separated (.csv) file into R\n\n\nread_tsv()\nReads a tab-separated (.txt or .tsv) file into R\n\n\nread_xlsx()\nReads an Excel (.xlsx) file (requires library(readxl))\n\n\nread_delim()\nReads any delimited file — specify the separator with delim =\n\n\nglimpse()\nCompact preview: column names, types, and first few values\n\n\nhead()\nShows the first 6 rows\n\n\nView()\nOpens the data in a spreadsheet-style viewer (RStudio only)\n\n\n\n\n\n24.2.2 Data manipulation (tidyverse / dplyr)\n\n\n\n\n\n\n\nFunction\nWhat it does\n\n\n\n\nfilter()\nKeeps only rows that match a condition\n\n\nselect()\nKeeps only the columns you name\n\n\nmutate()\nAdds a new column or changes an existing one\n\n\narrange()\nSorts rows; wrap column name in desc() for descending order\n\n\ngroup_by()\nSplits data into groups for subsequent operations\n\n\nsummarise()\nCollapses each group to one row of summary statistics\n\n\ncount()\nCounts how many rows belong to each group\n\n\ndrop_na()\nRemoves rows that contain NA in specified columns\n\n\nleft_join()\nMerges two tables; keeps all rows from the left table\n\n\ninner_join()\nMerges two tables; keeps only rows with a match in both\n\n\nfull_join()\nMerges two tables; keeps all rows from both\n\n\npivot_longer()\nReshapes wide data to long format (fewer columns, more rows)\n\n\npivot_wider()\nReshapes long data to wide format (more columns, fewer rows)\n\n\n\n\n\n24.2.3 Useful operators and helpers\n\n\n\n\n\n\n\nOperator / function\nWhat it does\n\n\n\n\n\\|&gt;\nPipe: passes the result on the left into the function on the right\n\n\n%in%\nChecks whether a value is in a set: x %in% c(\"a\", \"b\")\n\n\n!\nNegation: flips TRUE to FALSE and vice versa\n\n\nis.na()\nReturns TRUE where a value is missing (NA)\n\n\nc()\nCombines values into a vector: c(\"NL\", \"DM\", \"PF\")\n\n\nna.rm = TRUE\nParameter that tells many functions to ignore NA values\n\n\n\n\n\n24.2.4 Plotting (ggplot2)\n\n\n\n\n\n\n\nFunction\nWhat it does\n\n\n\n\nggplot()\nStarts a plot; always the first function in a ggplot call\n\n\naes()\nMaps columns to visual properties (x, y, colour, fill, …)\n\n\ngeom_point()\nScatter plot\n\n\ngeom_line()\nLine plot\n\n\ngeom_boxplot()\nBox-and-whisker plot\n\n\ngeom_histogram()\nHistogram (use bins = to control the number of bars)\n\n\ngeom_bar()\nBar chart where R counts the rows for you\n\n\ngeom_col()\nBar chart where you supply the bar heights as a column\n\n\ngeom_jitter()\nScatter plot with a small random horizontal spread\n\n\nlabs()\nSets the plot title and axis/legend labels\n\n\nfacet_wrap(~ var)\nSplits the plot into one panel per level of var\n\n\ntheme_minimal()\nApplies a clean theme with no grey background\n\n\n\n\n\n24.2.5 Descriptive statistics and tests (rstatix)\n\n\n\n\n\n\n\nFunction\nWhat it does\n\n\n\n\nmean(), median(), sd()\nMean, median, standard deviation\n\n\nmin(), max(), sum()\nMinimum, maximum, total\n\n\nsummary()\nQuick five-number summary for each column\n\n\nget_summary_stats()\nExtended summary including SE and CI (requires rstatix)\n\n\nt_test()\nOne- or two-sample t-test (requires rstatix)\n\n\nwilcox_test()\nWilcoxon signed-rank or rank-sum test (requires rstatix)\n\n\nshapiro_test()\nShapiro–Wilk test of normality (requires rstatix)\n\n\nlevene_test()\nLevene’s test of equal variances (requires rstatix)\n\n\nanova_test()\nOne- or two-way ANOVA (requires rstatix)\n\n\nkruskal_test()\nKruskal–Wallis test (requires rstatix)\n\n\nchisq_test()\nChi-squared test (requires rstatix)",
+    "crumbs": [
+      "Part 6: Appendices",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Quick Reference</span>"
+    ]
   }
 ]

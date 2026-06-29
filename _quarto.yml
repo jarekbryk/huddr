@@ -47,6 +47,9 @@ book:
     - genomics.qmd
     - phylogenetics.qmd
   - references.qmd
+  - part: 'Part 6: Appendices'
+    chapters:
+    - quick_reference.qmd
 bibliography: references.bib
 format:
   html:
