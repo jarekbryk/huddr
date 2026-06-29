@@ -82,3 +82,13 @@ df %>%
 ## For more complex cases, use a package
 
 If your data is large, has a complicate structure of missingness, or you want to quicly visualise the pattern of missing data, you should check out [a package `naniar`](https://naniar.njtierney.com/articles/naniar.html) by Nicholas Tierney. Not only it contains convenient functions to normalise missing data in an object (e.g. `replace_with_na()`), or to have a statistical summary of variables with missing values (e.g. `prop_miss_var()`), but the package website contains useful guide of how to look at missingness in data.
+
+---
+
+::: callout-note
+## Chapter recap
+
+**Functions covered:** `is.na()`, `!is.na()`, `drop_na()`, `filter()`, `mean()` / `sd()` with `na.rm = TRUE`
+
+**Key idea:** `NA` is contagious — one missing value makes the whole result `NA`. You have to actively decide what to do with missing data (ignore it with `na.rm = TRUE`, remove rows with `drop_na()`, or filter with `!is.na()`) before your summaries will work.
+:::

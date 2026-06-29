@@ -577,6 +577,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="for-more-complex-cases-use-a-package" class="level2" data-number="10.3">
 <h2 data-number="10.3" class="anchored" data-anchor-id="for-more-complex-cases-use-a-package"><span class="header-section-number">10.3</span> For more complex cases, use a package</h2>
 <p>If your data is large, has a complicate structure of missingness, or you want to quicly visualise the pattern of missing data, you should check out <a href="https://naniar.njtierney.com/articles/naniar.html">a package <code>naniar</code></a> by Nicholas Tierney. Not only it contains convenient functions to normalise missing data in an object (e.g.&nbsp;<code>replace_with_na()</code>), or to have a statistical summary of variables with missing values (e.g.&nbsp;<code>prop_miss_var()</code>), but the package website contains useful guide of how to look at missingness in data.</p>
+<hr>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Chapter recap
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Functions covered:</strong> <code>is.na()</code>, <code>!is.na()</code>, <code>drop_na()</code>, <code>filter()</code>, <code>mean()</code> / <code>sd()</code> with <code>na.rm = TRUE</code></p>
+<p><strong>Key idea:</strong> <code>NA</code> is contagious — one missing value makes the whole result <code>NA</code>. You have to actively decide what to do with missing data (ignore it with <code>na.rm = TRUE</code>, remove rows with <code>drop_na()</code>, or filter with <code>!is.na()</code>) before your summaries will work.</p>
+</div>
+</div>
 
 
 </section>

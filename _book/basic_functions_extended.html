@@ -757,8 +757,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop all the variables that have missing values in the hindfoot length column</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">drop_na</span>(rodents, hindfoot_length)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>rodents <span class="sc">|&gt;</span> </span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>rodents <span class="sc">|&gt;</span></span>
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(hindfoot_length)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<hr>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Chapter recap
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Functions covered:</strong> <code>filter()</code>, <code>select()</code>, <code>count()</code>, <code>mutate()</code>, <code>arrange()</code>, <code>group_by()</code>, <code>summarise()</code>, <code>drop_na()</code>, <code>tibble()</code></p>
+<p><strong>Key parameters and helpers:</strong> <code>is.na()</code>, <code>!is.na()</code>, <code>%in%</code>, <code>c()</code>, <code>desc()</code>, <code>sort = TRUE</code>, <code>na.rm = TRUE</code>, <code>ifelse()</code>, <code>case_when()</code>, <code>starts_with()</code>, <code>ends_with()</code>, <code>contains()</code></p>
+<p><strong>Key idea:</strong> Almost every tidyverse function follows the same pattern — first argument is the data, rest describes what to do. That consistency is why they all slot together so naturally with the pipe.</p>
+</div>
 </div>
 
 

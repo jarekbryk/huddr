@@ -104,3 +104,13 @@ View(rodents)
 -   Do the column types make sense? (e.g. a numeric column showing `<chr>` means R read it as text — often caused by a stray letter or comma in the data file)
 -   Does the number of rows match what you expect?
 :::
+
+---
+
+::: callout-note
+## Chapter recap
+
+**Functions covered:** `install.packages()`, `library()`, `here()`, `read_csv()`, `read_tsv()`, `read_xlsx()`, `read_delim()`, `glimpse()`, `head()`, `View()`
+
+**Key idea:** The order matters — install once, then load with `library()` every session, then load your data. And always check that what you loaded actually looks right before doing anything with it.
+:::

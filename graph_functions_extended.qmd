@@ -96,3 +96,15 @@ Use **`facet_wrap()`** when you have more groups, or when the groups overlap so 
 | `geom_bar()` | Bar chart (counts rows) |
 | `geom_col()` | Bar chart (uses a value column for height) |
 | `geom_jitter()` | Scatter with random horizontal spread (useful for discrete x) |
+
+---
+
+::: callout-note
+## Chapter recap
+
+**Functions covered:** `ggplot()`, `aes()`, `geom_point()`, `geom_line()`, `geom_boxplot()`, `geom_histogram()`, `geom_bar()`, `geom_col()`, `geom_jitter()`, `labs()`, `facet_wrap()`, `theme_minimal()`
+
+**Key parameters:** `colour`, `fill` (inside `aes()` to colour by a variable); `bins` (for `geom_histogram()`); `~ variable` (for `facet_wrap()`)
+
+**Key idea:** Every ggplot is three things — data, what to map where (`aes()`), and what shape to draw (`geom_*()`). Everything else — labels, colours, themes, facets — is optional polish you add one `+` at a time.
+:::

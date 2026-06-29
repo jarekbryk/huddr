@@ -183,3 +183,13 @@ rodents |>
 -   `theme_update()` - Modify the active theme, to affect all subsequent plots.
 -   `theme_minimal()` - Applies a simplified theme of the plot, with no background shading.
 :::
+
+---
+
+::: callout-note
+## Chapter recap
+
+**Functions covered:** `library()`, `filter()`, `select()`, `count()`, `mutate()`, `arrange()`, `group_by()`, `summarise()`, `drop_na()`, `tibble()`, `left_join()`, `right_join()`, `inner_join()`, `full_join()`, `pivot_longer()`, `pivot_wider()`, `ggplot()`, `aes()`, `geom_boxplot()`, `geom_point()` and others, `facet_wrap()`, `labs()`, `theme_minimal()`, `glimpse()`, `|>`, `%in%`, `!`
+
+**Key idea:** The pipe `|>` is not just a shortcut — it changes the way you think about code. Instead of nesting functions inside each other, you write a sequence of steps in the order they happen, which makes the code much easier to read and debug.
+:::
