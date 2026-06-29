@@ -68,3 +68,15 @@ rodents |>
   count(species_id, year) |>
   pivot_wider(names_from = year, values_from = n)
 ```
+
+---
+
+::: callout-note
+## Chapter recap
+
+**Functions covered:** `pivot_longer()`, `pivot_wider()`
+
+**Key parameters:** `cols`, `names_to`, `values_to` (for `pivot_longer`); `names_from`, `values_from` (for `pivot_wider`)
+
+**Key idea:** ggplot and most tidyverse analysis functions want data in long format — one row per observation, one column per variable. If your data is spread across many columns, `pivot_longer()` is almost always the first step.
+:::

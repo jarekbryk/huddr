@@ -303,6 +303,18 @@ In this example you can see both ways to use the `drop_na()` function in a data 
 # Drop all the variables that have missing values in the hindfoot length column
 drop_na(rodents, hindfoot_length)
 
-rodents |> 
+rodents |>
   drop_na(hindfoot_length)
 ```
+
+---
+
+::: callout-note
+## Chapter recap
+
+**Functions covered:** `filter()`, `select()`, `count()`, `mutate()`, `arrange()`, `group_by()`, `summarise()`, `drop_na()`, `tibble()`
+
+**Key parameters and helpers:** `is.na()`, `!is.na()`, `%in%`, `c()`, `desc()`, `sort = TRUE`, `na.rm = TRUE`, `ifelse()`, `case_when()`, `starts_with()`, `ends_with()`, `contains()`
+
+**Key idea:** Almost every tidyverse function follows the same pattern — first argument is the data, rest describes what to do. That consistency is why they all slot together so naturally with the pipe.
+:::
