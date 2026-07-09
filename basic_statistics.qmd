@@ -221,3 +221,15 @@ chisq_test(weight)
 ::: callout-important
 To use all these functions you will need to load `library(rstatix)`!!!
 :::
+
+---
+
+::: callout-note
+## Chapter recap
+
+**Functions covered:** `mean()`, `median()`, `sd()`, `var()`, `min()`, `max()`, `sum()`, `summary()`, `get_summary_stats()`, `t_test()`, `wilcox_test()`, `shapiro_test()`, `levene_test()`, `anova_test()`, `kruskal_test()`, `chisq_test()`
+
+**Key parameters:** `na.rm = TRUE`, `paired = TRUE/FALSE`, `alternative =`, `mu =`
+
+**Key idea:** Before running any test, check whether your data meets its assumptions — use `shapiro_test()` to check normality and `levene_test()` to check equal variances. If the assumptions do not hold, switch to the non-parametric equivalent (e.g. `wilcox_test()` instead of `t_test()`).
+:::

@@ -62,3 +62,13 @@ joining_function(left_table, right_table, by = "shared_column_name")
 
 joining_function(left_table, right_table, by = join_by(left_col == right_col))
 :::
+
+---
+
+::: callout-note
+## Chapter recap
+
+**Functions covered:** `left_join()`, `right_join()`, `inner_join()`, `full_join()`, `join_by()`
+
+**Key idea:** Every join needs a shared key column — a column with matching values in both tables. Get the key right and the rest is just choosing which rows to keep: `left_join` keeps everything on the left, `inner_join` keeps only matches, `full_join` keeps everything.
+:::

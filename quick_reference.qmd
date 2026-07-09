@@ -1,0 +1,97 @@
+# Quick Reference
+
+This appendix collects the functions and keyboard shortcuts used most often in the book. Use it as a checklist when you are stuck, or as a revision aid before an exam.
+
+## Keyboard shortcuts
+
+| Action | Windows | macOS |
+|---|---|---|
+| Run current line or selection | Ctrl+Enter | Cmd+Enter |
+| Run entire code chunk | Ctrl+Shift+Enter | Cmd+Shift+Enter |
+| Insert a new code chunk | Ctrl+Alt+I | Cmd+Option+I |
+| Render document to HTML | Ctrl+Shift+K | Cmd+Shift+K |
+| Insert pipe `\|>` | Ctrl+Shift+M | Cmd+Shift+M |
+| Save file | Ctrl+S | Cmd+S |
+| Undo | Ctrl+Z | Cmd+Z |
+| Autocomplete (while typing) | Tab | Tab |
+| Open help for function under cursor | F1 | F1 |
+| Clear the console | Ctrl+L | Ctrl+L |
+
+## Function glossary
+
+### Packages and data
+
+| Function | What it does |
+|---|---|
+| `install.packages("pkg")` | Downloads and installs a package from CRAN (do once) |
+| `library(pkg)` | Loads an installed package so you can use its functions |
+| `here("folder", "file.csv")` | Builds a file path relative to your project root |
+| `read_csv()` | Reads a comma-separated (.csv) file into R |
+| `read_tsv()` | Reads a tab-separated (.txt or .tsv) file into R |
+| `read_xlsx()` | Reads an Excel (.xlsx) file (requires `library(readxl)`) |
+| `read_delim()` | Reads any delimited file — specify the separator with `delim =` |
+| `glimpse()` | Compact preview: column names, types, and first few values |
+| `head()` | Shows the first 6 rows |
+| `View()` | Opens the data in a spreadsheet-style viewer (RStudio only) |
+
+### Data manipulation (tidyverse / dplyr)
+
+| Function | What it does |
+|---|---|
+| `filter()` | Keeps only rows that match a condition |
+| `select()` | Keeps only the columns you name |
+| `mutate()` | Adds a new column or changes an existing one |
+| `arrange()` | Sorts rows; wrap column name in `desc()` for descending order |
+| `group_by()` | Splits data into groups for subsequent operations |
+| `summarise()` | Collapses each group to one row of summary statistics |
+| `count()` | Counts how many rows belong to each group |
+| `drop_na()` | Removes rows that contain `NA` in specified columns |
+| `left_join()` | Merges two tables; keeps all rows from the left table |
+| `inner_join()` | Merges two tables; keeps only rows with a match in both |
+| `full_join()` | Merges two tables; keeps all rows from both |
+| `pivot_longer()` | Reshapes wide data to long format (fewer columns, more rows) |
+| `pivot_wider()` | Reshapes long data to wide format (more columns, fewer rows) |
+
+### Useful operators and helpers
+
+| Operator / function | What it does |
+|---|---|
+| `\|>` | Pipe: passes the result on the left into the function on the right |
+| `%in%` | Checks whether a value is in a set: `x %in% c("a", "b")` |
+| `!` | Negation: flips TRUE to FALSE and vice versa |
+| `is.na()` | Returns TRUE where a value is missing (`NA`) |
+| `c()` | Combines values into a vector: `c("NL", "DM", "PF")` |
+| `na.rm = TRUE` | Parameter that tells many functions to ignore `NA` values |
+
+### Plotting (ggplot2)
+
+| Function | What it does |
+|---|---|
+| `ggplot()` | Starts a plot; always the first function in a ggplot call |
+| `aes()` | Maps columns to visual properties (x, y, colour, fill, …) |
+| `geom_point()` | Scatter plot |
+| `geom_line()` | Line plot |
+| `geom_boxplot()` | Box-and-whisker plot |
+| `geom_histogram()` | Histogram (use `bins =` to control the number of bars) |
+| `geom_bar()` | Bar chart where R counts the rows for you |
+| `geom_col()` | Bar chart where you supply the bar heights as a column |
+| `geom_jitter()` | Scatter plot with a small random horizontal spread |
+| `labs()` | Sets the plot title and axis/legend labels |
+| `facet_wrap(~ var)` | Splits the plot into one panel per level of `var` |
+| `theme_minimal()` | Applies a clean theme with no grey background |
+
+### Descriptive statistics and tests (rstatix)
+
+| Function | What it does |
+|---|---|
+| `mean()`, `median()`, `sd()` | Mean, median, standard deviation |
+| `min()`, `max()`, `sum()` | Minimum, maximum, total |
+| `summary()` | Quick five-number summary for each column |
+| `get_summary_stats()` | Extended summary including SE and CI (requires `rstatix`) |
+| `t_test()` | One- or two-sample t-test (requires `rstatix`) |
+| `wilcox_test()` | Wilcoxon signed-rank or rank-sum test (requires `rstatix`) |
+| `shapiro_test()` | Shapiro–Wilk test of normality (requires `rstatix`) |
+| `levene_test()` | Levene's test of equal variances (requires `rstatix`) |
+| `anova_test()` | One- or two-way ANOVA (requires `rstatix`) |
+| `kruskal_test()` | Kruskal–Wallis test (requires `rstatix`) |
+| `chisq_test()` | Chi-squared test (requires `rstatix`) |

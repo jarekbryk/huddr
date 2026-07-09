@@ -1,124 +1,123 @@
 # Practice Questions
 
 ::: callout-note
-This exercise sheet is all about getting comfortable with RStudio and the tidyverse. In it you will find exercises ranging from individual use of functions to practicing exercises that will allow you to better manipulate data sets.
+This exercise sheet is all about getting comfortable with RStudio and the tidyverse. In it you will find exercises ranging from individual use of functions to practising exercises that will allow you to better manipulate data sets.
 :::
 
 ```{r echo=FALSE}
 library(webexercises)
-
 ```
 
 ## Mastering the Basics
 
-1.  
+1.
 
 ```{r results='asis', echo=FALSE}
-opts <- c("install.package", 
-            "install.packages", 
-            answer = "library", 
+opts <- c("install.package",
+            "install.packages",
+            answer = "library",
             "libraries")
 q1 <- mcq(opts)
 
-cat("What function loads a package that is already on your computer?", q1) 
+cat("What function loads a package that is already on your computer?", q1)
 ```
 
-2.  
+2.
 
 ```{r results='asis', echo=FALSE}
-opts2 <- c("tidyverse", 
-            "rodents_full", 
-            answer = "here", 
-            "select from computer")
+opts2 <- c("tidyverse",
+            "rodents_full",
+            answer = "here",
+            "readxl")
 q2 <- mcq(opts2)
-cat("What library do you need to load in your data set?", q2)
+cat("What package provides the `here()` function for managing file paths when loading data?", q2)
 ```
 
-3.  
+3.
 
 ```{r results='asis', echo=FALSE}
-opts3 <- c("read_csv", 
-            "read_tsv", 
-            answer = "he", 
+opts3 <- c(answer = "read_csv",
+            "read_tsv",
+            "read_excel",
             "read_xsxl")
-q3<- mcq(opts3)
-cat("Which function should I use to load in a comma separated dataset?", q3)
+q3 <- mcq(opts3)
+cat("Which function should I use to load a comma-separated (.csv) dataset?", q3)
 ```
 
-4.  
+4.
 
 ```{r results='asis', echo=FALSE}
-opts4 <- c("filter", 
-            answer = "select", 
-            "column", 
+opts4 <- c("filter",
+            answer = "select",
+            "column",
             "group_by")
 q4 <- mcq(opts4)
-cat("What function is used to select specific columns from a dataset?", q4)
+cat("What function is used to choose specific columns from a dataset?", q4)
 ```
 
-5.  
+5.
 
 ```{r results='asis', echo=FALSE}
-opts5 <- c(answer = "filter", 
-            "arrange", 
-            "summarise", 
+opts5 <- c(answer = "filter",
+            "arrange",
+            "summarise",
             "select")
 q5 <- mcq(opts5)
-cat("What function is used to select specific rows from a dataset?", q5)
+cat("What function is used to keep only certain rows from a dataset?", q5)
 ```
 
-6.  
+6.
 
 ```{r results='asis', echo=FALSE}
-opts6 <- c("summarise", 
-            "tibble", 
-            "summary", 
-					 answer = "mutate")
+opts6 <- c("summarise",
+            "tibble",
+            "summary",
+            answer = "mutate")
 q6 <- mcq(opts6)
 cat("Which function is used to add new columns or modify existing ones?", q6)
 ```
 
-7.  
+7.
 
 ```{r results='asis', echo=FALSE}
-opts7 <- c("c()", 
-            "%in%", 
-            answer = "all of the above", 
-            "==")
+opts7 <- c(answer = "|>",
+            "%in%",
+            "==",
+            "->")
 q7 <- mcq(opts7)
-cat("Which symbol is used for filter", q7)
+cat("Which symbol is the pipe operator in base R?", q7)
 ```
 
-8.  
+8.
 
 ```{r results='asis', echo=FALSE}
-opts8 <- c("Makes the function run in accordance with previous function", 
-            "It stores the output of a function as a variable but does not allow it to be used as an argument in another function.", 
-            answer = "Takes the output of one function and passes it into another function as an argument", 
-            "It executes multiple functions simultaneously ")
+opts8 <- c("Makes the function run in accordance with previous function",
+            "It stores the output of a function as a variable but does not allow it to be used as an argument in another function.",
+            answer = "Takes the output of one function and passes it into another function as an argument",
+            "It executes multiple functions simultaneously")
 q8 <- mcq(opts8)
-cat("What is this symbol used for? |>", q8)
+cat("What is the pipe operator `|>` used for?", q8)
 ```
 
-9.  
+9.
 
 ```{r results='asis', echo=FALSE}
-opts9 <- c(answer = "geom_point()", 
-            "ggplot(scatterplot)", 
-            "geom_graph()", 
-            "geom_scatter")
+opts9 <- c(answer = "geom_point()",
+            "ggplot(scatterplot)",
+            "geom_graph()",
+            "geom_scatter()")
 q9 <- mcq(opts9)
-cat("Which ggplot function would give me a scatterplot?", q9)
+cat("Which ggplot function creates a scatterplot?", q9)
 ```
 
-10. 
+10.
 
 ```{r results='asis', echo=FALSE}
-opts10 <- c(answer = "A", 
-            "B", 
-            "C", 
+opts10 <- c(answer = "A",
+            "B",
+            "C",
             "D")
-cat("What are the steps to follow every time you start a new quatro doc?", longmcq(opts10))
+cat("What are the steps to follow every time you start a new Quarto document?", longmcq(opts10))
 ```
 
 A)
@@ -148,50 +147,172 @@ Run analyses without checking if the dataset loaded correctly.
 ## Manipulating data sets
 
 ::: {.webex-check .webex-box}
-filter can be used to group rows: `r torf(TRUE)`
+`filter()` keeps only the rows that match a condition: `r torf(TRUE)`
 
 ```{r, results='asis', echo = FALSE}
 optsf <- c(
-   "filter(species_id = 'GM')",
-   
-   answer = "filter(species_id %in% c(DM, NL)",
-   
-   "filter(species_id == %in% c(DM, NL)")
+   "filter(species_id = 'DM')",
+   answer = "filter(species_id == 'DM')",
+   "filter(species_id %in% 'DM')")
 
-cat("Which is the correct form?", longmcq(optsf))
+cat("Which is the correct way to keep only rows where `species_id` is `'DM'`?", longmcq(optsf))
 ```
 :::
 
-2.  
+2.
 
-3.  
+```{r results='asis', echo=FALSE}
+opts_m2 <- c("select",
+             answer = "filter",
+             "mutate",
+             "arrange")
+cat("Which function would you use to keep only rows where `sex == 'F'`?", mcq(opts_m2))
+```
 
-4.  
+3.
 
-5.  
+```{r results='asis', echo=FALSE}
+opts_m3 <- c(answer = "select(rodents, species_id, weight)",
+             "filter(rodents, species_id, weight)",
+             "choose(rodents, species_id, weight)",
+             "mutate(rodents, species_id, weight)")
+cat("Which code correctly selects only the `species_id` and `weight` columns from `rodents`?", longmcq(opts_m3))
+```
 
-6.  
+4.
 
-7.  
+```{r results='asis', echo=FALSE}
+opts_m4 <- c(answer = "Splits rows into groups so that subsequent operations (e.g. summarise) apply within each group",
+             "Removes rows that belong to a group",
+             "Arranges rows in alphabetical order by a grouping variable",
+             "Selects columns that share a common name")
+cat("What does `group_by()` do?", longmcq(opts_m4))
+```
+
+5.
+
+```{r results='asis', echo=FALSE}
+opts_m5 <- c("select",
+             "filter",
+             answer = "mutate",
+             "summarise")
+cat("Which function would you use to add a new column `weight_kg` that divides `weight` by 1000?", mcq(opts_m5))
+```
+
+6.
+
+```{r results='asis', echo=FALSE}
+opts_m6 <- c(answer = "summarise",
+             "mutate",
+             "filter",
+             "select")
+cat("Which function would you use to calculate the mean weight for each species?", mcq(opts_m6))
+```
+
+7.
+
+```{r results='asis', echo=FALSE}
+opts_m7 <- c(answer = "arrange(rodents, weight)",
+             "sort(rodents, weight)",
+             "order(rodents, weight)",
+             "filter(rodents, weight)")
+cat("Which code sorts `rodents` by `weight` from smallest to largest?", longmcq(opts_m7))
+```
 
 ## Working with ggplot
 
-1.  
+1.
 
-2.  
+```{r results='asis', echo=FALSE}
+opts_g1 <- c(answer = "ggplot()",
+             "geom_point()",
+             "aes()",
+             "plot()")
+cat("Which function do you always call first to start a ggplot graph?", mcq(opts_g1))
+```
 
-3.  
+2.
 
-4.  
+```{r results='asis', echo=FALSE}
+opts_g2 <- c(answer = "aesthetics",
+             "arguments",
+             "analysis",
+             "attributes")
+cat("What does the `aes` in `aes()` stand for?", mcq(opts_g2))
+```
 
-5.  
+3.
 
-6.  
+```{r results='asis', echo=FALSE}
+opts_g3 <- c("geom_bar()",
+             answer = "geom_histogram()",
+             "geom_col()",
+             "geom_density_plot()")
+cat("Which geom would you use to create a histogram?", mcq(opts_g3))
+```
 
-7.  
+4.
 
-8.  
+```{r results='asis', echo=FALSE}
+opts_g4 <- c(answer = "geom_boxplot()",
+             "geom_box()",
+             "geom_whisker()",
+             "geom_range()")
+cat("Which geom creates a box-and-whisker plot?", mcq(opts_g4))
+```
 
-9.  
+5.
+
+```{r results='asis', echo=FALSE}
+opts_g5 <- c(answer = "It adds a new layer (e.g. geom, theme, labels) to the plot",
+             "It runs the ggplot code",
+             "It adds the two data values together",
+             "It connects points on a scatterplot")
+cat("What does the `+` sign do in a ggplot call?", longmcq(opts_g5))
+```
+
+6.
+
+```{r results='asis', echo=FALSE}
+opts_g6 <- c(answer = "aes(colour = species_id)",
+             "colour(species_id)",
+             "geom_point(colour == species_id)",
+             "set_colour(species_id)")
+cat("Which code colours scatterplot points by the `species_id` variable?", longmcq(opts_g6))
+```
+
+7.
+
+```{r results='asis', echo=FALSE}
+opts_g7 <- c(answer = "Adds a title and axis labels to a plot",
+             "Loads the ggplot library",
+             "Changes the colour palette",
+             "Saves the plot to a file")
+cat("What does `labs()` do?", mcq(opts_g7))
+```
+
+8.
+
+```{r results='asis', echo=FALSE}
+opts_g8 <- c(answer = "Splits the plot into small panels, one per level of a variable",
+             "Changes the plot theme",
+             "Wraps long axis labels onto multiple lines",
+             "Adds a second y-axis")
+cat("What does `facet_wrap()` do?", longmcq(opts_g8))
+```
+
+9.
+
+```{r results='asis', echo=FALSE}
+opts_g9 <- c("geom_scatter()",
+             answer = "geom_point()",
+             "geom_dot()",
+             "scatter_plot()")
+cat("Which geom creates a scatterplot?", mcq(opts_g9))
+```
 
 10.
+
+```{r results='asis', echo=FALSE}
+cat("ggplot2 is part of the tidyverse:", torf(TRUE))
+```
