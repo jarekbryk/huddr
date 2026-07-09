@@ -1,19 +1,20 @@
 # Basic R functions
-In this short chapter you will find a summary of some of the basic and most useful functions and operators from the tidyverse package that you will be using in R studio. If you want to learn a bit more about a specific function from this chapter simply click on the function, and it will take you to a page with additional information.
+
+In this short chapter you will find a summary of some of the basic and most useful functions and operators from the tidyverse package that you will be using in RStudio. If you want to learn a bit more about a specific function from this chapter, simply click on the function, and it will take you to a page with additional information.
 
 ::: callout-note
 ## Functions
 
--   `library()` - Loads packages into R.
--   [`filter()`](basic_functions_extended.qmd#filter)- Allows you to retain/filter rows from a data set depending on the condition you want.
--   [`select()`](basic_functions_extended.qmd#select) - Allows you to pick/keep specific columns from a data set.
--   [`count()`](basic_functions_extended.qmd#count) - Counts the number of occurrences of all distinct elements in a column.
--   [`mutate()`](basic_functions_extended.qmd#mutate) - Allows you to create and modify columns from a data set.
--   [`arrange()`](basic_functions_extended.qmd#arrange) - Allows for the ordering of the data by different variables.
--   [`group_by()`](basic_functions_extended.qmd#group_by) - Uses an existing table to form a grouped table by splitting the data sate based on one or more variables.
--   [`summarise()`](basic_functions_extended.qmd#summarise) - Allows you to calculate summary statistics and is usually used on grouped data produced by `group_by()`, as it creates one row for each combination of grouping variables.
--   [`tibble()`](basic_functions_extended.qmd#tibble) - Allows you to create new data frames.
--   [`drop_na()`](basic_functions_extended.qmd#drop_na) - Allows you to to drop all the rows containing missing values.
+- `library()` - Loads packages into R.
+- [`filter()`](basic_functions_extended.qmd#filter)- Allows you to retain/filter rows from a data set depending on the condition you want.
+- [`select()`](basic_functions_extended.qmd#select) - Allows you to pick/keep specific columns from a data set.
+- [`count()`](basic_functions_extended.qmd#count) - Counts the number of occurrences of all distinct elements in a column.
+- [`mutate()`](basic_functions_extended.qmd#mutate) - Allows you to create and modify columns from a data set.
+- [`arrange()`](basic_functions_extended.qmd#arrange) - Allows for the ordering of the data by different variables.
+- [`group_by()`](basic_functions_extended.qmd#group_by) - Uses an existing table to form a grouped table by splitting the data sate based on one or more variables.
+- [`summarise()`](basic_functions_extended.qmd#summarise) - Allows you to calculate summary statistics and is usually used on grouped data produced by `group_by()`, as it creates one row for each combination of grouping variables.
+- [`tibble()`](basic_functions_extended.qmd#tibble) - Allows you to create new data frames.
+- [`drop_na()`](basic_functions_extended.qmd#drop_na) - Allows you to to drop all the rows containing missing values.
 :::
 
 ------------------------------------------------------------------------
@@ -23,10 +24,10 @@ In this short chapter you will find a summary of some of the basic and most usef
 ::: callout-note
 ## Functions
 
--   [`left_join()`](joining_functions_extended.qmd)- Keeps all the values from the left table and matching rows from the right table.
--   [`right_join()`](joining_functions_extended.qmd)- Keeps all the values from the right table and matching rows from the left table.
--   [`inner_join()`](joining_functions_extended.qmd)- Keeps all values that have matching keys in both tables.
--   [`full_join()`](joining_functions_extended.qmd)- Keeps all values from both tables.
+- [`left_join()`](joining_functions_extended.qmd)- Keeps all the values from the left table and matching rows from the right table.
+- [`right_join()`](joining_functions_extended.qmd)- Keeps all the values from the right table and matching rows from the left table.
+- [`inner_join()`](joining_functions_extended.qmd)- Keeps all values that have matching keys in both tables.
+- [`full_join()`](joining_functions_extended.qmd)- Keeps all values from both tables.
 :::
 
 ------------------------------------------------------------------------
@@ -36,8 +37,8 @@ In this short chapter you will find a summary of some of the basic and most usef
 ::: callout-note
 ## Functions
 
--   [`pivot_longer()`](pivot_functions_extended.qmd)- Allows you to lengthen your data set from a wide format to a long format by reducing the number of columns and increasing the number of rows.
--   [`pivot_wider()`](pivot_functions_extended.qmd)- Allows you to widen your data set from a long format to a wide format by reducing the number of rows and increasing the number of columns.
+- [`pivot_longer()`](pivot_functions_extended.qmd)- Allows you to lengthen your data set from a wide format to a long format by reducing the number of columns and increasing the number of rows.
+- [`pivot_wider()`](pivot_functions_extended.qmd)- Allows you to widen your data set from a long format to a wide format by reducing the number of rows and increasing the number of columns.
 :::
 
 ------------------------------------------------------------------------
@@ -74,13 +75,13 @@ rodents |>
 ::: callout-tip
 ## Keyboard shortcut
 
-Type the pipe with **Ctrl + Shift + M** (Windows) or **Cmd + Shift + M** (macOS).
+Type the pipe with **Ctrl + Shift + M** (Windows) or **Cmd + Shift + M** (macOS). This is the second most important keyboard shortcut.
 :::
 
 ::: callout-note
 ## `|>` vs `%>%` — what is the difference?
 
-You will see both versions used online and in textbooks. `|>` is the **native pipe**, built into R since version 4.1 (2021) and requires no packages. `%>%` is the **magrittr pipe**, which comes from the `magrittr` package and is loaded automatically with `tidyverse`. They behave identically for the vast majority of everyday use, so do not worry about the difference for now. This book uses `|>`.
+You will see both versions used online and in textbooks. `|>` is the **base R pipe**, built into R since version 4.1 (2021) and requires no packages. `%>%` is the **magrittr pipe**, which comes from the `magrittr` package and is loaded automatically with `tidyverse`. They behave identically for the vast majority of everyday use, so do not worry about the difference for now. This book uses `|>` and there is a seting in **Tools -> Global options** menu to enforce this pipe even after loading `tidyverse` (see [Adjust RStudio interface](setup.qmd#adjust-rstudio-interface) chapter).
 :::
 
 ::: callout-warning
@@ -93,7 +94,35 @@ You will see both versions used online and in textbooks. `|>` is the **native pi
 `%in%`
 
 ::: callout
--   This is a logical operator that allows you to check if an element from one vector is present in another vector.
+-   This is a logical operator that allows you to check if an element from one vector is present in another vector. For example:
+
+```{r}
+birds <- c("swan", "stork", "kiwi")
+fruits <- c("apple", "kiwi", "watermelon")
+
+birds %in% fruits
+```
+
+```{r}
+fruits %in% birds
+```
+
+This operator is very useful when filtering for multiple elements in a vector.
+
+```{r}
+# This is correct
+rodents |>
+	filter(species_id %in% c("NL", "DO"))
+```
+
+```{r}
+# But this is NOT
+rodents |>
+	filter(species_id == c("NL", "DO"))
+
+# This is the most common mistake when filtering for multiple elements.
+```
+
 :::
 
 `!`
@@ -107,7 +136,11 @@ This is an example of how you can oppose the filter() in order to filter **out**
 ```{r}
 #| eval: false
 rodents |> 
-  filter(!species_id=="NL")
+  filter(!species_id == "NL")
+
+# Alternatively
+rodents |> 
+  filter(species_id != "NL")
 ```
 
 `+`, `-`, `log()`, `*`, `/`
@@ -123,9 +156,9 @@ rodents |>
 ::: callout-note
 ## Functions
 
--   `class()` - It provides just the class of the specified object.
--   `str()` - It shows you the type of content in each column.
--   `glimpse()` - While still detailed, it is easier to glance through than str().
+- `class()` - It provides just the class of the specified object.
+- `str()` - It shows you the type of content in each column.
+- `glimpse()` - While still detailed, it is easier to glance through than str().
 :::
 
 ------------------------------------------------------------------------
@@ -141,17 +174,17 @@ Now, in order to get a plot you should think about three main components:
 :::
 
 ::: callout
--   **Data** is a data frame you want to use (you can write it inside the ggplot() function of you can directly pipe ggplot() from your dataset.
--   **Aesthetics** is used to indicate x and y variables and it can also be used to control the color of the plot.
-    -   `aes()`
--   **Geometry** refers to the type of plot you want to make:
-    -   `geom_boxplot()`
-    -   `geom_point()`
-    -   `geom_line()`
-    -   `geom_col()`
-    -   `geom_histogram()`
-    -   `geom_jitter()`
-    -   `geom_bar()`
+- **Data** is a data frame you want to use (you can write it inside the ggplot() function of you can directly pipe ggplot() from your dataset.
+- **Aesthetics** is used to indicate x and y variables and it can also be used to control the color of the plot.
+    - `aes()`
+- **Geometry** refers to the type of plot you want to make:
+    - `geom_boxplot()`
+    - `geom_point()`
+    - `geom_line()`
+    - `geom_col()`
+    - `geom_histogram()`
+    - `geom_jitter()`
+    - `geom_bar()`
 :::
 
 Here you can see two examples of how to do a plot (one with pipe operator and one without):
@@ -176,10 +209,10 @@ rodents |>
 ::: callout-note
 ## Functions
 
--   `facet_wrap()` - Allows for the visualization of individual categories in their own graph.
--   `labs()` - Change axis labels and legend titles.
--   `scale_x_continuous() / scale_y_continuous()` - default scales for continuous x and y aesthetics, which can be used to transform these axes.
--   `theme()` - Modify a single plot's theme.
--   `theme_update()` - Modify the active theme, to affect all subsequent plots.
--   `theme_minimal()` - Applies a simplified theme of the plot, with no background shading.
+- `facet_wrap()` - Allows for the visualization of individual categories in their own graph.
+- `labs()` - Change axis labels and legend titles.
+- `scale_x_continuous() / scale_y_continuous()` - default scales for continuous x and y aesthetics, which can be used to transform these axes.
+- `theme()` - Modify a single plot's theme.
+- `theme_update()` - Modify the active theme, to affect all subsequent plots.
+- `theme_minimal()` - Applies a simplified theme of the plot, with no background shading.
 :::

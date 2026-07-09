@@ -1,29 +1,29 @@
 # Loading and Installing Packages
 
-## 0. Creating a new Quarto document
+## Creating a new Quarto document
 
 Every piece of work in this book is written in a **Quarto document** (`.qmd`). To create one in RStudio:
 
 1. Go to **File → New File → Quarto Document…**
-2. Give it a title and leave the output format as HTML, then click **Create**.
+2. Give it a title and leave the output format as HTML and use "Source" as the display type, then click **Create**.
 3. A template document opens. Delete everything below the first code chunk (the `setup` chunk) to start with a clean slate.
 4. Save the file into your project folder before you do anything else (**File → Save**, or **Ctrl+S** / **Cmd+S**).
 
 ::: callout-tip
 ## Keyboard shortcuts for running code
 
--   **Ctrl+Enter** (Windows) / **Cmd+Enter** (macOS) — run the current line or selected code.
--   **Ctrl+Shift+Enter** / **Cmd+Shift+Enter** — run the entire current code chunk.
--   **Ctrl+Shift+K** / **Cmd+Shift+K** — render the whole document to HTML.
+- **Ctrl+Enter** (Windows) / **Cmd+Enter** (macOS) — run the current line or selected code. This is the most important keyboard shortcut. Also, when you highlight a piece of code and click **Ctrl+Enter**/**Cmd+Enter**, the highlighted code (and only it) will be executed. This is very useful for debugging multi-step pipes.
+- **Ctrl+Shift+Enter** / **Cmd+Shift+Enter** — run the entire current code chunk.
+- **Ctrl+Shift+K** / **Cmd+Shift+K** — render the whole document to HTML.
 :::
 
-## 1. Loading and Installing Packages
+## Loading and Installing Packages
 
 The first step after you create a document in R should always be loading all the required packages (and installing them if needed).
 
--   **What is a package?** You should think of a package as a collection of functions, data and help files that you can download and install in R.
+- **What is a package?** You should think of a package as a collection of functions, data and help files that you can download and install in R.
 
--   You can do this by using the function `install.packages()` and always remember to put the name of the package in quotation marks as in the example below:
+- You can do this by using the function `install.packages()` and always remember to put the name of the package in quotation marks as in the example below:
 
 ```{r}
 #| eval: false
@@ -41,7 +41,7 @@ library(here)
 ::: callout-important
 ## Important
 
-Always start a quarto document by loading **tidyverse** and **here**
+Always start a quarto document by loading **tidyverse** and **here**.
 :::
 
 ## 2. Loading your data
@@ -49,22 +49,20 @@ Always start a quarto document by loading **tidyverse** and **here**
 The second step should be to load your data into R (otherwise you'll have nothing to work with). To do this you first have to check what type of file your data set is (is it .txt, .csv, .xlsx?). Depending on the type of file you have is the function that you are going to use:
 
 <div>
-
 -   `read_csv()` reads comma separated files
 -   `read_csv2()` reads semicolon separated files
 -   `read_tsv()` reads tab separated files
 -   `read_xlsx` reads excel files (for this function you'll need to load `library(readxl)`)
 -   `read_delim()` reads files with any delimiter
-
 </div>
 
 Now that you know which function to use, you'll have to follow three easy steps to load your data set:
 
-1.  Name the data and input an arrow signing to the data \<-
+1.  Name the data and input an arrow pointing to the data \<-
 2.  Use the relevant function for your file type
-3.  Use function here to tell R where you file is saved and what's the name **(Remember to always save you file in the data folder!)**
+3.  Use function here() to tell R where you file is saved and what's the name **(Remember to always save you file in the data folder!)**
 
-Here's and example for you:
+Here's an example:
 
 ```{r}
 #| eval: false
@@ -79,7 +77,7 @@ squirrels <- read_delim (here("data", "squirrels.csv"), delim = ";")
 squirrels
 ```
 
-## 3. Checking your data after loading
+## Checking your data after loading
 
 Always inspect your data immediately after loading it — this is the quickest way to catch problems such as columns read as the wrong type, unexpected `NA` values, or data that did not load correctly.
 
@@ -98,9 +96,9 @@ View(rodents)
 ```
 
 ::: callout-tip
-## What to check
+## What to check after loading data
 
--   Do the column names look right?
--   Do the column types make sense? (e.g. a numeric column showing `<chr>` means R read it as text — often caused by a stray letter or comma in the data file)
--   Does the number of rows match what you expect?
+- Do the column names look right?
+- Do the column types make sense? (e.g. a numeric column showing `<chr>` means R read it as text — often caused by a stray letter or comma in the data file)
+- Does the number of rows match what you expect?
 :::

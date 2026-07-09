@@ -14,5 +14,5 @@ We highly recommend reading the following sources to understand the base R vs. `
 
 - For the historical overview, read ([or watch](https://www.youtube.com/watch?v=5033jBHFiHE)) Roger Penn's [Teaching R to New Users - From tapply to the Tidyverse](https://simplystatistics.org/posts/2018-07-12-use-r-keynote-2018/).
 - David Robinson's [Teach the tidyverse to beginners](http://varianceexplained.org/r/teach-tidyverse/) post that first inspired Jarek to switch to `tidyverse` after a year of teaching base R + `ggplot`.
-- Not everyone agrees that `tidyverse` is better, or is better for teaching R, and the two recent contrarian views come from Norm Matloff ([Teaching R in a Kinder, Gentler, More Effective Manner](https://matloff.github.io/TidyverseSkeptic/Skeptic.html)) and Robert München ([Why R is Hard to Learn](https://r4stats.com/articles/why-r-is-hard-to-learn/)).
+- Not everyone agrees that `tidyverse` is better, or is better for teaching R, and the two contrarian views come from Norm Matloff ([Teaching R in a Kinder, Gentler, More Effective Manner](https://matloff.github.io/TidyverseSkeptic/Skeptic.html)) and Robert München ([Why R is Hard to Learn](https://r4stats.com/articles/why-r-is-hard-to-learn/)).
 :::

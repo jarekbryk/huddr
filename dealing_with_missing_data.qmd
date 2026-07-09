@@ -2,9 +2,9 @@
 
 R is a bit unusual among programming languages in that it explicitly recognises missing data as a "natural" part of datasets and objects it manipulates. Your data will almost always be messy and missing data will be one of your issues. In fact, in almost any large data analysis project, you will spend most of the time on cleaning up and tidying up the data so that downstream analyses are possible.
 
-In R, missing values are represented by a dedicated symbol `NA` (with variants like `NA_integer_`, `NA_real_` and `NA_character_`). It also has a separate concept for “not a number” (`NaN`) and “infinite” (`Inf`) values.
+In R, missing values are represented by a dedicated symbol `NA` (with variants like `NA_integer_`, `NA_real_` and `NA_character_`). It also has separate concepts for “not a number” (`NaN`) and “infinite” (`Inf`) values.
 
-From a user point of view, they need to know how to make sure that missing data is properly recognised by R, and how to accommodate it when operating on data with missing values. The latter is particularly visible due to the fact that in R, missing values "propagate" - any operation on a missing value (or a set that includes even a missing value), results in `NA`. For example:
+From a user point of view, you need to know how to make sure that missing data is properly recognised by R, and how to accommodate it when operating on data with missing values. The latter is particularly visible due to the fact that in R, missing values "contaminate" objects downstream - any operation on a missing value (or a set that includes even a single missing value), results in `NA`. For example:
 
 ```{r}
 a <- c(2, 55, NA, 4)
@@ -42,7 +42,7 @@ library(knitr)
 ```
 
 ```{r}
-# I am creating a tiny dataframe to illustrate my point about removing missing values
+# I am creating a tiny dataframe to illustrate the point about removing missing values
 df <- data.frame(
   stringsAsFactors = FALSE,
               col1 = c("one", "two", "three", "three and a half"),
@@ -68,7 +68,7 @@ df %>%
 ```
 
 
-(You may want to check `base R` functions such as `complete.cases()` and `na.omit()` as well.)
+(You may want to check [`base R`](tidyverse_vs_baser.qmd) functions such as `complete.cases()` and `na.omit()` as well.)
 
 3. Finally, you can simply filter the missing values using a Boolean function `is.na` with a negation operator `!`:
 
@@ -81,4 +81,4 @@ df %>%
 
 ## For more complex cases, use a package
 
-If your data is large, has a complicate structure of missingness, or you want to quicly visualise the pattern of missing data, you should check out [a package `naniar`](https://naniar.njtierney.com/articles/naniar.html) by Nicholas Tierney. Not only it contains convenient functions to normalise missing data in an object (e.g. `replace_with_na()`), or to have a statistical summary of variables with missing values (e.g. `prop_miss_var()`), but the package website contains useful guide of how to look at missingness in data.
+If your data is large, has a complicate structure of missingness, or you want to quickly visualise the pattern of missing data, you should check out [a package `naniar`](https://naniar.njtierney.com/articles/naniar.html) by Nicholas Tierney. Not only it contains convenient functions to normalise missing data in an object (e.g. `replace_with_na()`), or to have a summary of variables with missing values (e.g. `prop_miss_var()`), but the package website contains useful guide of how to look at missingness in data.

@@ -1,6 +1,6 @@
 # Improving this book
 
-This book is open source. It is published under a [MIT License](https://choosealicense.com/licenses/mit/) so you may use its contents however you like (we would appreciate if you [let us know if you do](mailto:j.bryk@hud.ac.uk))!). It also means anyone can suggest improvements or fix mistakes.
+This book is open source. It is published under a [MIT License](https://choosealicense.com/licenses/mit/) so you may use its contents however you like (we would however very much appreciate if you [let us know if you do](mailto:j.bryk@hud.ac.uk))!). It also means anyone can suggest improvements or fix mistakes.
 
 We would be very happy if you let us know about errors that that you spotted, or if you have suggestions to improve or expand the book. You do not need to be an expert in programming to contribute and you cannot break the book by doing so — even spotting a missing word or pointing out a confusing explanation will be helpful to us!
 

@@ -4,5 +4,6 @@
 .Ruserdata
 .DS_Store
 /.quarto/
-
+CLAUDE.md
+planning/*
 **/*.quarto_ipynb
