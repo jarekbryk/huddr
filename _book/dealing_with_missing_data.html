@@ -366,7 +366,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./quick_reference.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Quick Reference</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Quick Reference</span></span></a>
   </div>
 </li>
       </ul>
@@ -410,8 +410,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>R is a bit unusual among programming languages in that it explicitly recognises missing data as a “natural” part of datasets and objects it manipulates. Your data will almost always be messy and missing data will be one of your issues. In fact, in almost any large data analysis project, you will spend most of the time on cleaning up and tidying up the data so that downstream analyses are possible.</p>
-<p>In R, missing values are represented by a dedicated symbol <code>NA</code> (with variants like <code>NA_integer_</code>, <code>NA_real_</code> and <code>NA_character_</code>). It also has a separate concept for “not a number” (<code>NaN</code>) and “infinite” (<code>Inf</code>) values.</p>
-<p>From a user point of view, they need to know how to make sure that missing data is properly recognised by R, and how to accommodate it when operating on data with missing values. The latter is particularly visible due to the fact that in R, missing values “propagate” - any operation on a missing value (or a set that includes even a missing value), results in <code>NA</code>. For example:</p>
+<p>In R, missing values are represented by a dedicated symbol <code>NA</code> (with variants like <code>NA_integer_</code>, <code>NA_real_</code> and <code>NA_character_</code>). It also has separate concepts for “not a number” (<code>NaN</code>) and “infinite” (<code>Inf</code>) values.</p>
+<p>From a user point of view, you need to know how to make sure that missing data is properly recognised by R, and how to accommodate it when operating on data with missing values. The latter is particularly visible due to the fact that in R, missing values “contaminate” objects downstream - any operation on a missing value (or a set that includes even a single missing value), results in <code>NA</code>. For example:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">55</span>, <span class="cn">NA</span>, <span class="dv">4</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -453,7 +453,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>If you have a dataframe with some observations missing, you can use <code>drop_na</code> to remove all rows with missing values in them, therefore turning your dataframe into a set of complete cases:</li>
 </ol>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># I am creating a tiny dataframe to illustrate my point about removing missing values</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># I am creating a tiny dataframe to illustrate the point about removing missing values</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>,</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">col1 =</span> <span class="fu">c</span>(<span class="st">"one"</span>, <span class="st">"two"</span>, <span class="st">"three"</span>, <span class="st">"three and a half"</span>),</span>
@@ -558,7 +558,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 </div>
-<p>(You may want to check <code>base R</code> functions such as <code>complete.cases()</code> and <code>na.omit()</code> as well.)</p>
+<p>(You may want to check <a href="./tidyverse_vs_baser.html"><code>base R</code></a> functions such as <code>complete.cases()</code> and <code>na.omit()</code> as well.)</p>
 <ol start="3" type="1">
 <li>Finally, you can simply filter the missing values using a Boolean function <code>is.na</code> with a negation operator <code>!</code>:</li>
 </ol>
@@ -599,7 +599,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="for-more-complex-cases-use-a-package" class="level2" data-number="10.3">
 <h2 data-number="10.3" class="anchored" data-anchor-id="for-more-complex-cases-use-a-package"><span class="header-section-number">10.3</span> For more complex cases, use a package</h2>
-<p>If your data is large, has a complicate structure of missingness, or you want to quicly visualise the pattern of missing data, you should check out <a href="https://naniar.njtierney.com/articles/naniar.html">a package <code>naniar</code></a> by Nicholas Tierney. Not only it contains convenient functions to normalise missing data in an object (e.g.&nbsp;<code>replace_with_na()</code>), or to have a statistical summary of variables with missing values (e.g.&nbsp;<code>prop_miss_var()</code>), but the package website contains useful guide of how to look at missingness in data.</p>
+<p>If your data is large, has a complicate structure of missingness, or you want to quickly visualise the pattern of missing data, you should check out <a href="https://naniar.njtierney.com/articles/naniar.html">a package <code>naniar</code></a> by Nicholas Tierney. Not only it contains convenient functions to normalise missing data in an object (e.g.&nbsp;<code>replace_with_na()</code>), or to have a summary of variables with missing values (e.g.&nbsp;<code>prop_miss_var()</code>), but the package website contains useful guide of how to look at missingness in data.</p>
 <hr>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -615,6 +615,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Key idea:</strong> <code>NA</code> is contagious — one missing value makes the whole result <code>NA</code>. You have to actively decide what to do with missing data (ignore it with <code>na.rm = TRUE</code>, remove rows with <code>drop_na()</code>, or filter with <code>!is.na()</code>) before your summaries will work.</p>
 </div>
 </div>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>d92c1ff66332d7dbcf16fc95c7a54db236ed78bb</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 
 
 </section>

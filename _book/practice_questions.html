@@ -331,7 +331,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./quick_reference.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Quick Reference</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Quick Reference</span></span></a>
   </div>
 </li>
       </ul>
@@ -428,9 +428,9 @@ Note
 <ol start="10" type="1">
 <li></li>
 </ol>
-What are the steps to follow every time you start a new quatro doc?
-<div id="radio_VCPPBJFNLS" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_VCPPBJFNLS" value="answer"> <span>A</span></label><label><input type="radio" autocomplete="off" name="radio_VCPPBJFNLS" value=""> <span>B</span></label><label><input type="radio" autocomplete="off" name="radio_VCPPBJFNLS" value=""> <span>C</span></label><label><input type="radio" autocomplete="off" name="radio_VCPPBJFNLS" value=""> <span>D</span></label>
+What are the steps to follow every time you start a new Quarto document?
+<div id="radio_QGBQUTNDXT" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_QGBQUTNDXT" value="answer"> <span>A</span></label><label><input type="radio" autocomplete="off" name="radio_QGBQUTNDXT" value=""> <span>B</span></label><label><input type="radio" autocomplete="off" name="radio_QGBQUTNDXT" value=""> <span>C</span></label><label><input type="radio" autocomplete="off" name="radio_QGBQUTNDXT" value=""> <span>D</span></label>
 </div>
 <ol type="A">
 <li><p>Open Quarto and create a new document. Load in the necessary libraries. Load the dataset. Make sure progress is saved to OneDrive or on your computer.</p></li>
@@ -442,10 +442,10 @@ What are the steps to follow every time you start a new quatro doc?
 <section id="manipulating-data-sets" class="level2" data-number="18.2">
 <h2 data-number="18.2" class="anchored" data-anchor-id="manipulating-data-sets"><span class="header-section-number">18.2</span> Manipulating data sets</h2>
 <div class="webex-check webex-box">
-<p>filter can be used to group rows: <select class="webex-select"><option value="blank"></option><option value="answer">TRUE</option><option value="">FALSE</option></select></p>
-Which is the correct form?
-<div id="radio_HKBHXOVLAE" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_HKBHXOVLAE" value=""> <span>filter(species_id = 'GM')</span></label><label><input type="radio" autocomplete="off" name="radio_HKBHXOVLAE" value="answer"> <span>filter(species_id %in% c(DM, NL)</span></label><label><input type="radio" autocomplete="off" name="radio_HKBHXOVLAE" value=""> <span>filter(species_id == %in% c(DM, NL)</span></label>
+<p><code>filter()</code> keeps only the rows that match a condition: <select class="webex-select"><option value="blank"></option><option value="answer">TRUE</option><option value="">FALSE</option></select></p>
+Which is the correct way to keep only rows where <code>species_id</code> is <code>'DM'</code>?
+<div id="radio_LKIUDFBDZU" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_LKIUDFBDZU" value=""> <span>filter(species_id = 'DM')</span></label><label><input type="radio" autocomplete="off" name="radio_LKIUDFBDZU" value="answer"> <span>filter(species_id == 'DM')</span></label><label><input type="radio" autocomplete="off" name="radio_LKIUDFBDZU" value=""> <span>filter(species_id %in% 'DM')</span></label>
 </div>
 </div>
 <ol start="2" type="1">
@@ -456,15 +456,15 @@ Which is the correct form?
 <li></li>
 </ol>
 Which code correctly selects only the <code>species_id</code> and <code>weight</code> columns from <code>rodents</code>?
-<div id="radio_TBMMTIDITP" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_TBMMTIDITP" value="answer"> <span>select(rodents, species_id, weight)</span></label><label><input type="radio" autocomplete="off" name="radio_TBMMTIDITP" value=""> <span>filter(rodents, species_id, weight)</span></label><label><input type="radio" autocomplete="off" name="radio_TBMMTIDITP" value=""> <span>choose(rodents, species_id, weight)</span></label><label><input type="radio" autocomplete="off" name="radio_TBMMTIDITP" value=""> <span>mutate(rodents, species_id, weight)</span></label>
+<div id="radio_QMIVOOJUVE" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_QMIVOOJUVE" value="answer"> <span>select(rodents, species_id, weight)</span></label><label><input type="radio" autocomplete="off" name="radio_QMIVOOJUVE" value=""> <span>filter(rodents, species_id, weight)</span></label><label><input type="radio" autocomplete="off" name="radio_QMIVOOJUVE" value=""> <span>choose(rodents, species_id, weight)</span></label><label><input type="radio" autocomplete="off" name="radio_QMIVOOJUVE" value=""> <span>mutate(rodents, species_id, weight)</span></label>
 </div>
 <ol start="4" type="1">
 <li></li>
 </ol>
 What does <code>group_by()</code> do?
-<div id="radio_IXDUXQONTQ" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_IXDUXQONTQ" value="answer"> <span>Splits rows into groups so that subsequent operations (e.g.&nbsp;summarise) apply within each group</span></label><label><input type="radio" autocomplete="off" name="radio_IXDUXQONTQ" value=""> <span>Removes rows that belong to a group</span></label><label><input type="radio" autocomplete="off" name="radio_IXDUXQONTQ" value=""> <span>Arranges rows in alphabetical order by a grouping variable</span></label><label><input type="radio" autocomplete="off" name="radio_IXDUXQONTQ" value=""> <span>Selects columns that share a common name</span></label>
+<div id="radio_HKMMHKHRCG" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_HKMMHKHRCG" value="answer"> <span>Splits rows into groups so that subsequent operations (e.g.&nbsp;summarise) apply within each group</span></label><label><input type="radio" autocomplete="off" name="radio_HKMMHKHRCG" value=""> <span>Removes rows that belong to a group</span></label><label><input type="radio" autocomplete="off" name="radio_HKMMHKHRCG" value=""> <span>Arranges rows in alphabetical order by a grouping variable</span></label><label><input type="radio" autocomplete="off" name="radio_HKMMHKHRCG" value=""> <span>Selects columns that share a common name</span></label>
 </div>
 <ol start="5" type="1">
 <li></li>
@@ -478,8 +478,8 @@ What does <code>group_by()</code> do?
 <li></li>
 </ol>
 Which code sorts <code>rodents</code> by <code>weight</code> from smallest to largest?
-<div id="radio_BUXHIAMTHY" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_BUXHIAMTHY" value="answer"> <span>arrange(rodents, weight)</span></label><label><input type="radio" autocomplete="off" name="radio_BUXHIAMTHY" value=""> <span>sort(rodents, weight)</span></label><label><input type="radio" autocomplete="off" name="radio_BUXHIAMTHY" value=""> <span>order(rodents, weight)</span></label><label><input type="radio" autocomplete="off" name="radio_BUXHIAMTHY" value=""> <span>filter(rodents, weight)</span></label>
+<div id="radio_KKLZMNJTVZ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_KKLZMNJTVZ" value="answer"> <span>arrange(rodents, weight)</span></label><label><input type="radio" autocomplete="off" name="radio_KKLZMNJTVZ" value=""> <span>sort(rodents, weight)</span></label><label><input type="radio" autocomplete="off" name="radio_KKLZMNJTVZ" value=""> <span>order(rodents, weight)</span></label><label><input type="radio" autocomplete="off" name="radio_KKLZMNJTVZ" value=""> <span>filter(rodents, weight)</span></label>
 </div>
 </section>
 <section id="working-with-ggplot" class="level2" data-number="18.3">
@@ -504,15 +504,15 @@ Which code sorts <code>rodents</code> by <code>weight</code> from smallest to la
 <li></li>
 </ol>
 What does the <code>+</code> sign do in a ggplot call?
-<div id="radio_QNCZRDSLKY" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_QNCZRDSLKY" value="answer"> <span>It adds a new layer (e.g.&nbsp;geom, theme, labels) to the plot</span></label><label><input type="radio" autocomplete="off" name="radio_QNCZRDSLKY" value=""> <span>It runs the ggplot code</span></label><label><input type="radio" autocomplete="off" name="radio_QNCZRDSLKY" value=""> <span>It adds the two data values together</span></label><label><input type="radio" autocomplete="off" name="radio_QNCZRDSLKY" value=""> <span>It connects points on a scatterplot</span></label>
+<div id="radio_RMHRZZXVBQ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_RMHRZZXVBQ" value="answer"> <span>It adds a new layer (e.g.&nbsp;geom, theme, labels) to the plot</span></label><label><input type="radio" autocomplete="off" name="radio_RMHRZZXVBQ" value=""> <span>It runs the ggplot code</span></label><label><input type="radio" autocomplete="off" name="radio_RMHRZZXVBQ" value=""> <span>It adds the two data values together</span></label><label><input type="radio" autocomplete="off" name="radio_RMHRZZXVBQ" value=""> <span>It connects points on a scatterplot</span></label>
 </div>
 <ol start="6" type="1">
 <li></li>
 </ol>
 Which code colours scatterplot points by the <code>species_id</code> variable?
-<div id="radio_TXDOLSHJCI" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_TXDOLSHJCI" value="answer"> <span>aes(colour = species_id)</span></label><label><input type="radio" autocomplete="off" name="radio_TXDOLSHJCI" value=""> <span>colour(species_id)</span></label><label><input type="radio" autocomplete="off" name="radio_TXDOLSHJCI" value=""> <span>geom_point(colour == species_id)</span></label><label><input type="radio" autocomplete="off" name="radio_TXDOLSHJCI" value=""> <span>set_colour(species_id)</span></label>
+<div id="radio_QLBCLVJNOB" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_QLBCLVJNOB" value="answer"> <span>aes(colour = species_id)</span></label><label><input type="radio" autocomplete="off" name="radio_QLBCLVJNOB" value=""> <span>colour(species_id)</span></label><label><input type="radio" autocomplete="off" name="radio_QLBCLVJNOB" value=""> <span>geom_point(colour == species_id)</span></label><label><input type="radio" autocomplete="off" name="radio_QLBCLVJNOB" value=""> <span>set_colour(species_id)</span></label>
 </div>
 <ol start="7" type="1">
 <li></li>
@@ -522,8 +522,8 @@ Which code colours scatterplot points by the <code>species_id</code> variable?
 <li></li>
 </ol>
 What does <code>facet_wrap()</code> do?
-<div id="radio_NNIHTSBYUB" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_NNIHTSBYUB" value="answer"> <span>Splits the plot into small panels, one per level of a variable</span></label><label><input type="radio" autocomplete="off" name="radio_NNIHTSBYUB" value=""> <span>Changes the plot theme</span></label><label><input type="radio" autocomplete="off" name="radio_NNIHTSBYUB" value=""> <span>Wraps long axis labels onto multiple lines</span></label><label><input type="radio" autocomplete="off" name="radio_NNIHTSBYUB" value=""> <span>Adds a second y-axis</span></label>
+<div id="radio_WHYJIXPZKY" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_WHYJIXPZKY" value="answer"> <span>Splits the plot into small panels, one per level of a variable</span></label><label><input type="radio" autocomplete="off" name="radio_WHYJIXPZKY" value=""> <span>Changes the plot theme</span></label><label><input type="radio" autocomplete="off" name="radio_WHYJIXPZKY" value=""> <span>Wraps long axis labels onto multiple lines</span></label><label><input type="radio" autocomplete="off" name="radio_WHYJIXPZKY" value=""> <span>Adds a second y-axis</span></label>
 </div>
 <ol start="9" type="1">
 <li></li>
