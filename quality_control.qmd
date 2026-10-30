@@ -22,11 +22,18 @@ We will now generate a Levey-Jennings plot of the data. The blue line is the mea
 
 Both the mean and sigma are calculated from the data. Sigma is estimated using the **XmR method**: we take the average of the absolute differences between consecutive measurements (the *moving range*) and divide by 1.128. This gives a better estimate of process variability than the overall standard deviation, because it is more sensitive to sudden shifts in the process and less affected by a single large outlier.
 
+First we compute the control limit values, then pass them to ggplot.
+
 ```{r}
 # Compute control limits
-mean_val <- mean(df$value)
-sigma    <- mean(abs(diff(df$value))) / 1.128  # XmR sigma estimate
+mean_val <- df |> summarise(mean(value)) |> pull()
+sigma    <- df |>                                    # XmR sigma estimate:
+  mutate(mr = abs(value - lag(value))) |>            # moving range between consecutive points
+  summarise(mean(mr, na.rm = TRUE) / 1.128) |>       # average MR divided by d2 constant
+  pull()
+```
 
+```{r}
 df |>
   ggplot(aes(x = run, y = value)) +
   geom_hline(yintercept = mean_val,                        colour = "blue",    linewidth = 0.8) +
@@ -52,7 +59,7 @@ In the data above, three of the Westgard rules have been violated. Can you ident
 
 Check your answer by running the code below. This generates a facet plot, highlighting violations in red.
 
-The code first defines a small helper function, `flag_run()`, which marks points that belong to a run of **n** or more consecutive `TRUE` values. It uses base R's `rle()` (run-length encoding) to find runs, marks those long enough, and expands the result back to the original length. We then use this function to classify each data point according to four violation rules:
+The code first defines a small helper function, `flag_run()`, which marks points that belong to a run of **n** or more consecutive `TRUE` values. It uses base R's `rle()` (run-length encoding) to find runs, marks those long enough, and expands the result back to the original length. We then use this function to build a tidy dataset of violations, and plot it separately.
 
 -   **Same Side**: 8 or more consecutive, same-side points (i.e. all above or all below the mean)
 -   **1σ**: 4 or more consecutive, same-side points exceeding 1 sigma
@@ -61,19 +68,23 @@ The code first defines a small helper function, `flag_run()`, which marks points
 
 ```{r}
 # flag_run(): marks positions that belong to a run of n or more consecutive TRUEs
+# uses base R rle() (run-length encoding) internally
 flag_run <- function(condition, n) {
   r <- rle(condition)
   rep(r$lengths >= n & r$values, r$lengths)
 }
+```
 
-df |>
+```{r}
+# Data prep: classify each point by which rules it violates, then reshape to long format
+df_violations <- df |>
   mutate(
     v_same_side = flag_run(value > mean_val, 8) | flag_run(value < mean_val, 8),
     v_1sigma    = flag_run(value > mean_val + sigma,     4) | flag_run(value < mean_val - sigma,     4),
     v_2sigma    = flag_run(value > mean_val + 2 * sigma, 2) | flag_run(value < mean_val - 2 * sigma, 2),
     v_3sigma    = abs(value - mean_val) > 3 * sigma
   ) |>
-  select(run, value, v_same_side, v_1sigma, v_2sigma, v_3sigma) |>
+  select(run, value, starts_with("v_")) |>
   pivot_longer(cols      = starts_with("v_"),
                names_to  = "rule",
                values_to = "violated") |>
@@ -82,7 +93,11 @@ df |>
     rule == "v_1sigma"    ~ "1σ (4+ consecutive)",
     rule == "v_2sigma"    ~ "2σ (2+ consecutive)",
     rule == "v_3sigma"    ~ "3σ (any point)"
-  )) |>
+  ))
+```
+
+```{r}
+df_violations |>
   ggplot(aes(x = run, y = value)) +
   geom_hline(yintercept = mean_val, colour = "blue", linewidth = 0.5) +
   geom_line(colour = "grey60") +
@@ -121,18 +136,27 @@ random_df <- tibble(
   run   = 1:30,
   value = rnorm(30, mean = 40, sd = 2)
 )
+```
 
-rand_mean  <- mean(random_df$value)
-rand_sigma <- mean(abs(diff(random_df$value))) / 1.128
+```{r}
+# Compute control limits for the random data
+rand_mean  <- random_df |> summarise(mean(value)) |> pull()
+rand_sigma <- random_df |>
+  mutate(mr = abs(value - lag(value))) |>
+  summarise(mean(mr, na.rm = TRUE) / 1.128) |>
+  pull()
+```
 
-random_df |>
+```{r}
+# Data prep: classify violations, reshape to long format
+rand_violations <- random_df |>
   mutate(
     v_same_side = flag_run(value > rand_mean, 8) | flag_run(value < rand_mean, 8),
     v_1sigma    = flag_run(value > rand_mean + rand_sigma,     4) | flag_run(value < rand_mean - rand_sigma,     4),
     v_2sigma    = flag_run(value > rand_mean + 2 * rand_sigma, 2) | flag_run(value < rand_mean - 2 * rand_sigma, 2),
     v_3sigma    = abs(value - rand_mean) > 3 * rand_sigma
   ) |>
-  select(run, value, v_same_side, v_1sigma, v_2sigma, v_3sigma) |>
+  select(run, value, starts_with("v_")) |>
   pivot_longer(cols      = starts_with("v_"),
                names_to  = "rule",
                values_to = "violated") |>
@@ -141,7 +165,11 @@ random_df |>
     rule == "v_1sigma"    ~ "1σ (4+ consecutive)",
     rule == "v_2sigma"    ~ "2σ (2+ consecutive)",
     rule == "v_3sigma"    ~ "3σ (any point)"
-  )) |>
+  ))
+```
+
+```{r}
+rand_violations |>
   ggplot(aes(x = run, y = value)) +
   geom_hline(yintercept = rand_mean, colour = "blue", linewidth = 0.5) +
   geom_line(colour = "grey60") +
